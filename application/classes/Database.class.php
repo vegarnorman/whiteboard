@@ -27,6 +27,17 @@
 			}
 		}
 
+		public function run($query) {
+			if ($resultat = $this->query($query)) {
+				return $resultat;
+				$resultat->close();
+			}
+
+			else {
+				return false;
+			}
+		}
+
 	}
 
 ?>
