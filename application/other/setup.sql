@@ -1,4 +1,6 @@
-drop table if exists Auth, Post_Meta, Page_Meta, Comment_Meta, Categorization, Tag, Comment;
+alter database wpg25 character set utf8;
+
+drop table if exists Auth, Post_Meta, Page_Meta, Comment_Meta, Categorization, Tag, Comment, Permissions, Profile;
 drop table if exists Post, Page, Author, Category, User;
 
 create table if not exists User (
@@ -7,9 +9,41 @@ create table if not exists User (
 	primary key (user_id)
 );
 
+create table if not exists Permissions (
+	user_id int(4) not null,
+	is_root_user int(1) not null,
+	is_administrator int(1) not null,
+	is_banned int(1) not null,
+	can_create_posts int(1) not null,
+	can_edit_own_posts int(1) not null,
+	can_delete_own_posts int(1) not null,
+	can_edit_other_posts int(1) not null,
+	can_delete_other_posts int(1) not null,
+	can_create_pages int(1) not null,
+	can_edit_pages int(1) not null,
+	can_delete_pages int(1) not null,
+	can_delete_comments int(1) not null,
+	can_access_settings int(1) not null,
+	primary key (user_id),
+	foreign key (user_id) references User (user_id)
+);
+
 create table if not exists Auth (
 	user_id int(4) not null,
 	hash varchar(1024) not null,
+	primary key (user_id),
+	foreign key (user_id) references User (user_id)
+);
+
+create table if not exists Profile (
+	user_id int(4) not null,
+	user_display_name varchar(50) not null,
+	user_email_address varchar(50) not null,
+	user_homepage_url varchar(50) not null,
+	user_facebook_url varchar(50) not null,
+	user_twitter_url varchar(50) not null,
+	user_profile_description varchar(256) not null,
+	user_photo blob not null,
 	primary key (user_id),
 	foreign key (user_id) references User (user_id)
 );
