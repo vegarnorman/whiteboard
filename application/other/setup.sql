@@ -25,14 +25,14 @@ create table if not exists Permissions (
 	can_delete_comments int(1) not null,
 	can_access_settings int(1) not null,
 	primary key (user_id),
-	foreign key (user_id) references User (user_id)
+	foreign key (user_id) references User (user_id) on delete cascade
 );
 
 create table if not exists Auth (
 	user_id int(4) not null,
 	hash varchar(1024) not null,
 	primary key (user_id),
-	foreign key (user_id) references User (user_id)
+	foreign key (user_id) references User (user_id) on delete cascade
 );
 
 create table if not exists Profile (
@@ -45,7 +45,7 @@ create table if not exists Profile (
 	user_profile_description varchar(256) not null,
 	user_photo blob not null,
 	primary key (user_id),
-	foreign key (user_id) references User (user_id)
+	foreign key (user_id) references User (user_id) on delete cascade
 );
 
 create table if not exists Post (
@@ -62,9 +62,9 @@ create table if not exists Post_Meta (
 	post_published_by int(4) not null,
 	post_last_modified_by int(4) not null,
 	primary key (post_id),
-	foreign key (post_id) references Post (post_id),
-	foreign key (post_published_by) references User (user_id),
-	foreign key (post_last_modified_by) references User (user_id)
+	foreign key (post_id) references Post (post_id) on delete cascade,
+	foreign key (post_published_by) references User (user_id) on delete cascade,
+	foreign key (post_last_modified_by) references User (user_id) on delete cascade
 );
 
 create table if not exists Page (
@@ -81,8 +81,8 @@ create table if not exists Page_Meta (
 	page_published_by int(4) not null,
 	page_last_modified_by int(4) not null,
 	primary key (page_id),
-	foreign key (page_id) references Page (page_id),
-	foreign key (page_published_by) references User (user_id),
+	foreign key (page_id) references Page (page_id) on delete cascade,
+	foreign key (page_published_by) references User (user_id) on delete cascade,
 	foreign key (page_last_modified_by) references User (user_id)
 );
 
@@ -96,8 +96,8 @@ create table if not exists Categorization (
 	post_id int(4) not null,
 	category_id int(4) not null,
 	primary key (post_id, category_id),
-	foreign key (post_id) references Post (post_id),
-	foreign key (category_id) references Category (category_id)
+	foreign key (post_id) references Post (post_id) on delete cascade,
+	foreign key (category_id) references Category (category_id) on delete cascade
 );
 
 create table if not exists Tag (
@@ -105,7 +105,7 @@ create table if not exists Tag (
 	tag_name varchar(200) not null,
 	post_id int(4) not null,
 	primary key (tag_id),
-	foreign key (post_id) references Post (post_id)
+	foreign key (post_id) references Post (post_id) on delete cascade
 );
 
 create table if not exists Author (
@@ -122,7 +122,7 @@ create table if not exists Comment (
 	comment_data blob not null,
 	post_id int(4) not null,
 	primary key (comment_id),
-	foreign key (post_id) references Post (post_id)
+	foreign key (post_id) references Post (post_id) on delete cascade
 );
 
 create table if not exists Comment_Meta (
@@ -130,5 +130,5 @@ create table if not exists Comment_Meta (
 	comment_published timestamp not null,
 	comment_published_by int(4) not null,
 	primary key (comment_id),
-	foreign key (comment_published_by) references Author (author_id)
+	foreign key (comment_published_by) references Author (author_id) on delete cascade
 );
