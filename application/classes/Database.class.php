@@ -14,6 +14,7 @@
 			$use  = $auth->decrypt($db4);
 
 			parent::__construct($host, $user, $pass, $use);
+			$this->set_charset("utf8");
 
 		}
 
