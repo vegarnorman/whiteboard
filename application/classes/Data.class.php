@@ -28,8 +28,8 @@
 			}
 		}
 
-		// transaction() - opererer mot databasen
-		public function transaction($operation, $table, $data) {
+		// operation() - opererer mot databasen
+		public function operation($operation, $table, $data) {
 
 			// opprett datafelter
 			$fields = array_keys($data);
