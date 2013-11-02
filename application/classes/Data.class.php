@@ -19,473 +19,260 @@
 
 		// sanitize() - sanerer data som kommer fra frontend
 		private function sanitize($input) {
-			return $this->db->real_escape_string($input);
-		}
-
-
-
-		//	OPERASJONER MOT POST-TABELLEN
-		//===============================
-
-
-		// insertPost($title, $data)
-		// legger inn dataene inn i en ny rad i Post-tabellen i databasen
-		//
-		// innparametere:
-		//		$title: bloggpostens tittel
-		//		$data: innholdet i bloggposten
-		// returverdier: 
-		//		false = feil i kjøring 
-		//		ID-nummeret til den nye posten = suksess
-
-		public function insertPost($post_title, $post_data) {
-			$post_title = (string) $this->sanitize($post_title);
-			$post_data = (string) $this->sanitize($post_data);
-
-			$query = "insert into Post(post_title, post_data) values ('{$post_title}', '{$post_data}')";
-			if(!$this->db->run($query)) {
-				return false;
+			if (is_int($input)) {
+				return (int) $this->db->real_escape_string($input);
 			}
 
-			else {
-				return $this->db->insert_id;
+			else if (is_string($input)) {
+				return (string) $this->db->real_escape_string($input);
 			}
 		}
 
+		// transaction() - opererer mot databasen
+		public function transaction($operation, $table, $data) {
 
+			// opprett datafelter
+			$fields = array_keys($data);
+			$values = array_values($data);
+			$fields_list = "";
+			$values_list = "";
+			$update_statement = "";
 
-		// deletePost($id)
-		// sletter ønsket rad fra Post-tabellen i databasen
-		//
-		// innparametere:
-		// 		$id: post_id til raden som skal slettes
-		// returverdier: 
-		// 		false = feil i kjøring 
-		//		0 = ingen rader ble slettet (feil ID?)
-		//		true = suksess
+			// finn primærnøkkel
 
-		public function deletePost($post_id) {
-			$post_id = (int) $this->sanitize($post_id);
+			switch($table) {
 
-			$query = "delete in Post where post_id = '{$post_id}'";
-			if(!$this->db->run($query)) {
-				return false;
+				case "Post":
+					$primary_key = "post_id";
+					break;
+
+				case "Post_Meta":
+					$primary_key = "post_id";
+					break;
+
+				case "Page":
+					$primary_key = "page_id";
+					break;
+
+				case "Page_Meta":
+					$primary_key = "page_id";
+					break;
+
+				case "User":
+					$primary_key = "user_id";
+					break;
+
+				case "Auth":
+					$primary_key = "user_id";
+					break;
+
+				case "Permissions":
+					$primary_key = "user_id";
+					break;
+
+				case "Profile":
+					$primary_key = "user_id";
+					break;
+
+				case "Tag":
+					$primary_key = "post_id";
+					break;
+
+				case "Category":
+					$primary_key = "category_id";
+					break;
+
+				case "Categorization":
+					$primary_key = "categorization_id";
+					break;
+
+				case "Comment":
+					$primary_key = "comment_id";
+					break;
+
+				case "Comment_Meta":
+					$primary_key = "comment_id";
+					break;
+
+				case "Author":
+					$primary_key = "author_id";
+					break;
+
 			}
 
-			else {
-				if ($this->db->affected_rows == 0) {
-					return 0;
+			// saner data i values-arrayet
+			for ($i = 0; $i < count($values); $i++) {
+				$values[$i] = $this->sanitize($values[$i]);
+			}
+
+			// konverter arrayer til korrekte strenger
+			for ($i = 0; $i < count($fields); $i++) {
+				if ($i == count($fields) - 1) {
+					$fields_list .= $fields[$i];
 				}
 
 				else {
-					return true;
-				}
-			}
-		}
-
-
-
-		// updatePost($id, $title, $data)
-		// oppdaterer en rad i Post-tabellen med nye data
-		//
-		// innparametere:
-		// 		$id: post_id til raden som skal endres
-		// 		$title: bloggpostens tittel
-		// 		$data: bloggpostens innhold
-		// returverdier:
-		// 		false = feil i kjøring
-		//		0 = ingen rader påvirket, altså ingen data endret
-		//		true = suksess
-
-		public function updatePost($post_id, $post_title, $post_data) {
-			$post_id = (int) $this->sanitize($post_id);
-			$post_title = (string) $this->sanitize($post_title);
-			$post_data = (string) $this->sanitize($post_data);
-
-			$query = "update Post set post_title = '{$post_title}', post_data = '{$post_data}' where post_id = '{$post_id}'";
-
-			if (!$this->db->run($query)) {
-				return false;
-			}
-
-			else {
-				if ($this->db->affected_rows == 0) {
-					return 0;
+					$fields_list .= $fields[$i] . ", ";
 				}
 
-				else {
-					return true;
-				}
-			}
-		}
-
-
-
-		// getPost($id)
-		// henter en rad fra Post-tabellen i databasen
-		// innparameter:
-		//		$id = post_id til raden som skal hentes
-		// returverdier:
-		//		false = feil i kjøring
-		//		0 = ingen rader hentet (ID eksisterer ikke?)
-		//		et assosiativt array med alle radens felter = suksess
-
-		public function getPost($post_id) {
-			$post_id = (int) $this->sanitize($post_id);
-
-			$query = "select * from Post where post_id = {$post_id}";
-			$result = $this->db->run($query);
-
-			if(!$result) {
-				return false;
-			}
-
-			else {
-				if ($result->num_rows == 0) {
-					return 0;
-				}
-
-				else {
-					$post = array();
-
-					while($row = $result->fetch_assoc()) {
-						$post["post_id"] = $row["post_id"];
-						$post["post_title"] = $row["post_title"];
-						$post["post_data"] = $row["post_data"];
+				if (is_int($values[$i])) {
+					if ($i == count($fields) - 1) {
+						$values_list .= $values[$i];
 					}
 
-					return $post;
+					else {
+						$values_list .= $values[$i] . ", ";
+					}
+				}
+
+				 else if (is_string($values[$i])) {
+					if ($i == count($fields) - 1) {
+						$values_list .= "'" . $values[$i] . "'";
+					}
+
+					else {
+						$values_list .= "'" . $values[$i] . "', ";
+					}
+				}
+
+			}
+
+			// lag update statement
+			for ($i = 0; $i < count($fields); $i++) {
+				if ($i == count($fields) - 1) {
+					if (is_int($values[$i])) {
+						$update_statement .= $fields[$i] . " = " . $values[$i];
+					}
+
+					else if (is_string($values[$i])) {
+						$update_statement .= $fields[$i] . " = '" . $values[$i] . "'";
+					}
+				}
+
+				else {
+					if (is_int($values[$i])) {
+						$update_statement .= $fields[$i] . " = " . $values[$i] . ", ";
+					}
+
+					else if (is_string($values[$i])) {
+						$update_statement .= $fields[$i] . " = '" . $values[$i] . "', ";
+					}
 				}
 			}
-		}
 
+			// lag korrekt spørring
+			switch($operation) {
 
+				case "insert":
+					$query = "insert into {$table} ({$fields_list}) values ({$values_list})";
+					break;
 
-		//	OPERASJONER MOT POST_META-TABELLEN
-		//====================================
+				case "update":
+					$primary_key_value = $data[$primary_key];
+					$query = "update {$table} set {$update_statement} where {$primary_key} = {$primary_key_value}";
+					break;
 
-		public function insertPostMeta($post_id, 
-									   $post_published, 
-									   $post_last_modified, 
-									   $post_published_by, 
-									   $post_last_modified_by) {
-			$post_id = (int) $this->sanitize($post_id);
-			$post_published = (string) $this->sanitize($post_published);
-			$post_last_modified = (string) $this->sanitize($post_last_modified);
-			$post_published_by = (int) $this->sanitize($post_published_by);
-			$post_last_modified_by = (int) $this->sanitize($post_last_modified_by);
+				case "delete":
+					$primary_key_value = $data[$primary_key];
+					$query = "delete from {$table} where {$primary_key} = {$primary_key_value}";
+					break;
 
-			$query = "insert into Post_Meta (post_id, post_published, post_last_modified, post_published_by, post_last_modified_by) values ({$post_id}, '{$post_published}', '{$post_last_modified}', {$post_published_by}, {$post_last_modified_by})";
+				case "get":
+					$primary_key_value = $data[$primary_key];
+					$query = "select * from {$table} where {$primary_key} = {$primary_key_value}";
+					break;
 
-			if (!$this->db->run($query)) {
-				return false;
+				default:
+					$query = false;
+					break;
+
+			}
+
+			// gjennomfør spørring
+			if ($query != false) {
+
+				$sql_result = $this->db->run($query);
+
+				if (!$sql_result) {
+					return $this->db->error;
+				}
+
+				else {
+
+					switch($operation) {
+
+						case "insert":
+							return $this->db->insert_id;
+							break;
+
+						case "update":
+
+							if ($this->db->affected_rows == 0) {
+								return 0;
+							}
+
+							else {
+								return true;
+							}
+
+							break;
+
+						case "delete":
+
+							if ($this->db->affected_rows == 0) {
+								return $query;
+							}
+
+							else {
+								return $query;
+							}
+
+							break;
+
+						case "get":
+
+							if ($this->db->affected_rows == 0) {
+								return 0;
+							}
+
+							else {
+								return $sql_result->fetch_assoc();
+							}
+
+							break;
+
+					}
+
+				}
+
 			}
 
 			else {
-				return $this->db->insert_id;
+				return false;
 			}
-		}
-
-
-
-		public function deletePostMeta($post_id) {
-			
-		}
-
-
-
-		public function updatePostMeta($post_id, 
-									   $post_published, 
-									   $post_last_modified, 
-									   $post_published_by, 
-									   $post_last_modified_by) {
 
 		}
 
 
-
-		public function getPostMeta($post_id) {
-
+		// begin() - starter en MySQL-transaksjon
+		public function begin() {
+			$this->db->begin_transaction();
 		}
 
-
-
-
-		public function insertUser($user_name) {
-
+		// commit() - committer en databasetransaksjon
+		public function commit() {
+			$this->db->commit();
 		}
 
-		public function deleteUser($user_id) {
-
+		// rollback() - ruller tilbake en databasetransaksjon
+		public function rollback() {
+			$this->db->rollback();
 		}
 
-		public function updateUser($user_id, $user_name) {
-
+		// close() - stenger en databasetilkobling
+		public function close() {
+			$this->db->close();
 		}
-
-		public function getUser($user_id) {
-			
-		}
-
-
-
-
-		public function insertPermissions($user_id,
-										  $is_root_user,
-										  $is_administrator,
-										  $is_banned,
-										  $can_create_posts,
-										  $can_edit_own_posts,
-										  $can_delete_own_posts,
-										  $can_edit_other_posts,
-										  $can_delete_other_posts,
-										  $can_create_pages,
-										  $can_edit_pages,
-										  $can_delete_pages,
-										  $can_delete_comments,
-										  $can_access_settings) {
-
-		}
-
-		public function deletePermissions($user_id) {
-
-		}
-
-		public function updatePermissions($user_id,
-										  $is_root_user,
-										  $is_administrator,
-										  $is_banned,
-										  $can_create_posts,
-										  $can_edit_own_posts,
-										  $can_delete_own_posts,
-										  $can_edit_other_posts,
-										  $can_delete_other_posts,
-										  $can_create_pages,
-										  $can_edit_pages,
-										  $can_delete_pages,
-										  $can_delete_comments,
-										  $can_access_settings) {
-
-		}
-
-		public function getPermissions($user_id) {
-			
-		}
-
-
-
-
-		public function insertAuth($user_id, $hash) {
-
-		}
-
-		public function deleteAuth($user_id) {
-
-		}
-
-		public function updateAuth($user_id, $hash) {
-
-		}
-
-		public function getAuth($user_id) {
-
-		}
-
-
-
-
-		public function insertProfile($user_id,
-									  $user_display_name,
-									  $user_email_address,
-									  $user_homepage_url,
-									  $user_facebook_url,
-									  $user_twitter_url,
-									  $user_profile_description,
-									  $user_photo) {
-
-		}
-
-		public function deleteProfile($user_id) {
-
-		}
-
-		public function updateProfile($user_id,
-									  $user_display_name,
-									  $user_email_address,
-									  $user_homepage_url,
-									  $user_facebook_url,
-									  $user_twitter_url,
-									  $user_profile_description,
-									  $user_photo) {
-
-		}
-
-		public function getProfile($user_id) {
-			
-		}
-
-
-
-
-
-		public function insertPage($page_title, $page_data) {
-
-		}
-
-		public function deletePage($page_id) {
-
-		}
-
-		public function updatePage($page_id, $page_title, $page_data) {
-
-		}
-
-		public function getPage($page_id) {
-			
-		}
-
-
-
-
-		public function insertPageMeta($page_id,
-									   $page_published,
-									   $page_last_modified,
-									   $page_published_by,
-									   $page_last_modified_by) {
-
-		}
-
-		public function deletePageMeta($page_id) {
-
-		}
-
-		public function updatePageMeta($page_id,
-									   $page_published,
-									   $page_last_modified,
-									   $page_published_by,
-									   $page_last_modified_by) {
-
-		}
-
-		public function getPageMeta($page_id) {
-			
-		}
-
-
-
-
-		public function insertCategory($category_name) {
-
-		}
-
-		public function deleteCategory($category_id) {
-
-		}
-
-		public function updateCategory($category_id, $category_name) {
-
-		}
-
-		public function getCategory($category_id) {
-			
-		}
-
-
-
-
-		public function insertCategorization($post_id, $category_id) {
-
-		}
-
-		public function deleteCategorization($post_id, $category_id) {
-
-		}
-
-		public function updateCategorization($post_id, $category_id) {
-
-		}
-
-		public function getCategorization($post_id, $category_id) {
-
-		}
-
-
-
-
-		public function insertTag($tag_name, $post_id) {
-
-		}
-
-		public function deleteTag($tag_id) {
-
-		}
-
-		public function updateTag($tag_id, $tag_name, $post_id) {
-
-		}
-
-		public function getTag($tag_id) {
-			
-		}
-
-
-
-
-		public function insertAuthor($author_name, $author_email, $author_url) {
-
-		}
-
-		public function deleteAuthor($author_id) {
-
-		}
-
-		public function updateAuthor($author_id, $author_name, $author_email, $author_url) {
-
-		}
-
-		public function getAuthor($author_id) {
-			
-		}
-
-
-
-
-		public function insertComment($comment_title, $comment_data, $post_id) {
-
-		}
-
-		public function deleteComment($comment_id) {
-
-		}
-
-		public function updateComment($comment_id, $comment_title, $comment_data, $post_id) {
-
-		}
-
-		public function getComment($comment_id) {
-			
-		}
-
-
-
-
-		public function insertCommentMeta($comment_id, $comment_published, $comment_published_by) {
-
-		}
-
-		public function deleteCommentMeta($comment_id) {
-
-		}
-
-		public function updateCommentMeta($comment_id, $comment_published, $comment_published_by) {
-
-		}
-
-		public function getCommentMeta($comment_id) {
-			
-		}
-
-
 
 	}
 
