@@ -63,8 +63,8 @@ create table if not exists Post_Meta (
 	post_last_modified_by int(4) not null,
 	primary key (post_id),
 	foreign key (post_id) references Post (post_id) on delete cascade,
-	foreign key (post_published_by) references User (user_id) on delete set null,
-	foreign key (post_last_modified_by) references User (user_id) on delete set null
+	foreign key (post_published_by) references User (user_id),
+	foreign key (post_last_modified_by) references User (user_id)
 );
 
 create table if not exists Page (
@@ -82,8 +82,8 @@ create table if not exists Page_Meta (
 	page_last_modified_by int(4) not null,
 	primary key (page_id),
 	foreign key (page_id) references Page (page_id) on delete cascade,
-	foreign key (page_published_by) references User (user_id) on delete set null,
-	foreign key (page_last_modified_by) references User (user_id) on delete set null
+	foreign key (page_published_by) references User (user_id),
+	foreign key (page_last_modified_by) references User (user_id)
 );
 
 create table if not exists Category (
@@ -93,9 +93,10 @@ create table if not exists Category (
 );
 
 create table if not exists Categorization (
+	categorization_id int(4) auto_increment not null,
 	post_id int(4) not null,
 	category_id int(4) not null,
-	primary key (post_id, category_id),
+	primary key (categorization_id),
 	foreign key (post_id) references Post (post_id) on delete cascade,
 	foreign key (category_id) references Category (category_id) on delete cascade
 );
@@ -131,5 +132,5 @@ create table if not exists Comment_Meta (
 	comment_published_by int(4) not null,
 	primary key (comment_id),
 	foreign key (comment_id) references Comment (comment_id) on delete cascade,
-	foreign key (comment_published_by) references Author (author_id) on delete set null
+	foreign key (comment_published_by) references Author (author_id)
 );
