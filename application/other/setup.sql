@@ -5,7 +5,7 @@ drop table if exists Post, Page, Author, Category, User;
 
 create table if not exists User (
 	user_id int(4) auto_increment not null,
-	user_name varchar(200) not null,
+	user_name varchar(20) not null,
 	primary key (user_id)
 );
 
