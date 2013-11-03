@@ -36,68 +36,88 @@
 			$values = array_values($data);
 			$fields_list = "";
 			$values_list = "";
+			$tables_list = "";
 			$update_statement = "";
+			$find_statement = "";
+
+			// lag tabelliste
+			if (is_array($table)) {
+				for ($i = 0; $ < count($table); $i++) {
+					if ($i == count($table) - 1) {
+						$tables_list .= $table[$i];
+					}
+
+					else {
+						$tables_list .= $table[$i] . ", ";
+					}
+				}
+			}
+
+			// cast til riktig datatype hvis $table bare inneholder ett element
+			if (is_array($table) && count($table) == 1) {
+				$table = (string) $table[0];
+			}
 
 			// finn primærnøkkel
 
-			switch($table) {
+			if (is_string($table)) {
+				switch($table) {
+					case "Post":
+						$primary_key = "post_id";
+						break;
 
-				case "Post":
-					$primary_key = "post_id";
-					break;
+					case "Post_Meta":
+						$primary_key = "post_id";
+						break;
 
-				case "Post_Meta":
-					$primary_key = "post_id";
-					break;
+					case "Page":
+						$primary_key = "page_id";
+						break;
 
-				case "Page":
-					$primary_key = "page_id";
-					break;
+					case "Page_Meta":
+						$primary_key = "page_id";
+						break;
 
-				case "Page_Meta":
-					$primary_key = "page_id";
-					break;
+					case "User":
+						$primary_key = "user_id";
+						break;
 
-				case "User":
-					$primary_key = "user_id";
-					break;
+					case "Auth":
+						$primary_key = "user_id";
+						break;
 
-				case "Auth":
-					$primary_key = "user_id";
-					break;
+					case "Permissions":
+						$primary_key = "user_id";
+						break;
 
-				case "Permissions":
-					$primary_key = "user_id";
-					break;
+					case "Profile":
+						$primary_key = "user_id";
+						break;
 
-				case "Profile":
-					$primary_key = "user_id";
-					break;
+					case "Tag":
+						$primary_key = "post_id";
+						break;
 
-				case "Tag":
-					$primary_key = "post_id";
-					break;
+					case "Category":
+						$primary_key = "category_id";
+						break;
 
-				case "Category":
-					$primary_key = "category_id";
-					break;
+					case "Categorization":
+						$primary_key = "categorization_id";
+						break;
 
-				case "Categorization":
-					$primary_key = "categorization_id";
-					break;
+					case "Comment":
+						$primary_key = "comment_id";
+						break;
 
-				case "Comment":
-					$primary_key = "comment_id";
-					break;
+					case "Comment_Meta":
+						$primary_key = "comment_id";
+						break;
 
-				case "Comment_Meta":
-					$primary_key = "comment_id";
-					break;
-
-				case "Author":
-					$primary_key = "author_id";
-					break;
-
+					case "Author":
+						$primary_key = "author_id";
+						break;
+				}
 			}
 
 			// saner data i values-arrayet
@@ -160,6 +180,29 @@
 				}
 			}
 
+			// lag find statement
+			for ($i = 0; $i < count($fields); $i++) {
+				if ($i == count($fields) - 1) {
+					if (is_int($values[$i])) {
+						$find_statement .= $fields[$i] . " = " . $values[$i];
+					}
+
+					else if (is_string($values[$i])) {
+						$find_statement .= $fields[$i] . " = '" . $values[$i] . "'";
+					}
+				}
+
+				else {
+					if (is_int($values[$i])) {
+						$find_statement .= $fields[$i] . " = " . $values[$i] . " and ";
+					}
+
+					else if (is_string($values[$i])) {
+						$find_statement .= $fields[$i] . " = '" . $values[$i] . "' and ";
+					}
+				}
+			}
+
 			// lag korrekt spørring
 			switch($operation) {
 
@@ -180,6 +223,14 @@
 				case "get":
 					$primary_key_value = $data[$primary_key];
 					$query = "select * from {$table} where {$primary_key} = {$primary_key_value}";
+					break;
+
+				case "find":
+					$query = "select * from {$table} where {$find_statement}";
+					break;
+
+				case "join":
+					$query = "select * from {$tables_list} where {$find_statement}";
 					break;
 
 				default:
@@ -205,6 +256,7 @@
 							return $this->db->insert_id;
 							break;
 
+
 						case "update":
 
 							if ($this->db->affected_rows == 0) {
@@ -216,6 +268,7 @@
 							}
 
 							break;
+
 
 						case "delete":
 
@@ -229,9 +282,10 @@
 
 							break;
 
+
 						case "get":
 
-							if ($this->db->affected_rows == 0) {
+							if ($sql_result->num_rows == 0) {
 								return 0;
 							}
 
@@ -239,6 +293,30 @@
 								return $sql_result->fetch_assoc();
 							}
 
+							break;
+
+
+						case "find":
+
+							if ($sql_result->num_rows == 0) {
+								return 0;
+							}
+
+							else {
+								return $sql_result->fetch_assoc();
+							}
+							break;
+
+
+						case "join":
+
+							if ($sql_result->num_rows == 0) {
+								return 0;
+							}
+
+							else {
+								return $sql_result->fetch_assoc();
+							}
 							break;
 
 					}
