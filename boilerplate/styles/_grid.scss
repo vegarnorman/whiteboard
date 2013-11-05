@@ -1,0 +1,121 @@
+// Settings for the grid.
+
+$columns: 12;
+$gutter: 1.5%;
+
+
+
+// The actual container for the grid. Set the width to whatever you need. 
+
+@mixin container($max-width: 90%, $container-width: 90%) {
+	margin-left: auto;
+	margin-right: auto;
+	padding: 0;
+	width: $container-width;
+	max-width: $max-width;
+	@include clearfix();
+}
+
+
+// Use .row to "wrap" your elements. 
+
+@mixin grid-row() {
+	width: 100%;
+	margin: 0;
+	padding: 0;
+	@include clearfix();
+}
+
+
+// Common rules for all grid elements
+
+@mixin common() {
+	float: left;
+	display: inline-block;
+	min-height: 1px;
+	-webkit-box-sizing: border-box;
+		-moz-box-sizing: border-box;
+		     box-sizing: border-box;
+}
+
+// Mixins for gutters / no gutters
+
+@mixin gutters() {
+	margin-left: $gutter;
+	margin-right: $gutter;
+}
+
+@mixin no-gutters() {
+	margin-left: 0;
+	margin-right: 0;
+}
+
+
+// Silent grid. Make sure you use this mixin when generating within your styles!
+
+@mixin grid($size, $gutters: true) {
+	@include common();
+
+	@if $gutters == true {
+		@include gutters();
+		width: (100% / $columns) * $size - ($gutter * 2);
+	}
+
+	@else if $gutters == false {
+		@include no-gutters();
+		width: (100% / $columns) * $size;
+	}
+
+	@else {
+		@warn "Syntax error: second parameter must be set to true or false. Setting to true.";
+		@include gutters();
+		width: (100% / $columns) * $size - ($gutter * 2);
+	}
+}
+
+
+// Verbose grid
+// If you want to have the grid system in your CSS file for use within your HTML documents,
+// leave the following lines uncommented. If you just want to have the SASS magic, comment
+// out the parts you don't want, or just remove it altogether.
+
+.container {
+	@include container();
+}
+
+.row { 
+	@include grid-row(); 
+}
+
+.grid { 
+	@include common(); 
+	@include gutters(); 
+}
+
+.grid.no-gutters { 
+	@include no-gutters(); 
+}
+
+
+@for $i from 1 through $columns {
+	.grid.g#{$i} { width: (100% / $columns) * $i - ($gutter * 2); }
+}
+
+@for $i from 1 through $columns {
+	.grid.g#{$i}.no-gutters { width: (100% / $columns) * $i; }
+}
+
+// Layout generator
+// Use this for generating layouts for classes, IDs and so on.
+
+@mixin layout($arguments, $gutters: true) {
+	$counter: 1;
+
+	@each $argument in $arguments {
+		> *:nth-child(#{$counter}) {
+			@include grid($argument, $gutters);
+		}
+
+		$counter: $counter + 1;
+	}
+}
