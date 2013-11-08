@@ -1,0 +1,107 @@
+@charset "UTF-8";
+
+/*	Importsetninger
+*/
+
+@import url("http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css");
+@import url("../fonts/fira/fira.css");
+@import url("grid.css");
+
+/*	En ytterst simpel reset av elementer
+*/
+
+*, html, body, h1, h2, h3, h4, h5, h6, p, div, aside, article, section, header, footer, nav {
+	border: 0;
+	margin: 0;
+	padding: 0;
+	vertical-align: baseline;
+}
+
+/*	Oppsett av rotelementer
+*/
+
+html {
+	font-family: "Fira Sans", sans-serif;
+	font-size: 18px;
+	font-weight: 400;
+	line-height: 1.5;
+}
+
+html, body {
+	height: 100%;
+	width: 100%;
+}
+
+body {
+	background-color: #ffffff;
+	color: rgba(14, 15, 20, 0.8);
+}
+
+/*	Enkelt oppsett av typografi og mye brukte elementer
+*/
+
+h1, h2, h3, h4, h5, h6 {
+	line-height: 1;
+	font-weight: 500;
+}
+
+h1, h2, h3 {
+	padding-bottom: 1.5rem;
+}
+
+h4, h5, h6 {
+	padding-bottom: 1rem;
+}
+
+h1 { font-size: 3rem; }
+h2 { font-size: 2rem; }
+h3 { font-size: 1.5rem; }
+h4 { font-size: 1rem; }
+h5 { font-size: 0.75rem; }
+h6 { font-size: 0.6rem; }
+
+p {
+	padding-bottom: 1.5rem;
+}
+
+
+
+/*	Komponenter til kontrollpanelet
+==================================*/
+
+.cp-container {
+	display: flex;
+	flex-flow: row nowrap;
+	justify-content: flex-start;
+	align-items: stretch;
+	width: 100%;
+	height: 100%;
+}
+
+.cp-sidebar {
+	flex: 0 0 auto;
+	background-color: rgba(14, 15, 20, 1);
+	min-width: 180px;
+	max-width: 320px;
+	width: 20%;
+	padding: 1rem;
+	box-sizing: border-box;
+}
+
+.cp-main {
+	flex: 1 1 auto;
+	width: 80%;
+	padding: 1rem;
+	box-sizing: border-box;
+}
+
+.cp-main:before, .cp-main:after {
+	display: table;
+	content: " ";
+	clear: both;
+}
+
+.cp-site-title {
+	border-bottom: 2px solid rgba(0, 0, 0, 0.1);
+	margin-bottom: 1.5rem;
+}
