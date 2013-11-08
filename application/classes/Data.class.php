@@ -42,7 +42,7 @@
 
 			// lag tabelliste
 			if (is_array($table)) {
-				for ($i = 0; $ < count($table); $i++) {
+				for ($i = 0; $i < count($table); $i++) {
 					if ($i == count($table) - 1) {
 						$tables_list .= $table[$i];
 					}
