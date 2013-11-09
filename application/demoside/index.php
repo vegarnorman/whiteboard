@@ -11,7 +11,9 @@
 </head>
 <body>
 	<div class="top-banner">
-		<h1>Ramme for demoside</h1>
+		<div class="banner-content">
+			<h1>Ramme for demoside</h1>
+		</div>
 	</div>
 	<header>
 		<nav>
