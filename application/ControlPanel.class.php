@@ -1,7 +1,8 @@
 <?php 
 
-	require "Application.class.php";
-	require "SessionHandler.class.php";
+	require_once "Application.class.php";
+	require_once "classes/SessionManager.class.php";
+	require_once "classes/User.class.php";
 
 	class ControlPanel extends Application {
 
@@ -10,7 +11,7 @@
 		public function __construct() {
 			parent::__construct();
 
-			$this->session = new SessionHandler();
+			$this->session = new SessionManager();
 		}
 
 	}

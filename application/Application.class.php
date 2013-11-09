@@ -1,9 +1,9 @@
 <?php 
 
-	require "classes/Data.class.php";
-	require "classes/Page.class.php";
-	require "classes/Post.class.php";
-	require "classes/Comment.class.php";
+	require_once "classes/Data.class.php";
+	require_once "classes/Page.class.php";
+	require_once "classes/Post.class.php";
+	require_once "classes/Comment.class.php";
 
 	class Application {
 

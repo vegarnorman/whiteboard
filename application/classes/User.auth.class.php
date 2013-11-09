@@ -1,6 +1,6 @@
 <?php
 
-	require "User.settings.php";
+	require_once "User.settings.php";
 
 	class UserAuth {
 
