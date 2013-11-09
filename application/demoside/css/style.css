@@ -25,6 +25,7 @@ body{
 	background-color: #EEE;
 }
 .top-banner{
+	background: url('images/banner.png');
 	height: 250px;
 	background-color: #777;
 }
@@ -72,6 +73,7 @@ nav a{
 }
 footer{
 	height: auto;
+	min-height: 150px;
 	background-color: #111;
 }
 
