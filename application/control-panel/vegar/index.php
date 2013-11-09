@@ -1,3 +1,5 @@
+<?php require_once "../../ControlPanel.class.php"; ?>
+
 <!doctype html>
 
 <html lang="no">
@@ -14,16 +16,24 @@
 
 <body>
 
+	<?php
+		$cp = new ControlPanel();
+	?>
+
 	<div class="cp-container">
 
 		<aside class="cp-sidebar">
-
+			<?php include "includes/sidebar.php"; ?>
 		</aside>
 
 
 		<section class="cp-main">
 
 			<h2 class="grid g12 cp-site-title">Vår fantastiske nettside</h2>
+
+			<p>
+				
+			</p>
 
 		</section>
 

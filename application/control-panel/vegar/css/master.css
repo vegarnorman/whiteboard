@@ -64,11 +64,21 @@ p {
 	padding-bottom: 1.5rem;
 }
 
+/* Skjemakomponenter trenger litt ekstra overbevisning */
+
+input, button, textarea, select, option {
+	font-family: "Fira Sans", sans-serif;
+	font-size: 1rem;
+	outline: 0;
+}
+
 
 
 /*	Komponenter til kontrollpanelet
 ==================================*/
 
+
+/* .cp-container fungerer som en container for hele grensesnittet */
 .cp-container {
 	display: flex;
 	flex-flow: row nowrap;
@@ -78,16 +88,18 @@ p {
 	height: 100%;
 }
 
+/* Sidebar til venstre */
 .cp-sidebar {
 	flex: 0 0 auto;
 	background-color: rgba(14, 15, 20, 1);
 	min-width: 180px;
-	max-width: 320px;
+	max-width: 280px;
 	width: 20%;
 	padding: 1rem;
 	box-sizing: border-box;
 }
 
+/* Hovedcontainer - alle grid-elementer skal inn her */
 .cp-main {
 	flex: 1 1 auto;
 	width: 80%;
@@ -95,13 +107,114 @@ p {
 	box-sizing: border-box;
 }
 
+/* Automagisk clearing */
 .cp-main:before, .cp-main:after {
 	display: table;
 	content: " ";
 	clear: both;
 }
 
+/* Tittelen på websiden */
 .cp-site-title {
 	border-bottom: 2px solid rgba(0, 0, 0, 0.1);
 	margin-bottom: 1.5rem;
+}
+
+.cp-logout {
+	margin-top: 3rem;
+}
+
+/* A button is a button is a button is a button */
+input[type="submit"],
+input[type="button"],
+button,
+.button {
+	border: 0;
+	display: inline-block;
+	padding: 0.5rem 1rem;
+	text-align: center;
+	text-decoration: none;
+	text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.33);
+	background-color: #0053d9;
+	color: #ffffff;
+}
+
+input[type="submit"]:hover,
+input[type="button"]:hover,
+button:hover,
+.button:hover {
+	background-color: #0058e5;
+}
+
+input[type="submit"]:active,
+input[type="button"]:active,
+button:active,
+.button:active {
+	background-color: #004ecc;
+}
+
+.button.smaller {
+	font-size: 80%;
+}
+
+.button.bigger {
+	font-size: 125%;
+}
+
+.button.c2a {
+	display: block;
+}
+
+.button.green {
+	background-color: #00992b;
+}
+
+.button.green:hover {
+	background-color: #00a62f;
+}
+
+.button.green:active {
+	background-color: #008c28;
+}
+
+.button.red {
+	background-color: #d00000;
+}
+
+.button.red:hover {
+	background-color: #de0000;
+}
+
+.button.red:active {
+	background-color: #c40000;
+}
+
+/* Navigasjon i sidebaren
+*/
+
+nav ul {
+	list-style-type: none;
+	margin: 0;
+}
+
+nav ul li {
+	margin: 0;
+}
+
+nav ul li a {
+	display: block;
+	padding: 0.5rem;
+	color: #fff;
+	text-decoration: none;
+}
+
+nav ul li a:hover {
+	background-color: rgba(0, 200, 255, 0.16);
+}
+
+/*	Gi ikoner fra FontAwesome litt mer plass
+*/
+
+i.fa {
+	padding-right: 0.5rem;
 }
