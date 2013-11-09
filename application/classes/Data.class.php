@@ -1,6 +1,6 @@
 <?php
 
-	require "Database.class.php";
+	require_once "Database.class.php";
 
 	class Data {
 
@@ -273,11 +273,11 @@
 						case "delete":
 
 							if ($this->db->affected_rows == 0) {
-								return $query;
+								return 0;
 							}
 
 							else {
-								return $query;
+								return true;
 							}
 
 							break;
