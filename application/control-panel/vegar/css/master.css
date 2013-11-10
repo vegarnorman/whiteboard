@@ -253,7 +253,7 @@ i.fa {
 	margin-bottom: 1rem;
 	padding: 0.5rem 0;
 	border-bottom: 2px solid rgba(0, 0, 0, 0.1);
-	min-height: 8vh;
+	min-height: 4rem;
 }
 
 .post-editor-content {
@@ -321,11 +321,11 @@ i.fa {
 	font-size: 150%;
 	line-height: 0;
 	text-align: center;
-	padding: 0.5rem 0 0 0;
+	
 }
 
 .post-editor-new-tag, .post-editor-tag-add {
-	min-height: 5vh;
+	min-height: 3rem;
 }
 
 .tag {

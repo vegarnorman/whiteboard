@@ -10,6 +10,7 @@
 	<link rel="stylesheet" href="css/master.css" />
 	<script src="http://code.jquery.com/jquery-2.0.3.min.js"></script>
 	<script src="js/main.js"></script>
+	<script src="js/editor.js"></script>
 
 	<title>Skriv ny post (<?php ControlPanel::getSiteTitle(); ?>)</title>
 </head>
@@ -65,7 +66,7 @@
 
 					<div class="row post-editor-tags">
 						<input type="text" id="post-editor-new-tag" placeholder="Nytt emneord" class="grid g9 no-gutters post-editor-new-tag" />
-						<a id="post-editor-tag-add" class="grid g3 no-gutters post-editor-tag-add button green"><i class="fa fa-plus-circle"></i></a>
+						<button id="post-editor-tag-add" class="grid g3 no-gutters post-editor-tag-add button green"><i class="fa fa-plus-circle"></i></button>
 					</div>
 
 					<h3>Kategorier</h3>

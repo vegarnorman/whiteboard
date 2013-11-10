@@ -29,7 +29,7 @@
 
 		<section class="cp-main">
 
-			<h2 class="grid g12 cp-site-title"><?php Application::getSiteTitle(); ?></h2>
+			<h2 class="grid g12 cp-site-title"><?php ControlPanel::getSiteTitle(); ?></h2>
 
 		</section>
 
