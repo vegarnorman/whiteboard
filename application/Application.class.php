@@ -4,6 +4,7 @@
 	require_once "classes/Page.class.php";
 	require_once "classes/Post.class.php";
 	require_once "classes/Comment.class.php";
+	require_once "settings.php";
 
 	class Application {
 
@@ -15,6 +16,10 @@
 
 		public function getDataHandler() {
 			return $this->data_handler;
+		}
+
+		public static function getSiteTitle() {
+			echo SITE_TITLE;
 		}
 
 	}
