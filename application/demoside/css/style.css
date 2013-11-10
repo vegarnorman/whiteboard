@@ -10,7 +10,8 @@
  * ALL CONTENT OWNED BY GROUP 25
  */ 
 
- @import url("../css/.css");
+ @import url("../css/grid.css");
+ @import url("../css/login-style.css");
 
 *{
 	margin: 0;

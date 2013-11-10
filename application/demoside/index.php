@@ -5,7 +5,7 @@
 	<meta charset="utf-8">
 	<meta name="keywords" content="cms, project">
 	<title>Demoside</title>
-	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<link rel="stylesheet" type="text/css" href="css/master.css">
 	<!--script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script-->
 	<script type="text/javascript" src="javascript/jquery.js"></script>
 	<script type="text/javascript" src="javascript/functions.js"></script>
