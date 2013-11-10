@@ -6,7 +6,7 @@
 	<meta name="keywords" content="cms, project">
 	<title>Demoside</title>
 	<link rel="stylesheet" type="text/css" href="css/master.css">
-	<!--script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script-->
+	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 	<script type="text/javascript" src="javascript/jquery.js"></script>
 	<script type="text/javascript" src="javascript/functions.js"></script>
 </head>
@@ -53,8 +53,21 @@
 	</div>
 
 	<footer>
-		<h6>Footer her....</h6>
-		<a href="#1">to the top</a>
+		<div class="footer-content">
+			<div class="container">
+				<section class="grid g4 no-gutters">
+					<p>Webprosjekt © 2013 G25</p>
+				</section>
+
+				<section class="grid g4 no-gutters">
+					<p>Footer.....</p>
+				</section>
+
+				<section class="grid g4 no-gutters">
+					<p><a href="#1">Top of page</a></p>
+				</section>
+			</div><!-- end of container  -->
+		</div> <!-- end of footer-content -->
 	</footer>
 </body>
 </html>
