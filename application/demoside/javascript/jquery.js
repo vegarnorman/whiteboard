@@ -10,3 +10,15 @@ $(function(){
                 }
         });
 });
+
+
+
+
+//toggle text
+$(document).ready(function(){
+	//toggle-funksjon for å vise/skjule tekst
+	$(".menu-button").click(function(){
+		$(".menu-item").toggle(20);
+	});
+});
+
