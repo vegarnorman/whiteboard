@@ -29,11 +29,7 @@
 
 		<section class="cp-main">
 
-			<h2 class="grid g12 cp-site-title">Vår fantastiske nettside</h2>
-
-			<p>
-				
-			</p>
+			<h2 class="grid g12 cp-site-title"><?php Application::getSiteTitle(); ?></h2>
 
 		</section>
 

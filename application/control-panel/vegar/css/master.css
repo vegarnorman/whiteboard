@@ -3,6 +3,7 @@
 /*	Importsetninger
 */
 
+@import url("normalize.css");
 @import url("http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css");
 @import url("../fonts/fira/fira.css");
 @import url("grid.css");
@@ -72,6 +73,18 @@ input, button, textarea, select, option {
 	outline: 0;
 }
 
+input[type="text"], textarea {
+	border: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+input[type="text"]:hover, textarea:hover {
+	border: 1px solid rgba(0, 0, 0, 0.3);
+}
+
+input[type="text"]:focus, textarea:focus {
+	border: 1px solid #0058e5;
+	box-shadow: 0 0 5px #0058e5;
+}
 
 
 /*	Komponenter til kontrollpanelet
@@ -96,6 +109,7 @@ input, button, textarea, select, option {
 	max-width: 280px;
 	width: 20%;
 	padding: 1rem;
+	-moz-box-sizing: border-box;
 	box-sizing: border-box;
 }
 
@@ -104,6 +118,7 @@ input, button, textarea, select, option {
 	flex: 1 1 auto;
 	width: 80%;
 	padding: 1rem;
+	-moz-box-sizing: border-box;
 	box-sizing: border-box;
 }
 
@@ -217,4 +232,125 @@ nav ul li a:hover {
 
 i.fa {
 	padding-right: 0.5rem;
+}
+
+/*	Komponenter til editoren
+*/
+
+.post-editor-main {
+	
+}
+
+.post-editor-title, .post-editor-content {
+	width: 100%;
+	box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	color: rgba(14, 15, 20, 0.8);
+}
+
+.post-editor-title {
+	font-size: 150%;
+	margin-bottom: 1rem;
+	padding: 0.5rem 0;
+	border-bottom: 2px solid rgba(0, 0, 0, 0.1);
+	min-height: 8vh;
+}
+
+.post-editor-content {
+	font-family: "Fira Mono", monospace;
+	min-height: 65vh;
+	padding: 1rem;
+	border-width: 2px;
+}
+
+.post-editor-content:hover, .post-editor-content:focus {
+	border-width: 2px;
+	box-shadow: none;
+}
+
+/*	Toolbar til editor
+*/
+
+.post-editor-toolbar {
+	background-color: rgba(14, 15, 20, 0.25);
+	padding: 2px;
+}
+
+.post-editor-toolbar a {
+	line-height: 0;
+	text-align: center;
+	padding: 0.4rem 0.8rem;
+	font-size: 110%;
+	color: rgba(14, 15, 20, 0.8);
+	text-decoration: none;
+	display: inline-block;
+}
+
+.post-editor-toolbar a:hover {
+	background-color: rgba(255, 255, 255, 0.2);
+	color: #0058e5;
+}
+
+.post-editor-toolbar a span {
+	display: none;
+}
+
+#post-editor i.fa {
+	padding: 0;
+}
+
+.post-editor-current-tags {
+	display: block;
+	padding: 0.5rem;
+	box-sizing: border-box;
+	border: 1px solid rgba(0, 0, 0, 0.2);
+	margin-bottom: 1.5rem;
+	min-height: 15vh;
+}
+
+.post-editor-tags {
+	margin-bottom: 3rem;
+}
+
+.post-editor-new-tag {
+	padding: 0 0 0 0.5rem;
+	box-sizing: border-box;
+}
+
+.post-editor-tag-add {
+	font-size: 150%;
+	line-height: 0;
+	text-align: center;
+	padding: 0.5rem 0 0 0;
+}
+
+.post-editor-new-tag, .post-editor-tag-add {
+	min-height: 5vh;
+}
+
+.tag {
+	background-color: #0058e5;
+	color: #fff;
+	display: inline-block;
+	margin-right: 5px;
+	padding: 3px 4px;
+	line-height: 1;
+	font-size: 90%;
+}
+
+.post-editor-categories {
+	list-style-type: none;
+	margin-bottom: 3rem;
+}
+
+.post-editor-categories li {
+	padding: 0.33rem 0;
+}
+
+.post-editor-categories label {
+	padding-left: 0.5rem;
+}
+
+.post-editor-categories label:hover {
+	color: #0058e5;
 }
