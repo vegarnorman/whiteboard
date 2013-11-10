@@ -19,15 +19,15 @@
 }
 h1,h2,h3,h4,h5,h6{
 	display: block;
-	padding:15px 0; 
+	padding:10px 0; 
 }
 p{
 	padding-top: 15px; 
 	color: #333;
 }
 html{
-	font-family: Helvetica neue, arial, sans serif;
-	font-size: 18px;
+	font-family: Garamond, Helvetica neue, arial, sans serif;
+	font-size: 17px;
 	line-height: 1.23456;
 }
 body{
@@ -42,7 +42,7 @@ body{
 	background-color: #777;
 }
 .banner-content{
-	width: 900px;
+	width: 840px;
 	height:auto;
 	margin: 0 auto;
 }
@@ -56,7 +56,7 @@ header{
 /*MENU*/
 
 nav{
-	width: 900px;
+	width: 840px;
 	margin: 0 auto;
 	background-color: #ccc;
 	text-align: center;
@@ -66,10 +66,10 @@ nav{
 nav li{
 	display: inline;
 	float: left;
-	width: 19.9%;
+	width: 20%;
 	height: 30px;
 	background-color: #456;
-	border-right: 1px solid #345;
+	/*border-right: 1px solid #345;*/
 }
 nav li:hover{
 	background-color: #567;
@@ -81,9 +81,9 @@ nav a{
 	color: #EEE;
 }
 .main-container{
-	width: 900px;
+	width: 840px;
 	height: auto;
-	min-height: 1000px;
+	min-height: 500px;
 	margin: 0 auto;
 	padding: 15px;
 	/*background-color: #DDD;*/
@@ -92,9 +92,49 @@ nav a{
 footer{
 	height: auto;
 	min-height: 150px;
-	background-color: #111;
-	color:#465;
+	background-color: #345;
+	color:#678;
+	text-align: center;	
 }
+.footer-content{
+	font-size: 12px;
+	width: 840px;
+	margin:0 auto;
+}
+.footer-content a,p{
+	text-decoration: none;
+	/*color: #678;*/
+	/*text-align: center;*/
+}
+.blogg-sidebar{
+	margin-left: 10px;
+	font-size: 13px;
+	padding:10px;
+	border-radius: 5px;
+	color:#456;
+}
+.menu-button{
+	display: block;
+	padding: 4px;
+	width: 100%;
+	/*height: 38px;*/
+	color: #456;
+	/*background-color: #999;*/
+	text-transform: uppercase;
+	border-bottom: 1px solid #456;
+}
+.menu-button h3{
+	display: inline;
+}
+.menu-button img{
+	float: right;
+}
+
+.menu-item{
+	display:none;
+}
+
+
 
 /*MISC*/
 .stop{
