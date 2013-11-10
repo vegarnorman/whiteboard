@@ -23,7 +23,7 @@
 				<li class="menu"><a href="index.php?page=forside">Forside</a></li>
 				<li class="menu"><a href="index.php?page=blogg">Blogg</a></li>
 				<li class="menu"><a href="index.php?page=artikler">Artikler</a></li>
-				<li class="menu"><a href="index.php?page=mer">Mer</a></li>
+				<li class="menu"><a href="index.php?page=bloggpost">Bloggpost</a></li>
 				<li class="menu"><a href="index.php?page=kontakt">Kontakt</a></li> 
 			</ul>
 		</nav >
@@ -36,7 +36,7 @@
 					case 'forside':
 					case 'blogg':
 					case 'artikler':
-					case 'mer': 
+					case 'bloggpost': 
 					case 'kontakt':
 					    include("includes/$_GET[page].php");
 					break;

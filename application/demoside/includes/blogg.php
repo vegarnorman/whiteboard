@@ -29,11 +29,11 @@
 	</section>
 
 	<section class="grid g4 blogg-sidebar">
-		<div class="menu-button">
+		<div id="item-button1" class="menu-button">
 			<h3>Arkiv</h3>
-			<img src="images/rightarrow.png" height="17">
+			<img id="x" src="images/rightarrow.png" height="17">
 		</div>
-		<span class="menu-item">
+		<div id="item1" class="menu-item">
 			<p>
 				<ul>
 					<li>Example 1</li>
@@ -43,21 +43,31 @@
 					<li>Example 5</li>
 				</ul>
 			</p>
-		</span>
+		</div>
 			
-		<h3>Kategorier</h3>
-		<p>
-			<ul>
-				<li>Bla</li>
-				<li>Bla</li>
-				<li>Bla</li>
-				<li>Bla</li>
-				<li>Bla</li>
-			</ul>
-		</p>
-
-		<h3>Emneord #</h3>
-		<p>
+		<div id="item-button2" class="menu-button">
+			<h3>Kategorier</h3>
+			<img src="images/rightarrow.png" height="17">
+		</div>
+		<div id="item2" class="menu-item">
+			<p>
+				<ul>
+					<li>Bla</li>
+					<li>Bla</li>
+					<li>Bla</li>
+					<li>Bla</li>
+					<li>Bla</li>
+				</ul>
+			</p>
+		</div>
+		
+		<div id="item-button3" class="menu-button">
+			<h3>Emneord #</h3>
+			<img src="images/rightarrow.png" height="17">
+		</div>
+		
+		<div id="item3" class="menu-item">
+			<p>
 			<ul>
 				<li>css</li>
 				<li>html</li>
@@ -66,5 +76,6 @@
 				<li>sport</li>
 			</ul>
 		</p>
+		</div>
 	</section>
 </div> <!-- end of container -->
