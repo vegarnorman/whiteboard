@@ -1,0 +1,244 @@
+body {
+background-color:#B8B8B8;
+margin-top:0;
+}
+.hovedbilde {
+margin-top:0;
+padding:0;
+text-align:left;
+background-repeat:no-repeat;
+background-image:url('bilder/hovedbilde.jpg');
+position:absolute;
+background-size: cover;
+background-color:#E6E6E6;
+width:100%;
+height:250px;
+position:relative;
+
+}
+
+.hovedbilde h1 {
+color:#B0B0B0;
+opacity:0.9;
+padding:120px;
+}
+
+
+.hovedborder {
+	background-color:#DCDCDC;
+	border-left: 2px #E6E6E6 groove;
+	border-right: 2px #E6E6E6 groove;
+	border-bottom: 2px #E6E6E6 groove;
+	width:80%;
+	margin-left:auto;
+	margin-right:auto;
+	word-break:break-all;
+	border-bottom-left-radius:5px;
+	border-bottom-right-radius:5px;
+}
+
+.navbar {
+border-top:2px groove;
+border-bottom:2px groove;
+background-color:black;
+width:auto;
+text-align:center;
+padding:20px;
+}
+
+
+.navbar li {
+font-family:"sans serif";
+text-align:center;
+display:inline;
+margin:5px;
+}
+
+.navbar a{
+	font-family:"Palatino Linotype";
+	color:white;
+	text-transform:uppercase;
+	text-decoration:none;
+	font-size:130%;
+
+	padding:5px;
+}
+
+a:hover,a:active {
+opacity:0.3;
+}
+
+.navbar ul {
+list-style-type:none;
+margin:0;
+padding:0;
+margin-top:-15px;
+margin-bottom:-20px;
+}
+.forside {
+word-break:break-all;
+width:90%;
+margin-left:auto;
+margin-right:auto;
+
+}
+.forside h2 {
+padding:15px;  
+font-family: 'Piedra', cursive;
+font-style: normal;
+font-weight: 400;
+border-bottom: 2px dotted;
+}
+.forside p {
+margin:auto;
+padding:10px;
+line-height: 2em;
+font-family:sans-serif;
+font-style:oblique;
+}
+
+.blogg {
+word-break:break-all;
+width:90%;
+margin-left:auto;
+margin-right:auto;
+border-bottom: 2px dotted;
+}
+
+.blogg p {
+margin:auto;
+padding:10px;
+line-height: 2em;
+font-family:sans-serif;
+font-style:oblique;
+}
+
+
+.blogg h2 {
+padding:15px;  
+font-family: 'Piedra', cursive;
+font-style: normal;
+font-weight: 400;
+border-bottom: 2px dotted;
+}
+
+.komentarknappen {
+padding:15px;
+margin-left:450px;
+}
+
+.galleri {
+text-align:center;
+width:80%;
+margin-left:auto;
+margin-right:auto;
+margin-top:10px;
+margin-bottom:10px;
+}
+
+.galleri h1 { 
+font-family: 'Piedra', cursive;
+font-style: normal;
+font-weight: 400;
+border-bottom: 2px dotted;
+}
+
+.bilder {
+background-color:#DCDCDC;
+margin-left:auto;
+margin-right:auto;
+width:48%;
+height:500px;
+text-align:center;
+margin-bottom:10px;
+}
+
+#img1 {
+width:500px;
+height:500px;
+background-image:url(bilder/galleri_bilder/1.jpg);
+position:absolute;
+
+background-size:cover;
+}
+#img2 {
+width:500px;
+height:500px;
+position:absolute;
+background-image:url(bilder/galleri_bilder/2.jpg);
+
+background-size:cover;
+}
+#img3 {
+width:500px;
+height:500px;
+position:absolute;
+background-image:url(bilder/galleri_bilder/3.jpg);
+
+background-size:cover;
+}
+#img4 {
+width:500px;
+height:500px;
+position:absolute;
+background-image:url(bilder/galleri_bilder/4.jpg);
+
+background-size:cover;
+}
+#img5 {
+width:500px;
+height:500px;
+position:absolute;
+background-image:url(bilder/galleri_bilder/5.jpg);
+background-size:cover;
+
+}
+
+.kontakt{
+border-top: 2px dotted;
+border-bottom: 2px dotted;
+width:60%;
+margin-top:60px;
+margin-bottom:60px;
+margin-left:auto;
+margin-right:auto;
+height:200px;
+}
+.kontakt img {
+float:left;
+padding-top:20px;
+
+}
+.kontakt h4 {
+padding-top:15px;
+font-family: 'Piedra', cursive;
+font-style: normal;
+}
+
+.kontakt li {
+text-align:center;
+list-style-type: none;
+
+}
+.mer {
+word-break:break-all;
+width:90%;
+margin-left:auto;
+margin-right:auto;
+}
+
+.mer h2 {
+padding-top:15px;
+font-family: 'Piedra', cursive;
+font-style: normal;
+}
+
+.mer p {
+line-height: 2em;
+font-family:sans-serif;
+font-style:oblique;
+}
+
+footer {
+text-align:center;
+}
