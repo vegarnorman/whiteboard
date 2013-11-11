@@ -370,6 +370,7 @@ table {
 
 .database{
 	border-style: solid;
+	border-color: #c2c2c4;
 	border-width: 1px;
 	padding: 0.5em;
 }
