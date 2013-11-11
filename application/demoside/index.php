@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -26,7 +25,7 @@
 				<li class="menu"><a href="index.php?page=bloggpost">Bloggpost</a></li>
 				<li class="menu"><a href="index.php?page=kontakt">Kontakt</a></li> 
 			</ul>
-		</nav >
+		</nav>
 	</header>
 
 	<div class="main-container">
@@ -69,5 +68,7 @@
 			</div><!-- end of container  -->
 		</div> <!-- end of footer-content -->
 	</footer>
+
+	
 </body>
 </html>

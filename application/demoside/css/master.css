@@ -21,10 +21,7 @@ h1,h2,h3,h4,h5,h6{
 	display: block;
 	padding:10px 0; 
 }
-p{
-	padding-top: 15px; 
-	color: #333;
-}
+
 html{
 	font-family: Garamond, Helvetica neue, arial, sans serif;
 	font-size: 17px;
@@ -45,6 +42,12 @@ body{
 	width: 840px;
 	height:auto;
 	margin: 0 auto;
+}
+.banner-content h1{
+	font-family: Gothic;
+	color: #934;
+	font-size: 64px;
+	text-transform: uppercase;
 }
 header{
 	height: 30px;
@@ -86,26 +89,37 @@ nav a{
 	min-height: 800px;
 	margin: 0 auto;
 	padding: 15px;
-	/*background-color: #DDD;*/
 	clear: both;
+}
+.main-container p{
+	padding-top: 15px; 
+	color: #456;
 }
 footer{
 	height: auto;
 	min-height: 150px;
 	background-color: #345;
-	color:#678;
 	text-align: center;	
 }
 .footer-content{
 	font-size: 12px;
 	width: 840px;
 	margin:0 auto;
+	padding: 10px;
+	color:#678;
 }
-.footer-content a,p{
+.footer-content a{
 	text-decoration: none;
-	/*color: #678;*/
-	/*text-align: center;*/
+	color: #678;
 }
+
+
+
+
+/*
+ *    BLOG and BLOGPOSTS
+ */
+
 .blogg-sidebar{
 	margin-left: 10px;
 	font-size: 13px;
@@ -119,7 +133,6 @@ footer{
 	width: 100%;
 	margin-top: 50px;
 	color: #456;
-	/*background-color: #999;*/
 	text-transform: uppercase;
 	border-bottom: 1px solid #456;
 }
@@ -135,9 +148,6 @@ footer{
 	width: 280px;
 }
 
-/*
- *    BLOGS
- */
 
 article{
 	margin-top: 30px;
@@ -157,6 +167,43 @@ article{
 	color: #456;
 	border: 0;
 }
+.next-button{
+	float: right;
+	width: 90px;
+	margin-top: 50px;
+	background-color: #456;
+	color: #DDD;
+	line-height: 21px;
+	font-size: 12px;
+	border-radius: 3px;
+	padding-left: 8px;
+	border: 0;
+	text-transform: uppercase;
+	box-shadow: 2px 2px 5px #444;
+}
+
+.next-button img{
+	float: right;
+}
+.last-button{
+	float: left;
+	width: 90px;
+	margin-top: 50px;
+	background-color: #456;
+	color: #DDD;
+	line-height: 21px;
+	font-size: 12px;
+	border-radius: 3px;
+	padding-right: 8px;
+	border: 0;
+	text-transform: uppercase;
+	box-shadow: 2px 2px 5px #444;
+}
+.last-button img{
+	float: left;
+}
+
+
 
 /*
  * COMMENT FORM
@@ -171,8 +218,6 @@ button:hover{
 }
 
  #new-comment-button{
-/* 	width: 200px;
- 	height: 35px;*/
  	background-color: #07BD00;
  	color: #fff;
  	padding:5px;
@@ -182,8 +227,6 @@ button:hover{
   	box-shadow: 2px 2px 5px #444;
  }
   #report-comment-button{
-/* 	width: 200px;
- 	height: 35px;*/
  	background-color: #C90000;
  	color: #fff;
  	padding:5px;
@@ -195,6 +238,7 @@ button:hover{
 
  #comment-box{
  	display: none;
+ 	margin-top: 10px;
  }
 .comment-form {
   	background-color: #456;
@@ -263,7 +307,9 @@ button:hover{
     	background-color: #C2C0BE; 
   	}
 
-/*MISC*/
+/*
+ *      MISC
+ */
 .stop{
 	clear:both;
 }
