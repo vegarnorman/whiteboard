@@ -1,4 +1,4 @@
-
+<script type="text/javascript" src="js/toggle.js"></script>
 <div class="blogg">
 	<article>
 		<h2>Tittelen på bloggen</h2>
@@ -22,8 +22,12 @@
 			</p>
 
 	</article>
-	<div class="komentarknappen">
-	<img src="/ikoner/comments.png" onclick="colorChange()" alt="komentarknappen" width="25" height="25" >
+	<div class="kommentarknappen">
+		<img src="/ikoner/comments.png" onclick="toggleKommentarer(); " alt="komentarknappen" width="25" height="25"><a href= "#kommentarer"></a>
+	</div>
+	<div class="kommenterknappen">
+		<img src ="/ikoner/kommenter.png" onclick ="toggleFeltet(); " alt="komenterknappen" width="25" height="25" ><a href= "#kommenter"></a>
 	</div>
 	<?php include 'kommentarer.php'; ?>
+	<?php include 'kommenter.php'; ?>
 </div>

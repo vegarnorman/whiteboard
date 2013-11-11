@@ -1,4 +1,3 @@
-
 <div class="kontakt">
 <img src="bilder/profilbilde.jpg" alt ="profilbilde" width="150" height="150">
 	<ul>

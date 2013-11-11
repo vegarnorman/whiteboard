@@ -9,6 +9,7 @@ $page = $_GET ['page'];
 	<link rel="stylesheet" type='text/css' title="style1" href="style.css">
 	<script type="text/javascript" src="js/jquery.js"></script>
 	<script type="text/javascript" src="js/main.js"></script>
+	<script type="text/javascript" src="js/toggle.js"></script>
 	<title>Index</title>
 	</head>
 	<body>

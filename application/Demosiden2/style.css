@@ -25,16 +25,16 @@ padding:120px;
 
 
 .hovedborder {
-	background-color:#DCDCDC;
-	border-left: 2px #E6E6E6 groove;
-	border-right: 2px #E6E6E6 groove;
-	border-bottom: 2px #E6E6E6 groove;
-	width:80%;
-	margin-left:auto;
-	margin-right:auto;
-	word-break:break-all;
-	border-bottom-left-radius:5px;
-	border-bottom-right-radius:5px;
+background-color:#DCDCDC;
+border-left: 2px #E6E6E6 groove;
+border-right: 2px #E6E6E6 groove;
+border-bottom: 2px #E6E6E6 groove;
+width:80%;
+margin-left:auto;
+margin-right:auto;
+word-break:break-all;
+border-bottom-left-radius:5px;
+border-bottom-right-radius:5px;
 }
 
 .navbar {
@@ -55,13 +55,12 @@ margin:5px;
 }
 
 .navbar a{
-	font-family:"Palatino Linotype";
-	color:white;
-	text-transform:uppercase;
-	text-decoration:none;
-	font-size:130%;
-
-	padding:5px;
+font-family:"Palatino Linotype";
+color:white;
+text-transform:uppercase;
+text-decoration:none;
+font-size:130%;
+padding:5px;
 }
 
 a:hover,a:active {
@@ -125,6 +124,7 @@ border-bottom: 2px dotted;
 .komentarknappen {
 padding:15px;
 margin-left:450px;
+float:right;
 }
 
 .galleri {
@@ -238,6 +238,61 @@ line-height: 2em;
 font-family:sans-serif;
 font-style:oblique;
 }
+
+
+
+
+.kommentarer {
+width:80%;
+display:none;
+border-bottom:2px dotted;
+border-top:2px dotted;
+height:200px;
+margin-left:auto;
+margin-right:auto;
+}
+
+.kommenterknappen {
+float:right;
+margin-top:-30px;
+}
+
+.kommenter {
+display:none;
+text-align:center;
+width:80%;
+margin-left:auto;
+margin-right:auto;
+}
+
+
+
+.metadata {
+margin-left:auto;
+margin-right:auto;
+width:70%;
+
+
+}
+.metadata h4 {
+text-align:center;
+display:inline;
+border-bottom:dotted 1px;
+margin:20px;
+margin-top:20px;
+}
+
+.kommentarfelt {
+text-align:center;
+margin-top:30px;
+}
+
+.kommentarer h1 {
+text-align:center;
+font-family: 'Piedra', cursive;
+font-style: normal;
+}
+
 
 footer {
 text-align:center;
