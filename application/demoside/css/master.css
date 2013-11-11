@@ -210,9 +210,10 @@ sub{
 	display: block;
 	margin-top: 25px;
 	padding: 10px 0;
-	background-color: white;
-/*	border-bottom: 1px solid black;
-*/
+	font-family: "Courier New", Courier, monospace;
+	/*background-color: white;*/
+	border-bottom: 1px solid black;
+
 }
 
 /*
