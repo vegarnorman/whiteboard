@@ -1,10 +1,10 @@
 <div class="container">
-	<section class="grid g8 ">
+	<section class="grid g12">
 		<article>	
 			<h2>En dag i mitt liv</h2>
 
 			<p>
-				Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque aliquet, ante non molestie vulputate, 
+				Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque aliquet, ante non molestie <br/>vulputate, 
 				eros augue varius libero, non fringilla nunc enim id dolor. Donec vitae elit leo. Aliquam ut tortor vitae 
 				risus adipiscing posuere sit amet vitae tellus. Quisque tristique mauris vitae consectetur cursus. Curabitur 
 				pharetra, massa et vulputate ullamcorper, dolor nibh cursus lectus, a fermentum lorem turpis viverra augue. 
@@ -14,7 +14,9 @@
 			</p>
 
 		</article>
+	</section>
 
+	<section class="grid g12">
 		<button id="new-comment-button">New comment</button>	
 		<button id="report-comment-button">Report comment</button>	
 
@@ -28,21 +30,24 @@
 				</form>
 			</div>
 		</div>
-
+	</section>
+	
+	<section class=" grid g12 comment-area">
 		<h2>Kommentarer</h2>
 		<sub class="committed-comments">
 			Hei! dette var en kjempefin side! hilsen Arnt Harry Willy Bjørn Jensen
 		</sub>
 		<div class="article-footer">
-			Innlegg skrevet av: <b>Medel Svenson</b> 07.11.13 Kl.13:45
-</div>
-		<sub>
+			Innlegg skrevet av: <b>Arnt Harry Willy Bjørn</b> 07.11.13 Kl.13:45
+		</div>
+		<sub class="committed-comments">
 			Hei! Veldig bra side! Stå på! Dette blir a! :)
 
 		</sub>
 		<div class="article-footer">
 			Innlegg skrevet av: <b>Medel Svenson</b> 07.11.13 Kl.13:45
 		</div>
-		</section>
+	</section>
+
 </div> <!--end of container -->
 
