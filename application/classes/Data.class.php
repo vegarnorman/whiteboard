@@ -260,7 +260,7 @@
 						case "update":
 
 							if ($this->db->affected_rows == 0) {
-								return 0;
+								return (int) 0;
 							}
 
 							else {
@@ -273,7 +273,7 @@
 						case "delete":
 
 							if ($this->db->affected_rows == 0) {
-								return 0;
+								return (int) 0;
 							}
 
 							else {
@@ -286,7 +286,7 @@
 						case "get":
 
 							if ($sql_result->num_rows == 0) {
-								return 0;
+								return (int) 0;
 							}
 
 							else {
@@ -299,7 +299,7 @@
 						case "find":
 
 							if ($sql_result->num_rows == 0) {
-								return 0;
+								return (int) 0;
 							}
 
 							else {
@@ -311,7 +311,7 @@
 						case "join":
 
 							if ($sql_result->num_rows == 0) {
-								return 0;
+								return (int) 0;
 							}
 
 							else {
