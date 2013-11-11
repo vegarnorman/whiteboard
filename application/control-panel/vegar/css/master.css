@@ -359,3 +359,22 @@ i.fa {
 .post-editor-categories label:hover {
 	color: #0058e5;
 }
+
+/*table for database*/
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+    text-align: center;
+}
+
+.database{
+	border-style: solid;
+	border-width: 1px;
+	padding: 0.5em;
+}
+.checkbox{
+	padding: 0.5em;
+}
+
+
