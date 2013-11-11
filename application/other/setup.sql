@@ -57,8 +57,8 @@ create table if not exists Post (
 
 create table if not exists Post_Meta (
 	post_id int(4) not null,
-	post_published timestamp not null,
-	post_last_modified timestamp not null,
+	post_published varchar(100) not null,
+	post_last_modified varchar(100) not null,
 	post_published_by int(4) not null,
 	post_last_modified_by int(4) not null,
 	primary key (post_id),
@@ -76,8 +76,8 @@ create table if not exists Page (
 
 create table if not exists Page_Meta (
 	page_id int(4) not null,
-	page_published timestamp not null,
-	page_last_modified timestamp not null,
+	page_published varchar(100) not null,
+	page_last_modified varchar(100) not null,
 	page_published_by int(4) not null,
 	page_last_modified_by int(4) not null,
 	primary key (page_id),
@@ -128,7 +128,7 @@ create table if not exists Comment (
 
 create table if not exists Comment_Meta (
 	comment_id int(4) not null,
-	comment_published timestamp not null,
+	comment_published varchar(100) not null,
 	comment_published_by int(4) not null,
 	primary key (comment_id),
 	foreign key (comment_id) references Comment (comment_id) on delete cascade,
