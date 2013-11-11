@@ -1,16 +1,32 @@
 <div class="container">
-	<section class="grid g12 no-gutters">
-			<form action="#" name ="kommentar">
-					<h2>Kommentarside</h2>				
-					<h4>Navn</h4>
-					<input type="text" name="navn" placeholder="navn">
-					<h4>Etternavn</h4>
-					<input type="text" name="epost" placeholder="epost">
-					<h4>Skriv Kommentar</h4>
-					<textarea rows="10" cols="50">
-					</textarea><br>
-					<input type="submit" value="Submit">
-			</form>
-	</section>
-</div>
+	<section class="grid g8 ">
+		<article>	
+			<h2>En dag i mitt liv</h2>
+
+			<p>
+				Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque aliquet, ante non molestie vulputate, 
+				eros augue varius libero, non fringilla nunc enim id dolor. Donec vitae elit leo. Aliquam ut tortor vitae 
+				risus adipiscing posuere sit amet vitae tellus. Quisque tristique mauris vitae consectetur cursus. Curabitur 
+				pharetra, massa et vulputate ullamcorper, dolor nibh cursus lectus, a fermentum lorem turpis viverra augue. 
+				Fusce a neque tellus. Cras tristique elementum nunc nec ullamcorper. Ut volutpat dui eget enim suscipit, in
+				 iaculis diam lacinia. Donec lectus ante, hendrerit eget magna at, ullamcorper ultricies sapien. In venenatis 
+				 quam lacus, in fringilla lorem cursus nec. Aliquam sed sapien accumsan, pretium felis posuere, iaculis leo.
+			</p>
+		</article>
+
+		<button id="new-comment-button">New comment</button>	
+		<button id="report-comment-button">Report comment</button>	
+
+		<div id="comment-box">
+			<div class="comment-form" >	
+				<form action="#" name ="kommentar">
+						<input type="text" name="navn" placeholder="Name"><br/>
+						<input type="text" name="epost" placeholder="Email"><br/>
+						<textarea rows="5" placeholder="Enter your comments here"></textarea><br/>
+						<input type="submit" name="submit-comment" value="Submit your comment" class="submit-comment-button">
+				</form>
+		</div>
+		</div>
+		</section>
+</div> <!--end of container -->
 

@@ -27,6 +27,10 @@ $(document).ready(function(){
 		$("#item3").slideToggle("2000");
 	});
 
+	$("#new-comment-button").click(function(){
+		$("#comment-box").slideToggle("2000");
+	});
+
 
 
 

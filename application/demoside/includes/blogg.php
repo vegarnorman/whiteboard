@@ -2,7 +2,8 @@
 <div class="container">
 	
 	<section class="grid g8 ">
-			<h2>Blogg</h2>
+		<article>	
+			<h2>En dag i mitt liv</h2>
 
 			<p>
 				Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque aliquet, ante non molestie vulputate, 
@@ -13,7 +14,13 @@
 				 iaculis diam lacinia. Donec lectus ante, hendrerit eget magna at, ullamcorper ultricies sapien. In venenatis 
 				 quam lacus, in fringilla lorem cursus nec. Aliquam sed sapien accumsan, pretium felis posuere, iaculis leo.
 			</p>
+		</article>
+		<div class="article-footer">
+			Innlegg skrevet av: <b>Medel Svenson</b> 07.11.13 Kl.13:45<span><a href="index.php?page=bloggpost">Kommenter</a></span>
+		</div>
 
+		<article>	
+			<h2>En tur på butikken</h2>
 			<p>
 					Aenean ullamcorper aliquet leo, condimentum dictum velit laoreet quis. Mauris fermentum quam hendrerit convallis 
 				lobortis. In ac tortor sit amet nunc consectetur consectetur. Maecenas at tellus bibendum ligula tincidunt gravida 
@@ -23,6 +30,12 @@
 				  turpis sed facilisis. Aenean quam risus, porttitor ut faucibus tincidunt, sodales id eros. Nullam vel accumsan
 				   eros, nec rhoncus urna. Aliquam est tellus, auctor id pulvinar quis, dignissim quis metus.
 			</p>
+		</article>
+		<div class="article-footer">
+			Skrevet av: <b>Per I Hatten</b> 12.04.13 22:11<span><a href="index.php?page=bloggpost">Kommenter</a></span>
+		</div>
+
+	
 	</section>
 
 			
