@@ -338,6 +338,11 @@ i.fa {
 	font-size: 90%;
 }
 
+.tag:hover {
+	background-color: #0062ff;
+	cursor: pointer;
+}
+
 .post-editor-categories {
 	list-style-type: none;
 	margin-bottom: 3rem;

@@ -59,9 +59,7 @@
 					<h3>Emneord</h3>
 
 					<div id="post-editor-current-tags" class="post-editor-current-tags">
-						<span class="tag">HTML</span>
-						<span class="tag">SASS</span>
-						<span class="tag">Prosjekt</span>
+						
 					</div>
 
 					<div class="row post-editor-tags">
