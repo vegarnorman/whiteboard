@@ -12,6 +12,7 @@
 				 iaculis diam lacinia. Donec lectus ante, hendrerit eget magna at, ullamcorper ultricies sapien. In venenatis 
 				 quam lacus, in fringilla lorem cursus nec. Aliquam sed sapien accumsan, pretium felis posuere, iaculis leo.
 			</p>
+
 		</article>
 
 		<button id="new-comment-button">New comment</button>	
@@ -25,7 +26,22 @@
 						<textarea rows="5" placeholder="Enter your comments here"></textarea><br/>
 						<input type="submit" name="submit-comment" value="Submit your comment" class="submit-comment-button">
 				</form>
+			</div>
 		</div>
+
+		<h2>Kommentarer</h2>
+		<sub class="committed-comments">
+			Hei! dette var en kjempefin side! hilsen Arnt Harry Willy Bjørn Jensen
+		</sub>
+		<div class="article-footer">
+			Innlegg skrevet av: <b>Medel Svenson</b> 07.11.13 Kl.13:45
+</div>
+		<sub>
+			Hei! Veldig bra side! Stå på! Dette blir a! :)
+
+		</sub>
+		<div class="article-footer">
+			Innlegg skrevet av: <b>Medel Svenson</b> 07.11.13 Kl.13:45
 		</div>
 		</section>
 </div> <!--end of container -->
