@@ -1,6 +1,6 @@
 
 //sticky header
-        // var menuPosition = $('header').offset().top;
+        // var menuPosition = $('header').offset().top();
         // $(window).scroll(function(){
         //         if( $(window).scrollTop() > menuPosition ) {
         //                 $('header').css({position: 'fixed', top: '0px'});

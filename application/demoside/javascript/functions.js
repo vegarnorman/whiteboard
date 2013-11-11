@@ -8,7 +8,7 @@ window.onload = function highlight(){
 		if (current[i] == url){
 			if (current[i].parentNode.className=="menu") {
 				current[i].parentNode.setAttribute("class", "highlight");
-			};
+			}
 		}
-	};
-}
+	}
+};
