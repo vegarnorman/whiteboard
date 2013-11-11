@@ -44,6 +44,11 @@ $(document).ready(function(){
 	});
 
 
+	$("#new-comment-button").click(function(){
+		$("#comment-box").slideToggle("2000");
+	});
+
+
 
 
 
