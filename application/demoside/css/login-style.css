@@ -41,37 +41,40 @@ h2 {
       background-color: #FFF; }
 
 .login-button {
-  width: 80px;
-  height: 35px;
-  color: #EEE;
-  background-color: #4D7FAD;
-  border: 0px;
-  margin-top: 20px;
-  box-shadow: 2px 2px 5px #585858;
-  margin-right: -5px;
-  font-size: 18px;
-  border-radius: 5px;
-  float: right; }
-  .login-button:hover {
-    background-color: #6C7E99; 
-  }
-  .login-button:focus {
-    outline: none;
-    -outline-radius: 2px;
-    -moz-outline-radius: 2px;
-    -webkit-outline-radius: 2px;
-    background-color: #C2C0BE; 
-  }
+    width: 80px;
+    height: 35px;
+    color: #EEE;
+    background-color: #4D7FAD;
+    border: 0px;
+    margin-top: 20px;
+    box-shadow: 2px 2px 5px #444;
+    margin-right: -5px;
+    font-size: 12px;
+    border-radius: 3px;
+    float: right; 
+    text-transform: uppercase;
+}
+    .login-button:hover {
+        background-color: #6C7E99; 
+        cursor: pointer;
+    }
+    .login-button:focus {
+        outline: none;
+        -outline-radius: 3px;
+        -moz-outline-radius: 3px;
+        -webkit-outline-radius: 3px;
+        background-color: #C2C0BE; 
+    }
 
 .login-forgot {
-  width: 350px;
-  height: auto;
-  margin: 0 auto;
-  padding-left: 10px;
-  margin-top: 10px;
-  font-size: 10px; 
+    width: 350px;
+    height: auto;
+    margin: 0 auto;
+    padding-left: 10px;
+    margin-top: 10px;
+    font-size: 10px; 
 }
-    .flogin-orgot a {
-      text-decoration: none;
-      color: #556677; 
+    .login-forgot a {
+        text-decoration: none;
+        color: #456; 
     }
