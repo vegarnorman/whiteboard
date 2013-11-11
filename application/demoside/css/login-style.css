@@ -22,7 +22,11 @@ h2 {
   margin: 0 auto;
   margin-top: 15%;
   box-shadow: 4px 4px 15px #555555;
-  border-radius: 2px; }
+  -webkit-border-radius: 2px;
+  -moz-webkit-border-radius: 2px;
+  -ms-webkit-border-radius: 2px;
+  -o-webkit-border-radius: 2px; 
+}
   .login-form input[type="text"] {
     height: 35px;
     width: 100%;
@@ -32,10 +36,15 @@ h2 {
     font-size: 15px;
     color: #556677;
     border: 0px solid #111111;
-    border-radius: 2px; }
+    -webkit-border-radius: 2px;
+    -moz-webkit-border-radius: 2px;
+    -ms-webkit-border-radius: 2px;
+    -o-webkit-border-radius: 2px;
+  }
     .login-form input[type="text"]:focus {
       outline: 1px solid #FFF;
-      outline-radius: 2px;
+      -o-outline-radius: 2px;
+      -ms-outline-radius: 2px;
       -moz-outline-radius: 2px;
       -webkit-outline-radius: 2px;
       background-color: #FFF; }
@@ -50,7 +59,10 @@ h2 {
     box-shadow: 2px 2px 5px #444;
     margin-right: -5px;
     font-size: 12px;
-    border-radius: 3px;
+    -webkit-border-radius: 3px;
+    -moz-webkit-border-radius: 3px;
+    -ms-webkit-border-radius: 3px;
+    -o-webkit-border-radius: 3px;
     float: right; 
     text-transform: uppercase;
 }
@@ -60,7 +72,8 @@ h2 {
     }
     .login-button:focus {
         outline: none;
-        -outline-radius: 3px;
+        -o-outline-radius: 3px;
+        -ms-outline-radius: 3px;
         -moz-outline-radius: 3px;
         -webkit-outline-radius: 3px;
         background-color: #C2C0BE; 

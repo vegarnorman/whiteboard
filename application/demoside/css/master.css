@@ -22,7 +22,6 @@ h1,h2,h3,h4,h5,h6{
 	padding:10px 0; 
 	color: #456;
 }
-
 html{
 	font-family:  Helvetica neue, arial, sans serif;
 	font-size: 17px;
@@ -56,7 +55,6 @@ header{
 	border-bottom: 12px solid #345;
 	box-shadow: 0px 2px 12px #888;
 }
-
 /*MENU*/
 
 nav{
@@ -77,7 +75,6 @@ nav li{
 }
 nav li:hover{
 	background-color: #567;
-	border-radius: 0 0 0 0;
 }
 nav a{
 	display: block;
@@ -113,20 +110,18 @@ footer{
 	text-decoration: none;
 	color: #678;
 }
-
-
-
-
 /*
  *    BLOG and BLOGPOSTS
  */
-
 .blogg-sidebar{
 	margin-left: 10px;
 	font-size: 13px;
 	padding:10px;
-	border-radius: 5px;
-	color:#456;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	-ms-border-radius: 5px;
+	-o-border-radius: 5px;
+	color: #456;
 }
 .menu-button{
 	display: block;
@@ -148,7 +143,9 @@ footer{
 	display:none;
 	width: 280px;
 }
-
+.menu-item ul li{
+	padding:2px 4px;
+}
 /*
  *  ARTICLES
  */
@@ -164,7 +161,7 @@ article{
 .article-footer{
 	margin-bottom: 50px;
 	font-style: italic;
-	font-size: 12px;
+	font-size: 11px;
 }
 .article-footer span a{
 	font-weight: 900;
@@ -181,9 +178,12 @@ article{
 	color: #DDD;
 	line-height: 21px;
 	font-size: 12px;
-	border-radius: 3px;
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	-ms-border-radius: 3px;
+	-o-border-radius: 3px;
 	padding-left: 8px;
-	border: 0;
+	border: 0px;
 	text-transform: uppercase;
 	box-shadow: 2px 2px 5px #444;
 }
@@ -199,9 +199,12 @@ article{
 	color: #DDD;
 	line-height: 21px;
 	font-size: 12px;
-	border-radius: 3px;
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	-ms-border-radius: 3px;
+	-o-border-radius: 3px;
 	padding-right: 8px;
-	border: 0;
+	border: 0px;
 	text-transform: uppercase;
 	box-shadow: 2px 2px 5px #444;
 }
@@ -217,9 +220,7 @@ sub{
 	margin-top: 25px;
 	padding: 10px 0;
 	font-family: Tahoma;
-	/*background-color: white;*/
 	border-bottom: 1px solid black;
-
 }
 
 /*
@@ -233,25 +234,30 @@ button{
 button:hover{
 	cursor: pointer;
 }
-
- #new-comment-button{
+#new-comment-button{
  	background-color: #456;
  	width: 130px;
  	color: #fff;
  	padding:5px;
-	border-radius: 3px;
-	border: 0;
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	-ms-border-radius: 3px;
+	-o-border-radius: 3px;
+	border: 0px;
 	text-transform: uppercase;
   	box-shadow: 2px 2px 5px #555;
  }
-  #report-comment-button{
+ #report-comment-button{
  	background-color: #456;
  	width: 130px;
  	color: #fff;
  	padding:5px;
  	margin-left: 20px;
-	border-radius: 3px;
-	border: 0;
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	-ms-border-radius: 3px;
+	-o-border-radius: 3px;
+	border: 0px;
 	text-transform: uppercase;
   	box-shadow: 2px 2px 5px #555;
  }
@@ -266,13 +272,14 @@ button:hover{
  }
 .comment-form {
   	background-color: #456;
-  	border: 0px solid #111111;
   	height: auto;
   	min-height: 302px;
-  	/*padding: 30px;*/
   	margin: 0 auto;
 	box-shadow: 4px 4px 15px #555555;
-  	border-radius: 3px; 
+  	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	-ms-border-radius: 3px;
+	-o-border-radius: 3px;
  }
   	.comment-form input[type="text"] {
     	height: 35px;
@@ -284,13 +291,14 @@ button:hover{
     	font-size: 15px;
     	color: #556677;
     	border: 0px solid #111111;
-    	border-radius: 2px;
-    		    	box-shadow: -1px -1px 26px 4px #ddd inset;
-
-	}
+    	-webkit-border-radius: 2px;
+		-moz-border-radius: 2px;
+		-ms-border-radius: 2px;
+		-o-border-radius: 2px;
+    	-webikit-box-shadow: -1px -1px 26px 4px #DDD inset;
+}
     	.comment-form input[type="text"]:focus {
     		outline: 1px solid #FFF;
-     		outline-radius: 2px;
      		-o-outline-radius: 2px;
      		-ms-outline-radius: 2px;
      		-moz-outline-radius: 2px;
@@ -302,8 +310,11 @@ button:hover{
       		margin: 20px;
 	    	padding: 5px 0 0 5px;
 	    	border: 0;
-	    	box-shadow: -1px -1px 26px 4px #ddd inset;
-	    	border-radius: 2px;
+	    	-webkit-box-shadow: -1px -1px 26px 4px #DDD inset;
+	    	-webkit-border-radius: 2px;
+			-moz-border-radius: 2px;
+			-ms-border-radius: 2px;
+			-o-border-radius: 2px;
       	}
 
 .submit-comment-button {
@@ -316,7 +327,10 @@ button:hover{
   	padding:5px;
   	box-shadow: 2px 2px 5px #444;
   	font-size: 12px;
-  	border-radius: 3px;
+  	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	-ms-border-radius: 3px;
+	-o-border-radius: 3px;
   	text-transform: uppercase;
 }
   	.submit-comment-button:hover {
@@ -339,5 +353,4 @@ button:hover{
 }
 .highlight{
 	background-color: #345;
-	border-radius: 0 0 0 0;
 }

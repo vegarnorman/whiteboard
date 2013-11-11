@@ -15,10 +15,11 @@
 				iniaculis diam lacinia. Donec lectus ante, hendrerit eget magna at, ullamcorper ultricies sapien. In venenatis 
 				quam lacus, in fringilla lorem cursus nec. Aliquam sed sapien accumsan, pretium felis posuere, iaculis leo.
 			</p>
+			
 		</article>
 		
 		<div class="article-footer">
-			Innlegg skrevet av: <b>Medel Svenson</b> 07.11.13 Kl.13:45<span><a href="index.php?page=bloggpost">Kommenter <img src="images/talk.png" height="10"></a></span>
+			Innlegg skrevet av: <b>Medel Svenson</b> 07.11.13 Kl.13:45<span><a href="index.php?page=bloggpost">Kommenter <img src="images/talk.png" alt="snakkeboble" height="10"></a></span>
 		</div>
 
 		<article>	
@@ -36,12 +37,12 @@
 		</article>
 
 		<div class="article-footer">
-			Skrevet av: <b>Per I Hatten</b> 12.04.13 22:11<span><a href="index.php?page=bloggpost">Kommenter <img src="images/talk.png" height="10"></a></span>
+			Skrevet av: <b>Per I Hatten</b> 12.04.13 22:11<span><a href="index.php?page=bloggpost">Kommenter <img src="images/talk.png" alt="snakkeboble" height="10"></a></span>
 		</div>	
 		
 
-		<button class="next-button">Neste<img src="images/rightarrowwhite.png" height="21"></button>
-		<button class="last-button"><img src="images/leftarrowwhite.png" height="21">Forrige</button>
+		<button class="next-button">Neste<img src="images/rightarrowwhite.png" alt="pil til høyre" height="21"></button>
+		<button class="last-button"><img src="images/leftarrowwhite.png" alt="pil til venstre" height="21">Forrige</button>
 
 		<div class="stop"></div>
 
@@ -57,53 +58,47 @@
 
 		<div id="item-button1" class="menu-button">
 			<h3>Arkiv</h3>
-			<img id="arr1" src="images/rightarrow.png" height="21">
+			<img id="arr1" src="images/rightarrow.png" alt="pil til høyre" height="21">
 		</div>
 		
 		<div id="item1" class="menu-item">
-			<p>
-				<ul>
-					<li>Example 1</li>
-					<li>Example 2</li>
-					<li>Example 3</li>
-					<li>Example 4</li>
-					<li>Example 5</li>
-				</ul>
-			</p>
-		</div>
+			<ul>
+				<li>Example 1</li>
+				<li>Example 2</li>
+				<li>Example 3</li>
+				<li>Example 4</li>
+				<li>Example 5</li>
+			</ul>
+	</div>
 			
 		<div id="item-button2" class="menu-button">
 			<h3>Kategorier</h3>
-			<img id="arr2" src="images/rightarrow.png" height="21">
+			<img id="arr2" src="images/rightarrow.png" alt="pil til høyre" height="21">
 		</div>
 		
 		<div id="item2" class="menu-item">
-			<p>
-				<ul>
-					<li>Bla</li>
-					<li>Bla</li>
-					<li>Bla</li>
-					<li>Bla</li>
-					<li>Bla</li>
-				</ul>
-			</p>
+			<ul>
+				<li>Bla</li>
+				<li>Bla</li>
+				<li>Bla</li>
+				<li>Bla</li>
+				<li>Bla</li>
+			</ul>
 		</div>
 		
 		<div id="item-button3" class="menu-button">
 			<h3>Emneord #</h3>
-			<img id="arr3" src="images/rightarrow.png" height="21">
+			<img id="arr3" src="images/rightarrow.png" alt="pil til høyre" height="21">
 		</div>
 		
 		<div id="item3" class="menu-item">
-			<p>
-				<ul>
-					<li>css</li>
-					<li>html</li>
-					<li>php</li>
-					<li>bøker</li>
-					<li>sport</li>
-				</ul>
-			</p>
+			<ul>
+				<li>css</li>
+				<li>html</li>
+				<li>php</li>
+				<li>bøker</li>
+				<li>sport</li>
+			</ul>
 		</div>
 
 	</section>
