@@ -75,14 +75,43 @@ $(function() {
 	});
 
 
-	$(".post-editor-content").on("keydown", function(e) {
-		var key = e.which || e.keyCode;
+	$("#editor_submit").click(function() {
+		
+		var number_of_tags = $(".post-editor-current-tags .tag").length;
+		var number_of_categories = $(".post-editor-categories input:checked").length;
 
-		if (key == 9) {
-			wrapText("\t", "");
-			e.preventDefault();
+		if (number_of_tags > 0) {
+			var tag_html = $(".post-editor-current-tags .tag").toArray();
+			var tag_list = new Array();
+			
+			for (var i = 0; i < number_of_tags; i++) {
+				var keyword = tag_html[i].innerHTML;
+				tag_list[i] = keyword;
+			}
+
+			$("input#post_tags").val(JSON.stringify(tag_list));
+
 		}
-	});
+		
+
+
+		if (number_of_categories > 0) {
+			var categories_html = $(".post-editor-categories input:checked").toArray();
+			var category_list = new Array();
+
+			for (var i = 0; i < number_of_categories; i++) {
+				var categoryID = $(categories_html[i]).attr("value");
+				category_list[i] = categoryID;
+			}
+
+			$("input#post_categories").val(JSON.stringify(category_list));
+
+		}
+		
+
+		return true;
+
+	});	
 
 
 
