@@ -19,6 +19,26 @@
 
 	<?php
 		$cp = new ControlPanel();
+
+		if (isset($_POST["post_title"]) && 
+			isset($_POST["post_data"])	&&
+			isset($_POST["user_id"])) {
+			
+			$new_post_data = [
+				"post_title" => (string) $_POST["post_title"],
+				"post_data" => (string) $_POST["post_data"],
+				"post_published" => (string) date("j-m-Y, G:i"),
+				"post_last_modified" => (string) date("j-m-Y, G:i"),
+				"post_published_by" => (int) $_POST["user_id"],
+				"post_last_modified_by" => (int) $_POST["user_id"]
+			];
+
+			$post = new Post($new_post_data);
+
+			$result = $post->insertPost($cp->getDataHandler());
+
+		}
+
 	?>
 
 	<div class="cp-container">
@@ -34,7 +54,21 @@
 
 			<form name="post-editor" id="post-editor" action="new-post.php" method="post">
 
+				<input type="hidden" name="user_id" id="user_id" value="1" />
+
 				<section class="grid g9 post-editor-main">
+
+					<?php
+						if (isset($result)) {
+							if (!$result) {
+								echo '<p class="cp-message error"><b>FEIL</b><br />Det oppsto en feil ved posting.<br />' . var_dump($result) . '</p>';
+							}
+
+							else {
+								echo '<p class="cp-message success"><b>SUKSESS</b><br />Bloggposten ble publisert.</p>';
+							}
+						}
+					?>
 
 					<input class="post-editor-title" name="post_title" id="post_title" placeholder="Skriv inn tittel her" />
 
