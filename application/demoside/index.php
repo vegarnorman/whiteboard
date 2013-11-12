@@ -59,7 +59,7 @@
 				</section>
 
 				<section class="grid g4 no-gutters">
-					<p>Footer.....</p>
+					<p>Footer</p>
 				</section>
 
 				<section class="grid g4 no-gutters">
