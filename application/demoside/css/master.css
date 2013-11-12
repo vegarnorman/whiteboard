@@ -83,6 +83,10 @@ nav a{
 	text-decoration: none;
 	color: #EEE;
 }
+
+nav ul li img {
+margin-right:5px;
+}
 .main-container{
 	width: 840px;
 	height: auto;
@@ -251,7 +255,7 @@ button:hover{
  }
  #report-comment-button{
  	background-color: #456;
- 	width: 130px;
+ 	width: auto;
  	color: #fff;
  	padding:5px;
  	margin-left: 20px;
@@ -262,6 +266,7 @@ button:hover{
 	border: 0px;
 	text-transform: uppercase;
   	box-shadow: 0px 1px 4px #777;
+	
  }
 
  #comment-box{

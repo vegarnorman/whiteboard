@@ -19,11 +19,11 @@
 	<header>
 		<nav>
 			<ul>
-				<li class="menu"><a href="index.php?page=forside">Forside</a></li>
-				<li class="menu"><a href="index.php?page=blogg">Blogg</a></li>
-				<li class="menu"><a href="index.php?page=artikler">Artikler</a></li>
-				<li class="menu"><a href="index.php?page=bloggpost">Bloggpost</a></li>
-				<li class="menu"><a href="index.php?page=kontakt">Kontakt</a></li> 
+				<li class="menu"><a href="index.php?page=forside"><img src="images/home.png" alt="homeikon">Forside</a></li>
+				<li class="menu"><a href="index.php?page=blogg"><img src="images/blogg.png" alt="bloggikon">Blogg</a></li>
+				<li class="menu"><a href="index.php?page=artikler"><img src="images/artikkel.png" alt="article">Artikler</a></li>
+				<li class="menu"><a href="index.php?page=bloggpost"><img src="images/kommenter.png" alt="bloggpost">Bloggpost</a></li>
+				<li class="menu"><a href="index.php?page=kontakt"><img src="images/email.png" alt="kontakt">Kontakt</a></li> 
 			</ul>
 		</nav>
 	</header>
