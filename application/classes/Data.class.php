@@ -125,6 +125,7 @@
 				$values[$i] = $this->sanitize($values[$i]);
 			}
 
+
 			// konverter arrayer til korrekte strenger
 			for ($i = 0; $i < count($fields); $i++) {
 				if ($i == count($fields) - 1) {
@@ -253,7 +254,13 @@
 					switch($operation) {
 
 						case "insert":
-							return $this->db->insert_id;
+							if ($this->db->insert_id == 0) {
+								return -99;
+							}
+
+							else {
+								return $this->db->insert_id;
+							}
 							break;
 
 
@@ -290,7 +297,8 @@
 							}
 
 							else {
-								return $sql_result->fetch_assoc();
+								$return_data = $sql_result->fetch_assoc();
+								return $return_data;
 							}
 
 							break;
@@ -303,7 +311,8 @@
 							}
 
 							else {
-								return $sql_result->fetch_assoc();
+								$return_data = $sql_result->fetch_assoc();
+								return $return_data;
 							}
 							break;
 
@@ -315,7 +324,8 @@
 							}
 
 							else {
-								return $sql_result->fetch_assoc();
+								$return_data = $sql_result->fetch_assoc();
+								return $return_data;
 							}
 							break;
 
@@ -350,6 +360,10 @@
 		// close() - stenger en databasetilkobling
 		public function close() {
 			$this->db->close();
+		}
+
+		public function getError() {
+			return $this->db->errno;
 		}
 
 	}
