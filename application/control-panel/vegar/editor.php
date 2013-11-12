@@ -18,20 +18,31 @@
 <body>
 
 	<?php
+	
 		$cp = new ControlPanel();
 
 		if (isset($_POST["post_title"]) && 
 			isset($_POST["post_data"])	&&
 			isset($_POST["user_id"])) {
-			
+
 			$new_post_data = [
 				"post_title" => (string) $_POST["post_title"],
 				"post_data" => (string) $_POST["post_data"],
 				"post_published" => (string) date("j-m-Y, G:i"),
 				"post_last_modified" => (string) date("j-m-Y, G:i"),
 				"post_published_by" => (int) $_POST["user_id"],
-				"post_last_modified_by" => (int) $_POST["user_id"]
+				"post_last_modified_by" => (int) $_POST["user_id"],
 			];
+
+			if (isset($_POST["post_tags"])) {
+				$post_tags = json_decode($_POST["post_tags"], true);
+				$new_post_data["post_tags"] = $post_tags;
+			}
+
+			if (isset($_POST["post_categories"])) {
+				$post_categories = json_decode($_POST["post_categories"], true);
+				$new_post_data["post_categories"] = $post_categories;
+			}
 
 			$post = new Post($new_post_data);
 
@@ -52,9 +63,11 @@
 
 			<!--<h2 class="grid g12 cp-site-title">Skriv ny post</h2>-->
 
-			<form name="post-editor" id="post-editor" action="new-post.php" method="post">
+			<form name="post-editor" id="post-editor" action="editor.php" method="post">
 
 				<input type="hidden" name="user_id" id="user_id" value="1" />
+				<input type="hidden" name="post_tags" id="post_tags" value="" />
+				<input type="hidden" name="post_categories" id="post_categories" value="" />
 
 				<section class="grid g9 post-editor-main">
 
@@ -103,30 +116,9 @@
 
 					<h3>Kategorier</h3>
 
-					<ul class="post-editor-categories">
-						<li>
-							<input type="checkbox" id="HTML" />
-							<label for="HTML">HTML</label>
-						</li>
-						<li>
-							<input type="checkbox" id="CSS" />
-							<label for="CSS">CSS</label>
-						</li>
-						<li>
-							<input type="checkbox" id="Personlig" />
-							<label for="Personlig">Personlig</label>
-						</li>
-						<li>
-							<input type="checkbox" id="Arbeid" />
-							<label for="Arbeid">Arbeid</label>
-						</li>
-						<li>
-							<input type="checkbox" id="Ukategorisert" />
-							<label for="Ukategorisert">Ukategorisert</label>
-						</li>
-					</ul>
+					<?php $cp->categories(); ?>
 
-					<input type="submit" class="button bigger green" value="Publiser" />
+					<input type="submit" class="button bigger green" value="Publiser" id="editor_submit" />
 
 				</aside>
 
