@@ -1,5 +1,5 @@
 <p>
-	<a href="new-post.php" class="button c2a">Skriv ny post</a>
+	<a href="editor.php" class="button c2a">Skriv ny post</a>
 </p>
 
 <nav>
