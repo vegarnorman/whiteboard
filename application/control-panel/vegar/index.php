@@ -30,31 +30,31 @@
 		<section class="cp-main">
 
 			<h2 class="grid g12 cp-site-title"><?php ControlPanel::getSiteTitle(); ?></h2>
-			<ul class="cp-latest-post">
+			<ul class="cp-latest-post grid g4">
 				<li>
-					<h3></h3>
+					<a href="#"><h3></h3></a>
 					<p></p>
 				</li>
 				<li>
-					<h3></h3>
+					<a href="#"><h3></h3></a>
 					<p></p>
 				</li>
 				<li>
-					<h3></h3>
+					<a href="#"><h3></h3></a>
 					<p></p>
 				</li>
 			</ul>
-			<ul class="cp-latest-post">
+			<ul class="cp-latest-post grid g4">
 				<li>
-					<h3></h3>
+					<a href="#"><h3></h3></a>
 					<p></p>
 				</li>
 				<li>
-					<h3></h3>
+					<a href="#"><h3></h3></a>
 					<p></p>
 				</li>
 				<li>
-					<h3></h3>
+					<a href="#"><h3></h3></a>
 					<p></p>
 				</li>
 			</ul>
