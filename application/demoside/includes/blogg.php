@@ -58,7 +58,7 @@
 
 		<div id="item-button1" class="menu-button">
 			<h3>Arkiv</h3>
-			<img id="arr1" src="images/rightarrow.png" alt="pil til høyre" height="21">
+			<!-- <img id="arr1" src="images/rightarrow.png" alt="pil til høyre" height="21"> -->
 		</div>
 		
 		<div id="item1" class="menu-item">
@@ -73,7 +73,7 @@
 			
 		<div id="item-button2" class="menu-button">
 			<h3>Kategorier</h3>
-			<img id="arr2" src="images/rightarrow.png" alt="pil til høyre" height="21">
+			<!-- <img id="arr2" src="images/rightarrow.png" alt="pil til høyre" height="21"> -->
 		</div>
 		
 		<div id="item2" class="menu-item">
@@ -88,7 +88,7 @@
 		
 		<div id="item-button3" class="menu-button">
 			<h3>Emneord #</h3>
-			<img id="arr3" src="images/rightarrow.png" alt="pil til høyre" height="21">
+			<!-- <img id="arr3" src="images/rightarrow.png" alt="pil til høyre" height="21"> -->
 		</div>
 		
 		<div id="item3" class="menu-item">

@@ -26,7 +26,8 @@
 						<input type="text" name="navn" placeholder="Name"><br/>
 						<input type="text" name="epost" placeholder="Email"><br/>
 						<textarea rows="5" placeholder="Enter your comments here"></textarea><br/>
-						<input type="submit" name="submit-comment" value="Submit your comment" class="submit-comment-button">
+						<input type="submit" name="submit-comment" value="Submit your comment" class="submit-comment-button"><br/>
+						<br/>
 				</form>
 			</div>
 		</div>

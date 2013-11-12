@@ -1,16 +1,9 @@
-/*Ingen ID-tagger**: ID-tagger skal ikke brukes i CSS-selektorer. Dette er reservert til Javascript.
- *Ingen overkvalifisert kode**: Ikke skriv `div.sidebar` - skriv `.sidebar`
- *Ingen underscores**: Ikke skriv `.sidebar_left` - skriv `.sidebar-left`
- *Maksimal gjenbruk av kode**: Kode skal skrives slik at koden kan brukes igjen og igjen i andre elementer hvis nødvendig.
- *Færrest mulig vendor prefixes**: Minst mulig bruk av kode som er laget for spesielle nettlesere og motorer.
- */
-
 /* STYLESHEET FOR DEMOSITE - WEB PROJECT AT HIOA 2013
  * PARTICIPANTS: VEGAR NORMAN, PER ERIK FINSTAD, HALVOR ØDEGÅRD, MARIUS BALTRAMAITIS;
  * ALL CONTENT OWNED BY GROUP 25
  */ 
-
- @import url("../css/grid.css");
+@import url("../css/grid.css");
+@import url(../css/responsiveness.css);
 
 *{
 	margin: 0;
@@ -35,6 +28,7 @@ body{
 .top-banner{
 	background-image: url(../images/banner.png);
 	background-repeat: no-repeat;
+	background-size: cover;
 	height:200px;
 	background-color: #777;
 }
@@ -52,23 +46,23 @@ body{
 header{
 	height: 30px;
 	background-color: #456;
-	border-bottom: 12px solid #345;
-	box-shadow: 0px 2px 12px #888;
+	border-bottom: 12px solid #EEE;
+	/*box-shadow: 0px 2px 12px #888;*/
 }
 /*MENU*/
 
 nav{
 	width: 840px;
 	margin: 0 auto;
-	background-color: #ccc;
+	background-color: #333;
 	text-align: center;
-	line-height:1.8;
+	line-height:1.6;
 	vertical-align: bottom;
 }
 nav li{
 	display: inline;
 	float: left;
-	width: 20%;
+	/*width: 20%;*/
 	height: 30px;
 	background-color: #456;
 	/*border-right: 1px solid #345;*/
@@ -77,9 +71,14 @@ nav li:hover{
 	background-color: #567;
 }
 nav a{
+	font-size: 18px;
 	display: block;
 	text-decoration: none;
 	color: #EEE;
+}
+
+nav ul li img {
+margin-right:5px;
 }
 .main-container{
 	width: 840px;
@@ -95,7 +94,7 @@ nav a{
 }
 footer{
 	height: auto;
-	min-height: 150px;
+	min-height: 25px;
 	background-color: #345;
 	text-align: center;	
 }
@@ -116,7 +115,7 @@ footer{
 .blogg-sidebar{
 	margin-left: 10px;
 	font-size: 13px;
-	padding:10px;
+	padding:40px;
 	-webkit-border-radius: 5px;
 	-moz-border-radius: 5px;
 	-ms-border-radius: 5px;
@@ -140,7 +139,7 @@ footer{
 }
 
 .menu-item{
-	display:none;
+	display:;
 	width: 280px;
 }
 .menu-item ul li{
@@ -185,7 +184,7 @@ article{
 	padding-left: 8px;
 	border: 0px;
 	text-transform: uppercase;
-	box-shadow: 2px 2px 5px #444;
+  	box-shadow: 0px 1px 4px #777;
 }
 
 .next-button img{
@@ -206,7 +205,7 @@ article{
 	padding-right: 8px;
 	border: 0px;
 	text-transform: uppercase;
-	box-shadow: 2px 2px 5px #444;
+  	box-shadow: 0px 1px 4px #777;
 }
 .last-button img{
 	float: left;
@@ -236,7 +235,7 @@ button:hover{
 }
 #new-comment-button{
  	background-color: #456;
- 	width: 130px;
+ 	width: auto;
  	color: #fff;
  	padding:5px;
 	-webkit-border-radius: 3px;
@@ -245,11 +244,11 @@ button:hover{
 	-o-border-radius: 3px;
 	border: 0px;
 	text-transform: uppercase;
-  	box-shadow: 2px 2px 5px #555;
+  	box-shadow: 0px 1px 4px #777;
  }
  #report-comment-button{
  	background-color: #456;
- 	width: 130px;
+ 	width: auto;
  	color: #fff;
  	padding:5px;
  	margin-left: 20px;
@@ -259,23 +258,31 @@ button:hover{
 	-o-border-radius: 3px;
 	border: 0px;
 	text-transform: uppercase;
-  	box-shadow: 2px 2px 5px #555;
+  	box-shadow: 0px 1px 4px #777;
+	
  }
 
  #comment-box{
- 	display: none;
+ 	/*display: none;*/
+ 	height: auto;
  	width: 535px;
  	margin: 10px 0 50px 0;
+	-webkit-border-radius: 2px;
+	-moz-border-radius: 2px;
+	-ms-border-radius: 2px;
+	-o-border-radius: 2px;
+ 	border: 1px solid #AAA;
+
  }
  .comment-area{
+ 	height: auto;
  	margin-top: 40px;
  }
 .comment-form {
-  	background-color: #456;
-  	height: auto;
-  	min-height: 302px;
+  	background-color: ;
+  	/*height: auto;
+  	min-height: 302px;*/
   	margin: 0 auto;
-	box-shadow: 4px 4px 15px #555555;
   	-webkit-border-radius: 3px;
 	-moz-border-radius: 3px;
 	-ms-border-radius: 3px;
@@ -291,18 +298,12 @@ button:hover{
     	font-size: 15px;
     	color: #556677;
     	border: 0px solid #111111;
-    	-webkit-border-radius: 2px;
-		-moz-border-radius: 2px;
-		-ms-border-radius: 2px;
-		-o-border-radius: 2px;
+    	
     	-webikit-box-shadow: -1px -1px 26px 4px #DDD inset;
 }
     	.comment-form input[type="text"]:focus {
-    		outline: 1px solid #FFF;
-     		-o-outline-radius: 2px;
-     		-ms-outline-radius: 2px;
-     		-moz-outline-radius: 2px;
-     		-webkit-outline-radius: 2px;
+	    	outline-width: 0px;
+	    	border: 1px solid #AAA;
       	}
       	.comment-form textarea {
       		width: 490px;
@@ -310,22 +311,26 @@ button:hover{
       		margin: 20px;
 	    	padding: 5px 0 0 5px;
 	    	border: 0;
-	    	-webkit-box-shadow: -1px -1px 26px 4px #DDD inset;
+	    	/*-webkit-box-shadow: -1px -1px 26px 4px #DDD inset;*/
+	    	outline-width: 0px;
 	    	-webkit-border-radius: 2px;
 			-moz-border-radius: 2px;
 			-ms-border-radius: 2px;
 			-o-border-radius: 2px;
       	}
+      	.comment-form textarea:focus{
+      		border: 1px solid #AAA;
+      	}
 
 .submit-comment-button {
 	width: auto;
-  	height: 35px;
-  	color: #EEE;
-  	background-color: #4D7FAD;
+	color: #EEE;
+  	background-color: #456;
   	border: 0px;
-  	margin-left: 360px;
+  	margin:0 20px 0 0;
+	float: right;
   	padding:5px;
-  	box-shadow: 2px 2px 5px #444;
+  	box-shadow: 0px 1px 4px #777;
   	font-size: 12px;
   	-webkit-border-radius: 3px;
 	-moz-border-radius: 3px;
@@ -334,7 +339,7 @@ button:hover{
   	text-transform: uppercase;
 }
   	.submit-comment-button:hover {
-    	background-color: #6C7E99; 
+    	background-color: #586577; 
     	cursor: pointer;
   	}
   	.submit-comment-button:focus {
@@ -352,5 +357,9 @@ button:hover{
 	clear:both;
 }
 .highlight{
-	background-color: #345;
+	background-color: #EEE;
+}
+.highlight a{
+	color:#456;
+	font-weight: 600;
 }

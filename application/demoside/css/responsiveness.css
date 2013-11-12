@@ -1,0 +1,49 @@
+/*RESPONSIVENESS*/
+
+@media only screen and (max-width: 480px) {
+
+   /*body { font-size: 50%; }*/
+.top-banner{
+	max-width: 480px;
+	background-position: center;
+	background-color: #777;
+}
+
+nav li{
+	clear: both;
+	width: 480px;
+	border-bottom: 1px solid #567;
+}
+.container{
+	max-width: 440px !important;
+}
+.main-container{
+	max-width: 440px !important;
+	margin: 0;
+}
+.grid.g8{
+	width: 100%;
+	max-width: 440px !important;
+}
+.grid.g4{
+	width: 100%;
+	max-width: 440px !important;
+	margin: 5px;
+	padding: 0;
+	clear: both;
+}
+.blogg-sidebar{
+	padding:0px;
+}
+#comment-box{
+	width: 100%;
+	max-width: 430px;
+}
+.comment-form textarea {
+    max-width: 385px;
+    }  
+
+ footer{
+ 	max-width: 480px;
+ }
+}
