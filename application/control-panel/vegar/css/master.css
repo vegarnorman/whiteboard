@@ -360,7 +360,31 @@ i.fa {
 	color: #0058e5;
 }
 
-/*table for database*/
+
+/*	Meldingsbokser
+*/
+
+.cp-message {
+	display: block;
+	padding: 1rem;
+	color: #ffffff;
+}
+
+.cp-message.success {
+	background-color: #00992b;
+}
+
+.cp-message.error {
+	background-color: #d00000;
+}
+
+.cp-message.information {
+	background-color: #0053d9;
+}
+
+
+/*	Tabeller på oversiktsider
+*/
 
 table {
     border-collapse: collapse;
