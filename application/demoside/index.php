@@ -12,7 +12,7 @@
 <body id="1">
 	<div class="top-banner">
 		<div class="banner-content">
-			<h1>Demoside</h1>
+			<h1>Bloggbloggbloggbloggbloggbloggbloggblogg</h1>
 		</div>
 	</div>
 
