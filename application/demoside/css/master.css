@@ -242,7 +242,7 @@ button:hover{
 }
 #new-comment-button{
  	background-color: #456;
- 	width: 130px;
+ 	width: auto;
  	color: #fff;
  	padding:5px;
 	-webkit-border-radius: 3px;
