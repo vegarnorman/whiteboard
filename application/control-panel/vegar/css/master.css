@@ -392,14 +392,34 @@ table {
     text-align: center;
 }
 
-.database{
+table td{
 	border-style: solid;
-	border-color: #c2c2c4;
+	border-color: rgba(0,0,0,0.1);
 	border-width: 1px;
-	padding: 0.5em;
+	padding: 0.5rem;
 }
 .checkbox{
-	padding: 0.5em;
+	padding: 0.5rem;
+	border-style: none;
 }
 
 
+
+/*	Forsiden  
+*/
+.cp-latest-post li{
+	width: 100%;
+	height: 100%;
+	list-style: none;
+	background-color: rgba(0,0,0,0.06);
+	margin-bottom: 1.5rem;
+	padding: 2%;
+}
+
+.cp-latest-post li a{
+	text-decoration: none;
+	color:#000;	
+}
+.cp-latest-post li a:hover{
+	color: blue;
+}
