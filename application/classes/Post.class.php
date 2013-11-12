@@ -9,6 +9,8 @@
 				$post_last_modified,
 				$post_published_by,
 				$post_last_modified_by,
+				$post_tags,
+				$post_categories,
 				$user_display_name,
 				$user_last_modified_by_display_name;
 
@@ -24,6 +26,14 @@
 
 			if (isset($data["user_display_name"])) {
 				$this->user_last_modified_by_display_name = $data["user_last_modified_by_display_name"];
+			}
+
+			if (isset($data["post_tags"])) {
+				$this->post_tags = $data["post_tags"];
+			}
+
+			if (isset($data["post_categories"])) {
+				$this->post_categories = $data["post_categories"];
 			}
 
 			$this->post_title = $data["post_title"];
@@ -162,12 +172,55 @@
 				}
 
 				else {
-					$handle->commit();
-					return true;
-				}
+					if (!isset($this->post_data)) {
+						$handle->commit();
+						return true;
+					}
 
+					else {
+
+						foreach ($this->post_tags as $tag) {
+							$step3_data = [
+								"tag_name" => $tag,
+								"post_id" => $this->post_id
+							];
+
+							$step3 = $handle->operation("insert", "Tag", $step3_data);
+
+							if (!$step3) {
+								$handle->rollback();
+								return false;
+							}
+						}
+
+						if (!isset($this->post_categories)) {
+							$handle->commit();
+							return true;
+						}
+
+						else {
+
+							foreach ($this->post_categories as $category) {
+								$step4_data = [
+									"post_id" => $this->post_id,
+									"category_id" => $category
+								];
+
+								$step4 = $handle->operation("insert", "Categorization", $step4_data);
+
+								if (!$step4) {
+									$handle->rollback();
+									return false;
+								}
+							}
+
+							$handle->commit();
+							return true;
+
+						}
+					}
+				}
 			}
-			
 		}
 
 

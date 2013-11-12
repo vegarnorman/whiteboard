@@ -29,7 +29,7 @@
 		}
 
 		public function run($query) {
-			$resultat = $this->real_query($query);
+			$resultat = $this->query($query);
 			return $resultat;
 			
 		}

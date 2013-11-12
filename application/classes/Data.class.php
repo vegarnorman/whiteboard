@@ -362,8 +362,28 @@
 			$this->db->close();
 		}
 
+		// getError() - returnerer en MySQL-feil (kjekk å ha for debugging)
 		public function getError() {
 			return $this->db->errno;
+		}
+
+		// getCategoryList() - returnerer et array med alle kategorier og kategori-IDer
+		public function getCategoryList() {
+			$query = "select * from Category";
+			$result = $this->db->run($query);
+			$return = [];
+
+			if(!$result) {
+				return false;
+			}
+
+			else {
+				while($row = $result->fetch_assoc()) {
+					$return[] = $row;
+				}
+
+				return $return;
+			}
 		}
 
 	}
