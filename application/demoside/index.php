@@ -2,7 +2,7 @@
 <html>
 <head>
 	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=0.6666"> 
+	<meta name="viewport" content="width=device-width, initial-scale=0.61, user-scalable=yes"> 
 	<meta name="keywords" content="cms, project">
 	<title>Demoside</title>
 	<link rel="stylesheet" type="text/css" href="css/master.css">

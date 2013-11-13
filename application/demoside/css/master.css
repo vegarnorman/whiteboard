@@ -18,6 +18,9 @@ h1,h2,h3,h4,h5,h6{
 	padding:10px 0; 
 	color: #456;
 }
+p{
+	margin-top: 14px;
+}
 html{
 	font-family:  Helvetica neue, arial, sans serif;
 	font-size: 17px;
@@ -107,7 +110,7 @@ footer{
 	height: auto;
 	min-height: 25px;
 	background-color: #345;
-	/*text-align: center;	*/
+	text-align: center;	
 }
 .footer-content{
 	font-size: 12px;
@@ -171,7 +174,7 @@ article{
 .article-footer{
 	margin-bottom: 50px;
 	font-style: italic;
-	font-size: 11px;
+	font-size: 10px;
 }
 .article-footer span a{
 	font-weight: 900;

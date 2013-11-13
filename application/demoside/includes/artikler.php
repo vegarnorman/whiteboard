@@ -1,6 +1,7 @@
 
 <div class="container">
-	<section class="grid g12 no-gutters">
+	<section class="grid g12">
+		<article>
 		<h2>Artikler</h2>
 			<p>
 				Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque aliquet, ante non molestie vulputate, 
@@ -29,5 +30,6 @@
 				  iaculis eget iaculis eu, vulputate sed mi. Aenean in accumsan justo, vel gravida felis. Praesent commodo 
 				  pellentesque rhoncus. Morbi accumsan porttitor neque, dictum sagittis sapien luctus nec.
 			</p>
+		</article>
 	</section>
 </div>
