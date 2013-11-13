@@ -1,49 +1,84 @@
 /*RESPONSIVENESS*/
 
-@media only screen and (max-width: 480px) {
+@media only screen and (max-device-width: 468px) {
+   
 
-   /*body { font-size: 50%; }*/
-.top-banner{
-	max-width: 480px;
-	background-position: center;
-	background-color: #777;
-}
+    html,body { 
+   		max-width: 480px !important; 
+   		padding: 0;
+   		overflow-x:hidden;
+   	}
+   	.top-banner{
+		max-width: 480px !important;
+	}
+	.banner-content{
+		max-width: 480px !important;
+	}
+	header{
+		max-width: 480px !important;
+	}
+	nav{
+		max-width: 480px !important;
+	}
+	nav li{
+		clear: both;
+		border-bottom: 1px solid #567;
+	}
+	.menu{
+		width: 100%;
+	}
+	li.highlight{
+		width: 100%;
+		background-color: #789;
+		margin: 0 auto;
+	}
+	li.highlight a{
+		color:#EEE;
+	}
+	.container{
+		max-width: 440px !important;
+	}
+	.main-container{
+		max-width: 440px !important;
+		margin: 0;
+		padding: 0;
+	}
+	.grid.g8{
+		width: 100%;
+		max-width: 440px !important;
+	}
+	.grid.g4{
+		width: 100%;
+		max-width: 440px !important;
+		margin: 0 auto;
+		padding: 0;
+		clear: both;
+	}
+	.blogg-sidebar{
+		padding:0px;
+	}
+	#comment-box{
+		width: 100%;
+		max-width: 430px;
+	}
+	.comment-form textarea {
+	    max-width: 385px;
+	    }  
 
-nav li{
-	clear: both;
-	width: 480px;
-	border-bottom: 1px solid #567;
-}
-.container{
-	max-width: 440px !important;
-}
-.main-container{
-	max-width: 440px !important;
-	margin: 0;
-}
-.grid.g8{
-	width: 100%;
-	max-width: 440px !important;
-}
-.grid.g4{
-	width: 100%;
-	max-width: 440px !important;
-	margin: 5px;
-	padding: 0;
-	clear: both;
-}
-.blogg-sidebar{
-	padding:0px;
-}
-#comment-box{
-	width: 100%;
-	max-width: 430px;
-}
-.comment-form textarea {
-    max-width: 385px;
-    }  
+	.footer-content{
+	 	max-width: 480px;
+	 	margin: 0;
+	 	padding: 0;
+	 }
+	
+	 footer{
+	 	max-width: 480px;
+	 	text-align: center;
+	 }
 
- footer{
- 	max-width: 480px;
- }
+	 footer .grid.g4.no-gutters{
+	 	width: 480px; 
+	 }
+	
+
 }

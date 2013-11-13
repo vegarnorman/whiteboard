@@ -2,6 +2,7 @@
 <html>
 <head>
 	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=0.6666"> 
 	<meta name="keywords" content="cms, project">
 	<title>Demoside</title>
 	<link rel="stylesheet" type="text/css" href="css/master.css">
@@ -17,7 +18,7 @@
 	</div>
 
 	<header>
-		<nav>
+		<nav class="stop">
 			<ul>
 				<li class="menu"><a href="index.php?page=forside"><img src="images/home.png" alt="homeikon">Forside</a></li>
 				<li class="menu"><a href="index.php?page=blogg"><img src="images/blogg.png" alt="bloggikon">Blogg</a></li>
@@ -59,7 +60,7 @@
 				</section>
 
 				<section class="grid g4 no-gutters">
-					<p>Footer</p>
+					<p>Awesome CMS</p>
 				</section>
 
 				<section class="grid g4 no-gutters">

@@ -19,7 +19,7 @@
 		</article>
 		
 		<div class="article-footer">
-			Innlegg skrevet av: <b>Medel Svenson</b> 07.11.13 Kl.13:45<span><a href="index.php?page=bloggpost">Kommenter <img src="images/talk.png" alt="snakkeboble" height="10"></a></span>
+			Skrevet av: <b>Medel Svenson</b> 07.11.13 Kl.13:45<span><a href="index.php?page=bloggpost">Kommenter <img src="images/talk.png" alt="snakkeboble" height="10"></a></span>
 		</div>
 
 		<article>	
