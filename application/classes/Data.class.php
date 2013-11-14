@@ -297,7 +297,12 @@
 							}
 
 							else {
-								$return_data = $sql_result->fetch_assoc();
+								$return_data = [];
+
+								while ($row = $sql_result->fetch_assoc()) {
+									$return_data[] = $row;
+								}
+
 								return $return_data;
 							}
 
@@ -311,7 +316,12 @@
 							}
 
 							else {
-								$return_data = $sql_result->fetch_assoc();
+								$return_data = [];
+
+								while ($row = $sql_result->fetch_assoc()) {
+									$return_data[] = $row;
+								}
+
 								return $return_data;
 							}
 							break;
@@ -320,11 +330,16 @@
 						case "join":
 
 							if ($sql_result->num_rows == 0) {
-								return (int) 0;
+								return $query;
 							}
 
 							else {
-								$return_data = $sql_result->fetch_assoc();
+								$return_data = [];
+
+								while ($row = $sql_result->fetch_assoc()) {
+									$return_data[] = $row;
+								}
+
 								return $return_data;
 							}
 							break;
@@ -378,6 +393,31 @@
 			}
 
 			else {
+				while($row = $result->fetch_assoc()) {
+					$return[] = $row;
+				}
+
+				return $return;
+			}
+		}
+
+		// getCategorization() - returnerer kategorisering for en post
+		public function getCategorization($post_id) {
+			$query = "select * from Categorization, Category where Categorization.category_id = Category.category_id and Categorization.post_id = $post_id";
+
+			$result = $this->db->run($query);
+
+			if (!$result) {
+				return false;
+			}
+
+			else if ($result->num_rows == 0) {
+				return "Ingen rader funnet";
+			}
+
+			else {
+				$return = [];
+
 				while($row = $result->fetch_assoc()) {
 					$return[] = $row;
 				}
