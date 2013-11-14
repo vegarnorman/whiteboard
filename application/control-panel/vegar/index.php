@@ -30,34 +30,65 @@
 		<section class="cp-main">
 
 			<h2 class="grid g12 cp-site-title"><?php ControlPanel::getSiteTitle(); ?></h2>
-			<ul class="cp-latest-post grid g4">
+
+			<ul class="cp-latest-posts grid g4">
 				<li>
-					<a href="#"><h3></h3></a>
-					<p></p>
+					<a href="#"><h3>Dette er en bloggpost</h3></a>
+					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+					tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+					quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+					consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+					cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+					proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
 				</li>
 				<li>
-					<a href="#"><h3></h3></a>
-					<p></p>
+					<a href="#"><h3>Dette er en bloggpost</h3></a>
+					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+					tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+					quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+					consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+					cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+					proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
 				</li>
 				<li>
-					<a href="#"><h3></h3></a>
-					<p></p>
+					<a href="#"><h3>Dette er en bloggpost</h3></a>
+					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+					tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+					quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+					consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+					cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+					proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
 				</li>
 			</ul>
-			<ul class="cp-latest-post grid g4">
+
+
+			<ul class="cp-latest-comments grid g4">
 				<li>
-					<a href="#"><h3></h3></a>
-					<p></p>
+					<a href="#"><h3>Dette er en kommentar</h3></a>
+					<p>Duis aute irure dolor in reprehenderit in voluptate velit esse
+					cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+					proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
 				</li>
 				<li>
-					<a href="#"><h3></h3></a>
-					<p></p>
+					<a href="#"><h3>Dette er en kommentar</h3></a>
+					<p>Duis aute irure dolor in reprehenderit in voluptate velit esse
+					cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+					proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
 				</li>
 				<li>
-					<a href="#"><h3></h3></a>
-					<p></p>
+					<a href="#"><h3>Dette er en kommentar</h3></a>
+					<p>Duis aute irure dolor in reprehenderit in voluptate velit esse
+					cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+					proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+				</li>
+				<li>
+					<a href="#"><h3>Dette er en kommentar</h3></a>
+					<p>Duis aute irure dolor in reprehenderit in voluptate velit esse
+					cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+					proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
 				</li>
 			</ul>
+
 		</section>
 
 		

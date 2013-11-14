@@ -65,6 +65,19 @@ p {
 	padding-bottom: 1.5rem;
 }
 
+a {
+	text-decoration: none;
+	color: #0053d9;
+}
+
+a.cp-delete-link {
+	color: #cc0000;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
 /* Skjemakomponenter trenger litt ekstra overbevisning */
 
 input, button, textarea, select, option {
@@ -98,7 +111,7 @@ input[type="text"]:focus, textarea:focus {
 	justify-content: flex-start;
 	align-items: stretch;
 	width: 100%;
-	height: 100%;
+	min-height: 100%;
 }
 
 /* Sidebar til venstre */
@@ -108,6 +121,7 @@ input[type="text"]:focus, textarea:focus {
 	min-width: 180px;
 	max-width: 280px;
 	width: 20%;
+	min-height: 100%;
 	padding: 1rem;
 	-moz-box-sizing: border-box;
 	box-sizing: border-box;
@@ -135,6 +149,12 @@ input[type="text"]:focus, textarea:focus {
 	margin-bottom: 1.5rem;
 }
 
+.cp-site-title span {
+	color: rgba(14, 15, 20, 0.5);
+	font-size: 70%;
+	font-weight: 400;
+}
+
 .cp-logout {
 	margin-top: 3rem;
 }
@@ -158,6 +178,7 @@ input[type="submit"]:hover,
 input[type="button"]:hover,
 button:hover,
 .button:hover {
+	text-decoration: none;
 	background-color: #0058e5;
 }
 
@@ -225,6 +246,7 @@ nav ul li a {
 
 nav ul li a:hover {
 	background-color: rgba(0, 200, 255, 0.16);
+	text-decoration: none;
 }
 
 /*	Gi ikoner fra FontAwesome litt mer plass
@@ -386,40 +408,62 @@ i.fa {
 /*	Tabeller på oversiktsider
 */
 
+.cp-database-table {
+	margin-bottom: 1.5rem;
+}
+
 table {
     border-collapse: collapse;
-    border-spacing: 0;
+    width: 100%;
     text-align: center;
 }
 
-table td{
-	border-style: solid;
-	border-color: rgba(0,0,0,0.1);
-	border-width: 1px;
+tbody {
+
+}
+
+th {
+	font-weight: bold;
+}
+
+tr:hover {
+	background-color: #fffcb4;
+}
+
+tr:first-child:hover {
+	background-color: #fff;
+}
+
+td {
+	border: 1px solid #ccc;
 	padding: 0.5rem;
 }
-.checkbox{
-	padding: 0.5rem;
-	border-style: none;
+
+.noborder {
+	border: 0;
+}
+
+.cp-table-select, .cp-table-id {
+	width: 5%;
+}
+
+.cp-table-edit, .cp-table-delete, .cp-table-view {
+	width: 10%;
+}
+
+.cp-table-title {
+	width: 60%;
+	text-align: left;
 }
 
 
 
 /*	Forsiden  
 */
-.cp-latest-post li{
-	width: 100%;
-	height: 100%;
+
+.cp-latest-posts li, .cp-latest-comments li {
 	list-style: none;
 	background-color: rgba(0,0,0,0.06);
 	margin-bottom: 1.5rem;
-	padding: 2%;
-}
-
-.cp-latest-post li a{
-	text-decoration: none;
-	color:#000;	
-}
-.cp-latest-post li a:hover{
-	color: #0000ff;
+	padding: 1rem;
 }
