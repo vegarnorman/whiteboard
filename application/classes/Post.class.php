@@ -58,77 +58,83 @@
 			"post_published_by" => "",
 			"post_last_modified_by" => "",
 			"user_display_name" => "",
-			"user_last_modified_by_display_name" => ""
+			"user_last_modified_by_display_name" => "",
+			"post_tags" => [],
+			"post_categories" => []
 			];
 			
 			$step1 = $handle->operation("get", "Post", ["post_id" => $post_id]);
 
 			if (!$step1) {
 				$handle->rollback();
-				$step1->free();
-				return false;
-			}
-
-			else if ($step1 == 0) {
-				$handle->rollback();
-				return (int) 0;
+				return "Feil i steg 1";
 			}
 
 			else {
-				$post["post_title"] = $step1["post_title"];
-				$post["post_data"] = $step1["post_data"];
-				$step1->free();
+				foreach ($step1 as $row) {
+					$post["post_title"] = $row["post_title"];
+					$post["post_data"] = $row["post_data"];
+				}
 
 				$step2 = $handle->operation("get", "Post_Meta", ["post_id" => $post_id]);
 
 				if (!$step2) {
 					$handle->rollback();
-					return false;
-				}
-
-				else if ($step2 == 0) {
-					$handle->rollback();
-					return (int) 0;
+					return "Feil i steg 2";
 				}
 
 				else {
-					$post["post_published"] = $step2["post_published"];
-					$post["post_last_modified"] = $step2["post_last_modified"];
-					$post["post_published_by"] = $step2["post_published_by"];
-					$post["post_last_modified_by"] = $step2["post_last_modified_by"];
+					foreach ($step2 as $row) {
+						$post["post_published"] = $row["post_published"];
+						$post["post_last_modified"] = $row["post_last_modified"];
+						$post["post_published_by"] = $row["post_published_by"];
+						$post["post_last_modified_by"] = $row["post_last_modified_by"];
+					}
 
 					$step3 = $handle->operation("get", "Profile", ["user_id" => $post["post_published_by"]]);
 
 					if (!$step3) {
 						$handle->rollback();
-						return false;
-					}
-
-					else if ($step3 == 0) {
-						$handle->rollback();
-						return (int) 0;
+						return "Feil i steg 3";
 					}
 
 					else {
-						$post["user_display_name"] = $step3["user_display_name"];
+						foreach ($step3 as $row) {
+							$post["user_display_name"] = $row["user_display_name"];
+						}
 
 						$step4 = $handle->operation("get", "Profile", ["user_id" => $post["post_last_modified_by"]]);
 
 						if (!$step4) {
 							$handle->rollback();
-							return false;
-						}
-
-						else if ($step4 == 0) {
-							$handle->rollback();
-							return (int) 0;
+							return "Feil i steg 4";
 						}
 
 						else {
-							$post["user_last_modified_by_display_name"] = $step4["user_display_name"];
-							$handle->commit();
+							foreach ($step4 as $row) {
+								$post["user_last_modified_by_display_name"] = $row["user_display_name"];
+							}
+							
+							$step5 = $handle->getCategorization($post_id);
 
-							return $post;
+							if (!$step5) {
+								$handle->rollback();
+								return "Feil i steg 5";
+							}
+
+							else {
+
+								if (!is_string($step5)) {
+									foreach ($step5 as $row) {
+										$post["post_categories"][] = (int) $row["category_id"];
+									}
+								}
+
+								return $post;
+								
+
+							}
+							
 						}
 					}
 				}
