@@ -7,6 +7,10 @@
 <head>
 	<meta charset="utf-8" />
 
+		<script>
+			var edit = "";
+		</script>
+
 	<?php
 	
 		$cp = new ControlPanel();
@@ -15,41 +19,85 @@
 			isset($_POST["post_data"])	&&
 			isset($_POST["user_id"])) {
 
-			$new_post_data = [
-				"post_title" => (string) $_POST["post_title"],
-				"post_data" => (string) $_POST["post_data"],
-				"post_published" => (string) date("j-m-Y, G:i"),
-				"post_last_modified" => (string) date("j-m-Y, G:i"),
-				"post_published_by" => (int) $_POST["user_id"],
-				"post_last_modified_by" => (int) $_POST["user_id"],
-			];
+			if (isset($_POST["mode"]) && $_POST["mode"] == "edit" && isset($_POST["post_id"])) {
 
-			if (isset($_POST["post_tags"])) {
-				$post_tags = json_decode($_POST["post_tags"], true);
-				$new_post_data["post_tags"] = $post_tags;
+				$post_id = $_POST["post_id"];
+
+				$edit_post_data = [
+					"post_id" => (int) $_POST["post_id"],
+					"post_title" => (string) $_POST["post_title"],
+					"post_data" => (string) $_POST["post_data"],
+					"post_published" => (string) date("j-m-Y, G:i"),
+					"post_last_modified" => (string) date("j-m-Y, G:i"),
+					"post_published_by" => (int) $_POST["user_id"],
+					"post_last_modified_by" => (int) $_POST["user_id"],
+				];
+
+				if (isset($_POST["post_tags"])) {
+					$post_tags = json_decode($_POST["post_tags"], true);
+					$edit_post_data["post_tags"] = $post_tags;
+				}
+
+				if (isset($_POST["post_categories"])) {
+					$post_categories = json_decode($_POST["post_categories"], true);
+					$edit_post_data["post_categories"] = $post_categories;
+				}
+
+				$post = new Post($edit_post_data);
+
+				$result = $post->updatePost($cp->getDataHandler(), $post_id);
+
 			}
 
-			if (isset($_POST["post_categories"])) {
-				$post_categories = json_decode($_POST["post_categories"], true);
-				$new_post_data["post_categories"] = $post_categories;
+			else {
+
+				$new_post_data = [
+					"post_title" => (string) $_POST["post_title"],
+					"post_data" => (string) $_POST["post_data"],
+					"post_published" => (string) date("j-m-Y, G:i"),
+					"post_last_modified" => (string) date("j-m-Y, G:i"),
+					"post_published_by" => (int) $_POST["user_id"],
+					"post_last_modified_by" => (int) $_POST["user_id"],
+				];
+
+				if (isset($_POST["post_tags"])) {
+					$post_tags = json_decode($_POST["post_tags"], true);
+					$new_post_data["post_tags"] = $post_tags;
+				}
+
+				if (isset($_POST["post_categories"])) {
+					$post_categories = json_decode($_POST["post_categories"], true);
+					$new_post_data["post_categories"] = $post_categories;
+				}
+
+				$post = new Post($new_post_data);
+
+				$result = $post->insertPost($cp->getDataHandler());
+
 			}
-
-			$post = new Post($new_post_data);
-
-			$result = $post->insertPost($cp->getDataHandler());
 
 		}
 
-		else if (isset($_GET["edit"])) {
+		if (isset($_GET["edit"])) {
 			$id = (int) $_GET["edit"];
 
 			if (is_int($id)) {
-				$edit = json_encode(Post::getPost($cp->getDataHandler(), $id), JSON_UNESCAPED_UNICODE);
+				$edit = Post::getPost($cp->getDataHandler(), $id);
 
-				echo "<script>var edit = '" . $edit . "'; </script>";
+				if (is_array($edit)) {
+					$edit = json_encode($edit, JSON_UNESCAPED_UNICODE);
+					echo "<script>edit = '" . $edit . "'; </script>";
+					$editable = true;
+				}
+
+				else {
+					unset($edit);
+					$editable = false;
+				}
 			}
 		}
 
+		
 	?>
 
 	<link rel="stylesheet" href="css/master.css" />
@@ -81,9 +129,19 @@
 			<form name="post-editor" id="post-editor" action="editor.php" method="post">
 
 				<?php
-					if (!empty($edit)) {
-						echo '<input type="hidden" id="post_edit" name="post_edit" value="OK" />';
+					if (isset($editable) && $editable) {
+						echo '<input type="hidden" id="mode" name="mode" value="edit" />';
 					}
+
+					else {
+						echo '<input type="hidden" id="mode" name="mode" value="new" />';
+					}
+
+
+					if (isset($id)) {
+						echo '<input type="hidden" id="post_id" name="post_id" value="' . $id . '" />';
+					}
+
 				?>
 
 				<input type="hidden" name="user_id" id="user_id" value="1" />
@@ -101,6 +159,10 @@
 							else {
 								echo '<p class="cp-message success"><b>SUKSESS</b><br />Bloggposten ble publisert.</p>';
 							}
+						}
+
+						if (isset($_GET["edit"]) && isset($editable) && !$editable) {
+							echo '<p class="cp-message information"><b>Oops...</b><br />Det ser ut til at bloggposten du forsøkte å redigere ikke finnes i databasen. Kanskje du forsøkte å publisere en ny bloggpost? I så fall er det bare å skrive i vei. :)</p>';
 						}
 					?>
 
@@ -139,7 +201,15 @@
 
 					<?php $cp->categories(); ?>
 
-					<input type="submit" class="button bigger green" value="Publiser" id="editor_submit" />
+					<?php
+					if (isset($editable) && $editable) {
+						echo '<input type="submit" id="editor_submit" name="editor_submit" class="button green bigger" value="Oppdater" />';
+					}
+
+					else {
+						echo '<input type="submit" id="editor_submit" name="editor_submit" class="button green bigger" value="Publiser" />';
+					}
+				?>
 
 				</aside>
 

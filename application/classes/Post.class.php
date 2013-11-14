@@ -130,11 +130,24 @@
 									}
 								}
 
-								return $post;
-								
+								$step6 = $handle->operation("get", "Tag", ["post_id" => (int) $post_id]);
 
+								if (!$step6) {
+									$handle->rollback();
+									return "Feil i steg 6";
+								}
+
+								else {
+
+									foreach ($step6 as $row) {
+										$post["post_tags"][$row["tag_id"]] = $row["tag_name"];	
+									}
+
+									$handle->commit();
+									return $post;
+									
+								}
 							}
-							
 						}
 					}
 				}
@@ -178,33 +191,31 @@
 				}
 
 				else {
-					if (!isset($this->post_data)) {
+					if (!isset($this->post_tags) && !isset($this->post_categories)) {
 						$handle->commit();
 						return true;
 					}
 
 					else {
 
-						foreach ($this->post_tags as $tag) {
-							$step3_data = [
-								"tag_name" => $tag,
-								"post_id" => $this->post_id
-							];
+						if (!count($this->post_tags) == 0) {
 
-							$step3 = $handle->operation("insert", "Tag", $step3_data);
+							foreach ($this->post_tags as $tag) {
+								$step3_data = [
+									"tag_name" => $tag,
+									"post_id" => $this->post_id
+								];
 
-							if (!$step3) {
-								$handle->rollback();
-								return false;
+								$step3 = $handle->operation("insert", "Tag", $step3_data);
+
+								if (!$step3) {
+									$handle->rollback();
+									return false;
+								}
 							}
 						}
 
-						if (!isset($this->post_categories)) {
-							$handle->commit();
-							return true;
-						}
-
-						else {
+						if (!count($this->post_categories) == 0) {
 
 							foreach ($this->post_categories as $category) {
 								$step4_data = [
@@ -219,11 +230,10 @@
 									return false;
 								}
 							}
-
-							$handle->commit();
-							return true;
-
 						}
+
+						$handle->commit();
+						return true;
 					}
 				}
 			}
@@ -249,13 +259,13 @@
 
 
 
-		public function updatePost($handle) {
-			$handle->start();
+		public function updatePost($handle, $post_id) {
+			$handle->begin();
 
 			$step1_data = [
-				"post_id" => $this->post_id,
-				"post_title" => $this->post_title,
-				"post_data" => $this->post_data
+				"post_id" => (int) $this->post_id,
+				"post_title" => (string) $this->post_title,
+				"post_data" =>  (string) $this->post_data
 			];
 
 			$step1 = $handle->operation("update", "Post", $step1_data);
@@ -265,18 +275,14 @@
 				return false;
 			}
 
-			else if ($step1 == 0) {
-				$handle->rollback();
-				return (int) 0;
-			}
-
 			else {
+
 				$step2_data = [
-					"post_id" => $post_id,
-					"post_published" => $post_published,
-					"post_last_modified" => $post_last_modified,
-					"post_published_by" => $post_published_by,
-					"post_last_modified_by" => $post_last_modified_by
+					"post_id" =>  (int) $this->post_id,
+					"post_published" => (string) $this->post_published,
+					"post_last_modified" => (string) $this->post_last_modified,
+					"post_published_by" => (int) $this->post_published_by,
+					"post_last_modified_by" => (int) $this->post_last_modified_by
 				];
 
 				$step2 = $handle->operation("update", "Post_Meta", $step2_data);
@@ -286,14 +292,61 @@
 					return false;
 				}
 
-				else if ($step2 == 0) {
-					$handle->rollback();
-					return (int) 0;
-				}
-
 				else {
-					$handle->commit();
-					return true;
+					if (!isset($this->post_tags) && !isset($this->post_categories)) {
+						$handle->commit();
+						return true;
+					}
+
+					else {
+
+						if (!count($this->post_tags) == 0) {
+
+							$step3a = $handle->operation("delete", "Tag", ["post_id" => $this->post_id]);
+
+							if (!$step3a) {
+								$handle->rollback();
+								return false;
+							}
+
+							else {
+
+								foreach ($this->post_tags as $tag) {
+									$step3_data = [
+										"tag_name" => $tag,
+										"post_id" => $this->post_id
+									];
+
+									$step3 = $handle->operation("insert", "Tag", $step3_data);
+
+									if (!$step3) {
+										$handle->rollback();
+										return false;
+									}
+								}
+							}
+						}
+
+						if (!count($this->post_categories) == 0) {
+
+							foreach ($this->post_categories as $category) {
+								$step4_data = [
+									"post_id" => $this->post_id,
+									"category_id" => $category
+								];
+
+								$step4 = $handle->operation("insert", "Categorization", $step4_data);
+
+								if (!$step4) {
+									$handle->rollback();
+									return false;
+								}
+							}
+						}
+
+						$handle->commit();
+						return true;
+					}
 				}
 			}
 		}
