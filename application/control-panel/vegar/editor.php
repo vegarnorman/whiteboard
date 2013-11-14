@@ -7,16 +7,6 @@
 <head>
 	<meta charset="utf-8" />
 
-	<link rel="stylesheet" href="css/master.css" />
-	<script src="http://code.jquery.com/jquery-2.0.3.min.js"></script>
-	<script src="js/main.js"></script>
-	<script src="js/editor.js"></script>
-
-	<title>Skriv ny post (<?php ControlPanel::getSiteTitle(); ?>)</title>
-</head>
-
-<body>
-
 	<?php
 	
 		$cp = new ControlPanel();
@@ -50,7 +40,32 @@
 
 		}
 
+		else if (isset($_GET["edit"])) {
+			$id = (int) $_GET["edit"];
+
+			if (is_int($id)) {
+				$edit = json_encode(Post::getPost($cp->getDataHandler(), $id), JSON_UNESCAPED_UNICODE);
+
+				echo "<script>var edit = '" . $edit . "'; </script>";
+			}
+		}
+
 	?>
+
+	<link rel="stylesheet" href="css/master.css" />
+	<script src="http://code.jquery.com/jquery-2.0.3.min.js"></script>
+	<script src="js/main.js"></script>
+	<script src="js/editor.js"></script>
+
+	<title>Skriv ny post (<?php ControlPanel::getSiteTitle(); ?>)</title>
+
+		
+
+</head>
+
+<body>
+
+
 
 	<div class="cp-container">
 
@@ -64,6 +79,12 @@
 			<!--<h2 class="grid g12 cp-site-title">Skriv ny post</h2>-->
 
 			<form name="post-editor" id="post-editor" action="editor.php" method="post">
+
+				<?php
+					if (!empty($edit)) {
+						echo '<input type="hidden" id="post_edit" name="post_edit" value="OK" />';
+					}
+				?>
 
 				<input type="hidden" name="user_id" id="user_id" value="1" />
 				<input type="hidden" name="post_tags" id="post_tags" value="" />

@@ -1,5 +1,22 @@
 $(function() {
 
+	if (edit != "") {
+		var post = jQuery.parseJSON(edit);
+		console.log(post);
+
+		$("#post_title").val(post.post_title);
+		$("#post_data").val(post.post_data);
+
+		for (var i = 0; i < post.post_tags.length; i++) {
+			var tag = '<span class="tag">' + post.post_tags[i] + '</span>';
+			$(".post-editor-current-tags").append(tag);
+		}
+
+		for (var i = 0; i < post.post_categories.length; i++) {
+			$("input#" + post.post_categories[i]).attr("checked", true);
+		}
+	}
+
 	$(".post-editor-tag-add").click(function() {
 		if ($(".post-editor-new-tag").val() != "") {
 			var tag = "<span class=\"tag\">" + $(".post-editor-new-tag").val() + "</span>";
