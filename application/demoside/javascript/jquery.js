@@ -1,9 +1,23 @@
-//toggle text
 $(document).ready(function(){
 
-		$("#new-comment-button").click(function(){
-		$("#comment-box").slideToggle("2000");
+	//toggle between show/hide comment-box
+	$("#new-comment-button").click(function(){
+	$("#comment-box").slideToggle("2000");
 	});
+
+
+	//toggle between original/green color
+	$("#new-comment-button").click(function(){
+	$(this).toggleClass("change-to-green");
+	});
+
+	//toggle between original/red color
+	$("#report-comment-button").click(function(){
+	$(this).toggleClass("change-to-red");
+	});
+
+});
+
 
 
 
@@ -14,7 +28,7 @@ $(document).ready(function(){
 	// $("#item-button1").click(function(){
 	// 	if (item1.style.display=='block') {
 	// 		$("#arr1").attr('src','images/rightarrow.png');
-	// 	}
+	// 	
 	// 	else{
 	// 		$("#arr1").attr('src','images/downarrow.png');
 	// 	}
@@ -42,9 +56,6 @@ $(document).ready(function(){
 	// 	$("#item3").slideToggle("2000");
 	// });
 
-
-
-});
 
 
 

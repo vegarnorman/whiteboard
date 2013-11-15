@@ -12,3 +12,12 @@ window.onload = function highlight(){
 		}
 	}
 };
+
+
+// //hide comment form on load
+document.ready = function hideDiv(){
+	var div = document.getElementById('comment-box');
+	if (div !== null) {
+		div.style.display='none';
+	}
+};
