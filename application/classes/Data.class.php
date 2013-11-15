@@ -255,7 +255,7 @@
 
 						case "insert":
 							if ($this->db->insert_id == 0) {
-								return -99;
+								return (int) -99;
 							}
 
 							else {
@@ -267,7 +267,7 @@
 						case "update":
 
 							if ($this->db->affected_rows == 0) {
-								return (int) 0;
+								return (int) -99;
 							}
 
 							else {
@@ -280,7 +280,7 @@
 						case "delete":
 
 							if ($this->db->affected_rows == 0) {
-								return (int) 0;
+								return (int) -99;
 							}
 
 							else {
@@ -293,7 +293,7 @@
 						case "get":
 
 							if ($sql_result->num_rows == 0) {
-								return (int) 0;
+								return (int) -99;
 							}
 
 							else {
@@ -312,7 +312,7 @@
 						case "find":
 
 							if ($sql_result->num_rows == 0) {
-								return (int) 0;
+								return (int) -99;
 							}
 
 							else {
@@ -330,7 +330,7 @@
 						case "join":
 
 							if ($sql_result->num_rows == 0) {
-								return $query;
+								return (int) -99;
 							}
 
 							else {
@@ -423,6 +423,40 @@
 				}
 
 				return $return;
+			}
+		}
+
+		
+		// getPostIDs() - returnerer et array med ID'er basert på input
+		public function getPostIDs($number, $offset, $sorting) {
+			$return = [];
+
+			if ($offset != "none") {
+				$query = "select * from Post order by post_id {$sorting} limit {$offset}, {$number}";
+			}
+
+			else {
+				$query = "select * from Post order by post_id {$sorting} limit {$number}";
+			}
+
+			$result = $this->db->run($query);
+
+			if (!$result) {
+				return false;
+			}
+
+			else {
+				if ($result->num_rows == 0) {
+					return (int) -99;
+				}
+
+				else {
+					while ($row = $result->fetch_assoc()) {
+						$return[] = $row["post_id"];
+					}
+
+					return $return;
+				}
 			}
 		}
 
