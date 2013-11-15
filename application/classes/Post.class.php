@@ -47,21 +47,32 @@
 
 
 
-		public static function getPost($handle, $post_id) {
+		public static function getPost($handle, $post_id, $get_related_data) {
 			$handle->begin();
 
-			$post = [
-			"post_title" => "",
-			"post_data" => "",
-			"post_published" => "",
-			"post_last_modified" => "",
-			"post_published_by" => "",
-			"post_last_modified_by" => "",
-			"user_display_name" => "",
-			"user_last_modified_by_display_name" => "",
-			"post_tags" => [],
-			"post_categories" => []
-			];
+			if ($get_related_data == true) {
+				$post = [
+				"post_id" => $post_id,
+				"post_title" => "",
+				"post_data" => "",
+				"post_published" => "",
+				"post_last_modified" => "",
+				"post_published_by" => "",
+				"post_last_modified_by" => "",
+				"user_display_name" => "",
+				"user_last_modified_by_display_name" => "",
+				"post_tags" => [],
+				"post_categories" => []
+				];
+			}
+
+			else {
+				$post = [
+				"post_id" => $post_id,
+				"post_title" => "",
+				"post_data" => ""
+				];
+			}
 			
 			$step1 = $handle->operation("get", "Post", ["post_id" => $post_id]);
 
@@ -76,80 +87,91 @@
 					$post["post_data"] = $row["post_data"];
 				}
 
-				$step2 = $handle->operation("get", "Post_Meta", ["post_id" => $post_id]);
 
-				if (!$step2) {
-					$handle->rollback();
-					return "Feil i steg 2";
-				}
 
-				else {
-					foreach ($step2 as $row) {
-						$post["post_published"] = $row["post_published"];
-						$post["post_last_modified"] = $row["post_last_modified"];
-						$post["post_published_by"] = $row["post_published_by"];
-						$post["post_last_modified_by"] = $row["post_last_modified_by"];
-					}
 
-					$step3 = $handle->operation("get", "Profile", ["user_id" => $post["post_published_by"]]);
+				if ($get_related_data == true) {
 
-					if (!$step3) {
+					$step2 = $handle->operation("get", "Post_Meta", ["post_id" => $post_id]);
+
+					if (!$step2) {
 						$handle->rollback();
-						return "Feil i steg 3";
+						return "Feil i steg 2";
 					}
 
 					else {
-						foreach ($step3 as $row) {
-							$post["user_display_name"] = $row["user_display_name"];
+						foreach ($step2 as $row) {
+							$post["post_published"] = $row["post_published"];
+							$post["post_last_modified"] = $row["post_last_modified"];
+							$post["post_published_by"] = $row["post_published_by"];
+							$post["post_last_modified_by"] = $row["post_last_modified_by"];
 						}
 
-						$step4 = $handle->operation("get", "Profile", ["user_id" => $post["post_last_modified_by"]]);
+						$step3 = $handle->operation("get", "Profile", ["user_id" => $post["post_published_by"]]);
 
-						if (!$step4) {
+						if (!$step3) {
 							$handle->rollback();
-							return "Feil i steg 4";
+							return "Feil i steg 3";
 						}
 
 						else {
-							foreach ($step4 as $row) {
-								$post["user_last_modified_by_display_name"] = $row["user_display_name"];
+							foreach ($step3 as $row) {
+								$post["user_display_name"] = $row["user_display_name"];
 							}
-							
-							$step5 = $handle->getCategorization($post_id);
 
-							if (!$step5) {
+							$step4 = $handle->operation("get", "Profile", ["user_id" => $post["post_last_modified_by"]]);
+
+							if (!$step4) {
 								$handle->rollback();
-								return "Feil i steg 5";
+								return "Feil i steg 4";
 							}
 
 							else {
-
-								if (!is_string($step5)) {
-									foreach ($step5 as $row) {
-										$post["post_categories"][] = (int) $row["category_id"];
-									}
+								foreach ($step4 as $row) {
+									$post["user_last_modified_by_display_name"] = $row["user_display_name"];
 								}
+								
+								$step5 = $handle->getCategorization($post_id);
 
-								$step6 = $handle->operation("get", "Tag", ["post_id" => (int) $post_id]);
-
-								if (!$step6) {
+								if (!$step5) {
 									$handle->rollback();
-									return "Feil i steg 6";
+									return "Feil i steg 5";
 								}
 
 								else {
 
-									foreach ($step6 as $row) {
-										$post["post_tags"][$row["tag_id"]] = $row["tag_name"];	
+									if (!is_string($step5)) {
+										foreach ($step5 as $row) {
+											$post["post_categories"][] = (int) $row["category_id"];
+										}
 									}
 
-									$handle->commit();
-									return $post;
-									
+									$step6 = $handle->operation("get", "Tag", ["post_id" => (int) $post_id]);
+
+									if (!$step6) {
+										$handle->rollback();
+										return "Feil i steg 6";
+									}
+
+									else {
+
+										foreach ($step6 as $row) {
+											$post["post_tags"][$row["tag_id"]] = $row["tag_name"];	
+										}
+
+										$handle->commit();
+										return $post;
+										
+									}
 								}
 							}
 						}
 					}
+				}
+
+				else {
+					$handle->commit();
+					return $post;
 				}
 			}
 		}
@@ -272,7 +294,7 @@
 
 			if (!$step1) {
 				$handle->rollback();
-				return false;
+				return "Feil i steg 1";
 			}
 
 			else {
@@ -295,7 +317,7 @@
 				else {
 					if (!isset($this->post_tags) && !isset($this->post_categories)) {
 						$handle->commit();
-						return true;
+						return "Feil i steg 2";
 					}
 
 					else {
@@ -306,7 +328,7 @@
 
 							if (!$step3a) {
 								$handle->rollback();
-								return false;
+								return "Feil i steg 3a";
 							}
 
 							else {
@@ -321,7 +343,7 @@
 
 									if (!$step3) {
 										$handle->rollback();
-										return false;
+										return "Feil i steg 3";
 									}
 								}
 							}
@@ -339,7 +361,7 @@
 
 								if (!$step4) {
 									$handle->rollback();
-									return false;
+									return "Feil i steg 4";
 								}
 							}
 						}
