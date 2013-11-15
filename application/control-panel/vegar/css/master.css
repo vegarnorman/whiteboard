@@ -361,7 +361,7 @@ i.fa {
 }
 
 .tag:hover {
-	background-color: #0062ff;
+	background-color: #d00000;
 	cursor: pointer;
 }
 
@@ -380,6 +380,12 @@ i.fa {
 
 .post-editor-categories label:hover {
 	color: #0058e5;
+}
+
+.post-editor-helper-label {
+	color: rgba(14, 15, 20, 0.4);
+	font-size: 90%;
+	padding-bottom: 0.25rem;
 }
 
 
@@ -456,8 +462,6 @@ td {
 	text-align: left;
 }
 
-
-
 /*	Forsiden  
 */
 
@@ -466,4 +470,89 @@ td {
 	background-color: rgba(0,0,0,0.06);
 	margin-bottom: 1.5rem;
 	padding: 1rem;
+}
+
+
+/*		Mobilvisning
+==================*/
+
+@media only screen and (max-width: 768px) {
+
+	html {
+		font-size: 16px;
+	}
+
+	html, body {
+		overflow-x: hidden;
+	}
+
+	.cp-container {
+		display: block;
+	}
+
+	.cp-sidebar, .cp-main {
+		margin: 0;
+		flex: none;
+		display: block;
+		width: 100%;
+		min-width: 100%;
+		max-width: 100%;
+		box-sizing: border-box;
+	}
+
+	.cp-sidebar nav {
+		display: none;
+	}
+
+	nav ul li {
+		border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+		text-align: center;
+	}
+
+	nav ul li:last-child {
+		border-bottom: none;
+	}
+
+	nav ul li a {
+		font-size: 110%;
+		padding: 0.75rem;
+	}
+
+	.cp-mobile-menu-toggle {
+		display: block;
+		padding: 0;
+	}
+
+	.grid {
+		width: 100% !important;
+		margin-left: 0 !important;
+		margin-right: 0 !important;
+		float: none !important;
+	}
+
+	input[type="submit"], input[type="button"], button, a.button {
+		display: block;
+		max-width: 100%;
+	}
+
+	.post-editor-meta {
+		margin-top: 3rem;
+	}
+
+	.cp-message {
+		margin-bottom: 1.5rem;
+	}
+
+}
+
+@media only screen and (min-width: 769px) {
+
+	.cp-sidebar nav {
+		display: block !important;
+	}
+
+	.cp-mobile-menu-toggle {
+		display: none;
+	}
+
 }
