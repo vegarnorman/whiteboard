@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container"> <!-- wraps around grid -->
 	<section class="grid g12">
 		<article>	
 			<h2>En dag i mitt liv</h2>

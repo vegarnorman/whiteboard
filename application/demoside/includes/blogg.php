@@ -19,9 +19,10 @@
 		</article>
 		
 		<div class="article-footer">
-			Skrevet av: <b>Medel Svenson</b> 07.11.13 Kl.13:45<span><a href="index.php?page=bloggpost">Kommenter <img src="images/talk.png" alt="snakkeboble" height="10"></a></span>
+			<span><p>Skrevet av: <b>Medel Svenson</b> 07.11.13 Kl.13:45</p></span>
+			<span><a href="index.php?page=bloggpost">Kommentér<img src="images/talk.png" alt="snakkeboble" height="12"></a></span>
 		</div>
-
+		
 		<article>	
 			<h2>En tur på butikken</h2>
 		
@@ -37,10 +38,10 @@
 		</article>
 
 		<div class="article-footer">
-			Skrevet av: <b>Per I Hatten</b> 12.04.13 22:11<span><a href="index.php?page=bloggpost">Kommenter <img src="images/talk.png" alt="snakkeboble" height="10"></a></span>
+		<span><p>Skrevet av: <b>Per I Hatten</b> 12.04.13 22:11</p></span>	
+		<span><a href="index.php?page=bloggpost">Kommentér<img src="images/talk.png" alt="snakkeboble" height="12"></a></span>
 		</div>	
 		
-
 		<button class="next-button">Neste<img src="images/rightarrowwhite.png" alt="pil til høyre" height="21"></button>
 		<button class="last-button"><img src="images/leftarrowwhite.png" alt="pil til venstre" height="21">Forrige</button>
 

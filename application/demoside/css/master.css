@@ -14,7 +14,6 @@
 	list-style-type: none;
 }
 h1,h2,h3,h4,h5,h6{
-	display: block;
 	padding:10px 0; 
 	color: #456;
 }
@@ -31,6 +30,13 @@ body{
 	padding: 0;
 	background-color: #EEE;
 }
+
+/*
+ *  PAGE CONTENT
+ */
+
+
+
 .top-banner{
 	background-image: url(../images/banner.png);
 	width: 100%;
@@ -46,54 +52,17 @@ body{
 }
 .banner-content h1{
 	font-family: Gothic;
-	color: #934;
+	color: #333;
 	font-size: 64px;
-	text-transform: uppercase;
 	padding: 20px;
 }
+
 header{
 	width: 100%;
-	height: 30px;
+	height: 35px;
 	background-color: #456;
-	border-bottom: 12px solid #EEE;
-	/*box-shadow: 0px 2px 12px #888;*/
-}
-/*MENU*/
-
-nav{
-	width: 840px;
-	margin: 0 auto;
-	background-color: #777;
-	text-align: center;
-	line-height:1.6;
-	vertical-align: bottom;
-}
-nav ul{
-	margin: 0 auto;
-}
-nav li{
-	width: 20%;
-	display: inline;
-	float: left;
-	height: 30px;
-	background-color: #456;
-	margin: 0;
-	padding: 0;
-	/*border-right: 1px solid #345;*/
-}
-nav li:hover{
-	background-color: #567;
-}
-nav a{
-	font-size: 18px;
-	display: block;
-	text-decoration: none;
-	color: #EEE;
 }
 
-nav ul li img {
-margin-right:5px;
-}
 .main-container{
 	width: 840px;
 	height: auto;
@@ -106,6 +75,9 @@ margin-right:5px;
 	padding-top: 15px; 
 	color: #456;
 }
+/*
+ *       FOOTER
+*/
 footer{
 	height: auto;
 	min-height: 25px;
@@ -123,9 +95,63 @@ footer{
 	text-decoration: none;
 	color: #678;
 }
+
 /*
- *    BLOG and BLOGPOSTS
+ *          MENU / NAVIGATION
  */
+
+nav{
+	width: 840px;
+	margin: 0 auto;
+	background-color: #777;
+	text-align: center;
+	line-height:1.6;
+	vertical-align: bottom;
+}
+nav ul{
+	margin: 0 auto;
+}
+nav li{
+	width: 33.2%;
+	display: inline;
+	float: left;
+	height: 35px;
+	background-color: #456;
+	margin: 0;
+	padding: 0;
+	letter-spacing: 1.5px;
+	-o-transition: background-color .15s ease-in-out;
+	-ms-transition: background-color .15s ease-in-out;
+	-moz-transition: background-color .15s ease-in-out;
+	-webkit-transition: background-color .15s ease-in-out;
+	border-right: 1px solid #EEE;
+}
+nav li:last-child{
+	border-right:0;
+}
+nav li:hover{
+	background-color: #567;
+}
+nav a{
+	line-height: 2;
+	font-size: 18px;
+	font-weight: 300;
+	display: block;
+	text-decoration: none;
+	color: #EEE;
+}
+
+nav ul li img {
+margin-right:5px;
+}
+
+
+
+
+/*
+ *      BLOG and BLOGPOSTS
+ */
+
 .blogg-sidebar{
 	margin-left: 10px;
 	font-size: 13px;
@@ -153,14 +179,13 @@ footer{
 }
 
 .menu-item{
-	display:;
 	width: 280px;
 }
 .menu-item ul li{
 	padding:2px 4px;
 }
 /*
- *  ARTICLES
+ *  	ARTICLES
  */
 
 article{
@@ -171,34 +196,47 @@ article{
 	letter-spacing: 0.5px;
 	word-spacing: 1.2px;
 }
+.article-footer:before,.article-footer:after{
+	content: "";
+	display: table;
+}
+.article-footer:after{
+	clear: both;
+}
 .article-footer{
 	margin-bottom: 50px;
 	font-style: italic;
-	font-size: 10px;
+	font-size: 14px;
+}
+.article-footer span p{
+	display: inline-block;
+	width: auto;
+	margin: 0;
+	padding: 0;
+	color: #456;
 }
 .article-footer span a{
 	font-weight: 900;
 	text-decoration: none;
 	float: right;
 	color: #456;
-	border: 0;
 }
+.article-footer span a:hover{
+	color: #607085;
+}
+.article-footer img{
+	margin-left: 5px;
+}
+
+
+/*
+ *    BUTTONS
+ */
 .next-button{
 	float: right;
 	width: 90px;
 	margin-top: 50px;
-	background-color: #456;
-	color: #DDD;
 	line-height: 21px;
-	font-size: 12px;
-	-webkit-border-radius: 3px;
-	-moz-border-radius: 3px;
-	-ms-border-radius: 3px;
-	-o-border-radius: 3px;
-	padding-left: 8px;
-	border: 0px;
-	text-transform: uppercase;
-  	box-shadow: 0px 1px 4px #777;
 }
 
 .next-button img{
@@ -208,18 +246,9 @@ article{
 	float: left;
 	width: 90px;
 	margin-top: 50px;
-	background-color: #456;
-	color: #DDD;
 	line-height: 21px;
-	font-size: 12px;
-	-webkit-border-radius: 3px;
-	-moz-border-radius: 3px;
-	-ms-border-radius: 3px;
-	-o-border-radius: 3px;
 	padding-right: 8px;
-	border: 0px;
-	text-transform: uppercase;
-  	box-shadow: 0px 1px 4px #777;
+
 }
 .last-button img{
 	float: left;
@@ -228,6 +257,7 @@ article{
 /*
  *COMMENTS FROM USERS
  */
+
 sub{
 	display: block;
 	margin-top: 25px;
@@ -241,43 +271,34 @@ sub{
  */
 
 button{
+	background-color: #456;
+	font-size: 12px;
+	width: auto;
+ 	color: #fff;
 	outline: none;
 	margin: 10px 0;
+  	box-shadow: 0px 1px 4px #777;
+	text-transform: uppercase;
+	border: 0;
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	-ms-border-radius: 3px;
+	-o-border-radius: 3px;
+
 }
 button:hover{
 	cursor: pointer;
+ 	background-color: #506075;
 }
 #new-comment-button{
- 	background-color: #456;
- 	width: auto;
- 	color: #fff;
  	padding:5px;
-	-webkit-border-radius: 3px;
-	-moz-border-radius: 3px;
-	-ms-border-radius: 3px;
-	-o-border-radius: 3px;
-	border: 0px;
-	text-transform: uppercase;
-  	box-shadow: 0px 1px 4px #777;
  }
  #report-comment-button{
- 	background-color: #456;
- 	width: auto;
- 	color: #fff;
- 	padding:5px;
+  	padding:5px;
  	margin-left: 20px;
-	-webkit-border-radius: 3px;
-	-moz-border-radius: 3px;
-	-ms-border-radius: 3px;
-	-o-border-radius: 3px;
-	border: 0px;
-	text-transform: uppercase;
-  	box-shadow: 0px 1px 4px #777;
-	
  }
 
  #comment-box{
- 	/*display: none;*/
  	height: auto;
  	width: 535px;
  	margin: 10px 0 50px 0;
@@ -293,9 +314,6 @@ button:hover{
  	margin-top: 40px;
  }
 .comment-form {
-  	background-color: ;
-  	/*height: auto;
-  	min-height: 302px;*/
   	margin: 0 auto;
   	-webkit-border-radius: 3px;
 	-moz-border-radius: 3px;
@@ -312,9 +330,12 @@ button:hover{
     	font-size: 15px;
     	color: #556677;
     	border: 0px solid #111111;
-    	
+    	-webkit-border-radius: 2px;
+		-moz-border-radius: 2px;
+		-ms-border-radius: 2px;
+		-o-border-radius: 2px;
     	-webikit-box-shadow: -1px -1px 26px 4px #DDD inset;
-}
+	}
     	.comment-form input[type="text"]:focus {
 	    	outline-width: 0px;
 	    	border: 1px solid #AAA;
@@ -325,7 +346,6 @@ button:hover{
       		margin: 20px;
 	    	padding: 5px 0 0 5px;
 	    	border: 0;
-	    	/*-webkit-box-shadow: -1px -1px 26px 4px #DDD inset;*/
 	    	outline-width: 0px;
 	    	-webkit-border-radius: 2px;
 			-moz-border-radius: 2px;
@@ -367,6 +387,7 @@ button:hover{
 /*
  *      MISC
  */
+
 .stop:after{
 	clear:both;
 }
@@ -377,6 +398,17 @@ button:hover{
 	color:#456;
 	font-weight: 600;
 }
-
+.change-to-green{
+	background-color: #118444;
+}
+.change-to-green:hover{
+	background-color: #118444;
+}
+.change-to-red{
+	background-color: #993322;
+}
+.change-to-red:hover{
+	background-color: #993322;
+}
 
 

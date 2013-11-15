@@ -10,25 +10,28 @@
 	<script type="text/javascript" src="javascript/jquery.js"></script>
 	<script type="text/javascript" src="javascript/functions.js"></script>
 </head>
-<body id="1">
-	<div class="top-banner">
-		<div class="banner-content">
+<body>
+
+	<div  id="top-of-page" class="top-banner"> <!-- Sets the size of the top banner -->
+		<div class="banner-content"> 
 			<h1>Demosiden</h1>
 		</div>
-	</div>
+	</div> <!-- end of top banner div -->
 
+	<!-- Header including menu -->
 	<header>
 		<nav class="stop">
 			<ul>
 				<li class="menu"><a href="index.php?page=forside"><img src="images/home.png" alt="homeikon">Forside</a></li>
 				<li class="menu"><a href="index.php?page=blogg"><img src="images/blogg.png" alt="bloggikon">Blogg</a></li>
-				<li class="menu"><a href="index.php?page=artikler"><img src="images/artikkel.png" alt="article">Artikler</a></li>
 				<li class="menu"><a href="index.php?page=bloggpost"><img src="images/kommenter.png" alt="bloggpost">Bloggpost</a></li>
-				<li class="menu"><a href="index.php?page=kontakt"><img src="images/email.png" alt="kontakt">Kontakt</a></li> 
+				<!-- <li class="menu"><a href="index.php?page=artikler"><img src="images/artikkel.png" alt="article">Artikler</a></li> -->
+				<!-- <li class="menu"><a href="index.php?page=kontakt"><img src="images/email.png" alt="kontakt">Kontakt</a></li>  -->
 			</ul>
 		</nav>
 	</header>
-
+	
+ 	<!-- page content here -->
 	<div class="main-container">
 		<?php 
 			if (isset($_GET['page'])) {
@@ -52,8 +55,9 @@
 		?>
 	</div>
 
+
 	<footer>
-		<div class="footer-content">
+		<div class="footer-content">  <!-- Sets the footer content size  -->
 			<div class="container">
 				<section class="grid g4 no-gutters">
 					<p>Webprosjekt © 2013 G25</p>
@@ -64,7 +68,7 @@
 				</section>
 
 				<section class="grid g4 no-gutters">
-					<p><a href="#1">Top of page</a></p>
+					<p><a href="#top-of-page">Top of page</a></p>
 				</section>
 			</div><!-- end of container  -->
 		</div> <!-- end of footer-content -->
