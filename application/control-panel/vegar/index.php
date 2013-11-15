@@ -6,6 +6,7 @@
 
 <head>
 	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
 
 	<link rel="stylesheet" href="css/master.css" />
 	<script src="http://code.jquery.com/jquery-2.0.3.min.js"></script>
@@ -32,62 +33,38 @@
 			<h2 class="grid g12 cp-site-title"><?php ControlPanel::getSiteTitle(); ?></h2>
 
 			<ul class="cp-latest-posts grid g4">
-				<li>
-					<a href="#"><h3>Dette er en bloggpost</h3></a>
-					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-					tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-					quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-					consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-					cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-					proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-				</li>
-				<li>
-					<a href="#"><h3>Dette er en bloggpost</h3></a>
-					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-					tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-					quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-					consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-					cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-					proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-				</li>
-				<li>
-					<a href="#"><h3>Dette er en bloggpost</h3></a>
-					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-					tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-					quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-					consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-					cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-					proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-				</li>
+				
+				<?php
+					$posts = $cp->getSomePosts(5, "none", "desc");
+
+					if (!$posts) {
+						echo '<li>En feil oppsto.</li>';
+					}
+
+					else if ($posts == -99) {
+						echo '<li>Ingen poster funnet.</li>';
+					}
+
+					else {
+
+
+						foreach ($posts as $post) {
+
+							echo '<li>'.
+								 '<h3>' . $post["post_title"] . '</h3>'.
+								 '<p>' . $post["post_data"] . '</p>'.
+								 '<p><a href="editor.php?edit=' . $post["post_id"] . '">Rediger</a>'.
+								 '</li>';
+
+						}
+						
+					}
+				?>
+
 			</ul>
 
 
-			<ul class="cp-latest-comments grid g4">
-				<li>
-					<a href="#"><h3>Dette er en kommentar</h3></a>
-					<p>Duis aute irure dolor in reprehenderit in voluptate velit esse
-					cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-					proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-				</li>
-				<li>
-					<a href="#"><h3>Dette er en kommentar</h3></a>
-					<p>Duis aute irure dolor in reprehenderit in voluptate velit esse
-					cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-					proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-				</li>
-				<li>
-					<a href="#"><h3>Dette er en kommentar</h3></a>
-					<p>Duis aute irure dolor in reprehenderit in voluptate velit esse
-					cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-					proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-				</li>
-				<li>
-					<a href="#"><h3>Dette er en kommentar</h3></a>
-					<p>Duis aute irure dolor in reprehenderit in voluptate velit esse
-					cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-					proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-				</li>
-			</ul>
+			
 
 		</section>
 
