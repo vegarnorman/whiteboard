@@ -6,18 +6,28 @@
 
 <head>
 	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
 
-		<script>
-			var edit = "";
-		</script>
+	<link rel="stylesheet" href="css/master.css" />
+
+
+	<!-- Sett edit-variabel i Javascript. Må settes først for at editoren skal fungere! -->
+	<script>
+		var edit = "";
+	</script>
 
 	<?php
 	
 		$cp = new ControlPanel();
 
+		// Sjekker om en post har blitt innsendt via $_POST
+
 		if (isset($_POST["post_title"]) && 
 			isset($_POST["post_data"])	&&
 			isset($_POST["user_id"])) {
+
+
+			// Hvis ja, sjekk om bloggposten skal oppdateres.
 
 			if (isset($_POST["mode"]) && $_POST["mode"] == "edit" && isset($_POST["post_id"])) {
 
@@ -43,11 +53,22 @@
 					$edit_post_data["post_categories"] = $post_categories;
 				}
 
+				
+
 				$post = new Post($edit_post_data);
 
 				$result = $post->updatePost($cp->getDataHandler(), $post_id);
 
+				
+
+				if ($result != true) {
+					
+				}
+
 			}
+
+
+			// Hvis ikke posten skal oppdateres skal det legges inn en ny.
 
 			else {
 
@@ -78,11 +99,15 @@
 
 		}
 
+
+		// Dersom ingen data er lagt inn via $_POST og edit er satt via $_GET, skal data hentes fra databasen
+		// og fylles inn i skjemaet så brukeren kan redigere. 
+
 		if (isset($_GET["edit"])) {
 			$id = (int) $_GET["edit"];
 
 			if (is_int($id)) {
-				$edit = Post::getPost($cp->getDataHandler(), $id);
+				$edit = Post::getPost($cp->getDataHandler(), $id, true);
 
 				if (is_array($edit)) {
 					$edit = json_encode($edit, JSON_UNESCAPED_UNICODE);
@@ -100,7 +125,6 @@
 		
 	?>
 
-	<link rel="stylesheet" href="css/master.css" />
 	<script src="http://code.jquery.com/jquery-2.0.3.min.js"></script>
 	<script src="js/main.js"></script>
 	<script src="js/editor.js"></script>
@@ -129,6 +153,8 @@
 			<form name="post-editor" id="post-editor" action="editor.php" method="post">
 
 				<?php
+
+					// Bestem "modus" og legg modus inn i variabel
 					if (isset($editable) && $editable) {
 						echo '<input type="hidden" id="mode" name="mode" value="edit" />';
 					}
@@ -137,7 +163,7 @@
 						echo '<input type="hidden" id="mode" name="mode" value="new" />';
 					}
 
-
+					// Hvis en post_id har blitt passet inn skal den lagres i en variabel.
 					if (isset($id)) {
 						echo '<input type="hidden" id="post_id" name="post_id" value="' . $id . '" />';
 					}
@@ -151,16 +177,32 @@
 				<section class="grid g9 post-editor-main">
 
 					<?php
+
+						// Gi feilmelding basert på resultat av insert/update
 						if (isset($result)) {
-							if (!$result) {
-								echo '<p class="cp-message error"><b>FEIL</b><br />Det oppsto en feil ved posting.<br />' . var_dump($result) . '</p>';
+
+							if ($_POST["mode"] == "new") {
+								if (!$result) {
+									echo '<p class="cp-message error"><b>FEIL</b><br />Det oppsto en feil ved posting.' . var_dump($result) . '</p>';
+								}
+
+								else {
+									echo '<p class="cp-message success"><b>SUKSESS</b><br />Bloggposten ble publisert.</p>';
+								}
 							}
 
-							else {
-								echo '<p class="cp-message success"><b>SUKSESS</b><br />Bloggposten ble publisert.</p>';
+							else if ($_POST["mode"] == "edit") {
+								if (!$result) {
+									echo '<p class="cp-message error"><b>FEIL</b><br />Det oppsto en feil ved oppdatering av bloggpost.</p>';
+								}
+
+								else {
+									echo '<p class="cp-message success"><b>SUKSESS</b><br />Bloggposten ble oppdatert.</p>';
+								}
 							}
 						}
 
+						// Dersom en feilaktig ID er satt i $_GET
 						if (isset($_GET["edit"]) && isset($editable) && !$editable) {
 							echo '<p class="cp-message information"><b>Oops...</b><br />Det ser ut til at bloggposten du forsøkte å redigere ikke finnes i databasen. Kanskje du forsøkte å publisere en ny bloggpost? I så fall er det bare å skrive i vei. :)</p>';
 						}
@@ -169,13 +211,11 @@
 					<input class="post-editor-title" name="post_title" id="post_title" placeholder="Skriv inn tittel her" />
 
 					<div class="post-editor-toolbar">
+						<a href="#" id="editor-heading"><i class="fa fa-text-height"></i></a>
 						<a href="#" id="editor-bold"><i class="fa fa-bold"></i></a>
 						<a href="#" id="editor-italic"><i class="fa fa-italic"></i></a>
 						<a href="#" id="editor-underline"><i class="fa fa-underline"></i></a>
-						<a href="#" id="editor-unordered"><i class="fa fa-list-ul"></i></a>
-						<a href="#" id="editor-ordered"><i class="fa fa-list-ol"></i></a>
 						<a href="#" id="editor-link"><i class="fa fa-link"></i></a>
-						<a href="#" id="editor-image"><i class="fa fa-picture-o"></i></a>
 						<a href="#" id="editor-code"><i class="fa fa-code"></i></a>
 					</div>
 
@@ -187,6 +227,8 @@
 				<aside class="grid g3 post-editor-meta">
 
 					<h3>Emneord</h3>
+
+					<p class="post-editor-helper-label">Trykk på et emneord for å slette det</p>
 
 					<div id="post-editor-current-tags" class="post-editor-current-tags">
 						
@@ -202,6 +244,8 @@
 					<?php $cp->categories(); ?>
 
 					<?php
+
+					// Lag korrekt knapp basert på om modus er edit eller new
 					if (isset($editable) && $editable) {
 						echo '<input type="submit" id="editor_submit" name="editor_submit" class="button green bigger" value="Oppdater" />';
 					}
