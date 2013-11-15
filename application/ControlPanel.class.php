@@ -40,6 +40,33 @@
 			}
 		}
 
+
+		public function getSomePosts($number, $offset, $sorting) {
+			$posts = [];
+			$handle = $this->getDataHandler();
+			$ids = $handle->getPostIDs($number, $offset, $sorting);
+
+			if (!$ids) {
+				return false;
+			}
+
+			else {
+
+				if ($ids == -99) {
+					return (int) -99;
+				}
+
+				else {
+
+					foreach ($ids as $id) {
+						$post = Post::getPost($handle, $id, false);
+						$posts[] = $post;
+					}
+
+					return $posts;
+				}
+			}
+		}
 	}
 
  ?>
