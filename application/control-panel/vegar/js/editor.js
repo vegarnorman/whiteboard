@@ -41,6 +41,10 @@ $(function() {
 	    textArea.val(textArea.val().substring(0, start) + replacement + textArea.val().substring(end, len));
 	}
 
+	function makeHeading() {
+		wrapText("## ", "\n");
+	}
+
 	function makeBold() {
 		wrapText("**", "**");
 	}
@@ -66,6 +70,11 @@ $(function() {
 		wrapText("```\n", "\n```");
 	}
 
+
+	$("#editor-heading").click(function() {
+		makeHeading();
+		return false;
+	});
 
 	$("#editor-bold").click(function() {
 		makeBold();
@@ -129,7 +138,9 @@ $(function() {
 
 	});	
 
-
+	$(".cp-mobile-menu-toggle").click(function() {
+		$(".cp-sidebar nav").slideToggle(300);
+	});
 
 
 
