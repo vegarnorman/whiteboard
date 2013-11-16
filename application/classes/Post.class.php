@@ -263,24 +263,6 @@
 
 
 
-		public function deletePost($handle) {
-			$handle->begin();
-
-			$step1 = $handle->operation("delete", "Post", ["post_id" => $this->post_id]);
-
-			if (!$step1) {
-				$handle->rollback();
-				return false;
-			}
-
-			else {
-				$handle->commit();
-				return true;
-			}
-		}
-
-
-
 		public function updatePost($handle, $post_id) {
 			$handle->begin();
 
@@ -370,6 +352,23 @@
 						return true;
 					}
 				}
+			}
+		}
+
+
+		public static function deletePost($handle, $post_id) {
+			$handle->begin();
+
+			$step1 = $handle->operation("delete", "Post", ["post_id" => $post_id]);
+
+			if (!$step1) {
+				$handle->rollback();
+				return false;
+			}
+
+			else {
+				$handle->commit();
+				return true;
 			}
 		}
 	}
