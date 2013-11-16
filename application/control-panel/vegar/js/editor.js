@@ -1,6 +1,6 @@
 $(function() {
 
-	if (edit != "") {
+	if (edit !== "") {
 		var post = jQuery.parseJSON(edit);
 		console.log(post);
 
@@ -19,13 +19,13 @@ $(function() {
 
 
 	$(".post-editor-tag-add").click(function() {
-		if ($(".post-editor-new-tag").val() != "") {
+		if ($(".post-editor-new-tag").val() !== "") {
 			var tag = "<span class=\"tag\">" + $(".post-editor-new-tag").val() + "</span>";
 			$(".post-editor-current-tags").append(tag);
 			$(".post-editor-new-tag").val("");
 		}
 		return false;
-	})
+	});
 
 	$("body").on("click", ".tag", function() {
 		$(this).remove();
@@ -89,7 +89,7 @@ $(function() {
 	$("#editor-underline").click(function() {
 		makeUnderlined();
 		return false;
-	})
+	});
 
 	$("#editor-link").click(function() {
 		makeLink();
@@ -137,11 +137,5 @@ $(function() {
 		return true;
 
 	});	
-
-	$(".cp-mobile-menu-toggle").click(function() {
-		$(".cp-sidebar nav").slideToggle(300);
-	});
-
-
 
 });
