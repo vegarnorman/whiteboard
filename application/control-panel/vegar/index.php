@@ -32,7 +32,7 @@
 
 			<h2 class="grid g12 cp-site-title"><?php ControlPanel::getSiteTitle(); ?></h2>
 
-			<ul class="cp-latest-posts grid g4">
+			
 				
 				<?php
 					$posts = $cp->getSomePosts(5, "none", "desc");
@@ -47,21 +47,24 @@
 
 					else {
 
+						echo '<ul class="cp-latest-posts grid g4">';
 
 						foreach ($posts as $post) {
 
 							echo '<li>'.
 								 '<h3>' . $post["post_title"] . '</h3>'.
 								 '<p>' . $post["post_data"] . '</p>'.
-								 '<p><a href="editor.php?edit=' . $post["post_id"] . '">Rediger</a>'.
+								 '<p><a href="editor.php?edit=' . $post["post_id"] . '" class="button smaller">Rediger</a>'.
 								 '</li>';
 
 						}
+
+						echo '</ul>';
 						
 					}
 				?>
 
-			</ul>
+			
 
 
 			
