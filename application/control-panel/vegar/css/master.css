@@ -388,6 +388,10 @@ i.fa {
 	padding-bottom: 0.25rem;
 }
 
+#page_data {
+	margin-bottom: 1.5rem;
+}
+
 
 /*	Meldingsbokser
 */
@@ -491,13 +495,18 @@ td {
 	}
 
 	.cp-sidebar, .cp-main {
-		margin: 0;
+		margin-left: 0;
+		margin-right: 0;
 		flex: none;
 		display: block;
 		width: 100%;
 		min-width: 100%;
 		max-width: 100%;
 		box-sizing: border-box;
+	}
+
+	.cp-sidebar {
+		margin-bottom: 3rem;
 	}
 
 	.cp-sidebar nav {
