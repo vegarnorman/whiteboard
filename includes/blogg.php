@@ -20,7 +20,7 @@
 		
 		<div class="article-footer">
 			<span><p>Skrevet av: <b>Medel Svenson</b> 07.11.13 Kl.13:45</p></span>
-			<span><a href="index.php?page=bloggpost">Kommentér<img src="images/talk.png" alt="snakkeboble" height="12"></a></span>
+			<span><a href="index.php?page=bloggpost">Kommentér<img src="themes/default/images/talk.png" alt="snakkeboble" height="12"></a></span>
 		</div>
 		
 		<article>	
@@ -39,11 +39,11 @@
 
 		<div class="article-footer">
 		<span><p>Skrevet av: <b>Per I Hatten</b> 12.04.13 22:11</p></span>	
-		<span><a href="index.php?page=bloggpost">Kommentér<img src="images/talk.png" alt="snakkeboble" height="12"></a></span>
+		<span><a href="index.php?page=bloggpost">Kommentér<img src="themes/default/images/talk.png" alt="snakkeboble" height="12"></a></span>
 		</div>	
 		
-		<button class="next-button">Neste<img src="images/rightarrowwhite.png" alt="pil til høyre" height="21"></button>
-		<button class="last-button"><img src="images/leftarrowwhite.png" alt="pil til venstre" height="21">Forrige</button>
+		<button class="next-button">Neste<img src="themes/default/images/rightarrowwhite.png" alt="pil til høyre" height="21"></button>
+		<button class="last-button"><img src="themes/default/images/leftarrowwhite.png" alt="pil til venstre" height="21">Forrige</button>
 
 		<div class="stop"></div>
 

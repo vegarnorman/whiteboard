@@ -1,18 +1,6 @@
 <div class="container">
 	<section class="grid g12">
 		<article>
-
-			<?php
-			// require "../Site.class.php";
-	
-			// $mysqli= new mysqli("localhost","test","test","wpg25");			
-			?>
-
-
-
-
-
-
 			<h2>Forside</h2>
 			<p>
 				Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus imperdiet, felis nec imperdiet dapibus, lorem mi vehicula

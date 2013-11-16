@@ -1,14 +1,16 @@
+<?php require_once "application/Site.class.php"; ?>
+
 <!DOCTYPE html>
-<html>
+<html lang="no">
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=0.61, user-scalable=yes"> 
 	<meta name="keywords" content="cms, project">
 	<title>Demoside</title>
-	<link rel="stylesheet" type="text/css" href="css/master.css">
+	<link rel="stylesheet" type="text/css" href="themes/default/master.css">
 	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-	<script type="text/javascript" src="javascript/jquery.js"></script>
-	<script type="text/javascript" src="javascript/functions.js"></script>
+	<script type="text/javascript" src="themes/default/js/jquery.js"></script>
+	<script type="text/javascript" src="themes/default/js/functions.js"></script>
 </head>
 <body>
 
@@ -22,11 +24,11 @@
 	<header>
 		<nav class="stop">
 			<ul>
-				<li class="menu"><a href="index.php?page=forside"><img src="images/home.png" alt="homeikon">Forside</a></li>
-				<li class="menu"><a href="index.php?page=blogg"><img src="images/blogg.png" alt="bloggikon">Blogg</a></li>
-				<li class="menu"><a href="index.php?page=bloggpost"><img src="images/kommenter.png" alt="bloggpost">Bloggpost</a></li>
-				<!-- <li class="menu"><a href="index.php?page=artikler"><img src="images/artikkel.png" alt="article">Artikler</a></li> -->
-				<!-- <li class="menu"><a href="index.php?page=kontakt"><img src="images/email.png" alt="kontakt">Kontakt</a></li>  -->
+				<li class="menu"><a href="index.php?page=forside"><img src="themes/default/images/home.png" alt="homeikon">Forside</a></li>
+				<li class="menu"><a href="index.php?page=blogg"><img src="themes/default/images/blogg.png" alt="bloggikon">Blogg</a></li>
+				<li class="menu"><a href="index.php?page=bloggpost"><img src="themes/default/images/kommenter.png" alt="bloggpost">Bloggpost</a></li>
+				<!-- <li class="menu"><a href="index.php?page=artikler"><img src="themes/default/images/artikkel.png" alt="article">Artikler</a></li> -->
+				<!-- <li class="menu"><a href="index.php?page=kontakt"><img src="themes/default/images/email.png" alt="kontakt">Kontakt</a></li>  -->
 			</ul>
 		</nav>
 	</header>

@@ -2,11 +2,11 @@
  * PARTICIPANTS: VEGAR NORMAN, PER ERIK FINSTAD, HALVOR ØDEGÅRD, MARIUS BALTRAMAITIS;
  * ALL CONTENT OWNED BY GROUP 25
  */ 
-@import url("../css/grid.css");
+@import url("grid.css");
 
 /*RESPONSIVENESS*/
 
-@import url(../css/responsiveness.css);
+@import url("responsiveness.css");
 
 *{
 	margin: 0;
@@ -38,7 +38,7 @@ body{
 
 
 .top-banner{
-	background-image: url(../images/banner.png);
+	background-image: url("images/banner.png");
 	width: 100%;
 	background-repeat: no-repeat;
 	background-size: cover;

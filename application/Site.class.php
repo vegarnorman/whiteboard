@@ -1,7 +1,7 @@
 <?php 
 
 	require_once "Application.class.php";
-	require_once "Router.class.php";
+	require_once "classes/Router.class.php";
 
 	class Site extends Application {
 
