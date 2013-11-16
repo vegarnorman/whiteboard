@@ -110,7 +110,8 @@
 				$edit = Post::getPost($cp->getDataHandler(), $id, true);
 
 				if (is_array($edit)) {
-					$edit = json_encode($edit, JSON_UNESCAPED_UNICODE);
+					$edit = json_encode($edit, JSON_HEX_APOS, JSON_HEX_QUOT);
+					$edit = str_replace("\\", "\\\\", $edit);
 					echo "<script>edit = '" . $edit . "'; </script>";
 					$editable = true;
 				}
