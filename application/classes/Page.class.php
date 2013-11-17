@@ -67,6 +67,11 @@
 				return false;
 			}
 
+			else if ($step1 == -99) {
+				$handle->rollback();
+				return -99;
+			}
+
 			else {
 				foreach($step1 as $row) {
 					$page["page_title"] = $row["page_title"];
@@ -80,6 +85,11 @@
 					if (!$step2) {
 						$handle->rollback();
 						return false;
+					}
+
+					else if ($step2 == -99) {
+						$handle->rollback();
+						return -99;
 					}
 
 					else {
