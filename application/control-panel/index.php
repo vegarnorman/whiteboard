@@ -1,4 +1,4 @@
-<?php require_once "../../ControlPanel.class.php"; ?>
+<?php require_once "../ControlPanel.class.php"; ?>
 
 <!doctype html>
 
@@ -20,6 +20,8 @@
 	<?php
 		$cp = new ControlPanel();
 	?>
+
+	<?php if(SessionManager::checkSession()): ?>
 
 	<div class="cp-container">
 
@@ -64,16 +66,22 @@
 					}
 				?>
 
-			
-
-
-			
-
 		</section>
 
-		
-
 	</div>
+
+	<?php else: ?>
+
+	<script>
+		$("body").addClass("login-page");
+	</script>
+
+	<div class="cp-login">
+		<p class="cp-login-header">Stopp</p>
+		<p>Du må <a href="login.php">logge inn</a> for å få tilgang til denne siden. Vennligst logg inn og forsøk igjen.</p>
+	</div>
+
+	<?php endif; ?>
 
 </body>
 </html>

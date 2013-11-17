@@ -1,4 +1,4 @@
-<?php require_once "../../ControlPanel.class.php"; ?>
+<?php require_once "../ControlPanel.class.php"; ?>
 
 <!doctype html>
 
@@ -110,7 +110,7 @@
 
 <body>
 
-
+	<?php if(SessionManager::checkSession()): ?>
 
 	<div class="cp-container">
 
@@ -143,7 +143,7 @@
 
 				?>
 
-				<input type="hidden" name="user_id" id="user_id" value="1" />
+				<input type="hidden" name="user_id" id="user_id" value="<?php SessionManager::getUserID(); ?>" />
 				<input type="hidden" name="page_tags" id="page_tags" value="" />
 				<input type="hidden" name="page_categories" id="page_categories" value="" />
 
@@ -212,6 +212,19 @@
 		</section>
 
 	</div>
+
+	<?php else: ?>
+
+	<script>
+		$("body").addClass("login-page");
+	</script>
+
+	<div class="cp-login">
+		<p class="cp-login-header">Stopp</p>
+		<p>Du må <a href="login.php">logge inn</a> for å få tilgang til denne siden. Vennligst logg inn og forsøk igjen.</p>
+	</div>
+
+	<?php endif; ?>
 
 </body>
 </html>
