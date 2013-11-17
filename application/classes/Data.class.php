@@ -460,6 +460,31 @@
 			}
 		}
 
+
+		public function checkLogin($user, $hash) {
+			$query = "select * from User, Auth where User.user_id = Auth.user_id and User.user_name = '{$user}' and Auth.hash = '{$hash}'";
+
+			$result = $this->db->run($query);
+
+			if (!$result) {
+				return false;
+			}
+
+			else {
+				if ($result->num_rows != 1) {
+					return (string) "Ingen bruker funnet";
+				}
+
+				else {
+					while($row = $result->fetch_assoc()) {
+						$id = $row["user_id"];
+					}
+
+					return (int) $id;
+				}
+			}
+		}
+
 	}
 
 ?>
