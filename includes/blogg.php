@@ -3,7 +3,18 @@
 	
 	<section class="grid g8">
 
-		<article>	
+		<?php
+			require_once('application/Site.class.php');
+
+			$site = new Site();
+
+			$posts= $site->getAllPosts();
+
+			echo $posts;
+
+		?>
+
+		<!--article>	
 			<h2>En dag i mitt liv</h2>
 
 			<p>
@@ -40,7 +51,7 @@
 		<div class="article-footer">
 		<span><p>Skrevet av: <b>Per I Hatten</b> 12.04.13 22:11</p></span>	
 		<span><a href="index.php?page=bloggpost">Kommentér<img src="themes/default/images/talk.png" alt="snakkeboble" height="12"></a></span>
-		</div>	
+		</div-->	
 		
 		<button class="next-button">Neste<img src="themes/default/images/rightarrowwhite.png" alt="pil til høyre" height="21"></button>
 		<button class="last-button"><img src="themes/default/images/leftarrowwhite.png" alt="pil til venstre" height="21">Forrige</button>
