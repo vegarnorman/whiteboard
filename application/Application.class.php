@@ -11,6 +11,7 @@
 		private $data_handler;
 
 		public function __construct() {
+			date_default_timezone_set("Europe/Oslo");
 			$this->data_handler = new Data();
 		}
 
