@@ -6,8 +6,7 @@
 	class Database extends mysqli {
 
 		public function __construct() {
-			global $db0, $db1, $db2, $db3, $db4;
-			// $auth = new DatabaseAuth($db0);
+			global $db1, $db2, $db3, $db4;
 			$host = $db1;
 			$user = $db2;
 			$pass = $db3;
