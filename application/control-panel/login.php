@@ -106,6 +106,10 @@
 			Innloggingen var vellykket. Du vil automatisk bli sendt videre til kontrollpanelet. <a href="index.php">Trykk her hvis du ikke vil vente.</a>
 		</p>
 
+		<script>
+			redirect(5, "index.php");
+		</script>
+
 		<?php else: ?>
 
 		<form name="login" id="login" action="login.php" method="post">
