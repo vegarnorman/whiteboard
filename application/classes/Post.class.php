@@ -78,7 +78,12 @@
 
 			if (!$step1) {
 				$handle->rollback();
-				return "Feil i steg 1";
+				return false;
+			}
+
+			else if ($step1 == -99) {
+				$handle->rollback();
+				return -99;
 			}
 
 			else {
@@ -87,16 +92,18 @@
 					$post["post_data"] = $row["post_data"];
 				}
 
-
-
-
 				if ($get_related_data == true) {
 
 					$step2 = $handle->operation("get", "Post_Meta", ["post_id" => $post_id]);
 
 					if (!$step2) {
 						$handle->rollback();
-						return "Feil i steg 2";
+						return false;
+					}
+
+					else if ($step2 == -99) {
+						$handle->rollback();
+						return -99;
 					}
 
 					else {
@@ -111,7 +118,12 @@
 
 						if (!$step3) {
 							$handle->rollback();
-							return "Feil i steg 3";
+							return false;
+						}
+
+						else if ($step3 == -99) {
+							$handle->rollback();
+							return -99;
 						}
 
 						else {
@@ -123,7 +135,12 @@
 
 							if (!$step4) {
 								$handle->rollback();
-								return "Feil i steg 4";
+								return false;
+							}
+
+							else if ($step4 == -99) {
+								$handle->rollback();
+								return -99;
 							}
 
 							else {
@@ -135,7 +152,12 @@
 
 								if (!$step5) {
 									$handle->rollback();
-									return "Feil i steg 5";
+									return false;
+								}
+
+								else if ($step5 == -99) {
+									$handle->rollback();
+									return -99;
 								}
 
 								else {
@@ -150,7 +172,13 @@
 
 									if (!$step6) {
 										$handle->rollback();
-										return "Feil i steg 6";
+										return false;
+									}
+
+
+									else if ($step6 == -99) {
+										$handle->rollback();
+										return -99;
 									}
 
 									else {
