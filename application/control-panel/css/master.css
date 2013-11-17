@@ -86,15 +86,16 @@ input, button, textarea, select, option {
 	outline: 0;
 }
 
-input[type="text"], textarea {
+input[type="text"], input[type="password"], textarea {
 	border: 1px solid rgba(0, 0, 0, 0.2);
+	padding: 0.5rem;
 }
 
-input[type="text"]:hover, textarea:hover {
+input[type="text"]:hover, input[type="password"]:hover, textarea:hover {
 	border: 1px solid rgba(0, 0, 0, 0.3);
 }
 
-input[type="text"]:focus, textarea:focus {
+input[type="text"]:focus, input[type="password"]:focus, textarea:focus {
 	border: 1px solid #0058e5;
 	box-shadow: 0 0 5px #0058e5;
 }
@@ -164,7 +165,10 @@ input[type="submit"],
 input[type="button"],
 button,
 .button {
-	border: 0;
+	border-bottom-width: 3px;
+	border-bottom-style: solid;
+	border-bottom-color: #003b99;
+	border-radius: 5px;
 	display: inline-block;
 	padding: 0.5rem 1rem;
 	text-align: center;
@@ -186,11 +190,18 @@ input[type="submit"]:active,
 input[type="button"]:active,
 button:active,
 .button:active {
+	border-bottom: 0;
+	margin-top: 3px;
 	background-color: #004ecc;
 }
 
 .button.smaller {
 	font-size: 80%;
+	border-bottom-width: 2px;
+}
+
+.button.smaller:active {
+	margin-top: 2px;
 }
 
 .button.bigger {
@@ -203,6 +214,7 @@ button:active,
 
 .button.green {
 	background-color: #00992b;
+	border-bottom-color: #007321;
 }
 
 .button.green:hover {
@@ -215,6 +227,7 @@ button:active,
 
 .button.red {
 	background-color: #d00000;
+	border-bottom-color: #a00000;
 }
 
 .button.red:hover {
@@ -400,6 +413,7 @@ i.fa {
 	display: block;
 	padding: 1rem;
 	color: #ffffff;
+	margin-bottom: 1.5rem;
 }
 
 .cp-message.success {
@@ -474,6 +488,38 @@ td {
 	background-color: rgba(0,0,0,0.06);
 	margin-bottom: 1.5rem;
 	padding: 1rem;
+}
+
+
+/*	Innlogging
+*/
+
+.login-page {
+	background-color: #f0f0f0;
+}
+
+.cp-login {
+	display: block;
+	background-color: #fff;
+	width: 400px;
+	min-height: 20vh;
+	margin: 25vh auto 0 auto;
+	padding: 1.5rem;
+}
+
+.cp-login-header {
+	text-align: center;
+	font-size: 120%;
+	font-weight: 500;
+	border-bottom: 2px solid rgba(0, 0, 0, 0.1);
+	margin-bottom: 3rem;
+	padding-bottom: 0.75rem;
+}
+
+.cp-login input {
+	display: block;
+	box-sizing: border-box;
+	width: 100%;
 }
 
 
