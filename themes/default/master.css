@@ -290,6 +290,10 @@ button:hover{
 	cursor: pointer;
  	background-color: #506075;
 }
+button a{
+	text-decoration: none;
+	color: #FFF;
+}
 #new-comment-button{
  	padding:5px;
  }
@@ -410,5 +414,6 @@ button:hover{
 .change-to-red:hover{
 	background-color: #993322;
 }
+
 
 
