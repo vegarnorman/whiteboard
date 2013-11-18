@@ -37,7 +37,7 @@
 			
 				
 				<?php
-					$posts = $cp->getSomePosts(5, "none", "desc");
+					$posts = $cp->getSomeData("Post", 5, "none", "desc");
 
 					if (!$posts) {
 						echo '<li>En feil oppsto.</li>';
