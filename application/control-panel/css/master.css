@@ -475,11 +475,6 @@ td {
 	width: 10%;
 }
 
-.cp-table-title {
-	width: 60%;
-	text-align: left;
-}
-
 /*	Forsiden  
 */
 
@@ -522,6 +517,11 @@ td {
 	width: 100%;
 }
 
+
+.cp-view-pagination a {
+	display: inline-block;
+	padding: 0.5rem 1rem;
+}
 
 /*		Mobilvisning
 ==================*/
@@ -611,3 +611,11 @@ td {
 	}
 
 }
+
+
+/*	Hjelpeklasser
+*/
+
+.align-left { text-align: left; }
+.align-center { text-align: center; }
+.align-right { text-align: right; }
