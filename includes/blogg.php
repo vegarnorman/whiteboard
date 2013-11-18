@@ -7,8 +7,14 @@
 			require_once('application/Site.class.php');
 
 			$site = new Site();
-
-			$posts= $site->getAllPosts();
+			
+			if ($_GET['site'] < 0) {
+				$start = 0;
+			}
+			else{
+				$start = $_GET['site'];
+			}
+			$posts = $site->getAllPosts($start*3);
 
 			echo $posts;
 
@@ -52,14 +58,27 @@
 		<span><p>Skrevet av: <b>Per I Hatten</b> 12.04.13 22:11</p></span>	
 		<span><a href="index.php?page=bloggpost">Kommentér<img src="themes/default/images/talk.png" alt="snakkeboble" height="12"></a></span>
 		</div-->	
-		
-		<button class="next-button">Neste<img src="themes/default/images/rightarrowwhite.png" alt="pil til høyre" height="21"></button>
-		<button class="last-button"><img src="themes/default/images/leftarrowwhite.png" alt="pil til venstre" height="21">Forrige</button>
+	
 
+		<?php
+			//Hvis man viser siste poster vil ikke knappen for å trykke tilbake vises
+			if ($_GET['site'] > 0 ) {
+				echo "<button class='last-button'><img src='themes/default/images/leftarrowwhite.png' alt='pil til venstre' height='21'><a href='index.php?page=blogg&site=";echo $start-1;echo "'>Forrige</a></button>";
+
+			}
+			//Hvis første poster er skrevet ut vil ikke neste knappen vises
+			$ant = $site->countPosts()/3-1;
+			if ($_GET['site']<$ant) {
+
+				echo "<button class='next-button'><img src='themes/default/images/rightarrowwhite.png' alt='pil til høyre' height='21'><a href='index.php?page=blogg&site=";echo $start+=1;echo "'>Neste</a></button>";
+			}
+				
+		?>
+		<!-- <button class="next-button"><img src="themes/default/images/rightarrowwhite.png" alt="pil til høyre"   height="21"><a href="index.php?page=blogg&site=<?php// echo $start+=1;?>">Neste</a></button> -->
+		<!-- <button class="last-button"><img src="themes/default/images/leftarrowwhite.png"  alt="pil til venstre" height="21"><a href="index.php?page=blogg&site=<?php //echo $start-2;?>">Forrige</a></button> -->
 		<div class="stop"></div>
 
 	</section>
-
 			
 <!-- 
 		SIDEBAR 

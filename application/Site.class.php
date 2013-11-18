@@ -14,15 +14,14 @@
 		}
 
 
-		public function getAllPosts(){
+		public function getAllPosts($start){
 			$db = new Database();
-
 			if (!$db) {
 				echo "Feil under tilkobling til database";
 				die();
 			}
 			else{		
-				$sql="SELECT * FROM Post ORDER BY post_id DESC";
+				$sql="SELECT * FROM Post ORDER BY post_id DESC LIMIT $start,3 ";
 				$result = $db->query($sql);
 				if(!$result){
 					echo "Feil under henting fra server";
@@ -31,7 +30,7 @@
 					$output = "";
 					$nrOfRows = $result->num_rows;
 					if($nrOfRows == null){
-						echo "Det finnes foreløpig ingen poster";
+						echo "Det finnes foreløpig ikke så mange poster!";
 
 					}
 					else{
@@ -54,6 +53,27 @@
 				return $output;
 			}
 			
+		}
+
+		//Funsksjon som teller alle poster
+		public function countPosts() {
+			$db = new Database();
+			if (!$db) {
+				echo "Feil under tilkobling til database";
+				die();
+			}
+			else{		
+				$sql="SELECT * FROM Post";
+				$result = $db->query($sql);
+					if(!$result){
+						echo "Feil under henting fra server";
+					}
+					else{
+						$nrOfRows = $result->num_rows;
+					}
+				
+			}
+			return $nrOfRows;
 		}
 
 		//Funksjon som skriver hvem som har skrevet innlegget

@@ -9,8 +9,8 @@
 				risus adipiscing posuere sit amet vitae tellus. Quisque tristique mauris vitae consectetur cursus. Curabitur 
 				pharetra, massa et vulputate ullamcorper, dolor nibh cursus lectus, a fermentum lorem turpis viverra augue. 
 				Fusce a neque tellus. Cras tristique elementum nunc nec ullamcorper. Ut volutpat dui eget enim suscipit, in
-				 iaculis diam lacinia. Donec lectus ante, hendrerit eget magna at, ullamcorper ultricies sapien. In venenatis 
-				 quam lacus, in fringilla lorem cursus nec. Aliquam sed sapien accumsan, pretium felis posuere, iaculis leo.
+				iaculis diam lacinia. Donec lectus ante, hendrerit eget magna at, ullamcorper ultricies sapien. In venenatis 
+				quam lacus, in fringilla lorem cursus nec. Aliquam sed sapien accumsan, pretium felis posuere, iaculis leo.
 			</p>
 
 		</article>
