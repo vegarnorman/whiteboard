@@ -2,7 +2,7 @@
 
 	class Post {
 
-		private $post_id,
+		public 	$post_id,
 				$post_title,
 				$post_data,
 				$post_published,

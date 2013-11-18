@@ -428,15 +428,16 @@
 
 		
 		// getPostIDs() - returnerer et array med ID'er basert på input
-		public function getPostIDs($number, $offset, $sorting) {
+		public function getIDs($from, $number, $offset, $sorting) {
 			$return = [];
+			$primary_key = strtolower($from) . "_id";
 
 			if ($offset != "none") {
-				$query = "select * from Post order by post_id {$sorting} limit {$offset}, {$number}";
+				$query = "select * from {$from} order by {$primary_key} {$sorting} limit {$offset}, {$number}";
 			}
 
 			else {
-				$query = "select * from Post order by post_id {$sorting} limit {$number}";
+				$query = "select * from {$from} order by {$primary_key} {$sorting} limit {$number}";
 			}
 
 			$result = $this->db->run($query);
@@ -452,11 +453,31 @@
 
 				else {
 					while ($row = $result->fetch_assoc()) {
-						$return[] = $row["post_id"];
+						$return[] = $row[$primary_key];
 					}
 
 					return $return;
 				}
+			}
+		}
+
+
+
+		public function getNumberOfRows($from) {
+			$query = "select count(*) as number from {$from}";
+
+			$result = $this->db->run($query);
+
+			if (!$result) {
+				return false;
+			}
+
+			else {
+				while ($row = $result->fetch_assoc()) {
+					$return = $row["number"];
+				}
+
+				return $return;
 			}
 		}
 

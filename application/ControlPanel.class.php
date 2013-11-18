@@ -41,10 +41,10 @@
 		}
 
 
-		public function getSomePosts($number, $offset, $sorting) {
-			$posts = [];
+		public function getSomeData($what, $number, $offset, $sorting) {
+			$data = [];
 			$handle = $this->getDataHandler();
-			$ids = $handle->getPostIDs($number, $offset, $sorting);
+			$ids = $handle->getIDs($what, $number, $offset, $sorting);
 
 			if (!$ids) {
 				return false;
@@ -58,12 +58,32 @@
 
 				else {
 
-					foreach ($ids as $id) {
-						$post = Post::getPost($handle, $id, false);
-						$posts[] = $post;
+					if ($what == "Post") {
+						foreach ($ids as $id) {
+							$post = Post::getPost($handle, $id, false);
+							$data[] = $post;
+						}
 					}
 
-					return $posts;
+					else if ($what == "Page") {
+						foreach ($ids as $id) {
+							$page = Page::getPage($handle, $id, false);
+							$data[] = $page;
+						}
+					}
+
+					else if ($what == "Comment") {
+						foreach ($ids as $id) {
+							$comment = Comment::getComment($handle, $id, false);
+							$data[] = $comment;
+						}
+					}
+
+					else {
+						$data[] = "Kunne ikke finne data";
+					}
+
+					return $data;
 				}
 			}
 		}
