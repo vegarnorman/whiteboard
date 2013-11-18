@@ -5,12 +5,11 @@
 	</p>
 
 	<ul>
-		<li><a href="#"><i class="fa fa-book"></i> Bloggposter</a></li>
-		<li><a href="#"><i class="fa fa-copy"></i> Undersider</a></li>
-		<li><a href="#"><i class="fa fa-comments"></i> Kommentarer</a></li>
-		<li><a href="#"><i class="fa fa-folder-open"></i> Kategorier</a></li>
-		<li><a href="#"><i class="fa fa-tags"></i> Emneord</a></li>
-		<li><a href="#"><i class="fa fa-cogs"></i> Innstillinger</a></li>
+		<li><a href="view.php?mode=posts"><i class="fa fa-book"></i> Bloggposter</a></li>
+		<li><a href="view.php?mode=pages"><i class="fa fa-copy"></i> Undersider</a></li>
+		<li><a href="view.php?mode=comments"><i class="fa fa-comments"></i> Kommentarer</a></li>
+		<li><a href="categories.php"><i class="fa fa-folder-open"></i> Kategorier</a></li>
+		<li><a href="site-settings.php"><i class="fa fa-cogs"></i> Innstillinger</a></li>
 	</ul>
 
 	<p class="cp-logout">
