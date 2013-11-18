@@ -1,0 +1,42 @@
+@import url("../css/grid.css");
+
+@import url(..css/responsiveness.css);
+
+*{
+	margin: 0;
+	padding: 0;
+	list-style-type: none;
+}
+
+nav{
+	width: 100%;
+	background-color: #777;
+	text-align: center;
+	line-height:1.6;
+	vertical-align: bottom;
+}
+nav ul{
+	margin: 0 auto;
+}
+nav li{
+	width:15%;
+	height: 30px;
+	background-color: #456;
+	margin: 0;
+	padding: 0;
+	/*border-right: 1px solid #345;*/
+}
+nav li:hover{
+	background-color: #567;
+}
+nav a{
+	float:left;
+	font-size: 18px;
+	display: block;
+	text-decoration: none;
+	color: #EEE;
+}
+
+nav ul li img {
+margin-right:10px;
+}
