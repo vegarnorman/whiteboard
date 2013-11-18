@@ -25,7 +25,7 @@
 		<nav class="stop">
 			<ul>
 				<li class="menu"><a href="index.php?page=forside"><img src="themes/default/images/home.png" alt="homeikon">Forside</a></li>
-				<li class="menu"><a href="index.php?page=blogg"><img src="themes/default/images/blogg.png" alt="bloggikon">Blogg</a></li>
+				<li class="menu"><a href="index.php?page=blogg&site=0"><img src="themes/default/images/blogg.png" alt="bloggikon">Blogg</a></li>
 				<li class="menu"><a href="index.php?page=bloggpost"><img src="themes/default/images/kommenter.png" alt="bloggpost">Bloggpost</a></li>
 				<!-- <li class="menu"><a href="index.php?page=artikler"><img src="themes/default/images/artikkel.png" alt="article">Artikler</a></li> -->
 				<!-- <li class="menu"><a href="index.php?page=kontakt"><img src="themes/default/images/email.png" alt="kontakt">Kontakt</a></li>  -->
@@ -47,7 +47,7 @@
 					break;
 				
 					default: 
-					    include('includes/forside.php');
+					    include('404.html');
 					break;
 				}
 			}
