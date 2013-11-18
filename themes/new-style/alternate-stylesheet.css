@@ -234,20 +234,19 @@ button a{
 	-o-border-radius: 3px;
   	text-transform: uppercase;
 }
-  	.submit-comment-button:hover {
+.submit-comment-button:hover {
     	background-color: #586577; 
     	cursor: pointer;
-  	}
-  	.submit-comment-button:focus {
+}
+
+.submit-comment-button:focus {
     	outline: none;
     	-outline-radius: 2px;
     	-moz-outline-radius: 2px;
     	-webkit-outline-radius: 2px;
     	background-color: #C2C0BE; 
-  	}
-.committed-coments {
-margin-left:20px;
 }
+
 	
 footer{
 	height: auto;
