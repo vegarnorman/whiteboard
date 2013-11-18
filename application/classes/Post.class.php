@@ -384,10 +384,10 @@
 		}
 
 
-		public static function deletePost($handle, $post_id) {
+		public static function deletePost($handle, $id) {
 			$handle->begin();
 
-			$step1 = $handle->operation("delete", "Post", ["post_id" => $post_id]);
+			$step1 = $handle->operation("delete", "Post", ["post_id" => $id]);
 
 			if (!$step1) {
 				$handle->rollback();

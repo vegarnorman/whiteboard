@@ -196,10 +196,10 @@
 
 
 
-		public static function deletePage($handle, $page_id) {
+		public static function deletePage($handle, $id) {
 			$handle->begin();
 
-			$step1 = $handle->operation("delete", "Page", ["page_id" => $page_id]);
+			$step1 = $handle->operation("delete", "Page", ["page_id" => $id]);
 
 			if (!$step1) {
 				$handle->rollback();
