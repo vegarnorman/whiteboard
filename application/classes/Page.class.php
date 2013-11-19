@@ -206,6 +206,11 @@
 				return false;
 			}
 
+			else if ($step1 == (int) -99) {
+				$handle->rollback();
+				return (int) -99;
+			}
+
 			else {
 				$handle->commit();
 				return true;
