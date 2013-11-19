@@ -20,6 +20,8 @@ background-color:rgb(245,245,245);
 	list-style-type: none;
 }
 
+
+
 .top-banner{
 display:none;
 }
@@ -29,7 +31,7 @@ display:none;
 }
 
 nav{
-	width: 70%;
+	width: 80%;
 	line-height:1.6;
 	background-image: url("images/banner.jpg");
 	background-repeat: no-repeat;
@@ -82,7 +84,7 @@ font-family: 'Headland One', serif;
 border-color:#CACACA;
 }
 .main-container{
-	width: 70%;
+	width: 80%;
 	height: auto;
 	min-height: 800px;
 	margin-left:auto;
@@ -254,15 +256,12 @@ button a{
 
 	
 footer{
-	height: auto;
 	min-height: 25px;
 	text-align: center;	
 }
 .footer-content{
-	font-size: 12px;
 	width: 840px;
 	margin:0 auto;
-	padding: 10px;
 	color:#678;
 }
 .footer-content a{
