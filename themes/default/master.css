@@ -129,7 +129,8 @@ footer .grid.g4.no-gutters{
 
 nav{
 	width: 100%;
-	height: 45px;
+	height: auto;
+	min-height: 45px;
 	margin: 0 auto;
 	background-color:rgba(1,1,1,0.7);
 	text-align: center;
@@ -146,7 +147,7 @@ nav ul{
 
 }
 nav li{
-	width: 33.2%;/*33.2*/
+	width: 33.2%;
 	display: inline;
 	float: left;
 	height: 45px;
@@ -213,30 +214,6 @@ nav li:nth-child(3){
 	color:#456;
 }
 
-/*kan fjernes*/
-
-/*.menu-button{
-	display: block;
-	padding: 4px;
-	width: 100%;
-	margin-top: 50px;
-	color: #456;
-	text-transform: uppercase;
-	border-bottom: 1px solid #456;
-}
-.menu-button h3{
-	display: inline;
-}
-.menu-button img{
-	float: right;
-}
-
-.menu-item{
-	width: 280px;
-}
-.menu-item ul li{
-	padding:2px 4px;
-}*/
 /*
  *  	ARTICLES
  */
@@ -257,20 +234,20 @@ article{
 .article-footer{
 	margin-bottom: 50px;
 	font-style: italic;
-	font-size: 14px;
+	font-size: 13px;
+	color: #444040;
 }
 .article-footer span p{
 	display: inline-block;
 	width: auto;
 	margin: 0;
 	padding: 0;
-	color: #444040;
 }
 .article-footer span a{
-	font-weight: 900;
+	font-weight: 600;
 	text-decoration: none;
 	float: right;
-	color: #456;
+	color: #444040;
 }
 .article-footer span a:hover{
 	color: #607085;
