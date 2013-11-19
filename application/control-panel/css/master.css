@@ -356,7 +356,10 @@ i.fa {
 	font-size: 150%;
 	line-height: 0;
 	text-align: center;
-	
+}
+
+.post-editor-tag-add:focus {
+	margin-top: 0;
 }
 
 .post-editor-new-tag, .post-editor-tag-add {
@@ -596,6 +599,18 @@ td {
 
 	.cp-message {
 		margin-bottom: 1.5rem;
+	}
+
+	.cp-table-select {
+		display: none;
+	}
+
+	.cp-table-id {
+		width: 10%;
+	}
+
+	.cp-table-edit, .cp-table-delete, .cp-table-view {
+		width: 20%;
 	}
 
 }
