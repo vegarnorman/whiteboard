@@ -99,6 +99,7 @@ margin-right:auto;
 font-size: 3rem;
 font-family: 'Headland One', serif;
 border-color:#CACACA;
+color: #456;
 }
 .main-container{
 	width: 70%;
@@ -271,17 +272,18 @@ button a{
 }
 
 .committed-comments {
-padding-right:5%;
+padding-left:5%;
 }
 
 .article-footer {
-padding-right:5%;
+padding-left:5%;
 }
 
 	
 footer{
 	min-height: 25px;
-	text-align: center;	
+	text-align:center;
+	margin-top:2%;
 }
 .footer-content{
 	width: 840px;
