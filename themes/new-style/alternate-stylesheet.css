@@ -82,6 +82,7 @@ margin-right:auto;
 font-size: 3rem;
 font-family: 'Headland One', serif;
 border-color:#CACACA;
+color: #456;
 }
 .main-container{
 	width: 80%;
@@ -108,7 +109,6 @@ margin-top:5%;
 margin-left:auto;
 margin-right:auto;
 width:90%;
-
 }
 
 .next-button{
@@ -162,109 +162,119 @@ button a{
 #new-comment-button{
  	padding:5px;
  }
-#report-comment-button{
-  	padding:5px;
- 	margin-left: 20px;
- }
 
 #comment-box{
  	height: auto;
  	width: 535px;
  	margin: 10px 0 50px 0;
 	-webkit-border-radius: 2px;
-	-moz-border-radius: 2px;
-	-ms-border-radius: 2px;
-	-o-border-radius: 2px;
+-moz-border-radius: 2px;
+-ms-border-radius: 2px;
+-o-border-radius: 2px;
 
  }
  
 .comment-area{
- 	height: auto;
- 	margin-top: 40px;
- }
-.comment-form {
-  	margin: 0 auto;
-  	-webkit-border-radius: 3px;
-	-moz-border-radius: 3px;
-	-ms-border-radius: 3px;
-	-o-border-radius: 3px;
+height: auto;
+margin-top: 40px;
 }
- .comment-form input[type="text"] {
-    	height: 35px;
-    	width: 300px;
-    	background-color: #fff;
-    	margin-top: 20px;
-    	margin-left: 20px;
-    	padding-left: 5px;
-    	font-size: 15px;
-    	color: #556677;
-    	border: 0px solid #111111;
-    	-webkit-border-radius: 2px;
-		-moz-border-radius: 2px;
-		-ms-border-radius: 2px;
-		-o-border-radius: 2px;
-    	-webikit-box-shadow: -1px -1px 26px 4px #DDD inset;
-	}
-    	.comment-form input[type="text"]:focus {
-	    	outline-width: 0px;
-	    	border: 1px solid #AAA;
-      	}
-      	.comment-form textarea {
-      		width: 490px;
-      		font-size: 15px;
-      		margin: 20px;
-	    	padding: 5px 0 0 5px;
-	    	border: 0;
-	    	outline-width: 0px;
-	    	-webkit-border-radius: 2px;
-			-moz-border-radius: 2px;
-			-ms-border-radius: 2px;
-			-o-border-radius: 2px;
-      	}
-      	.comment-form textarea:focus{
-      		border: 1px solid #AAA;
-      	}
+
+.comment-form {
+margin: 0 auto;
+-webkit-border-radius: 3px;
+-moz-border-radius: 3px;
+-ms-border-radius: 3px;
+-o-border-radius: 3px;
+}
+
+.comment-form input[type="text"] {
+height: 35px;
+width: 300px;
+background-color: #fff;
+margin-top: 20px;
+margin-left: 20px;
+padding-left: 5px;
+font-size: 15px;
+color: #556677;
+border: 0px solid #111111;
+-webkit-border-radius: 2px;
+-moz-border-radius: 2px;
+-ms-border-radius: 2px;
+-o-border-radius: 2px;
+-webikit-box-shadow: -1px -1px 26px 4px #DDD inset;
+}
+
+.comment-form input[type="text"]:focus {
+outline-width: 0px;
+border: 1px solid #AAA;
+}
+
+.comment-form textarea {
+width: 490px;
+font-size: 15px;
+margin: 20px;
+padding: 5px 0 0 5px;
+border: 0;
+outline-width: 0px;
+-webkit-border-radius: 2px;
+-moz-border-radius: 2px;
+-ms-border-radius: 2px;
+-o-border-radius: 2px;
+}
+
+.comment-form textarea:focus{
+     border: 1px solid #AAA;
+}
 
 .submit-comment-button {
-	width: auto;
-	color: #EEE;
-  	background-color: #4D704D;
-  	border: 0px;
-  	margin:0 20px 0 0;
-	margin-left:30px;
-  	padding:5px;
-  	box-shadow: 0px 1px 4px #777;
-  	font-size: 12px;
-  	-webkit-border-radius: 3px;
-	-moz-border-radius: 3px;
-	-ms-border-radius: 3px;
-	-o-border-radius: 3px;
-  	text-transform: uppercase;
+width: auto;
+color: #EEE;
+background-color: #4D704D;
+border: 0px;
+margin:0 20px 0 0;
+margin-left:30px;
+padding:5px;
+box-shadow: 0px 1px 4px #777;
+font-size: 12px;
+-webkit-border-radius: 3px;
+-moz-border-radius: 3px;
+-ms-border-radius: 3px;
+-o-border-radius: 3px;
+text-transform: uppercase;
 }
 .submit-comment-button:hover {
-    	background-color: #586577; 
-    	cursor: pointer;
+background-color: #586577; 
+cursor: pointer;
 }
 
 .submit-comment-button:focus {
-    	outline: none;
-    	-outline-radius: 2px;
-    	-moz-outline-radius: 2px;
-    	-webkit-outline-radius: 2px;
-    	background-color: #C2C0BE; 
+outline: none;
+-outline-radius: 2px;
+-moz-outline-radius: 2px;
+-webkit-outline-radius: 2px;
+background-color: #C2C0BE; 
+}
+
+.committed-comments {
+padding-left:5%;
+}
+
+.article-footer {
+padding-left:5%;
 }
 
 	
 footer{
-	min-height: 25px;
-	text-align: center;	
+min-height: 25px;
+text-align: center;	
 }
 .footer-content{
-	width: 840px;
-	margin:0 auto;
-	color:#678;
+width: 840px;
+margin:0 auto;
+color:#678;
 }
 .footer-content a{
-	text-decoration: none;
-	color: #678;
+text-decoration: none;
+color: #678;
 }
+
