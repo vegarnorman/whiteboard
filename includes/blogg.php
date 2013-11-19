@@ -10,6 +10,7 @@
 					$db = $site->getDataHandler();
 					
 
+					//sørger for at databasekallet får riktig startverdi (id)
 					if ($_GET['site'] < 0) {
 						$start = 0;
 					}
@@ -17,45 +18,34 @@
 						$start = $_GET['site'];
 					}
 
-
-					$poster = $db->getIDs("Post", 3, ($start*3), "desc");
+					//henter id på postene som skal skrives ut.
+					$poster = $db->getIDs("Post", 5, ($start*5), "desc");
 
 					$post_data="";
 					
-					
+						//sjekk om det er igjen flere poster som kan skrives ut
 						if ($poster == -99) {
 							echo "Det finnes foreløpig ikke flere poster";
 						}
 						else{
 							foreach ($poster as $key) {
-							$post_data = Post::getPost($db, $key, false);
-							$site->printPost($post_data);
-							
+							$post_data = Post::getPost($db, $key, true);
+							$user = User::getUserName($db, $post_data['post_published_by']);
+							$site->printPost($post_data, $user);
 						}
 					}
-
-
+			
 				
 
 					// //Hvis man viser siste poster vil ikke knappen for å trykke tilbake vises
-					// if ($_GET['site'] > 0 ) {
-					// 	echo "<button class='last-button'><a href='index.php?page=blogg&amp;site=";echo $start-1;echo "'>Older posts</button>";
-
-					// }
-					// //Hvis første poster er skrevet ut vil ikke neste knappen vises
-
-					// if ($poster != -99) {
-					// 	echo "<button class='next-button'><a href='index.php?page=blogg&amp;site=";echo $start+=1;echo "'>Newer posts</a></button>";
-					// }
-
 					if ($_GET['site'] > 0 ) {
 						echo "<a class='nav-button last' href='index.php?page=blogg&amp;site=";
 						echo $start-1;
 						echo "'>Older posts</a>";
 
 					}
+					
 					//Hvis første poster er skrevet ut vil ikke neste knappen vises
-
 					if ($poster != -99) {
 						echo "<a class='nav-button next' href='index.php?page=blogg&amp;site=";
 						echo $start+=1;
@@ -68,7 +58,8 @@
 		<div class="stop"></div>
 
 			</section>
-					
+
+
 		<!-- 
 				SIDEBAR 
 							-->
