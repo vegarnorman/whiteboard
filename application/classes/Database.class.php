@@ -14,7 +14,7 @@
 
 			parent::__construct($host, $user, $pass, $use);
 			$this->set_charset("utf8");
-			$this->autocommit(FALSE);
+			$this->query("SET autocommit = 0");
 		}
 
 		public function connected() {

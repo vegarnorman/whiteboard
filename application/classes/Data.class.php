@@ -359,17 +359,17 @@
 
 		// begin() - starter en MySQL-transaksjon
 		public function begin() {
-			$this->db->begin_transaction();
+			$this->db->query("start transaction");
 		}
 
 		// commit() - committer en databasetransaksjon
 		public function commit() {
-			$this->db->commit();
+			$this->db->query("commit");
 		}
 
 		// rollback() - ruller tilbake en databasetransaksjon
 		public function rollback() {
-			$this->db->rollback();
+			$this->db->query("rollback");
 		}
 
 		// close() - stenger en databasetilkobling
