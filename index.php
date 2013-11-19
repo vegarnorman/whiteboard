@@ -16,7 +16,8 @@
 
 	<div  id="top-of-page" class="top-banner"> <!-- Sets the size of the top banner -->
 		<div class="banner-content"> 
-			<h1>Demosiden</h1>
+			<h1>waxoff</h1>	
+			<h4>content management system</h4>
 		</div>
 	</div> <!-- end of top banner div -->
 
@@ -24,9 +25,9 @@
 	<header>
 		<nav class="stop">
 			<ul>
-				<li class="menu"><a href="index.php?page=forside"><img src="themes/default/images/home.png" alt="homeikon">Forside</a></li>
-				<li class="menu"><a href="index.php?page=blogg&site=0"><img src="themes/default/images/blogg.png" alt="bloggikon">Blogg</a></li>
-				<li class="menu"><a href="index.php?page=bloggpost"><img src="themes/default/images/kommenter.png" alt="bloggpost">Bloggpost</a></li>
+				<li class="menu" id="img1"><a href="index.php?page=forside">Forside</a></li>
+				<li class="menu"><a href="index.php?page=blogg&site=0">Blogg</a></li>
+				<li class="menu"><a href="index.php?page=bloggpost">Bloggpost</a></li>
 				<!-- <li class="menu"><a href="index.php?page=artikler"><img src="themes/default/images/artikkel.png" alt="article">Artikler</a></li> -->
 				<!-- <li class="menu"><a href="index.php?page=kontakt"><img src="themes/default/images/email.png" alt="kontakt">Kontakt</a></li>  -->
 			</ul>
@@ -58,6 +59,7 @@
 	</div>
 
 
+	
 	<footer>
 		<div class="footer-content">  <!-- Sets the footer content size  -->
 			<div class="container">
@@ -66,7 +68,7 @@
 				</section>
 
 				<section class="grid g4 no-gutters">
-					<p>Awesome CMS</p>
+					<p>waxoff CMS</p>
 				</section>
 
 				<section class="grid g4 no-gutters">
