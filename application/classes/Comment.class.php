@@ -29,7 +29,7 @@
 		public static function getComment($handle, $id) {
 			$handle->begin();
 
-			$result = [
+			$result = array(
 				"comment_id" => $id,
 				"comment_title" => "",
 				"comment_data" => "",
@@ -39,9 +39,9 @@
 				"author_name" => "",
 				"author_email" => "",
 				"author_url" => ""
-			];
+			);
 
-			$step1 = $handle->operation("get", "Comment", ["comment_id" => $id]);
+			$step1 = $handle->operation("get", "Comment", array("comment_id" => $id));
 
 			if (!$step1) {
 				$handle->rollback();
@@ -60,7 +60,7 @@
 					$result["post_id"] = $row["post_id"];
 				}
 
-				$step2 = $handle->operation("get", "Comment_Meta", ["comment_id" => $id]);
+				$step2 = $handle->operation("get", "Comment_Meta", array("comment_id" => $id));
 
 				if (!$step2) {
 					$handle->rollback();
@@ -78,7 +78,7 @@
 						$result["comment_published_by"] = $row["comment_published_by"];
 					}
 
-					$step3 = $handle->operation("get", "Author", ["author_id" => $result["comment_published_by"]]);
+					$step3 = $handle->operation("get", "Author", array("author_id" => $result["comment_published_by"]));
 
 					if (!$step3) {
 						$handle->rollback();
@@ -108,11 +108,11 @@
 		public function insertComment($handle) {
 			$handle->begin();
 
-			$step1_data = [
+			$step1_data = array(
 				"comment_title" => $this->comment_title,
 				"comment_data" => $this->comment_data,
 				"post_id" => $this->post_id
-			];
+			);
 
 			$step1 = $handle->operation("insert", "Comment", $step1_data);
 
@@ -124,11 +124,11 @@
 			else {
 				$this->comment_id = $step1;
 
-				$step2_data = [
+				$step2_data = array(
 					"author_name" => $this->author_name,
 					"author_email" => $this->author_email,
 					"author_url" => $this->author_url
-				];
+				);
 
 				$step2 = $handle->operation("insert", "Author", $step2_data);
 
@@ -140,11 +140,11 @@
 				else {
 					$this->comment_published_by = $step2;
 
-					$step3_data = [
+					$step3_data = array(
 						"comment_id" => $this->comment_id,
 						"comment_published" => $this->comment_published,
 						"comment_published_by" => $this->comment_published_by
-					];
+					);
 
 					$step3 = $handle->operation("insert", "Comment_Meta", $step3_data);
 
@@ -166,7 +166,7 @@
 		public static function deleteComment($handle, $id) {
 			$handle->begin();
 
-			$step1 = $handle->operation("delete", "Comment", ["comment_id" => $id]);
+			$step1 = $handle->operation("delete", "Comment", array("comment_id" => $id));
 
 			if (!$step1) {
 				$handle->rollback();

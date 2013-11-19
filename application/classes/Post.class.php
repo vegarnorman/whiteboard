@@ -51,7 +51,7 @@
 			$handle->begin();
 
 			if ($get_related_data == true) {
-				$post = [
+				$post = array(
 				"post_id" => $post_id,
 				"post_title" => "",
 				"post_data" => "",
@@ -61,20 +61,20 @@
 				"post_last_modified_by" => "",
 				"user_display_name" => "",
 				"user_last_modified_by_display_name" => "",
-				"post_tags" => [],
-				"post_categories" => []
-				];
+				"post_tags" => array(),
+				"post_categories" => array()
+				);
 			}
 
 			else {
-				$post = [
+				$post = array(
 				"post_id" => $post_id,
 				"post_title" => "",
 				"post_data" => ""
-				];
+				);
 			}
 			
-			$step1 = $handle->operation("get", "Post", ["post_id" => $post_id]);
+			$step1 = $handle->operation("get", "Post", array("post_id" => $post_id));
 
 			if (!$step1) {
 				$handle->rollback();
@@ -94,7 +94,7 @@
 
 				if ($get_related_data == true) {
 
-					$step2 = $handle->operation("get", "Post_Meta", ["post_id" => $post_id]);
+					$step2 = $handle->operation("get", "Post_Meta", array("post_id" => $post_id));
 
 					if (!$step2) {
 						$handle->rollback();
@@ -114,7 +114,7 @@
 							$post["post_last_modified_by"] = $row["post_last_modified_by"];
 						}
 
-						$step3 = $handle->operation("get", "Profile", ["user_id" => $post["post_published_by"]]);
+						$step3 = $handle->operation("get", "Profile", array("user_id" => $post["post_published_by"]));
 
 						if (!$step3) {
 							$handle->rollback();
@@ -131,7 +131,7 @@
 								$post["user_display_name"] = $row["user_display_name"];
 							}
 
-							$step4 = $handle->operation("get", "Profile", ["user_id" => $post["post_last_modified_by"]]);
+							$step4 = $handle->operation("get", "Profile", array("user_id" => $post["post_last_modified_by"]));
 
 							if (!$step4) {
 								$handle->rollback();
@@ -168,7 +168,7 @@
 										}
 									}
 
-									$step6 = $handle->operation("get", "Tag", ["post_id" => (int) $post_id]);
+									$step6 = $handle->operation("get", "Tag", array("post_id" => (int) $post_id));
 
 									if (!$step6) {
 										$handle->rollback();
@@ -209,10 +209,10 @@
 		public function insertPost($handle) {
 			$handle->begin();
 
-			$step1_data = [
+			$step1_data = array(
 				"post_title" => (string) $this->post_title,
 				"post_data" =>  (string) $this->post_data
-			];
+			);
 
 			$step1 = $handle->operation("insert", "Post", $step1_data);
 
@@ -225,13 +225,13 @@
 
 				$this->post_id = $step1;
 
-				$step2_data = [
+				$step2_data = array(
 					"post_id" =>  (int) $this->post_id,
 					"post_published" => (string) $this->post_published,
 					"post_last_modified" => (string) $this->post_last_modified,
 					"post_published_by" => (int) $this->post_published_by,
 					"post_last_modified_by" => (int) $this->post_last_modified_by
-				];
+				);
 
 				$step2 = $handle->operation("insert", "Post_Meta", $step2_data);
 
@@ -251,10 +251,10 @@
 						if (!count($this->post_tags) == 0) {
 
 							foreach ($this->post_tags as $tag) {
-								$step3_data = [
+								$step3_data = array(
 									"tag_name" => $tag,
 									"post_id" => $this->post_id
-								];
+								);
 
 								$step3 = $handle->operation("insert", "Tag", $step3_data);
 
@@ -268,10 +268,10 @@
 						if (!count($this->post_categories) == 0) {
 
 							foreach ($this->post_categories as $category) {
-								$step4_data = [
+								$step4_data = array(
 									"post_id" => $this->post_id,
 									"category_id" => $category
-								];
+								);
 
 								$step4 = $handle->operation("insert", "Categorization", $step4_data);
 
@@ -294,11 +294,11 @@
 		public function updatePost($handle, $post_id) {
 			$handle->begin();
 
-			$step1_data = [
+			$step1_data = array(
 				"post_id" => (int) $this->post_id,
 				"post_title" => (string) $this->post_title,
 				"post_data" =>  (string) $this->post_data
-			];
+			);
 
 			$step1 = $handle->operation("update", "Post", $step1_data);
 
@@ -309,13 +309,13 @@
 
 			else {
 
-				$step2_data = [
+				$step2_data = array(
 					"post_id" =>  (int) $this->post_id,
 					"post_published" => (string) $this->post_published,
 					"post_last_modified" => (string) $this->post_last_modified,
 					"post_published_by" => (int) $this->post_published_by,
 					"post_last_modified_by" => (int) $this->post_last_modified_by
-				];
+				);
 
 				$step2 = $handle->operation("update", "Post_Meta", $step2_data);
 
@@ -334,7 +334,7 @@
 
 						if (!count($this->post_tags) == 0) {
 
-							$step3a = $handle->operation("delete", "Tag", ["post_id" => $this->post_id]);
+							$step3a = $handle->operation("delete", "Tag", array("post_id" => $this->post_id));
 
 							if (!$step3a) {
 								$handle->rollback();
@@ -344,10 +344,10 @@
 							else {
 
 								foreach ($this->post_tags as $tag) {
-									$step3_data = [
+									$step3_data = array(
 										"tag_name" => $tag,
 										"post_id" => $this->post_id
-									];
+									);
 
 									$step3 = $handle->operation("insert", "Tag", $step3_data);
 
@@ -362,10 +362,10 @@
 						if (!count($this->post_categories) == 0) {
 
 							foreach ($this->post_categories as $category) {
-								$step4_data = [
+								$step4_data = array(
 									"post_id" => $this->post_id,
 									"category_id" => $category
-								];
+								);
 
 								$step4 = $handle->operation("insert", "Categorization", $step4_data);
 
@@ -387,7 +387,7 @@
 		public static function deletePost($handle, $id) {
 			$handle->begin();
 
-			$step1 = $handle->operation("delete", "Post", ["post_id" => $id]);
+			$step1 = $handle->operation("delete", "Post", array("post_id" => $id));
 
 			if (!$step1) {
 				$handle->rollback();

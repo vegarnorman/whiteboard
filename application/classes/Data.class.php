@@ -297,7 +297,7 @@
 							}
 
 							else {
-								$return_data = [];
+								$return_data = array();
 
 								while ($row = $sql_result->fetch_assoc()) {
 									$return_data[] = $row;
@@ -316,7 +316,7 @@
 							}
 
 							else {
-								$return_data = [];
+								$return_data = array();
 
 								while ($row = $sql_result->fetch_assoc()) {
 									$return_data[] = $row;
@@ -334,7 +334,7 @@
 							}
 
 							else {
-								$return_data = [];
+								$return_data = array();
 
 								while ($row = $sql_result->fetch_assoc()) {
 									$return_data[] = $row;
@@ -386,7 +386,7 @@
 		public function getCategoryList() {
 			$query = "select * from Category";
 			$result = $this->db->run($query);
-			$return = [];
+			$return = array();
 
 			if(!$result) {
 				return false;
@@ -416,7 +416,7 @@
 			}
 
 			else {
-				$return = [];
+				$return = array();
 
 				while($row = $result->fetch_assoc()) {
 					$return[] = $row;
@@ -429,7 +429,7 @@
 		
 		// getPostIDs() - returnerer et array med ID'er basert på input
 		public function getIDs($from, $number, $offset, $sorting) {
-			$return = [];
+			$return = array();
 			$primary_key = strtolower($from) . "_id";
 
 			if ($offset != "none") {

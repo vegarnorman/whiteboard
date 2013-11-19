@@ -42,7 +42,7 @@
 
 
 		public function getSomeData($what, $number, $offset, $sorting) {
-			$data = [];
+			$data = array();
 			$handle = $this->getDataHandler();
 			$ids = $handle->getIDs($what, $number, $offset, $sorting);
 

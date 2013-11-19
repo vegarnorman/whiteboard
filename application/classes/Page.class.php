@@ -41,7 +41,7 @@
 			$handle->begin();
 
 			if ($get_related_data == true) {
-				$page = [
+				$page = array(
 					"page_id" => $page_id,
 					"page_title" => "",
 					"page_data" => "",
@@ -49,18 +49,18 @@
 					"page_last_modified" => "",
 					"page_published_by" => "",
 					"page_last_modified_by" => ""
-				];
+				);
 			}
 
 			else {
-				$page = [
+				$page = array(
 					"page_id" => $page_id,
 					"page_title" => "",
 					"page_data" => ""
-				];
+				);
 			}
 
-			$step1 = $handle->operation("get", "Page", ["page_id" => $page["page_id"]]);
+			$step1 = $handle->operation("get", "Page", array("page_id" => $page["page_id"]));
 
 			if (!$step1) {
 				$handle->rollback();
@@ -80,7 +80,7 @@
 
 				if ($get_related_data == true) {
 
-					$step2 = $handle->operation("get", "Page_Meta", ["page_id" => $page["page_id"]]);
+					$step2 = $handle->operation("get", "Page_Meta", array("page_id" => $page["page_id"]));
 
 					if (!$step2) {
 						$handle->rollback();
@@ -118,10 +118,10 @@
 		public function insertPage($handle) {
 			$handle->begin();
 
-			$step1_data = [
+			$step1_data = array(
 				"page_title" => $this->page_title,
 				"page_data" => $this->page_data
-			];
+			);
 
 			$step1 = $handle->operation("insert", "Page", $step1_data);
 
@@ -131,13 +131,13 @@
 			}
 
 			else {
-				$step2_data = [
+				$step2_data = array(
 					"page_id" => $step1,
 					"page_published" => $this->page_published,
 					"page_last_modified" => $this->page_last_modified,
 					"page_published_by" => $this->page_published_by,
 					"page_last_modified_by" => $this->page_last_modified_by
-				];
+				);
 
 				$step2 = $handle->operation("insert", "Page_Meta", $step2_data);
 
@@ -158,11 +158,11 @@
 		public function updatePage($handle) {
 			$handle->begin();
 
-			$step1_data = [
+			$step1_data = array(
 				"page_id" => $this->page_id,
 				"page_title" => $this->page_title,
 				"page_data" => $this->page_data
-			];
+			);
 
 			$step1 = $handle->operation("update", "Page", $step1_data);
 
@@ -172,13 +172,13 @@
 			}
 
 			else {
-				$step2_data = [
+				$step2_data = array(
 					"page_id" => $this->page_id,
 					"page_published" => $this->page_published,
 					"page_last_modified" => $this->page_last_modified,
 					"page_published_by" => $this->page_published_by,
 					"page_last_modified_by" => $this->page_last_modified_by
-				];
+				);
 
 				$step2 = $handle->operation("update", "Page", $step2_data);
 
@@ -199,7 +199,7 @@
 		public static function deletePage($handle, $id) {
 			$handle->begin();
 
-			$step1 = $handle->operation("delete", "Page", ["page_id" => $id]);
+			$step1 = $handle->operation("delete", "Page", array("page_id" => $id));
 
 			if (!$step1) {
 				$handle->rollback();
