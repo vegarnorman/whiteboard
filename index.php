@@ -13,29 +13,21 @@
 	<script type="text/javascript" src="themes/default/js/functions.js"></script>
 </head>
 <body>
-
-	<div  id="top-of-page" class="top-banner"> <!-- Sets the size of the top banner -->
-		<div class="banner-content"> 
-			<h1>waxoff</h1>	
-			<h4>content management system</h4>
-		</div>
-	</div> <!-- end of top banner div -->
-
-	<!-- Header including menu -->
-	<header>
-		<nav class="stop">
+	<header id="top-of-page">
+		<h1>waxoff</h1>	
+		<h4>content management system™</h4>
+		<nav>
 			<ul>
 				<li class="menu" id="img1"><a href="index.php?page=forside">Forside</a></li>
-				<li class="menu"><a href="index.php?page=blogg&site=0">Blogg</a></li>
+				<li class="menu"><a href="index.php?page=blogg&amp;site=0">Blogg</a></li>
 				<li class="menu"><a href="index.php?page=bloggpost">Bloggpost</a></li>
-				<!-- <li class="menu"><a href="index.php?page=artikler"><img src="themes/default/images/artikkel.png" alt="article">Artikler</a></li> -->
-				<!-- <li class="menu"><a href="index.php?page=kontakt"><img src="themes/default/images/email.png" alt="kontakt">Kontakt</a></li>  -->
 			</ul>
 		</nav>
 	</header>
 	
  	<!-- page content here -->
 	<div class="main-container">
+	
 		<?php 
 			if (isset($_GET['page'])) {
 				switch($_GET['page']){
@@ -56,26 +48,25 @@
 				include('includes/forside.php');
 			}
 		?>
+
 	</div>
 
 
 	
 	<footer>
-		<div class="footer-content">  <!-- Sets the footer content size  -->
-			<div class="container">
-				<section class="grid g4 no-gutters">
-					<p>Webprosjekt © 2013 G25</p>
-				</section>
+			<ul class="container">
+				<li class="grid g4 no-gutters">
+					Webprosjekt © 2013 G25
+				</li>
 
-				<section class="grid g4 no-gutters">
-					<p>waxoff CMS</p>
-				</section>
+				<li class="grid g4 no-gutters">
+					Waxoff CMS
+				</li>
 
-				<section class="grid g4 no-gutters">
-					<p><a href="#top-of-page">Top of page</a></p>
-				</section>
-			</div><!-- end of container  -->
-		</div> <!-- end of footer-content -->
+				<li class="grid g4 no-gutters">
+					<a href="#top-of-page">Top of page</a>
+				</li>
+			</ul><!-- end of container  -->
 	</footer>
 
 	
