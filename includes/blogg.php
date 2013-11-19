@@ -19,7 +19,7 @@
 			}
 
 
-			$poster = $db->getPostIDs(3, $start*3, "desc");
+			$poster = $db->getIDs("Post", 3, ($start*3), "desc");
 
 			$post_data="";
 			
