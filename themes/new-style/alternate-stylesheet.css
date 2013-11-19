@@ -270,6 +270,14 @@ button a{
     	background-color: #C2C0BE; 
 }
 
+.committed-comments {
+padding-left:5%;
+}
+
+.article-footer {
+padding-left:5%;
+}
+
 	
 footer{
 	min-height: 25px;
