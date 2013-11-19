@@ -96,10 +96,6 @@
 								echo '<p class="cp-message success grid g12"><b>SUKSESS</b><br />Oppføringen ble slettet fra databasen.</p>';
 							}
 
-							else if ($delete_result == (int) -99) {
-								echo '<p class="cp-message information grid g12"><b>UGYLDIG ID</b><br />Oppføringen kunne ikke slettes fra databasen fordi oppføringen ikke ble funnet.</p>';
-							}
-
 							else {
 								echo '<p class="cp-message error grid g12"><b>FEIL</b><br />Oppføringen kunne ikke slettes fra databasen. En feil oppsto i databaselaget.</p>';
 							}
@@ -190,10 +186,6 @@
 
 							if ($delete_result == true) {
 								echo '<p class="cp-message success grid g12"><b>SUKSESS</b><br />Oppføringen ble slettet fra databasen.</p>';
-							}
-
-							else if ($delete_result == (int) -99) {
-								echo '<p class="cp-message information grid g12"><b>UGYLDIG ID</b><br />Oppføringen kunne ikke slettes fra databasen fordi oppføringen ikke ble funnet.</p>';
 							}
 
 							else {
@@ -289,10 +281,6 @@
 
 							if ($delete_result == true) {
 								echo '<p class="cp-message success grid g12"><b>SUKSESS</b><br />Oppføringen ble slettet fra databasen.</p>';
-							}
-
-							else if ($delete_result == (int) -99) {
-								echo '<p class="cp-message information grid g12"><b>UGYLDIG ID</b><br />Oppføringen kunne ikke slettes fra databasen fordi oppføringen ikke ble funnet.</p>';
 							}
 
 							else {
