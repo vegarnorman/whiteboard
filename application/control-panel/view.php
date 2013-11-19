@@ -87,6 +87,24 @@
 				<?php 
 					$db = $cp->getDataHandler();
 					$rows = $db->getNumberOfRows("Post");
+
+					if (isset($_GET["delete"])) {
+						if ($_GET["delete"] > 0) {
+							$delete_result = Post::deletePost($db, $_GET["delete"]);
+
+							if ($delete_result == true) {
+								echo '<p class="cp-message success grid g12"><b>SUKSESS</b><br />Oppføringen ble slettet fra databasen.</p>';
+							}
+
+							else if ($delete_result == (int) -99) {
+								echo '<p class="cp-message information grid g12"><b>UGYLDIG ID</b><br />Oppføringen kunne ikke slettes fra databasen fordi oppføringen ikke ble funnet.</p>';
+							}
+
+							else {
+								echo '<p class="cp-message error grid g12"><b>FEIL</b><br />Oppføringen kunne ikke slettes fra databasen. En feil oppsto i databaselaget.</p>';
+							}
+						}
+					}
 					
 					if (($rows % 10) == 0) {
 						$max_page = (int) ($rows / 10);
@@ -128,7 +146,7 @@
 									echo '<td class="cp-table-id">' . $row["post_id"] . '</td>';
 									echo '<td class="align-left">' . $row["post_title"] . '</td>';
 									echo '<td class="cp-table-edit"><a href="editor.php?edit=' . $row["post_id"] . '">Endre</a></td>';
-									echo '<td class="cp-table-delete"><a href="view.php?mode=' . $mode . '&page=' . $page . '&delete=' . $row["post_id"] . '">Slett</a></td>';
+									echo '<td class="cp-table-delete"><a href="view.php?mode=' . $mode . '&p=' . $page . '&delete=' . $row["post_id"] . '">Slett</a></td>';
 									echo '<td class="cp-table-view"><a href="#">Se på</a></td>';
 								echo '</tr>';
 							}
@@ -165,6 +183,24 @@
 				<?php 
 					$db = $cp->getDataHandler();
 					$rows = $db->getNumberOfRows("Page");
+
+					if (isset($_GET["delete"])) {
+						if ($_GET["delete"] > 0) {
+							$delete_result = Post::deletePost($db, $_GET["delete"]);
+
+							if ($delete_result == true) {
+								echo '<p class="cp-message success grid g12"><b>SUKSESS</b><br />Oppføringen ble slettet fra databasen.</p>';
+							}
+
+							else if ($delete_result == (int) -99) {
+								echo '<p class="cp-message information grid g12"><b>UGYLDIG ID</b><br />Oppføringen kunne ikke slettes fra databasen fordi oppføringen ikke ble funnet.</p>';
+							}
+
+							else {
+								echo '<p class="cp-message error grid g12"><b>FEIL</b><br />Oppføringen kunne ikke slettes fra databasen. En feil oppsto i databaselaget.</p>';
+							}
+						}
+					}
 					
 					if (($rows % 10) == 0) {
 						$max_page = (int) ($rows / 10);
@@ -206,7 +242,7 @@
 									echo '<td class="cp-table-id">' . $row["page_id"] . '</td>';
 									echo '<td class="align-left">' . $row["page_title"] . '</td>';
 									echo '<td class="cp-table-edit"><a href="page-composer.php?edit=' . $row["page_id"] . '">Endre</a></td>';
-									echo '<td class="cp-table-delete"><a href="view.php?mode=' . $mode . '&page=' . $page . '&delete=' . $row["page_id"] . '">Slett</a></td>';
+									echo '<td class="cp-table-delete"><a href="view.php?mode=' . $mode . '&p=' . $page . '&delete=' . $row["page_id"] . '">Slett</a></td>';
 									echo '<td class="cp-table-view"><a href="#">Se på</a></td>';
 								echo '</tr>';
 							}
@@ -246,6 +282,24 @@
 				<?php 
 					$db = $cp->getDataHandler();
 					$rows = $db->getNumberOfRows("Comment");
+
+					if (isset($_GET["delete"])) {
+						if ($_GET["delete"] > 0) {
+							$delete_result = Post::deletePost($db, $_GET["delete"]);
+
+							if ($delete_result == true) {
+								echo '<p class="cp-message success grid g12"><b>SUKSESS</b><br />Oppføringen ble slettet fra databasen.</p>';
+							}
+
+							else if ($delete_result == (int) -99) {
+								echo '<p class="cp-message information grid g12"><b>UGYLDIG ID</b><br />Oppføringen kunne ikke slettes fra databasen fordi oppføringen ikke ble funnet.</p>';
+							}
+
+							else {
+								echo '<p class="cp-message error grid g12"><b>FEIL</b><br />Oppføringen kunne ikke slettes fra databasen. En feil oppsto i databaselaget.</p>';
+							}
+						}
+					}
 					
 					if (($rows % 10) == 0) {
 						$max_page = (int) ($rows / 10);
@@ -287,7 +341,7 @@
 									echo '<td class="cp-table-id">' . $row["comment_id"] . '</td>';
 									echo '<td class="cp-table-id">' . $row["author_name"] . '</td>';
 									echo '<td class="align-left">' . $row["comment_title"] . '</td>';
-									echo '<td class="cp-table-delete"><a href="view.php?mode=' . $mode . '&page=' . $page . '&delete=' . $row["comment_id"] . '">Slett</a></td>';
+									echo '<td class="cp-table-delete"><a href="view.php?mode=' . $mode . '&p=' . $page . '&delete=' . $row["comment_id"] . '">Slett</a></td>';
 									echo '<td class="cp-table-view"><a href="#">Se på</a></td>';
 								echo '</tr>';
 							}
