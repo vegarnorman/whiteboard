@@ -16,12 +16,12 @@
 				<ul class="container">
 					<li class="grid g4 ">
 						<h3>Moderne</h3>
-						<p>Shuriken er skrevet med HTML5, CSS, PHP og MySQL - teknologier som støttes av de aller fleste leverandører av webhosting.</p>
+						<p>Waxoff er skrevet med HTML5, CSS, PHP og MySQL - teknologier som støttes av de aller fleste leverandører av webhosting.</p>
 					</li>
 
 					<li class="grid g4 ">
 						<h3>Funksjonelt</h3>
-						<p>Shuriken tilpasser seg dine enheter. Enten du er på farten med mobil eller nettbrett, eller sitter hjemme med laptopen i fanget - Shuriken fungerer overalt.</p>
+						<p>Waxoff tilpasser seg dine enheter. Enten du er på farten med mobil eller nettbrett, eller sitter hjemme med laptopen i fanget - Waxoff fungerer overalt.</p>
 					</li>
 
 					<li class="grid g4">
