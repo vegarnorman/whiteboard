@@ -5,6 +5,11 @@
 @import url(http://fonts.googleapis.com/css?family=Jolly+Lodger);
 @import url(http://fonts.googleapis.com/css?family=Headland+One);
 
+header {
+margin-left:auto;
+margin-right:auto;
+}
+
 body {
 background-color:rgb(245,245,245);
 }
