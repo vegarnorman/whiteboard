@@ -2,11 +2,23 @@
  * PARTICIPANTS: VEGAR NORMAN, PER ERIK FINSTAD, HALVOR ØDEGÅRD, MARIUS BALTRAMAITIS;
  * ALL CONTENT OWNED BY GROUP 25
  */ 
+
+ /*
+  *  GRID
+  */
 @import url("grid.css");
 
-/*RESPONSIVENESS*/
 
+/*
+ * FONT
+ */
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:400italic,600italic,700italic,400,600,700);
+
+/*
+ *  RESPONSIVENESS
+ */
 @import url("responsiveness.css");
+
 
 *{
 	margin: 0;
@@ -14,16 +26,18 @@
 	list-style-type: none;
 }
 h1,h2,h3,h4,h5,h6{
-	padding:10px 0; 
-	color: #456;
+	padding:0;
+	margin: 0; 
+	color: #444040;
 }
 p{
 	margin-top: 14px;
 }
 html{
-	font-family:  Helvetica neue, arial, sans serif;
-	font-size: 17px;
-	line-height: 1.23456;
+	font-family: 'Open Sans', sans-serif;
+	font-size: 16px;
+	line-height: 1.546;
+	word-spacing: 1px;
 }
 body{
 	margin: 0;
@@ -38,29 +52,43 @@ body{
 
 
 .top-banner{
-	background-image: url("images/banner.png");
+	background-image: url("images/city3.jpg");
 	width: 100%;
 	background-repeat: no-repeat;
 	background-size: cover;
-	height:200px;
-	background-color: #DDD;
+	height:320px;
+	background-color: #666;
 }
 .banner-content{
-	width: 840px;
+	width: auto;
+	max-width: 840px;
 	height:auto;
 	margin: 0 auto;
 }
 .banner-content h1{
-	font-family: Gothic;
-	color: #333;
-	font-size: 64px;
-	padding: 20px;
+	display: inline-block;
+	color: #DDD;
+	font-size: 420%;
+	font-weight: 400;
+	padding: 30px 0 0 0;
+	letter-spacing: 19px;
+	text-shadow:1px 3px 3px #111111;
+
+}
+.banner-content h4{
+	width: 308px;
+	color: #BBB;
+	padding:6px 0;
+	font-weight: 400;
+	letter-spacing: 3.3px;
+	border-top: 6px solid #CCC;
+	text-shadow:1px 3px 3px #111111;
 }
 
 header{
 	width: 100%;
 	height: 35px;
-	background-color: #456;
+	background-color: #252525;
 }
 
 .main-container{
@@ -70,10 +98,11 @@ header{
 	margin: 0 auto;
 	padding: 15px;
 	clear: both;
+	box-shadow: 0px 0px  55px rgba(200,200,200, 0.2);
 }
 .main-container p{
 	padding-top: 15px; 
-	color: #456;
+	color: #444040;
 }
 /*
  *       FOOTER
@@ -81,7 +110,7 @@ header{
 footer{
 	height: auto;
 	min-height: 25px;
-	background-color: #345;
+	background-color: #252525;
 	text-align: center;	
 }
 .footer-content{
@@ -95,6 +124,9 @@ footer{
 	text-decoration: none;
 	color: #678;
 }
+footer .grid.g4.no-gutters{
+	 	width: 100%; 
+	 }
 
 /*
  *          MENU / NAVIGATION
@@ -103,10 +135,11 @@ footer{
 nav{
 	width: 840px;
 	margin: 0 auto;
-	background-color: #777;
+	/*background-color: #777;*/
 	text-align: center;
 	line-height:1.6;
 	vertical-align: bottom;
+	text-transform: uppercase;
 }
 nav ul{
 	margin: 0 auto;
@@ -116,21 +149,38 @@ nav li{
 	display: inline;
 	float: left;
 	height: 35px;
-	background-color: #456;
+	/*background-color: #345;*/
 	margin: 0;
 	padding: 0;
-	letter-spacing: 1.5px;
 	-o-transition: background-color .15s ease-in-out;
 	-ms-transition: background-color .15s ease-in-out;
 	-moz-transition: background-color .15s ease-in-out;
 	-webkit-transition: background-color .15s ease-in-out;
-	border-right: 1px solid #EEE;
+	border-right: 1px solid #444040;
 }
 nav li:last-child{
 	border-right:0;
 }
 nav li:hover{
-	background-color: #567;
+	background-color: #2E2E2E;
+}
+nav li:first-child{
+	background-image: url("images/home2.png");
+	background-size: 18px;
+	background-repeat: no-repeat;
+	background-position:80px;
+}
+nav li:nth-child(2){
+	background-image: url("images/blogg2.png");
+	background-size: 18px;
+	background-repeat: no-repeat;
+	background-position:88px;
+}
+nav li:nth-child(3){
+	background-image: url("images/bloggpost2.png");
+	background-size: 18px;
+	background-repeat: no-repeat;
+	background-position:66px;
 }
 nav a{
 	line-height: 2;
@@ -142,7 +192,7 @@ nav a{
 }
 
 nav ul li img {
-margin-right:5px;
+	margin-right:5px;
 }
 
 
@@ -153,14 +203,18 @@ margin-right:5px;
  */
 
 .blogg-sidebar{
-	margin-left: 10px;
+	margin:40px 0 0 10px;
 	font-size: 13px;
-	padding:40px;
-	-webkit-border-radius: 5px;
-	-moz-border-radius: 5px;
-	-ms-border-radius: 5px;
-	-o-border-radius: 5px;
+	padding:20px;
+	-webkit-border-radius: 2px;
+	-moz-border-radius: 2px;
+	-ms-border-radius: 2px;
+	-o-border-radius: 2px;
 	color: #456;
+	box-shadow: -2px 4px 3px #DDD;
+}
+.blogg-sidebar h3{
+	color:#456;
 }
 .menu-button{
 	display: block;
@@ -192,9 +246,7 @@ article{
 	margin-top: 30px;
 	margin-bottom: 3px;
 	padding-bottom: 30px;
-	border-bottom: 2px solid #456;
-	letter-spacing: 0.5px;
-	word-spacing: 1.2px;
+	border-bottom: 2px solid #444040;
 }
 .article-footer:before,.article-footer:after{
 	content: "";
@@ -213,7 +265,7 @@ article{
 	width: auto;
 	margin: 0;
 	padding: 0;
-	color: #456;
+	color: #444040;
 }
 .article-footer span a{
 	font-weight: 900;
@@ -233,26 +285,32 @@ article{
  *    BUTTONS
  */
 .next-button{
+	background-image:url("images/rightarrow.png");
+	background-position: right;
+	background-size: 18px;
+	background-repeat: no-repeat;
 	float: right;
-	width: 90px;
+	width: auto;
+	min-width: 130px;
+	padding: 0 20px;
 	margin-top: 50px;
 	line-height: 21px;
 }
 
-.next-button img{
-	float: right;
-}
 .last-button{
+	background-image:url("images/leftarrow.png");
+	background-position: left;
+	background-size: 18px;
+	background-repeat: no-repeat;
 	float: left;
-	width: 90px;
+	width: auto;
+	min-width: 130px;
 	margin-top: 50px;
 	line-height: 21px;
-	padding-right: 8px;
+	padding-left:10px;
 
 }
-.last-button img{
-	float: left;
-}
+
 
 /*
  *COMMENTS FROM USERS
@@ -271,37 +329,31 @@ sub{
  */
 
 button{
-	background-color: #456;
+	background-color:#EEE ;
 	font-size: 12px;
 	width: auto;
- 	color: #fff;
+ 	color: #444040;
 	outline: none;
 	margin: 10px 0;
-  	box-shadow: 0px 1px 4px #777;
 	text-transform: uppercase;
-	border: 0;
-	-webkit-border-radius: 3px;
-	-moz-border-radius: 3px;
-	-ms-border-radius: 3px;
-	-o-border-radius: 3px;
-
+	border: 1px solid #444040;
+	-webkit-border-radius: 2px;
+	-moz-border-radius: 2px;
+	-ms-border-radius: 2px;
+	-o-border-radius: 2px;
 }
 button:hover{
 	cursor: pointer;
- 	background-color: #506075;
+ 	background-color: #DBDBDB;
+ 	color:#444040;
 }
 button a{
 	text-decoration: none;
-	color: #FFF;
+	color:#444040;
 }
 #new-comment-button{
  	padding:5px;
  }
- #report-comment-button{
-  	padding:5px;
- 	margin-left: 20px;
- }
-
  #comment-box{
  	height: auto;
  	width: 535px;
@@ -310,8 +362,7 @@ button a{
 	-moz-border-radius: 2px;
 	-ms-border-radius: 2px;
 	-o-border-radius: 2px;
- 	border: 1px solid #AAA;
-
+ 	border: 1px solid #444040;
  }
  .comment-area{
  	height: auto;
@@ -333,7 +384,7 @@ button a{
     	padding-left: 5px;
     	font-size: 15px;
     	color: #556677;
-    	border: 0px solid #111111;
+    	border: 0px solid #444040;
     	-webkit-border-radius: 2px;
 		-moz-border-radius: 2px;
 		-ms-border-radius: 2px;
@@ -362,22 +413,21 @@ button a{
 
 .submit-comment-button {
 	width: auto;
-	color: #EEE;
-  	background-color: #456;
-  	border: 0px;
+	color: #444040;
+  	background-color: #EEE;
+  	border: 1px solid #444040;
   	margin:0 20px 0 0;
 	float: right;
   	padding:5px;
-  	box-shadow: 0px 1px 4px #777;
   	font-size: 12px;
-  	-webkit-border-radius: 3px;
-	-moz-border-radius: 3px;
-	-ms-border-radius: 3px;
-	-o-border-radius: 3px;
+  	-webkit-border-radius: 2px;
+	-moz-border-radius: 2px;
+	-ms-border-radius: 2px;
+	-o-border-radius: 2px;
   	text-transform: uppercase;
 }
   	.submit-comment-button:hover {
-    	background-color: #586577; 
+    	background-color: #DBDBDB; 
     	cursor: pointer;
   	}
   	.submit-comment-button:focus {
@@ -399,21 +449,14 @@ button a{
 	background-color: #EEE;
 }
 .highlight a{
-	color:#456;
+	color:#444040;
 	font-weight: 600;
 }
 .change-to-green{
-	background-color: #118444;
+	background-color: #B8D8C6;
 }
 .change-to-green:hover{
-	background-color: #118444;
+	background-color: ;
 }
-.change-to-red{
-	background-color: #993322;
-}
-.change-to-red:hover{
-	background-color: #993322;
-}
-
 
 
