@@ -23,6 +23,38 @@
 			return $this->hash;
 		}
 
+		public static function getUserName($handle, $id) {
+			$handle->begin();
+
+			$result = array(
+				"user_id" => $id,
+				"user_name" => "",
+				
+			);
+
+			$step1 = $handle->operation("get", "User", array("user_id" => $id));
+
+			if (!$step1) {
+				$handle->rollback();
+				return false;
+			}
+
+			else if ($step1 == (int) -99) {
+				$handle->rollback();
+				return (int) -99;
+			}
+
+			else {
+				foreach ($step1 as $row) {
+					$result["user_id"] = $row["user_id"];
+					$result["user_name"] = $row["user_name"];
+				}
+				
+			$handle->commit();
+			return $result;
+			}
+			
+		}
 	}
 
  ?>
