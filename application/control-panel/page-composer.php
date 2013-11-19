@@ -82,7 +82,7 @@
 				$edit = Page::getPage($cp->getDataHandler(), $id, false);
 
 				if (is_array($edit)) {
-					$edit = json_encode($edit, JSON_HEX_APOS, JSON_HEX_QUOT);
+					$edit = json_encode($edit, JSON_HEX_APOS | JSON_HEX_QUOT);
 					$edit = str_replace("\\", "\\\\", $edit);
 					echo "<script>edit = '" . $edit . "'; </script>";
 					$editable = true;

@@ -33,7 +33,7 @@
 
 				$post_id = $_POST["post_id"];
 
-				$edit_post_data = [
+				$edit_post_data = array(
 					"post_id" => (int) $_POST["post_id"],
 					"post_title" => (string) $_POST["post_title"],
 					"post_data" => (string) $_POST["post_data"],
@@ -41,7 +41,7 @@
 					"post_last_modified" => (string) date("j-m-Y, G:i"),
 					"post_published_by" => (int) $_POST["user_id"],
 					"post_last_modified_by" => (int) $_POST["user_id"],
-				];
+				);
 
 				if (isset($_POST["post_tags"])) {
 					$post_tags = json_decode($_POST["post_tags"], true);
@@ -72,14 +72,14 @@
 
 			else {
 
-				$new_post_data = [
+				$new_post_data = array(
 					"post_title" => (string) $_POST["post_title"],
 					"post_data" => (string) $_POST["post_data"],
 					"post_published" => (string) date("j-m-Y, G:i"),
 					"post_last_modified" => (string) date("j-m-Y, G:i"),
 					"post_published_by" => (int) $_POST["user_id"],
 					"post_last_modified_by" => (int) $_POST["user_id"],
-				];
+				);
 
 				if (isset($_POST["post_tags"])) {
 					$post_tags = json_decode($_POST["post_tags"], true);
@@ -110,7 +110,7 @@
 				$edit = Post::getPost($cp->getDataHandler(), $id, true);
 
 				if (is_array($edit)) {
-					$edit = json_encode($edit, JSON_HEX_APOS, JSON_HEX_QUOT);
+					$edit = json_encode($edit, JSON_HEX_APOS | JSON_HEX_QUOT);
 					$edit = str_replace("\\", "\\\\", $edit);
 					echo "<script>edit = '" . $edit . "'; </script>";
 					$editable = true;
