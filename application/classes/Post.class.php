@@ -168,7 +168,7 @@
 										}
 									}
 
-									$step6 = $handle->operation("get", "Tag", ["post_id" => (int) $post_id]);
+									$step6 = $handle->operation("get", "Tag", ["tag_name_id" => (int) $post_id]);
 
 									if (!$step6) {
 										$handle->rollback();
@@ -187,7 +187,7 @@
 											$post["post_tags"][$row["tag_id"]] = $row["tag_name"];	
 										}
 
-										$handle->commit();
+									 	$handle->commit();
 										return $post;
 										
 									}

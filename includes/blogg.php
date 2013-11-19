@@ -7,16 +7,87 @@
 			require_once('application/Site.class.php');
 
 			$site = new Site();
+			//instans av dataobjektet
+			$db = $site->getDataHandler();
 			
+
 			if ($_GET['site'] < 0) {
 				$start = 0;
 			}
 			else{
 				$start = $_GET['site'];
 			}
-			$posts = $site->getAllPosts($start*3);
 
-			echo $posts;
+
+			$poster = $db->getPostIDs(3, $start*3, "desc");
+
+			$post_data="";
+			
+			
+				if ($poster == -99) {
+					echo "Det finnes foreløpig ikke flere poster";
+				}
+				else{
+					foreach ($poster as $key) {
+					$post_data = Post::getPost($db, $key, false);
+					$site->printPost($post_data);
+					
+				}
+			}
+
+
+		
+
+			//Hvis man viser siste poster vil ikke knappen for å trykke tilbake vises
+			if ($_GET['site'] > 0 ) {
+				echo "<button class='last-button'><a href='index.php?page=blogg&site=";echo $start-1;echo "'>Older posts</button>";
+
+			}
+			//Hvis første poster er skrevet ut vil ikke neste knappen vises
+
+			if ($poster != -99) {
+				echo "<button class='next-button'><a href='index.php?page=blogg&site=";echo $start+=1;echo "'>Newer posts</a></button>";
+			}
+				
+		?>
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+		<!--?php
+			require_once('application/Site.class.php');
+
+			// $site = new Site();
+			
+			// if ($_GET['site'] < 0) {
+			// 	$start = 0;
+			// }
+			// else{
+			// 	$start = $_GET['site'];
+			// }
+			// $posts = $site->getAllPosts($start*3);
+
+			// echo $posts;
 
 		?>
 
@@ -60,7 +131,7 @@
 		</div-->	
 	
 
-		<?php
+		<!--?php
 			//Hvis man viser siste poster vil ikke knappen for å trykke tilbake vises
 			if ($_GET['site'] > 0 ) {
 				echo "<button class='last-button'><img src='themes/default/images/leftarrowwhite.png' alt='pil til venstre' height='21'><a href='index.php?page=blogg&site=";echo $start-1;echo "'>Forrige</a></button>";
@@ -94,11 +165,11 @@
 		
 		<div id="item1" class="menu-item">
 			<ul>
-				<li>Example 1</li>
-				<li>Example 2</li>
-				<li>Example 3</li>
-				<li>Example 4</li>
-				<li>Example 5</li>
+				<li>Oktober </li>
+				<li>September </li>
+				<li>August</li>
+				<li>Juli</li>
+				<li>Juni</li>
 			</ul>
 	</div>
 			
@@ -109,11 +180,11 @@
 		
 		<div id="item2" class="menu-item">
 			<ul>
-				<li>Bla</li>
-				<li>Bla</li>
-				<li>Bla</li>
-				<li>Bla</li>
-				<li>Bla</li>
+				<li>Fakta</li>
+				<li>Teknisk</li>
+				<li>Dagbok</li>
+				<li>Politikk</li>
+				<li>Fritid</li>
 			</ul>
 		</div>
 		
