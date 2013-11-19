@@ -18,8 +18,6 @@
 
 	<section class="grid g12">
 		<button id="new-comment-button">Ny kommentar</button>	
-		<button id="report-comment-button">Rapportér kommentar</button>	
-
 		<div id="comment-box">
 			<div class="comment-form" >	
 				<form action="#" name ="kommentar">
