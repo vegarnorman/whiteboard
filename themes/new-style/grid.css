@@ -1,0 +1,24 @@
+
+
+.container {
+
+}
+
+.container:before, .container:after {
+content: " ";
+display: table; 
+}
+
+.container:after {
+clear: both; 
+}
+
+
+.grid.g8 {
+font-family: 'Headland One', serif;
+}
+
+.blogg-sidebar{
+display:none;
+}
+

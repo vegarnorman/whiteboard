@@ -23,7 +23,7 @@
 				<li class="menu"><a href="index3.php?page=forside"><img src="images/home.png" alt="homeikon">Forside</a></li>
 				<li class="menu"><a href="index3.php?page=blogg"><img src="images/blogg.png" alt="bloggikon">Blogg</a></li>
 				<li class="menu"><a href="index3.php?page=artikler"><img src="images/artikkel.png" alt="article">Artikler</a></li>
-				<li class="menu"><a href="index3.php?page=bloggpost"><img src="images/kommenter.png" alt="bloggpost">Bloggpost</a></li>
+				<li class="menu"><a href="index3.php?page=blogg&amp;site=0"><img src="images/kommenter.png" alt="bloggpost">Bloggpost</a></li>
 				<li class="menu"><a href="index3.php?page=kontakt"><img src="images/email.png" alt="kontakt">Kontakt</a></li> 
 			</ul>
 		</nav>

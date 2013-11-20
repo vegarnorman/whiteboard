@@ -1,6 +1,5 @@
-@import url("../css/grid.css");
+@import url("grid.css");
 
-@import url(..css/responsiveness.css);
 
 @import url(http://fonts.googleapis.com/css?family=Jolly+Lodger);
 @import url(http://fonts.googleapis.com/css?family=Headland+One);
@@ -21,6 +20,7 @@ background-color:rgb(245,245,245);
 	padding: 0%;
 	list-style-type: none;
 }
+
 
 
 
@@ -127,24 +127,18 @@ border-bottom: 1px solid;
 width:90%;
 margin-left:auto;
 margin-right:auto;
-font-size: 3rem;
+font-size: 1rem;
 font-family: 'Headland One', serif;
 border-color:#CACACA;
 color: #456;
 }
 .main-container{
+	border-left:1px solid;
+	border-right:1px solid;
+	border-bottom:1px solid;
 	width: 70%;
 	height: auto;
 	margin:0 auto;
-}
-.main-container article{
-	border-left: 1px solid;
-	border-right:1px solid;
-	border-bottom:1px solid;
-	background-color:white;
-	padding-top: 15px; 
-	color: #456;
-	padding-bottom:5%;
 }
 
 .main-container p {
@@ -302,10 +296,36 @@ button a{
 padding-left:5%;
 }
 
-.article-footer {
-padding-left:5%;
+.article-footer:before,.article-footer:after{
+	content: "";
+	display: table;
 }
+.article-footer:after{
+	clear: both;
+}
+.article-footer{
+	margin-bottom: 15px;
+	font-style: italic;
+	font-size: 13px;
+	color: #444040;
 
+}
+.article-footer span p{
+	display: inline-block;
+	width: auto;
+	margin-left: 5%;
+	padding: 0;
+}
+.article-footer span a{
+	font-weight: 600;
+	text-decoration: none;
+	margin-left:5px;
+	color: #444040;
+	padding:0;
+}
+.article-footer span a:hover{
+	color: #607085;
+}
 	
 footer{
 	min-height: 25px;
