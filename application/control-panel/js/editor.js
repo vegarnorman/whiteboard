@@ -1,6 +1,7 @@
 $(function() {
 
 	if (edit !== "") {
+		edit = edit.replace(/<br \/>/g, "\\n");
 		var post = jQuery.parseJSON(edit);
 		console.log(post);
 
