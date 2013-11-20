@@ -37,15 +37,23 @@
 
 			<section class="grid g12">
 
-				<h3>Velkommen til Shuriken CMS!</h3>
+				<h3>Åh, heisann!</h3>
 
 				<p>
-					For å publisere en post, trykk "Skriv ny post" i menyen - eller, for nettlesere som støtter dette, bare dra en fil lagret på enheten din over det grå området under for å laste opp filen! Filer må være i tekst- eller markdown-format.
+					Vi håper du ikke blir for skuffet, men det er faktisk ingenting å gjøre i innstillingspanelet ennå. Shuriken er et skoleprosjekt som er laget av fire studenter på mindre enn en måned, og derfor måtte vi ta noen beslutninger på hva vi kunne og ikke kunne ha med av funksjonalitet - innstillingene ble derfor kuttet.
 				</p>
 
-				<div id="cp-filedrop" class="cp-filedrop">
-					<p id="cp-filedrop-status">Slipp en tekstfil her for å publisere!</p>
-				</div>
+				<p>
+					Vi setter imidlertid pris på tilbakemeldinger, så gi oss gjerne en pling dersom du liker det vi har fått til, ønsker å komme med idéer og innspill til funksjonalitet eller design, eller kanskje du er interessert i å prøve systemet så fort det har blitt jobbet litt mer på i fremtiden?
+				</p>
+
+				<p>
+					<a href="#">Ta gjerne kontakt!</a>
+				</p>	
+
+				<p>
+					Hilsen Vegar, Per Erik, Marius og Halvor!
+				</p>
 
 			</section>
 				

@@ -536,6 +536,10 @@ td {
 	min-height: 20vh;
 }
 
+.cp-filedrop:hover {
+	background-color: #b2d2ff;
+}
+
 .cp-filedrop p {
 	text-align: center;
 	font-size: 200%;
