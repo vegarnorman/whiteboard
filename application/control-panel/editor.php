@@ -20,6 +20,11 @@
 	
 		$cp = new ControlPanel();
 
+		if (isset($_POST["filedrop_content"])) {
+			$filedrop = $_POST["filedrop_content"];
+			echo "<script>edit = '" . $filedrop . "'</script>";
+		}
+
 		// Sjekker om en post har blitt innsendt via $_POST
 
 		if (isset($_POST["post_title"]) && 
