@@ -19,9 +19,9 @@
 			$this->post_id = $data["post_id"];
 			$this->comment_published = $data["comment_published"];
 			$this->comment_published_by = $data["comment_published_by"];
-			$author_name = $data["author_name"];
-			$author_email = $data["author_email"];
-			$author_url = $data["author_url"];
+			$this->author_name = $data["author_name"];
+			$this->author_email = $data["author_email"];
+			$this->author_url = $data["author_url"];
 		}
 
 

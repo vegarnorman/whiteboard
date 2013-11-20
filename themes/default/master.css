@@ -210,6 +210,9 @@ nav li:nth-child(3){
 	background-color: #E7E7E7;
 	box-shadow: 1px 2px 3px #BBB;
 }
+.blogg-sidebar h2,h3{
+	color:#456;
+}
 
 /*
  *  	ARTICLES
@@ -246,7 +249,7 @@ article{
 	color: #444040;
 }
 .article-footer span a:hover{
-	color: #607085;
+	color: #797676;
 }
 .article-footer img{
 	margin-left: 5px;

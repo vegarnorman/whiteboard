@@ -4,7 +4,7 @@
 
 				<?php
 					require_once('application/Site.class.php');
-
+					
 					$site = new Site();
 					//instans av dataobjektet
 					$db = $site->getDataHandler();
@@ -67,7 +67,7 @@
 
 			<section class="grid g4 blogg-sidebar">
 
-				<h1>Tidligere poster</h1>
+				<h2>Tidligere poster</h2>
 				
 				<h3 id="item-button1" class="menu-button">Arkiv</h3>
 				<!-- <img id="arr1" src="images/rightarrow.png" alt="pil til høyre" height="21"> -->

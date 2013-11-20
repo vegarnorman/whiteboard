@@ -1,4 +1,7 @@
-<?php require_once "application/Site.class.php"; ?>
+
+<?php 
+	require_once "application/Site.class.php"; 
+?>
 
 <!DOCTYPE html>
 <html lang="no">
