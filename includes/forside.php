@@ -12,7 +12,7 @@
 			</section>
 
 			<section class="container">
-
+				<h1 class="align-center color-red">3 gode grunner til å velge Waxoff CMS</h1>
 				<ul class="container">
 					<li class="grid g4 ">
 						<h3>Moderne</h3>

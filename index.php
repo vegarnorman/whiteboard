@@ -20,7 +20,7 @@
 			<ul>
 				<li class="menu" id="img1"><a href="index.php?page=forside">Forside</a></li>
 				<li class="menu"><a href="index.php?page=blogg&amp;site=0">Blogg</a></li>
-				<li class="menu"><a href="index.php?page=bloggpost">Bloggpost</a></li>
+				<li class="menu"><a href="index.php?page=artikler">Artikler</a></li>
 			</ul>
 		</nav>
 	</header>
