@@ -5,6 +5,7 @@
 @import url(http://fonts.googleapis.com/css?family=Headland+One);
 html{
 	font-size: 18px;
+	height: 100%;
 }
 header {
 margin-left:auto;
@@ -132,6 +133,7 @@ font-size: 2rem;
 font-family: 'Headland One', serif;
 border-color:#CACACA;
 color: #456;
+text-align: center;
 }
 .main-container{
 	font-family: 'Headland One', serif;
@@ -147,13 +149,25 @@ color: #456;
 
 .main-container p {
 font-family: 'Headland One', serif;
-margin-top:5%;
 margin-left:auto;
 margin-right:auto;
 width:90%;
 
 }
 
+.container h3{
+	margin-left: auto;
+	margin-right: auto;
+	margin-top:50px;
+}
+.container h1{
+	margin-left: auto;
+	margin-right: auto;
+	text-align: center;
+	margin: 20px;
+	border-bottom: 1px solid;
+	border-color:#CACACA;
+}
 .next-button{
 	float: right;
 	width: 90px;
@@ -302,10 +316,6 @@ font-size: 13px;
 padding:20px;
 margin:48px 0 0 10px;
 color: #456;
-border-top:1px solid;
-border-bottom:1px solid;
-border-left:1px dashed;
-border-right:1px dashed;
 background-color: #E7E7E7;
 box-shadow: 1px 2px 3px #000;
 clear:both;
@@ -316,6 +326,11 @@ clear:both;
 padding-left:5%;
 }
 
+article p{
+	margin-top: 30px;
+	margin-bottom: 30px;
+}
+
 .article-footer:before,.article-footer:after{
 	content: "";
 	display: table;
@@ -324,7 +339,7 @@ padding-left:5%;
 	clear: both;
 }
 .article-footer{
-	margin-bottom: 15px;
+	margin-bottom: 50px;
 	font-style: italic;
 	font-size: 13px;
 	color: #444040;
@@ -364,4 +379,38 @@ footer{
 .footer-content a{
 	text-decoration: none;
 	color: #678;
+}
+
+.nav-button{
+	background-size: 18px;
+	background-repeat: no-repeat;
+	width: auto;
+	min-width: 105px;
+	color: #444040;
+  	background-color: #FFF;
+  	border: 1px solid #444040;
+  	font-size: 12px;
+	text-decoration: none;
+	text-align: center;
+  	text-transform: uppercase;
+
+ }
+ .nav-button:hover{
+ 	cursor: pointer;
+ 	background-color:rgb(245,245,245);
+ 	color:#444040;
+ }
+
+.next{
+	background-position: right;
+	margin:50px 0 0 0;
+	float: right;
+	padding: 2px 10px 2px 10px;
+}
+
+.last{
+	background-position: left;
+	margin:50px 0 0 0;
+  	float: left;
+	padding: 2px 10px 2px 10px;
 }
