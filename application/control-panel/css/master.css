@@ -526,6 +526,23 @@ td {
 	padding: 0.5rem 1rem;
 }
 
+
+.cp-filedrop {
+	background-color: rgba(0, 0, 0, 0.1);
+	color: rgba(0, 0, 0, 0.4);
+	padding: 1.5rem;
+	box-sizing: border-box;
+	border: 5px solid rgba(0, 0, 0, 0.05);
+	min-height: 20vh;
+}
+
+.cp-filedrop p {
+	text-align: center;
+	font-size: 200%;
+	padding: 0;
+	line-height: 30vh;
+}
+
 /*		Mobilvisning
 ==================*/
 
