@@ -48,6 +48,10 @@
 				$view_title = "Kommentarer";
 			}
 
+			else if ($mode == "categories") {
+				$view_title = "Kategorier";
+			}
+
 			else {
 				$view_title = "";
 			}
@@ -360,6 +364,99 @@
 
 				</section>
 
+
+
+
+			<?php elseif ($mode == "categories"): ?>
+
+				<?php 
+					$db = $cp->getDataHandler();
+					$rows = $db->getNumberOfRows("Category");
+
+					if (isset($_GET["delete"])) {
+						if ($_GET["delete"] > 0) {
+							$delete_result = Category::deleteCategory($db, $_GET["delete"]);
+
+							if ($delete_result == true) {
+								echo '<p class="cp-message success grid g12"><b>SUKSESS</b><br />Oppføringen ble slettet fra databasen.</p>';
+							}
+
+							else {
+								echo '<p class="cp-message error grid g12"><b>FEIL</b><br />Oppføringen kunne ikke slettes fra databasen. En feil oppsto i databaselaget.</p>';
+							}
+						}
+					}
+					
+					if (($rows % 10) == 0) {
+						$max_page = (int) ($rows / 10);
+					}
+
+					else {
+						$max_page = (int) (($rows / 10) + 1);
+					}
+
+
+					if ($page > $max_page) {
+						$data = $cp->getSomeData("Category", 10, (($max_page - 1) * 10), "desc");
+						$page = $max_page;
+					}
+
+					else {
+						$data = $cp->getSomeData("Category", 10, (($page - 1) * 10), "desc");
+					}
+
+				?>
+
+
+
+				<section class="grid g12">
+					<table class="cp-database-table">
+						<tr>
+							<td class="noborder cp-table-select"></td>
+							<th class="cp-table-id">ID</th>
+							<th class="align-left">Kategorinavn</th>
+							<th class="cp-table-delete">Slett</th>
+						</tr>
+
+						<?php
+							foreach ($data as $row) {
+								echo '<tr>';
+									echo '<td class="noborder cp-table-select"><input type="checkbox" id="' . $row["category_id"] .'" /></td>';
+									echo '<td class="cp-table-id">' . $row["category_id"] . '</td>';
+									echo '<td class="align-left">' . $row["category_name"] . '</td>';
+									echo '<td class="cp-table-delete"><a href="view.php?mode=' . $mode . '&p=' . $page . '&delete=' . $row["category_id"] . '">Slett</a></td>';
+								echo '</tr>';
+							}
+						?>
+
+					</table>
+
+					<section class="row">
+
+						<div class="grid g4 row">
+							<form name="new_category" id="new_category" action="new_category.php" method="post">
+								<input type="text" name="new_category_name" id="new_category_name" placeholder="Kategorinavn" class="grid g8" />
+								<input type="submit" name="submit" id="submit" value="Lag ny" class="grid g4" />
+							</form>
+						</div>
+
+						<div class="cp-view-pagination grid g8 align-right">
+							
+							<?php
+								if ($page > 1) {
+									echo '<a href="view.php?mode=' . $mode . '&p=' . ($page - 1) . '">&larr; Forrige side</a>';
+								}
+
+								if ($page < $max_page ) {
+									echo '<a href="view.php?mode=' . $mode . '&p=' . ($page + 1) . '">Neste side &rarr;</a>';
+								}
+							?>
+
+						</div>
+					</section>
+
+				</section>
+				
 
 
 

@@ -79,6 +79,13 @@
 						}
 					}
 
+					else if ($what == "Category") {
+						foreach ($ids as $id) {
+							$category = Category::getCategory($handle, $id);
+							$data[] = $category;
+						}
+					}
+
 					else {
 						$data[] = "Kunne ikke finne data";
 					}

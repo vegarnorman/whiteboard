@@ -4,6 +4,7 @@
 	require_once "classes/Page.class.php";
 	require_once "classes/Post.class.php";
 	require_once "classes/Comment.class.php";
+	require_once "classes/Category.class.php";
 	require_once "settings.php";
 
 	class Application {
