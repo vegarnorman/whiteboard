@@ -1,7 +1,8 @@
 
-
-.container {
-
+.grid{
+width:90%;
+margin-left:auto;
+margin-right:auto;
 }
 
 .container:before, .container:after {
@@ -13,12 +14,4 @@ display: table;
 clear: both; 
 }
 
-
-.grid.g8 {
-font-family: 'Headland One', serif;
-}
-
-.blogg-sidebar{
-display:none;
-}
 
