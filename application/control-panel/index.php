@@ -11,6 +11,7 @@
 	<link rel="stylesheet" href="css/master.css" />
 	<script src="http://code.jquery.com/jquery-2.0.3.min.js"></script>
 	<script src="js/main.js"></script>
+	<script src="js/filedrop.js"></script>
 
 	<title>Kontrollpanel</title>
 </head>
@@ -34,37 +35,21 @@
 
 			<h2 class="grid g12 cp-site-title"><?php ControlPanel::getSiteTitle(); ?></h2>
 
-			
+			<section class="grid g12">
+
+				<h2>Velkommen til Shuriken CMS!</h2>
+
+				<p>
+					For å publisere en post, trykk "Skriv ny post" i menyen - eller, for nettlesere som støtter dette, bare dra en fil lagret på enheten din over det grå området under for å laste opp filen! Filer må være i tekst- eller markdown-format.
+				</p>
+
+				<div id="cp-filedrop" class="cp-filedrop">
+					<p id="cp-filedrop-status">Slipp en tekstfil her for å publisere!</p>
+				</div>
+
+			</section>
 				
-				<?php
-					$posts = $cp->getSomeData("Post", 5, "none", "desc");
-
-					if (!$posts) {
-						echo '<li>En feil oppsto.</li>';
-					}
-
-					else if ($posts == -99) {
-						echo '<li>Ingen poster funnet.</li>';
-					}
-
-					else {
-
-						echo '<ul class="cp-latest-posts grid g4">';
-
-						foreach ($posts as $post) {
-
-							echo '<li>'.
-								 '<h3>' . $post["post_title"] . '</h3>'.
-								 '<p>' . $post["post_data"] . '</p>'.
-								 '<p><a href="editor.php?edit=' . $post["post_id"] . '" class="button smaller">Rediger</a>'.
-								 '</li>';
-
-						}
-
-						echo '</ul>';
-						
-					}
-				?>
+				
 
 		</section>
 
