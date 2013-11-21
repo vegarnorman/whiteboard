@@ -25,6 +25,115 @@ document.ready = function hideDiv(){
 
 
 
+//
+//			VALIDERING AV INPUTSKJEMA
+//
+
+
+
+function validateForm(){
+
+	var name = document.commentForm.user.value;
+	var mail = document.commentForm.mail.value;
+	var comment = document.commentForm.comment.value;
+	
+	if (name === "") {
+		document.getElementById("error").innerHTML="Feltet må være fylt ut";
+		document.getElementById("error").setAttribute("style","border:1px solid #FF3F3F;");
+		document.commentForm.user.setAttribute("style","border:1px solid #FF3F3F;");
+		document.commentForm.user.focus();
+		return false;
+	}
+	else if (mail === ""){
+		document.getElementById("error").innerHTML="Feltet må være fylt ut";
+		document.getElementById("error").setAttribute("style","border:1px solid #FF3F3F;");
+		document.commentForm.mail.setAttribute("style","border:1px solid #FF3F3F;");
+		document.commentForm.mail.focus();
+		return false;
+	}
+	else if (comment === ""){
+		document.getElementById("error").innerHTML="Feltet må være fylt ut";
+		document.getElementById("error").setAttribute("style","border:1px solid #FF3F3F;");
+		document.commentForm.comment.setAttribute("style","border:1px solid #FF3F3F;");
+		document.commentForm.comment.focus();
+		return false;
+	}
+	else{
+		return true;
+	}
+	
+}
+
+
+
+function nameCheck(){
+	var input = document.commentForm.user.value;
+	if (input !== "") {
+		document.commentForm.user.setAttribute("style","border:1px solid rgb(99, 233, 99);");
+		document.getElementById("error").setAttribute("style","border:0;");
+		document.getElementById("error").innerHTML="";
+	}
+	else{
+		document.getElementById("error").innerHTML="Feltet må være fylt ut";
+		document.getElementById("error").setAttribute("style","border:1px solid #FF3F3F;");
+		document.commentForm.user.setAttribute("style","border:1px solid #FF3F3F;");
+	}
+}
+function mailCheck(){
+ 	var	regEx = /^[a-zA-ZæøåÆØÅ0-9_-]+@[a-zA-ZæøåÆØÅ0-9]+(\.[a-z0-9-]+)*(\.[a-zæøå]{2,4})$/;
+	var ok = regEx.test(document.commentForm.mail.value);
+	
+	var input = document.commentForm.mail.value;
+	if (input !== "") {
+		if(!ok){
+			document.getElementById("error").innerHTML="Epostadressen er ugyldig";
+			document.getElementById("error").setAttribute("style","border:1px solid #FF3F3F;");
+		}
+		else{
+			document.commentForm.mail.setAttribute("style","border:1px solid rgb(99, 233, 99);");
+			document.getElementById("error").setAttribute("style","border:0;");
+			document.getElementById("error").innerHTML="";
+	
+		}
+	}
+	else{
+		document.getElementById("error").innerHTML="Feltet må være fylt ut";
+		document.getElementById("error").setAttribute("style","border:1px solid #FF3F3F;");
+		document.commentForm.mail.setAttribute("style","border:1px solid #FF3F3F;");
+	}
+}
+
+function commentCheck(){
+	var input = document.commentForm.comment.value;
+	if (input !== "") {
+		document.commentForm.comment.setAttribute("style","border:1px solid rgb(99, 233, 99);");
+		document.getElementById("error").setAttribute("style","border:0;");
+		document.getElementById("error").innerHTML="";
+	}
+	else{
+		document.getElementById("error").innerHTML="Feltet må være fylt ut";
+		document.getElementById("error").setAttribute("style","border:1px solid #FF3F3F;");
+		document.commentForm.comment.setAttribute("style","border:1px solid #FF3F3F;");
+	}
+}
+
+
+
+function free(){
+	var mail = document.commentForm.mail;
+		document.getElementById("free").setAttribute("style", "color:#444040;");
+		document.getElementById("free").innerHTML="Kommentaren kan postes!";
+}
+
+
+function free2(){
+	var mail = document.commentForm.mail;
+		document.getElementById("free").setAttribute("style", "color:#EEE;");
+		document.getElementById("free").innerHTML="Frivillig felt";
+}
+
+
+
 
 //
 //		forslag til easteregg
@@ -80,68 +189,6 @@ function meshUp(){
 
  	return false;
 }
-
-
-
-						//MÅ IKKE SLETTES~~~~~~
-
-
-
-
-function validateForm(){
-
-	var name = document.commentForm.user.value;
-	if (name === "") {
-		document.getElementById("error").innerHTML="Feltet må være fylt ut";
-		document.getElementById("error").setAttribute("style","border:1px solid #FF3F3F;");
-		document.commentForm.user.setAttribute("style","border:1px solid #FF3F3F;");
-		document.commentForm.user.focus();
-		return false;
-	}
-	else{
-		var comment = document.commentForm.comment.value;
-		if (comment === "") {
-			document.getElementById("error").innerHTML="Feltet må være fylt ut";
-			document.getElementById("error").setAttribute("style","border:1px solid #FF3F3F;");
-			document.commentForm.comment.setAttribute("style","border:1px solid #FF3F3F;");
-			document.commentForm.comment.focus();
-			return false;
-		}
-	}
-}
-
-function inputOk(){
-	var name = document.commentForm.name.value;
-	if (name !== "") {
-		document.commentForm.user.setAttribute("style","border:1px solid rgb(99, 233, 99);");
-		document.getElementById("error").setAttribute("style","border:0;");
-		document.getElementById("error").innerHTML="";
-	}
-}
-
-function textOk(){
-	var comment = document.commentForm.comment.value;
-	if (comment !== "") {
-		document.commentForm.comment.setAttribute("style","border:1px solid rgb(99, 233, 99);");
-		document.getElementById("error").setAttribute("style","border:0;");
-		document.getElementById("error").innerHTML="";
-	}
-}
-
-
-function free(){
-	var mail = document.commentForm.mail;
-		document.getElementById("free").setAttribute("style", "color:#444040;");
-		document.getElementById("free").innerHTML="Frivillig felt";
-}
-
-
-function free2(){
-	var mail = document.commentForm.mail;
-		document.getElementById("free").setAttribute("style", "color:#EEE;");
-		document.getElementById("free").innerHTML="Frivillig felt";
-}
-
 
 
 

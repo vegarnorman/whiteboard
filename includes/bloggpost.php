@@ -34,10 +34,11 @@
 				<div id="comment-box">
 					<div class="comment-form">
 						<form action="#" method="post" name="commentForm" onsubmit="return validateForm();">
-								<input type="text" name="user" onChange="inputOk();" placeholder="Name">
-								<input type="text" name="mail" onfocus="free();" onblur="free2();" placeholder="Email"><span id="free"></span><br/>
-								<textarea rows="5" placeholder="Enter your comments here" name="comment" onChange="textOk();"></textarea><br/>
+								<input type="text" name="user" onChange="nameCheck();" placeholder="Name">
+								<input type="text" name="mail" onChange="mailCheck();" " placeholder="Email"><br/>
+								<textarea rows="5" placeholder="Enter your comments here" name="comment" onChange="commentCheck();"></textarea><br/>
 								<span id="error"></span>
+								<span id="free"></span>
 								<br/>
 								<input type="submit" id="submit" onclick="meshUp();" name="submit_comment" value="Legg til kommentar" class="submit-comment-button"><br/>
 								<br/>
