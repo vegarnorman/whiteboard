@@ -87,7 +87,7 @@
 				<?php			
 
 					$comments = $db->operation("find", "Comment", array("post_id" => $_GET['no']));
-					
+					$comments = array_reverse($comments);
 					if ($comments == -99) {
 						echo "Ingen kommentarer";
 					}

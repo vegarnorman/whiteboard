@@ -18,7 +18,7 @@
 <body>
 	<header id="top-of-page">
 		<h1>waxoff</h1>	
-		<h4>content management system™</h4>
+		<h4>content management system</h4>
 		<nav>
 			<ul>
 				<li class="menu" id="img1"><a href="index.php?page=forside">Forside</a></li>

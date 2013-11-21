@@ -21,8 +21,7 @@
 					//henter id på postene som skal skrives ut.
 					$poster = $db->getIDs("Post", 5, ($start*5), "desc");
 
-					$post_data="";
-					
+									
 						//sjekk om det er igjen flere poster som kan skrives ut
 						if ($poster == -99) {
 							echo "Det finnes foreløpig ikke flere poster";
@@ -30,13 +29,11 @@
 						else{
 							foreach ($poster as $key) {
 							$post_data = Post::getPost($db, $key, true);
-							$user = User::getUserName($db, $post_data['post_published_by']);
-							$site->printPost($post_data, $user);
+							$site->printPost($post_data);
 						}
 					}
 			
 				
-
 					// //Hvis man viser siste poster vil ikke knappen for å trykke tilbake vises
 					if ($_GET['site'] > 0 ) {
 						echo "<a class='nav-button last' href='index.php?page=blogg&amp;site=";
