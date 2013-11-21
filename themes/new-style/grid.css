@@ -3,6 +3,7 @@
 width:90%;
 margin-left:auto;
 margin-right:auto;
+background-color:black;
 }
 
 .container:before, .container:after {
@@ -13,5 +14,3 @@ display: table;
 .container:after {
 clear: both; 
 }
-
-
