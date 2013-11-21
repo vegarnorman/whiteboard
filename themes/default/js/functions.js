@@ -65,7 +65,6 @@ function validateForm(){
 }
 
 
-
 function nameCheck(){
 	var input = document.commentForm.user.value;
 	if (input !== "") {
@@ -79,6 +78,10 @@ function nameCheck(){
 		document.commentForm.user.setAttribute("style","border:1px solid #FF3F3F;");
 	}
 }
+
+
+
+
 function mailCheck(){
  	var	regEx = /^[a-zA-ZæøåÆØÅ0-9_-]+@[a-zA-ZæøåÆØÅ0-9]+(\.[a-z0-9-]+)*(\.[a-zæøå]{2,4})$/;
 	var ok = regEx.test(document.commentForm.mail.value);
@@ -101,8 +104,11 @@ function mailCheck(){
 		document.getElementById("error").innerHTML="Feltet må være fylt ut";
 		document.getElementById("error").setAttribute("style","border:1px solid #FF3F3F;");
 		document.commentForm.mail.setAttribute("style","border:1px solid #FF3F3F;");
+		return false;
 	}
+	return true;
 }
+
 
 function commentCheck(){
 	var input = document.commentForm.comment.value;
@@ -186,8 +192,6 @@ function meshUp(){
 
 	}
 	// else if(name === "" && clickCount==35){}
-
-
  	return false;
 }
 

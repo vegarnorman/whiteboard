@@ -40,9 +40,9 @@
 		public function printComments($data){
 			echo "<sub class='committed-comments'>";
 			echo "<p>".$data['comment_data']."</p></sub>";
-			echo "<div class='article-footer'>Innlegg skrevet av: <b>";
+			echo "<div class='article-footer'><span><p>Kommentar fra: <b>";
 			echo $data['author_name'];
-			echo "</b> ".$data['comment_published']."</div>";
+			echo "</b> ".$data['comment_published']."</p></span></div>";
 		}
 
 
