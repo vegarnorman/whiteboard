@@ -41,7 +41,7 @@
 					if ($_GET['site'] > 0 ) {
 						echo "<a class='nav-button last' href='index.php?page=blogg&amp;site=";
 						echo $start-1;
-						echo "'>Older posts</a>";
+						echo "'>Eldre poster</a>";
 
 					}
 					
@@ -49,7 +49,7 @@
 					if ($poster != -99) {
 						echo "<a class='nav-button next' href='index.php?page=blogg&amp;site=";
 						echo $start+=1;
-						echo "'>Newer posts</a>";
+						echo "'>Nyere poster</a>";
 					}
 						
 				?>
@@ -65,14 +65,14 @@
 							-->
 
 
-			<section class="grid g4 blogg-sidebar">
+			<section class="grid g4 history">
 
-				<h2>Tidligere poster</h2>
+				<h2>Historikk</h2>
 				
-				<h3 id="item-button1" class="menu-button">Arkiv</h3>
+				<h3>Arkiv</h3>
 				<!-- <img id="arr1" src="images/rightarrow.png" alt="pil til høyre" height="21"> -->
 				
-					<ul id="item1" class="menu-item">
+					<ul>
 						<li>Oktober </li>
 						<li>September </li>
 						<li>August</li>
@@ -80,7 +80,7 @@
 						<li>Juni</li>
 					</ul>
 					
-				<h3 id="item-button2" class="menu-button">Kategorier</h3>
+				<h3>Kategorier</h3>
 				<!-- <img id="arr2" src="images/rightarrow.png" alt="pil til høyre" height="21"> -->
 				
 					<ul id="item2" class="menu-item">
@@ -91,7 +91,7 @@
 						<li>Fritid</li>
 					</ul>
 			
-				<h3 id="item-button3" class="menu-button">Emneord #</h3>
+				<h3>Emneord #</h3>
 				<!-- <img id="arr3" src="images/rightarrow.png" alt="pil til høyre" height="21"> -->
 				
 					<ul id="item3" class="menu-item">

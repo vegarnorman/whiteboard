@@ -7,8 +7,6 @@
   *  GRID
   */
 @import url("grid.css");
-
-
 /*
  * FONT
  */
@@ -28,7 +26,6 @@
 h1,h2,h3,h4,h5,h6{
 	padding:10px 0 20px 0 ;
 	margin: 0; 
-	color: #444040;
 }
 p{
 	margin-top: 14px;
@@ -43,6 +40,7 @@ body{
 	font-family: 'Open Sans', sans-serif;
 	margin: 0;
 	padding: 0;
+	color:#444040;
 	background-color: #EEE;
 }
 
@@ -66,7 +64,7 @@ header h1{
 	display: inline-block;
 	color: #DDD;
 	padding: 0 ;
-	font-size: 420%;
+	font-size: 360%;
 	font-weight: 400;
 	margin: 2% 0 0 21%;
 	letter-spacing: 19px;
@@ -74,11 +72,11 @@ header h1{
 
 }
 header h4{
-	max-width: 308px;
+	max-width: 278px;
 	color: #BBB;
 	margin:0 0 0 21%;
 	font-weight: 400;
-	letter-spacing: 2.7px;
+	letter-spacing: 1.6px;
 	text-shadow:1px 3px 3px #111111;
 	border-top: 6px solid #CCC;
 }
@@ -197,11 +195,11 @@ nav li:nth-child(3){
  *      BLOG and BLOGPOSTS
  */
 
-.blogg-sidebar{
+.history{
 	width: 150px;
 	margin:48px 0 0 10px;
 	font-size: 13px;
-	padding:20px;
+	padding:20px 20px 20px 30px;
 	-webkit-border-radius: 2px;
 	-moz-border-radius: 2px;
 	-ms-border-radius: 2px;
@@ -209,9 +207,6 @@ nav li:nth-child(3){
 	color: #456;
 	background-color: #E7E7E7;
 	box-shadow: 1px 2px 3px #BBB;
-}
-.blogg-sidebar h2,h3{
-	color:#456;
 }
 
 /*
@@ -367,7 +362,7 @@ sub{
     	margin-left: 20px;
     	padding-left: 5px;
     	font-size: 15px;
-    	color: #556677;
+    	color: #444040;
     	border: 0px solid #444040;
     	-webkit-border-radius: 2px;
 		-moz-border-radius: 2px;
@@ -384,6 +379,7 @@ sub{
       		margin: 20px;
 	    	padding: 5px 0 0 5px;
 	    	border: 0;
+	    	color: #444040;
 	    	outline-width: 0px;
 	    	-webkit-border-radius: 2px;
 			-moz-border-radius: 2px;
@@ -429,7 +425,10 @@ sub{
 }
 .highlight{
 	background-color: #EEE;
-	-webkit-border-radius:10px 0 0 0;
+	-webkit-border-radius:2px 2px 0 0;
+}
+.highlight:hover{
+	background-color: #EEE;
 }
 .highlight a{
 	color:#444040;
@@ -440,7 +439,7 @@ sub{
 	background-color: #B8D8C6;
 }
 .change-to-green:hover{
-	background-color: #DBDBDB ;
+	background-color: #DBDBDB;
 }
 .align-center{
 	margin: 0 auto;
@@ -448,6 +447,33 @@ sub{
 }
 .color-red{
 	color:#934;
+}
+
+/*
+ *			PØNT te' JAVASCRIPT'n
+ */
+#error{
+	display: inline-block;
+	color: #FF3F3F;
+	padding: 10px;
+	margin-left: 20px;
+	font-size: 18px;
+}
+#free{
+	margin-left: 10px;
+	color: #EEE;
+	-o-transition: color .7s ease-in-out;
+	-ms-transition: color .7s ease-in-out;
+	-moz-transition: color .7s ease-in-out;
+	-webkit-transition: color .7s ease-in-out;
+}
+#free2{
+	margin-left: 10px;
+	color: #EEE;
+	-o-transition: color .7s ease-in-out;
+	-ms-transition: color .7s ease-in-out;
+	-moz-transition: color .7s ease-in-out;
+	-webkit-transition: color .7s ease-in-out;
 }
 
 
