@@ -35,7 +35,7 @@
 					<div class="comment-form">
 						<form action="#" method="post" name="commentForm" onsubmit="return validateForm();">
 								<input type="text" name="user" onChange="nameCheck();" placeholder="Name">
-								<input type="text" name="mail" onChange="mailCheck();" " placeholder="Email"><br/>
+								<input type="text" name="mail" onchange="mailCheck();" onkeypress="mailCheck();" placeholder="Email"><br/>
 								<textarea rows="5" placeholder="Enter your comments here" name="comment" onChange="commentCheck();"></textarea><br/>
 								<span id="error"></span>
 								<span id="free"></span>

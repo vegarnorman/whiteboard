@@ -44,7 +44,7 @@ function validateForm(){
 		document.commentForm.user.focus();
 		return false;
 	}
-	else if (mail === ""){
+	else if (mail === "" || mailCheck() !== true){
 		document.getElementById("error").innerHTML="Feltet må være fylt ut";
 		document.getElementById("error").setAttribute("style","border:1px solid #FF3F3F;");
 		document.commentForm.mail.setAttribute("style","border:1px solid #FF3F3F;");
@@ -88,12 +88,13 @@ function mailCheck(){
 		if(!ok){
 			document.getElementById("error").innerHTML="Epostadressen er ugyldig";
 			document.getElementById("error").setAttribute("style","border:1px solid #FF3F3F;");
+			return false;
 		}
 		else{
 			document.commentForm.mail.setAttribute("style","border:1px solid rgb(99, 233, 99);");
 			document.getElementById("error").setAttribute("style","border:0;");
 			document.getElementById("error").innerHTML="";
-	
+			return true;
 		}
 	}
 	else{
