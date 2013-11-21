@@ -28,8 +28,7 @@
 
 			$result = array(
 				"user_id" => $id,
-				"user_name" => "",
-				
+				"user_name" => ""	
 			);
 
 			$step1 = $handle->operation("get", "User", array("user_id" => $id));
