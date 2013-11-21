@@ -54,7 +54,7 @@
 					
 					$id = $_GET['no'];
 
-					$comment_data = [
+					$comment_data = array(
 						"comment_id" => "",
 						"comment_title" => "",
 						"comment_data" => (string) $_POST['comment'],
@@ -64,7 +64,7 @@
 						"author_name" => (string) $_POST['user'],
 						"author_email" => (string) $_POST['mail'],
 						"author_url" => "",
-					];
+					);
 					$new = new Comment($comment_data);
 
 					$new->insertComment($site->getDataHandler());
