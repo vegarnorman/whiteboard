@@ -104,6 +104,11 @@ $(function() {
 
 
 	$("#editor_submit").click(function() {
+
+		if ($(".post-editor-title").val() === "" || $(".post-editor-content").val() === "") {
+			alert("Tittel og innhold må være utfylt. Vennligst korriger og forsøk igjen.");
+			return false;
+		}
 		
 		var number_of_tags = $(".post-editor-current-tags .tag").length;
 		var number_of_categories = $(".post-editor-categories input:checked").length;
