@@ -336,6 +336,7 @@ i.fa {
 .post-editor-current-tags {
 	display: block;
 	padding: 0.5rem;
+	-moz-box-sizing: border-box;
 	box-sizing: border-box;
 	border: 1px solid rgba(0, 0, 0, 0.2);
 	margin-bottom: 1.5rem;
@@ -348,6 +349,7 @@ i.fa {
 
 .post-editor-new-tag {
 	padding: 0 0 0 0.5rem;
+	-moz-box-sizing: border-box;
 	box-sizing: border-box;
 }
 
@@ -515,6 +517,7 @@ td {
 
 .cp-login input {
 	display: block;
+	-moz-box-sizing: border-box;
 	box-sizing: border-box;
 	width: 100%;
 }
@@ -530,6 +533,7 @@ td {
 	background-color: rgba(0, 0, 0, 0.1);
 	color: rgba(0, 0, 0, 0.4);
 	padding: 1.5rem;
+	-moz-box-sizing: border-box;
 	box-sizing: border-box;
 	border: 5px solid rgba(0, 0, 0, 0.05);
 	min-height: 20vh;
@@ -567,6 +571,7 @@ td {
 		width: 100%;
 		min-width: 100%;
 		max-width: 100%;
+		-moz-box-sizing: border-box;
 		box-sizing: border-box;
 	}
 
