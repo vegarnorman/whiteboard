@@ -6,6 +6,8 @@ $(function() {
 			evt.stopPropagation();
 			evt.preventDefault();
 			evt.dataTransfer.dropEffect = "copy";
+
+			$("#cp-filedrop").css({"background-color": "#b2d2ff"});
 		}		
 
 		function filedropDropAction(evt) {
