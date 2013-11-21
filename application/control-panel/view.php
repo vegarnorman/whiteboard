@@ -146,7 +146,7 @@
 									echo '<td class="cp-table-id">' . $row["post_id"] . '</td>';
 									echo '<td class="align-left">' . $row["post_title"] . '</td>';
 									echo '<td class="cp-table-edit"><a href="editor.php?edit=' . $row["post_id"] . '">Endre</a></td>';
-									echo '<td class="cp-table-delete"><a href="view.php?mode=' . $mode . '&p=' . $page . '&delete=' . $row["post_id"] . '">Slett</a></td>';
+									echo '<td class="cp-table-delete"><a href="view.php?mode=' . $mode . '&amp;p=' . $page . '&amp;delete=' . $row["post_id"] . '">Slett</a></td>';
 									echo '<td class="cp-table-view"><a href="#">Se på</a></td>';
 								echo '</tr>';
 							}
@@ -164,11 +164,11 @@
 							
 							<?php
 								if ($page > 1) {
-									echo '<a href="view.php?mode=' . $mode . '&p=' . ($page - 1) . '">&larr; Forrige side</a>';
+									echo '<a href="view.php?mode=' . $mode . '&amp;p=' . ($page - 1) . '">&larr; Forrige side</a>';
 								}
 
 								if ($page < $max_page ) {
-									echo '<a href="view.php?mode=' . $mode . '&p=' . ($page + 1) . '">Neste side &rarr;</a>';
+									echo '<a href="view.php?mode=' . $mode . '&amp;p=' . ($page + 1) . '">Neste side &rarr;</a>';
 								}
 							?>
 
@@ -238,7 +238,7 @@
 									echo '<td class="cp-table-id">' . $row["page_id"] . '</td>';
 									echo '<td class="align-left">' . $row["page_title"] . '</td>';
 									echo '<td class="cp-table-edit"><a href="page-composer.php?edit=' . $row["page_id"] . '">Endre</a></td>';
-									echo '<td class="cp-table-delete"><a href="view.php?mode=' . $mode . '&p=' . $page . '&delete=' . $row["page_id"] . '">Slett</a></td>';
+									echo '<td class="cp-table-delete"><a href="view.php?mode=' . $mode . '&amp;p=' . $page . '&amp;delete=' . $row["page_id"] . '">Slett</a></td>';
 									echo '<td class="cp-table-view"><a href="#">Se på</a></td>';
 								echo '</tr>';
 							}
@@ -249,18 +249,18 @@
 					<section class="row">
 
 						<div class="grid g8">
-							<a href="editor.php" class="button">Ny statisk side</a>
+							<a href="page-composer.php" class="button">Ny statisk side</a>
 						</div>
 
 						<div class="cp-view-pagination grid g4 align-right">
 							
 							<?php
 								if ($page > 1) {
-									echo '<a href="view.php?mode=' . $mode . '&p=' . ($page - 1) . '">&larr; Forrige side</a>';
+									echo '<a href="view.php?mode=' . $mode . '&amp;p=' . ($page - 1) . '">&larr; Forrige side</a>';
 								}
 
 								if ($page < $max_page ) {
-									echo '<a href="view.php?mode=' . $mode . '&p=' . ($page + 1) . '">Neste side &rarr;</a>';
+									echo '<a href="view.php?mode=' . $mode . '&amp;p=' . ($page + 1) . '">Neste side &rarr;</a>';
 								}
 							?>
 
@@ -331,9 +331,9 @@
 								echo '<tr>';
 									echo '<td class="noborder cp-table-select"><input type="checkbox" id="' . $row["comment_id"] .'" /></td>';
 									echo '<td class="cp-table-id">' . $row["comment_id"] . '</td>';
-									echo '<td class="cp-table-id">' . $row["author_name"] . '</td>';
+									echo '<td>' . $row["author_name"] . '</td>';
 									echo '<td class="align-left">' . $row["comment_title"] . '</td>';
-									echo '<td class="cp-table-delete"><a href="view.php?mode=' . $mode . '&p=' . $page . '&delete=' . $row["comment_id"] . '">Slett</a></td>';
+									echo '<td class="cp-table-delete"><a href="view.php?mode=' . $mode . '&amp;p=' . $page . '&amp;delete=' . $row["comment_id"] . '">Slett</a></td>';
 									echo '<td class="cp-table-view"><a href="#">Se på</a></td>';
 								echo '</tr>';
 							}
@@ -351,11 +351,11 @@
 							
 							<?php
 								if ($page > 1) {
-									echo '<a href="view.php?mode=' . $mode . '&p=' . ($page - 1) . '">&larr; Forrige side</a>';
+									echo '<a href="view.php?mode=' . $mode . '&amp;p=' . ($page - 1) . '">&larr; Forrige side</a>';
 								}
 
 								if ($page < $max_page ) {
-									echo '<a href="view.php?mode=' . $mode . '&p=' . ($page + 1) . '">Neste side &rarr;</a>';
+									echo '<a href="view.php?mode=' . $mode . '&amp;p=' . ($page + 1) . '">Neste side &rarr;</a>';
 								}
 							?>
 
@@ -424,7 +424,7 @@
 									echo '<td class="noborder cp-table-select"><input type="checkbox" id="' . $row["category_id"] .'" /></td>';
 									echo '<td class="cp-table-id">' . $row["category_id"] . '</td>';
 									echo '<td class="align-left">' . $row["category_name"] . '</td>';
-									echo '<td class="cp-table-delete"><a href="view.php?mode=' . $mode . '&p=' . $page . '&delete=' . $row["category_id"] . '">Slett</a></td>';
+									echo '<td class="cp-table-delete"><a href="view.php?mode=' . $mode . '&amp;p=' . $page . '&amp;delete=' . $row["category_id"] . '">Slett</a></td>';
 								echo '</tr>';
 							}
 						?>
@@ -444,11 +444,11 @@
 							
 							<?php
 								if ($page > 1) {
-									echo '<a href="view.php?mode=' . $mode . '&p=' . ($page - 1) . '">&larr; Forrige side</a>';
+									echo '<a href="view.php?mode=' . $mode . '&amp;p=' . ($page - 1) . '">&larr; Forrige side</a>';
 								}
 
 								if ($page < $max_page ) {
-									echo '<a href="view.php?mode=' . $mode . '&p=' . ($page + 1) . '">Neste side &rarr;</a>';
+									echo '<a href="view.php?mode=' . $mode . '&amp;p=' . ($page + 1) . '">Neste side &rarr;</a>';
 								}
 							?>
 
