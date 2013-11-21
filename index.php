@@ -9,7 +9,7 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=0.61, user-scalable=yes"> 
 	<meta name="keywords" content="cms, project">
-	<title>Demoside</title>
+	<title>Whiteboard CMS</title>
 	<link rel="stylesheet" type="text/css" href="themes/default/master.css">
 	<link rel="alternate stylesheet" type="text/css" href="themes/platoon/platoon.css">
 	<script type="text/javascript" src="//code.jquery.com/jquery-1.10.2.min.js"></script>
@@ -18,7 +18,7 @@
 </head>
 <body>
 	<header id="top-of-page">
-		<h1>waxoff</h1>	
+		<h1>whiteboard</h1>	
 		<h4>content management system</h4>
 		<nav>
 			<ul>
@@ -64,7 +64,7 @@
 				</li>
 
 				<li class="grid g4 no-gutters">
-					Waxoff CMS
+					Whiteboard CMS
 				</li>
 
 				<li class="grid g4 no-gutters">

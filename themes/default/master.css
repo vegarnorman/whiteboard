@@ -65,19 +65,19 @@ header h1{
 	display: inline-block;
 	color: #DDD;
 	padding: 0 ;
-	font-size: 360%;
+	font-size: 300%;
 	font-weight: 400;
 	margin: 2% 0 0 21%;
-	letter-spacing: 19px;
+	letter-spacing: 7.2px;
 	text-shadow:1px 3px 3px #111111;
 
 }
 header h4{
-	max-width: 278px;
+	max-width: 318px;
 	color: #BBB;
 	margin:0 0 0 21%;
 	font-weight: 400;
-	letter-spacing: 1.6px;
+	letter-spacing: 3.76px;
 	text-shadow:1px 3px 3px #111111;
 	border-top: 6px solid #CCC;
 }
