@@ -1,5 +1,4 @@
 <nav>
-
 	<p>
 		<a href="editor.php" class="button c2a">Skriv ny post</a>
 	</p>
