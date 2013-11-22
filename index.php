@@ -10,8 +10,8 @@
 	<meta name="viewport" content="width=device-width, initial-scale=0.61, user-scalable=yes"> 
 	<meta name="keywords" content="cms, project">
 	<title>Whiteboard CMS</title>
-	<link rel="stylesheet" type="text/css" href="themes/default/master.css">
-	<link rel="alternate stylesheet" type="text/css" href="themes/platoon/platoon.css">
+	<link rel="stylesheet" title="Default" type="text/css" href="themes/default/master.css">
+	<link rel="alternate stylesheet" title="Platoon" type="text/css" href="themes/platoon/platoon.css">
 	<script type="text/javascript" src="//code.jquery.com/jquery-1.10.2.min.js"></script>
 	<script type="text/javascript" src="themes/default/js/jquery.js"></script>
 	<script type="text/javascript" src="themes/default/js/functions.js"></script>
