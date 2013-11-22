@@ -5,17 +5,19 @@
 
 <!DOCTYPE html>
 <html lang="no">
-<head>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=0.61, user-scalable=yes"> 
-	<meta name="keywords" content="cms, project">
-	<title>Whiteboard CMS</title>
-	<link rel="stylesheet" title="Default" type="text/css" href="themes/default/master.css">
-	<link rel="alternate stylesheet" title="Platoon" type="text/css" href="themes/platoon/platoon.css">
-	<script type="text/javascript" src="//code.jquery.com/jquery-1.10.2.min.js"></script>
-	<script type="text/javascript" src="themes/default/js/jquery.js"></script>
-	<script type="text/javascript" src="themes/default/js/functions.js"></script>
-</head>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=0.61, user-scalable=yes"> 
+		<meta name="keywords" content="cms, project">
+		<title>Whiteboard CMS</title>
+		<link rel="stylesheet" title="Default" type="text/css" href="themes/default/master.css">
+		<link rel="alternate stylesheet" title="New Style" type="text/css" href="themes/new-style/alternate-stylesheet.css">
+		<link rel="alternate stylesheet" title="White Sun" type="text/css" href="themes/white-sun/master.css">
+		<link rel="alternate stylesheet" title="Platoon" type="text/css" href="themes/platoon/platoon.css">
+		<script type="text/javascript" src="//code.jquery.com/jquery-1.10.2.min.js"></script>
+		<script type="text/javascript" src="themes/default/js/jquery.js"></script>
+		<script type="text/javascript" src="themes/default/js/functions.js"></script>
+	</head>
 <body>
 
 	<?php
@@ -28,7 +30,7 @@
 		<h4>content management system</h4>
 		<nav>
 			<ul>
-				<li class="menu" id="img1"><a href="index.php?page=forside">Forside</a></li>
+				<li class="menu"><a href="index.php?page=forside">Forside</a></li>
 				<li class="menu"><a href="index.php?page=blogg&amp;site=0">Blogg</a></li>
 				<li class="menu"><a href="index.php?page=artikler">Artikler</a></li>
 			</ul>
