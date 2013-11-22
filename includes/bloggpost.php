@@ -40,7 +40,7 @@
 								<span id="error"></span>
 								<span id="free"></span>
 								<br/>
-								<input type="submit" id="submit" onclick="meshUp();" name="submit_comment" value="Legg til kommentar" class="submit-comment-button"><br/>
+								<input type="submit" id="submit" onclick="meshUp();" name="submit_comment" value="Legg til kommentar" class="submit-comment-button" onclick="vis()"><br/>
 								<br/>
 						</form>
 					</div>
