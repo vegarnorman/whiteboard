@@ -136,7 +136,6 @@
 							<th class="align-left">Tittel</th>
 							<th class="cp-table-edit">Endre</th>
 							<th class="cp-table-delete">Slett</th>
-							<th class="cp-table-view">Se på</th>
 						</tr>
 
 						<?php
@@ -146,8 +145,7 @@
 									echo '<td class="cp-table-id">' . $row["post_id"] . '</td>';
 									echo '<td class="align-left">' . $row["post_title"] . '</td>';
 									echo '<td class="cp-table-edit"><a href="editor.php?edit=' . $row["post_id"] . '">Endre</a></td>';
-									echo '<td class="cp-table-delete"><a href="view.php?mode=' . $mode . '&amp;p=' . $page . '&amp;delete=' . $row["post_id"] . '">Slett</a></td>';
-									echo '<td class="cp-table-view"><a href="#">Se på</a></td>';
+									echo '<td class="cp-table-delete"><a href="view.php?mode=' . $mode . '&amp;p=' . $page . '&amp;delete=' . $row["post_id"] . '" class="cp-delete-link">Slett</a></td>';
 								echo '</tr>';
 							}
 						?>
@@ -228,7 +226,6 @@
 							<th class="align-left">Tittel</th>
 							<th class="cp-table-edit">Endre</th>
 							<th class="cp-table-delete">Slett</th>
-							<th class="cp-table-view">Se på</th>
 						</tr>
 
 						<?php
@@ -238,8 +235,7 @@
 									echo '<td class="cp-table-id">' . $row["page_id"] . '</td>';
 									echo '<td class="align-left">' . $row["page_title"] . '</td>';
 									echo '<td class="cp-table-edit"><a href="page-composer.php?edit=' . $row["page_id"] . '">Endre</a></td>';
-									echo '<td class="cp-table-delete"><a href="view.php?mode=' . $mode . '&amp;p=' . $page . '&amp;delete=' . $row["page_id"] . '">Slett</a></td>';
-									echo '<td class="cp-table-view"><a href="#">Se på</a></td>';
+									echo '<td class="cp-table-delete"><a href="view.php?mode=' . $mode . '&amp;p=' . $page . '&amp;delete=' . $row["page_id"] . '" class="cp-delete-link">Slett</a></td>';
 								echo '</tr>';
 							}
 						?>
@@ -320,10 +316,9 @@
 						<tr>
 							<td class="noborder cp-table-select"></td>
 							<th class="cp-table-id">ID</th>
-							<th>Forfatter</th>
-							<th>Tittel</th>
+							<th class="align-left">Forfatter</th>
+							<th class="align-left">Tittel</th>
 							<th class="cp-table-delete">Slett</th>
-							<th class="cp-table-view">Se på</th>
 						</tr>
 
 						<?php
@@ -331,10 +326,9 @@
 								echo '<tr>';
 									echo '<td class="noborder cp-table-select"><input type="checkbox" id="' . $row["comment_id"] .'" /></td>';
 									echo '<td class="cp-table-id">' . $row["comment_id"] . '</td>';
-									echo '<td>' . $row["author_name"] . '</td>';
+									echo '<td class="align-left">' . $row["author_name"] . '</td>';
 									echo '<td class="align-left">' . $row["comment_title"] . '</td>';
-									echo '<td class="cp-table-delete"><a href="view.php?mode=' . $mode . '&amp;p=' . $page . '&amp;delete=' . $row["comment_id"] . '">Slett</a></td>';
-									echo '<td class="cp-table-view"><a href="#">Se på</a></td>';
+									echo '<td class="cp-table-delete"><a href="view.php?mode=' . $mode . '&amp;p=' . $page . '&amp;delete=' . $row["comment_id"] . '" class="cp-delete-link">Slett</a></td>';
 								echo '</tr>';
 							}
 						?>
@@ -424,7 +418,7 @@
 									echo '<td class="noborder cp-table-select"><input type="checkbox" id="' . $row["category_id"] .'" /></td>';
 									echo '<td class="cp-table-id">' . $row["category_id"] . '</td>';
 									echo '<td class="align-left">' . $row["category_name"] . '</td>';
-									echo '<td class="cp-table-delete"><a href="view.php?mode=' . $mode . '&amp;p=' . $page . '&amp;delete=' . $row["category_id"] . '">Slett</a></td>';
+									echo '<td class="cp-table-delete"><a href="view.php?mode=' . $mode . '&amp;p=' . $page . '&amp;delete=' . $row["category_id"] . '" class="cp-delete-link">Slett</a></td>';
 								echo '</tr>';
 							}
 						?>
