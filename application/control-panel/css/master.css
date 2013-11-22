@@ -898,13 +898,19 @@ table {
 		font-size: 16px;
 	}
 
+
+	/* Endre visning av navigasjon */
+
 	.cp-sidebar nav {
 		display: block !important;
 	}
 
-	.cp-mobile-menu{
+	.cp-mobile-menu {
 		display: none;
 	}
+
+
+	/* Stack editoren vertikalt */
 
 	.post-editor-main, .post-editor-meta {
 		width: 100% !important;
