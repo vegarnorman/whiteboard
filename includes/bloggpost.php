@@ -1,7 +1,13 @@
-		<div class="container"> <!-- wraps around grid -->
+<div class="container"> <!-- wraps around grid -->
 			<section class="grid g12">
 
 			<?php
+
+				require_once('application/Site.class.php');
+
+				$site = new Site();
+				//instans av dataobjektet
+				$db = $site->getDataHandler();
 				
 				$post = $_GET['no'];
 
@@ -34,7 +40,7 @@
 								<span id="error"></span>
 								<span id="free"></span>
 								<br/>
-								<input type="submit" id="submit" onclick="meshUp();" name="submit_comment" value="Legg til kommentar" class="submit-comment-button" onclick="vis()"><br/>
+								<input type="submit" id="submit" onclick="vis(); meshUp();" name="submit_comment" value="Legg til kommentar" class="submit-comment-button"><br/>
 								<br/>
 						</form>
 					</div>
