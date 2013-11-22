@@ -6,7 +6,7 @@
 
 <head>
 	<meta charset="utf-8" />
-	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
 
 	<link rel="stylesheet" href="css/master.css" />
 
@@ -181,6 +181,7 @@
 						}
 					?>
 
+					<label for="page_title">Sidetittel:</label>
 					<input class="post-editor-title" name="page_title" id="page_title" placeholder="Skriv inn tittel her" />
 
 					<div class="post-editor-toolbar">
@@ -192,7 +193,8 @@
 						<a href="#" id="editor-code"><i class="fa fa-code"></i></a>
 					</div>
 
-					<textarea class="post-editor-content" name="page_data" id="page_data" placeholder="Det var en mørk og stormfull kveld..."></textarea>
+					<label for="page_data">Sideinnhold:</label>
+					<textarea class="post-editor-content page-data" name="page_data" id="page_data" placeholder="Det var en mørk og stormfull kveld..."></textarea>
 
 					<?php
 						// Lag korrekt knapp basert på om modus er edit eller new

@@ -6,7 +6,7 @@
 
 <head>
 	<meta charset="utf-8" />
-	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
 
 	<link rel="stylesheet" href="css/master.css" />
 	<script src="http://code.jquery.com/jquery-2.0.3.min.js"></script>
@@ -60,7 +60,7 @@
 
 		<form name="login" id="login" action="login.php" method="post">
 
-			<p class="cp-login-header">Innlogging</p>
+			<p class="cp-login-header">Whiteboard CMS</p>
 
 			<p>
 				<label for="cp-login-username">Brukernavn:</label>
@@ -86,7 +86,7 @@
 
 		<form name="login" id="login" action="login.php" method="post">
 
-			<p class="cp-login-header">Innlogging</p>
+			<p class="cp-login-header">Whiteboard CMS</p>
 
 			<p>
 				<label for="cp-login-username">Brukernavn:</label>
@@ -118,7 +118,7 @@
 
 		<form name="login" id="login" action="login.php" method="post">
 
-			<p class="cp-login-header">Innlogging</p>
+			<p class="cp-login-header">Whiteboard CMS</p>
 
 			<p>
 				<label for="cp-login-username">Brukernavn:</label>

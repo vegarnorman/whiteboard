@@ -1,13 +1,12 @@
 <?php require_once "../ControlPanel.class.php"; ?>
 
-
 <!doctype html>
 
 <html lang="no">
 
 <head>
 	<meta charset="utf-8" />
-	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
 
 	<link rel="stylesheet" href="css/master.css" />
 	<script src="http://code.jquery.com/jquery-2.0.3.min.js"></script>
@@ -25,7 +24,7 @@
 	?>
 
 	<div class="cp-login">
-		<p class="cp-login-header">Bruker utlogget</p>
+		<p class="cp-login-header">Whiteboard CMS</p>
 		<p>Du er nå logget ut av kontrollpanelet.</p>
 		<p><a href="login.php">Vil du logge inn på nytt?</a></p>
 	</div>
