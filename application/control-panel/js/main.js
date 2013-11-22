@@ -1,11 +1,10 @@
 $(function() {
 
-	$(".cp-sidebar").append("<p />");
-	$(".cp-mobile-menu-toggle").append("<a href=\"#\" id=\"cp-mobile-menu-toggle\" class=\"button c2a\">Vis/skjul meny</a>");
+	$(".cp-sidebar").append('<p class="cp-mobile-menu" />');
+	$(".cp-mobile-menu").append('<a href="#" class="button c2a" id="cp-mobile-menu-toggle">Vis/skjul meny</a>');
 
-	$(".body").on("click", "#cp-mobile-menu-toggle", function() {
-		$(".cp-sidebar nav").slideToggle(300);
-		return false;
+	$(".cp-sidebar").on("click", "#cp-mobile-menu-toggle", function() {
+		$(".cp-sidebar nav").slideToggle(280);
 	});
 
 });
