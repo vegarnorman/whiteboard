@@ -511,7 +511,8 @@ td {
 .cp-login {
 	display: block;
 	background-color: #fff;
-	width: 400px;
+	width: 90%;
+	max-width: 400px;
 	min-height: 20vh;
 	margin: 25vh auto 0 auto;
 	padding: 1.5rem;
