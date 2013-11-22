@@ -1,7 +1,8 @@
 $(function() {
 
-	$(".cp-mobile-menu-toggle").click(function() {
+	$(".cp-mobile-menu-toggle a").click(function() {
 		$(".cp-sidebar nav").slideToggle(300);
+		return false;
 	});
 
 	$(".cp-sidebar").append("<p class=\"cp-mobile-menu-toggle\" />");
