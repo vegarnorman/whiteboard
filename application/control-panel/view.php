@@ -434,6 +434,7 @@
 					<section class="row">
 
 						<div class="grid g4 row">
+							<h3>Ny kategori:</h3>
 							<form name="new_category" id="new_category" action="new_category.php" method="post">
 								<input type="text" name="new_category_name" id="new_category_name" placeholder="Kategorinavn" class="grid g8" />
 								<input type="submit" name="submit" id="submit" value="Lag ny" class="grid g4" />
@@ -479,12 +480,13 @@
 	<?php else: ?>
 
 	<script>
+		redirect(0, "login.php");
 		$("body").addClass("login-page");
 	</script>
 
 	<div class="cp-login">
-		<p class="cp-login-header">Stopp</p>
-		<p>Du må <a href="login.php">logge inn</a> for å få tilgang til denne siden. Vennligst logg inn og forsøk igjen.</p>
+		<p class="cp-login-header">Kontrollpanelet</p>
+		<p>Du må <a href="login.php">logge inn</a> for å få tilgang til denne siden.</p>
 	</div>
 
 	<?php endif; ?>

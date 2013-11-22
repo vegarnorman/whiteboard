@@ -27,6 +27,7 @@
 	<div class="cp-login">
 		<p class="cp-login-header">Bruker utlogget</p>
 		<p>Du er nå logget ut av kontrollpanelet.</p>
+		<p><a href="login.php">Vil du logge inn på nytt?</a></p>
 	</div>
 
 </body>

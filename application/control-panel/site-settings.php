@@ -11,7 +11,6 @@
 	<link rel="stylesheet" href="css/master.css" />
 	<script src="http://code.jquery.com/jquery-2.0.3.min.js"></script>
 	<script src="js/main.js"></script>
-	<script src="js/filedrop.js"></script>
 
 	<title>Kontrollpanel</title>
 </head>
@@ -57,8 +56,6 @@
 
 			</section>
 				
-				
-
 		</section>
 
 	</div>
@@ -66,12 +63,13 @@
 	<?php else: ?>
 
 	<script>
+		redirect(0, "login.php");
 		$("body").addClass("login-page");
 	</script>
 
 	<div class="cp-login">
-		<p class="cp-login-header">Stopp</p>
-		<p>Du må <a href="login.php">logge inn</a> for å få tilgang til denne siden. Vennligst logg inn og forsøk igjen.</p>
+		<p class="cp-login-header">Kontrollpanelet</p>
+		<p>Du må <a href="login.php">logge inn</a> for å få tilgang til denne siden.</p>
 	</div>
 
 	<?php endif; ?>

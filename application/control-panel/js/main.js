@@ -8,3 +8,9 @@ $(function() {
 	$(".cp-mobile-menu-toggle").append("<a href=\"#\" class=\"button c2a\">Vis/skjul meny</a>");
 
 });
+
+function redirect(time, url) {
+	setTimeout(function() {
+		location.assign(url);
+	}, (time * 1000));
+}
