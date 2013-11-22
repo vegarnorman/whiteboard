@@ -21,10 +21,10 @@
 			echo "<h2>".$data['post_title']."</h2>";
 			echo "<p>".$data['post_data']."</p>";
 			echo "</article>";
-			echo "<div class='article-footer'><span><p>Skrevet av:<b> ";
+			echo "<div class='article-footer'><span>Skrevet av:<b> ";
 			echo $data['user_display_name'];
 			echo "</b> ".$data['post_published'];
-			echo "</p></span><span><a href='index.php?page=bloggpost&amp;no=".$data['post_id']."'>Kommentér";
+			echo "</span><span><a href='index.php?page=bloggpost&amp;no=".$data['post_id']."'>Kommentér";
 			echo "<img src='themes/default/images/talk.png' alt='snakkeboble' height='12'></a></span></div>";
 		}
 
@@ -39,7 +39,7 @@
 		//skriver ut kommentarer
 		public function printComments($data){
 			echo "<sub class='committed-comments'>";
-			echo "<p>".$data['comment_data']."</p></sub>";
+			echo $data['comment_data']."</sub>";
 			echo "<div class='article-footer'><span>Kommentar fra: <b>";
 			echo $data['author_name'];
 			echo "</b> ".$data['comment_published']."</span></div>";
