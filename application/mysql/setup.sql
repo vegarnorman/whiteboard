@@ -141,7 +141,7 @@ create table if not exists Comment_Meta (
 	comment_published_by int(4) not null,
 	primary key (comment_id),
 	foreign key (comment_id) references Comment (comment_id) on delete cascade,
-	foreign key (comment_published_by) references Author (author_id) on delete cascade;
+	foreign key (comment_published_by) references Author (author_id) on delete cascade
 );
 
 /* Setter inn litt tabelldata
