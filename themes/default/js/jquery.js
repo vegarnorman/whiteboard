@@ -1,3 +1,4 @@
+
 $(document).ready(function(){
 
 	//toggle between show/hide comment-box
@@ -6,7 +7,7 @@ $(document).ready(function(){
 	});
 
 
-	//toggle between original/green color
+	// //toggle between original/green color
 	$("#new-comment-button").click(function(){
 	$(this).toggleClass("change-to-green");
 	});
