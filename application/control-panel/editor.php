@@ -239,20 +239,22 @@
 					</section>
 
 					
+					<section class="post-editor-section-categories">
 						<h3>Kategorier</h3>
 
 						<?php $cp->categories(); ?>
+					</section>
 					
 
 					<?php
 
 					// Lag korrekt knapp basert på om modus er edit eller new
 					if (isset($editable) && $editable) {
-						echo '<input type="submit" id="editor_submit" name="editor_submit" class="button green bigger" value="Oppdater" />';
+						echo '<p><input type="submit" id="editor_submit" name="editor_submit" class="button green bigger" value="Oppdater" /></p>';
 					}
 
 					else {
-						echo '<input type="submit" id="editor_submit" name="editor_submit" class="button green bigger" value="Publiser" />';
+						echo '<p><input type="submit" id="editor_submit" name="editor_submit" class="button green bigger" value="Publiser" /></p>';
 					}
 				?>
 

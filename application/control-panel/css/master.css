@@ -22,8 +22,9 @@
 |	<6> Grid                                              |
 |	<7> Responsivt design                                 |
 |		<7a> Små skjermer                                 |
-|		<7b> Store skjermer                               |
-|		<7c> Digre skjermer                               |
+|		<7b> Mellomstore skjermer                         |
+|		<7c> Store skjermer                               |
+|		<7d> Digre skjermer                               |
 |	<8> Hjelpeklasser                                     |
 +--------------------------------------------------------*/
 
@@ -887,10 +888,15 @@ table {
 }
 
 
-/*	<7b> Store skjermer 
+
+/*	<7b> Mellomstore skjermer 
 ---------------------*/
 
-@media only screen and (min-width: 769px) {
+@media only screen and (min-width: 769px) and (max-width: 1439px) {
+
+	html {
+		font-size: 16px;
+	}
 
 	.cp-sidebar nav {
 		display: block !important;
@@ -900,10 +906,61 @@ table {
 		display: none;
 	}
 
+	.post-editor-main, .post-editor-meta {
+		width: 100% !important;
+		float: none;
+		margin-left: 0;
+		margin-right: 0;
+	}
+
+	.post-editor-main {
+		margin-bottom: 3rem;
+	}
+
+	.post-editor-section-tags {
+		width: 66.6%;
+		float: left;
+		-moz-box-sizing: border-box;
+		box-sizing: border-box;
+		padding-right: 3%;
+	}
+
+	.post-editor-section-categories {
+		width: 33.4%;
+		float: left;
+		-moz-box-sizing: border-box;
+		box-sizing: border-box;
+		padding-left: 3%;
+	}
+
+	.post-editor-section-categories + p:before {
+		content: " ";
+		display: table;
+		clear: both;
+	}
+
+	.post-editor-section-categories + p input {
+		margin-top: 1.5rem;
+	}
+
 }
 
 
-/*	<7c> Digre skjermer 
+
+/*	<7c> Store skjermer 
+---------------------*/
+
+@media only screen and (min-width: 1440px) {
+
+	.cp-mobile-menu{
+		display: none;
+	}
+
+}
+
+
+
+/*	<7d> Digre skjermer 
 ---------------------*/
 
 @media only screen and (min-width: 1920px) {
@@ -913,6 +970,7 @@ table {
 	}
 
 }
+
 
 
 /*	<8> Hjelpeklasser 
