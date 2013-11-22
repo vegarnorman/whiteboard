@@ -1,3 +1,4 @@
+
 //highligts current menu item
 window.onload = function highlight(){
 	//get url
@@ -12,25 +13,6 @@ window.onload = function highlight(){
 		}
 	}
 };
-
-// Easter Egg
-
-var navnomraade = document.getElementsByTagName("input");
-var chucknavn = navnomraade.getAttribute("placeholder");
-
-
-function popupwindow(url, title, w, h) {
-  var left = (screen.width/2)-(w/2);
-  var top = (screen.height/2)-(h/2);
-  return window.open(url="http://www.empireonline.com/images/uploaded/chuck-norris-uzis.jpg", title, 'toolbar=no, location=no, directories=no, status=no, menubar=no, scrollbars=no, resizable=no, copyhistory=no, width='+w+', height='+h+', top='+top+', left='+left);
-} 
-
- function vis() {
-	if (navnomraade[0].value === "Chuck Norris") {
-	popupwindow();
-	}
-}
-//
 
 
 
@@ -147,6 +129,10 @@ function commentCheck(){
 
 
 
+
+
+
+// melding til bruker 
 function free(){
 	var mail = document.commentForm.mail;
 		document.getElementById("free").setAttribute("style", "color:#444040;");
@@ -157,7 +143,7 @@ function free(){
 function free2(){
 	var mail = document.commentForm.mail;
 		document.getElementById("free").setAttribute("style", "color:#EEE;");
-		document.getElementById("free").innerHTML="Frivillig felt";
+		document.getElementById("free").innerHTML="Kommentaren kan postes!";
 }
 
 
@@ -216,6 +202,26 @@ function meshUp(){
  	return false;
 }
 
+
+
+
+// Easter Egg Marius
+
+var navnomraade = document.getElementsByTagName("input");
+var chucknavn = navnomraade.getAttribute("placeholder");
+
+
+function popupwindow(url, title, w, h) {
+  var left = (screen.width/2)-(w/2);
+  var top = (screen.height/2)-(h/2);
+  return window.open(url="http://www.empireonline.com/images/uploaded/chuck-norris-uzis.jpg", title, 'toolbar=no, location=no, directories=no, status=no, menubar=no, scrollbars=no, resizable=no, copyhistory=no, width='+w+', height='+h+', top='+top+', left='+left);
+} 
+
+ function vis() {
+	if (navnomraade[0].value === "Chuck Norris") {
+	popupwindow();
+	}
+}
 
 
 
