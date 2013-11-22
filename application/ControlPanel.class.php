@@ -31,7 +31,7 @@
 						$name = (string) $category["category_name"];
 						echo '<li>'.
 							 '<input type="checkbox" value="' . $id . '" id="' . $id . '" />'.
-							 '<label for="' . $id . '">' . $name . '</label>'.
+							 '<label class="cp-category-label" for="' . $id . '">' . $name . '</label>'.
 							 '</li>';
 					}
 

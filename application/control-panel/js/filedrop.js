@@ -1,8 +1,6 @@
 $(function() {
 
-	if (window.FileReader) {
-
-		$(".cp-main").append("<div class=\"cp-filedrop grid g12\" />");
+		$(".cp-main").append("<div class=\"cp-filedrop grid g12\" id=\"cp-filedrop\" />");
 		$(".cp-filedrop").append("<p class=\"cp-filedrop-status\">Slipp en tekstfil her for å publisere!</p>");
 
 		var fileContent = "";
@@ -51,7 +49,5 @@ $(function() {
 		filedrop.addEventListener("dragover", filedropDragover, false);
 		filedrop.addEventListener("drop", filedropDropAction, false);
 		filedrop.addEventListener("change", filedropDropAction, false);
-
-	}
 
 });

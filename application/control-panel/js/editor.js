@@ -1,5 +1,12 @@
 $(function() {
 
+	$(".post-editor-section-tags").append('<h3>Emneord</h3>');
+	$(".post-editor-section-tags").append('<p class="post-editor-helper-label">Trykk på et emneord for å slette det</p>');
+	$(".post-editor-section-tags").append('<div id="post-editor-current-tags" class="post-editor-current-tags" />');
+	$(".post-editor-section-tags").append('<div class="row post-editor-tags" />');
+	$(".post-editor-tags").append('<input type="text" id="post-editor-new-tag" placeholder="Nytt emneord" class="grid g9 no-gutters post-editor-new-tag" />');
+	$(".post-editor-tags").append('<button id="post-editor-tag-add" class="grid g3 no-gutters post-editor-tag-add button green"><i class="fa fa-plus-circle"></i></button>');
+
 	if (edit !== "") {
 		edit = edit.replace(/<br \/>/g, "\\n");
 		var post = jQuery.parseJSON(edit);
@@ -8,13 +15,17 @@ $(function() {
 		$("#post_title").val(post.post_title);
 		$("#post_data").val(post.post_data);
 
-		$.each(post.post_tags, function(key, value) {
-			var tag = '<span class="tag">' + value + '</span>';
-			$(".post-editor-current-tags").append(tag);
-		});
+		if (post.post_tags !== undefined) {
+			$.each(post.post_tags, function(key, value) {
+				var tag = '<span class="tag">' + value + '</span>';
+				$(".post-editor-current-tags").append(tag);
+			});
+		}
 
-		for (var i = 0; i < post.post_categories.length; i++) {
-			$("input#" + post.post_categories[i]).attr("checked", true);
+		if (post.post_categories !== undefined) {
+			for (var i = 0; i < post.post_categories.length; i++) {
+				$("input#" + post.post_categories[i]).attr("checked", true);
+			}
 		}
 	}
 

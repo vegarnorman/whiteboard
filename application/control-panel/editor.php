@@ -214,6 +214,7 @@
 						}
 					?>
 
+					<label for="post_title">Tittel:</label>
 					<input class="post-editor-title" name="post_title" id="post_title" placeholder="Skriv inn tittel her" />
 
 					<div class="post-editor-toolbar">
@@ -225,6 +226,7 @@
 						<a href="#" id="editor-code"><i class="fa fa-code"></i></a>
 					</div>
 
+					<label for="post_data">Innhold:</label>
 					<textarea class="post-editor-content" name="post_data" id="post_data" placeholder="Det var en mørk og stormfull kveld..."></textarea>
 
 				</section>
@@ -232,22 +234,15 @@
 
 				<aside class="grid g3 post-editor-meta">
 
-					<h3>Emneord</h3>
-
-					<p class="post-editor-helper-label">Trykk på et emneord for å slette det</p>
-
-					<div id="post-editor-current-tags" class="post-editor-current-tags">
+					<section class="post-editor-section-tags">
 						
-					</div>
+					</section>
 
-					<div class="row post-editor-tags">
-						<input type="text" id="post-editor-new-tag" placeholder="Nytt emneord" class="grid g9 no-gutters post-editor-new-tag" />
-						<button id="post-editor-tag-add" class="grid g3 no-gutters post-editor-tag-add button green"><i class="fa fa-plus-circle"></i></button>
-					</div>
+					
+						<h3>Kategorier</h3>
 
-					<h3>Kategorier</h3>
-
-					<?php $cp->categories(); ?>
+						<?php $cp->categories(); ?>
+					
 
 					<?php
 

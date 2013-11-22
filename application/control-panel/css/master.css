@@ -244,6 +244,10 @@ label {
 	display: none;
 }
 
+label.cp-category-label {
+	display: inline;
+}
+
 /* Navigasjon i sidebaren
 */
 
