@@ -1,9 +1,9 @@
 $(function() {
 
-	$(".cp-sidebar").append("<p class=\"cp-mobile-menu-toggle\" />");
-	$(".cp-mobile-menu-toggle").append("<a href=\"#\" class=\"button c2a\">Vis/skjul meny</a>");
+	$(".cp-sidebar").append("<p />");
+	$(".cp-mobile-menu-toggle").append("<a href=\"#\" id=\"cp-mobile-menu-toggle\" class=\"button c2a\">Vis/skjul meny</a>");
 
-	$(".body").on("click", ".cp-mobile-menu-toggle a", function() {
+	$(".body").on("click", "#cp-mobile-menu-toggle", function() {
 		$(".cp-sidebar nav").slideToggle(300);
 		return false;
 	});
