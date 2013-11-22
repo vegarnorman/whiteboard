@@ -3,13 +3,7 @@
 			<section class="grid g8">
 
 				<?php
-					require_once('application/Site.class.php');
 					
-					$site = new Site();
-					//instans av dataobjektet
-					$db = $site->getDataHandler();
-					
-
 					//sørger for at databasekallet får riktig startverdi (id)
 					if ($_GET['site'] < 0) {
 						$start = 0;

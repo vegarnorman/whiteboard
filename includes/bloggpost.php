@@ -2,12 +2,6 @@
 			<section class="grid g12">
 
 			<?php
-
-				require_once('application/Site.class.php');
-
-				$site = new Site();
-				//instans av dataobjektet
-				$db = $site->getDataHandler();
 				
 				$post = $_GET['no'];
 

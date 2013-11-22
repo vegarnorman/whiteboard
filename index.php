@@ -17,6 +17,12 @@
 	<script type="text/javascript" src="themes/default/js/functions.js"></script>
 </head>
 <body>
+
+	<?php
+		$site = new Site();
+		$db = $site->getDataHandler();
+	?>
+
 	<header id="top-of-page">
 		<h1>whiteboard</h1>	
 		<h4>content management system</h4>
@@ -73,6 +79,9 @@
 			</ul><!-- end of container  -->
 	</footer>
 
-	
+	<?php
+		$site->kill();
+	?>
+
 </body>
 </html>
