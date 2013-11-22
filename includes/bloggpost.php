@@ -3,26 +3,27 @@
 
 			<?php
 
-				require_once('application/Site.class.php');
+				if (isset($_GET['no'])) {
+					$post = (int) $_GET['no'];
 
-				$site = new Site();
-				//instans av dataobjektet
-				$db = $site->getDataHandler();
-				
-				$post = $_GET['no'];
-
-				if ($post < 0 || is_nan($post)) {
-					echo "Denne posten finnes ikke!";
-				}
-				else{
-					$post_data = Post::getPost($db, $post, false);
-					if ($post_data == -99) {
+					if ($post < 0 || is_nan($post)) {
 						echo "Denne posten finnes ikke!";
 					}
 					else{
-						$site->printSinglePost($post_data);
+						$post_data = Post::getPost($db, $post, false);
+						if ($post_data == -99) {
+							echo "Denne posten finnes ikke!";
+						}
+						else{
+							$site->printSinglePost($post_data);
+						}
 					}
 				}
+				else{
+					include "404.html";
+				}
+			
+			
 
 			?>	
 
@@ -86,10 +87,13 @@
 				<h2>Kommentarer</h2>
 
 				<?php			
-
 					$comments = $db->operation("find", "Comment", array("post_id" => $_GET['no']));
-					$comments = array_reverse($comments);
-					if ($comments == -99) {
+					if (is_array($comments)) {
+						$comments = array_reverse($comments);
+					}
+
+					
+					if ($comments == -99 || $comments == 0) {
 						echo "Ingen kommentarer";
 					}
 					else{
@@ -98,6 +102,7 @@
 							$site->printComments($data);
 						}
 					}
+				
 				
 
 				
