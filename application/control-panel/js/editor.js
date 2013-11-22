@@ -1,7 +1,7 @@
 $(function() {
 
 	$(".post-editor-section-tags").append('<h3>Emneord</h3>');
-	$(".post-editor-section-tags").append('<p class="post-editor-helper-label">Trykk på et emneord for å slette det</p>');
+	$(".post-editor-section-tags").append('<p class="post-editor-help">Trykk på et emneord for å slette det</p>');
 	$(".post-editor-section-tags").append('<div id="post-editor-current-tags" class="post-editor-current-tags" />');
 	$(".post-editor-section-tags").append('<div class="row post-editor-tags" />');
 	$(".post-editor-tags").append('<input type="text" id="post-editor-new-tag" placeholder="Nytt emneord" class="grid g9 no-gutters post-editor-new-tag" />');
