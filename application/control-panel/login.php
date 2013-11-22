@@ -63,10 +63,12 @@
 			<p class="cp-login-header">Innlogging</p>
 
 			<p>
+				<label for="cp-login-username">Brukernavn:</label>
 				<input type="text" name="cp-login-username" id="cp-login-username" placeholder="Brukernavn" />
 			</p>
 
 			<p>
+				<label for="cp-login-password">Passord:</label>
 				<input type="password" name="cp-login-password" id="cp-login-password" placeholder="Passord" />
 			</p>
 

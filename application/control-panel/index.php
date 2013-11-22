@@ -43,9 +43,7 @@
 					For å publisere en post, trykk "Skriv ny post" i menyen - eller, for nettlesere som støtter dette, bare dra en fil lagret på enheten din over det grå området under for å laste opp filen! Filer må være i tekst- eller markdown-format.
 				</p>
 
-				<div id="cp-filedrop" class="cp-filedrop">
-					<p id="cp-filedrop-status">Slipp en tekstfil her for å publisere!</p>
-				</div>
+				
 
 			</section>
 				

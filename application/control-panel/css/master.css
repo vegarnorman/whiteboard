@@ -237,6 +237,13 @@ button:active,
 	background-color: #c40000;
 }
 
+/* Labels skjules by default av CSS
+*/
+
+label {
+	display: none;
+}
+
 /* Navigasjon i sidebaren
 */
 

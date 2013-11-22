@@ -1,5 +1,10 @@
 $(function() {
 
+	if (window.FileReader) {
+
+		$(".cp-main").append("<div class=\"cp-filedrop grid g12\" />");
+		$(".cp-filedrop").append("<p class=\"cp-filedrop-status\">Slipp en tekstfil her for å publisere!</p>");
+
 		var fileContent = "";
 
 		function filedropDragover(evt) {
@@ -40,11 +45,13 @@ $(function() {
 				reader.readAsText(file);
 			}
 		}
-	
+
 
 		var filedrop = document.getElementById("cp-filedrop");
 		filedrop.addEventListener("dragover", filedropDragover, false);
 		filedrop.addEventListener("drop", filedropDropAction, false);
 		filedrop.addEventListener("change", filedropDropAction, false);
+
+	}
 
 });
