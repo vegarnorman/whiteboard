@@ -30,8 +30,8 @@
 		public function run($query) {
 			$resultat = $this->query($query);
 			return $resultat;
-			
 		}
+
 
 	}
 

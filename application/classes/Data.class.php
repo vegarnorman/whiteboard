@@ -14,13 +14,18 @@
 
 		// destruktør - tilintetgjør objektet når det ikke lengre trengs
 		public function __destruct() {
-			$this->close();
-			unset($this->db);
+			
 		}
 
 		// kill() - kaller på destruktøren
 		public function kill() {
+			$this->close();
+			unset($this->db);
 			$this->__destruct();
+		}
+
+		public function show() {
+			return $this->db;
 		}
 
 		// connected() - returnerer tilkoblingsstatus i form av true/false

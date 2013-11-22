@@ -17,8 +17,7 @@
 		}
 
 		public function __destruct() {
-			$this->data_handler->kill();
-			unset($this->data_handler);
+		
 		}
 
 		public function getDataHandler() {
@@ -30,6 +29,8 @@
 		}
 
 		public function kill() {
+			echo $this->data_handler->kill();
+			unset($this->data_handler);
 			$this->__destruct();
 		}
 
