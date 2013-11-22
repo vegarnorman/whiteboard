@@ -1,7 +1,7 @@
 <?php
 	
 	require_once "Database.auth.class.php";
-	require_once "Database.settings.alt.php";
+	require_once "Database.settings.php";
 
 	class Database extends mysqli {
 
