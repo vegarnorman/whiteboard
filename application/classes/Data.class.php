@@ -12,6 +12,17 @@
 			$this->db = new Database();
 		}
 
+		// destruktør - tilintetgjør objektet når det ikke lengre trengs
+		public function __destruct() {
+			$this->close();
+			unset($this->db);
+		}
+
+		// kill() - kaller på destruktøren
+		public function kill() {
+			$this->__destruct();
+		}
+
 		// connected() - returnerer tilkoblingsstatus i form av true/false
 		public function connected() {
 			return $this->db->connected();
