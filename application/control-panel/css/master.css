@@ -1,13 +1,44 @@
 @charset "UTF-8";
 
-/*	Importsetninger
-*/
+/*--------------------------------------------------------+
+|		       W H I T E B O A R D   C M S                |
++---------------------------------------------------------+
+|	Innholdsfortegnelse:                                  |					
+|                                                         |
+|	<1> Importsetninger                                   |
+|	<2> En ytterst simpel reset av elementer              |
+|	<3> Oppsett av rotelementer                           |
+|	<4> Grunnlinje                                        |
+|	<5> Komponenter                                       |
+|		<5a> Grunnleggende flexbox-layout                 |
+|		<5b> Sidebar                                      |
+|		<5c> Editor                                       |
+|		<5d> Emneord                                      |
+|		<5e> Kategorier                                   |
+|		<5f> Meldingsbokser                               |
+|		<5g> Oversiktssidene + tabeller                   |
+|		<5h> Innlogging                                   |
+|		<5i> Filedrop                                     |
+|	<6> Grid                                              |
+|	<7> Responsivt design                                 |
+|		<7a> Små skjermer                                 |
+|		<7b> Store skjermer                               |
+|		<7c> Digre skjermer                               |
+|	<8> Hjelpeklasser                                     |
++--------------------------------------------------------*/
+
+
+
+/*	<1> Importsetninger
+=====================*/
 
 @import url("http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css");
 @import url("../fonts/fira/fira.css");
 
-/*	En ytterst simpel reset av elementer
-*/
+
+
+/*	<2> En ytterst simpel reset av elementer
+==========================================*/
 
 *, html, body, h1, h2, h3, h4, h5, h6, p, div, aside, article, section, header, footer, nav {
 	border: 0;
@@ -16,8 +47,10 @@
 	vertical-align: baseline;
 }
 
-/*	Oppsett av rotelementer
-*/
+
+
+/*	<3> Oppsett av rotelementer
+=============================*/
 
 html {
 	font-family: "Fira Sans", sans-serif;
@@ -36,8 +69,13 @@ body {
 	color: rgba(14, 15, 20, 0.8);
 }
 
-/*	Enkelt oppsett av typografi og mye brukte elementer
-*/
+
+
+/*	<4> Grunnlinje
+================*/
+
+
+/* Overskrifter */
 
 h1, h2, h3, h4, h5, h6 {
 	line-height: 1;
@@ -59,24 +97,35 @@ h4 { font-size: 1rem; }
 h5 { font-size: 0.75rem; }
 h6 { font-size: 0.6rem; }
 
+
+/* Paragrafer */
+
 p {
 	padding-bottom: 1.5rem;
 }
+
+
+/* Lenker */
 
 a {
 	text-decoration: none;
 	color: #0053d9;
 }
 
-a.cp-delete-link {
-	color: #cc0000;
-}
-
 a:hover {
 	text-decoration: underline;
 }
 
-/* Skjemakomponenter trenger litt ekstra overbevisning */
+a.cp-delete-link {
+	color: #cc0000;
+}
+
+
+
+/* Skjemakomponenter  */
+
+
+/* En litt strengere reset av komponenter */
 
 input, button, textarea, select, option {
 	font-family: "Fira Sans", sans-serif;
@@ -84,81 +133,26 @@ input, button, textarea, select, option {
 	outline: 0;
 }
 
+
+/* Inputfelter */
+
 input[type="text"], input[type="password"], textarea {
 	border: 1px solid rgba(0, 0, 0, 0.2);
 	padding: 0.5rem;
 }
 
-input[type="text"]:hover, input[type="password"]:hover, textarea:hover {
-	border: 1px solid rgba(0, 0, 0, 0.3);
-}
+	input[type="text"]:hover, input[type="password"]:hover, textarea:hover {
+		border: 1px solid rgba(0, 0, 0, 0.3);
+	}
 
-input[type="text"]:focus, input[type="password"]:focus, textarea:focus {
-	border: 1px solid #0058e5;
-	box-shadow: 0 0 5px #0058e5;
-}
-
-
-/*	Komponenter til kontrollpanelet
-==================================*/
+	input[type="text"]:focus, input[type="password"]:focus, textarea:focus {
+		border: 1px solid #0058e5;
+		box-shadow: 0 0 5px #0058e5;
+	}
 
 
-/* .cp-container fungerer som en container for hele grensesnittet */
-.cp-container {
-	display: flex;
-	flex-flow: row nowrap;
-	justify-content: flex-start;
-	align-items: stretch;
-	width: 100%;
-	min-height: 100%;
-}
+/* Knapper */
 
-/* Sidebar til venstre */
-.cp-sidebar {
-	flex: 0 0 auto;
-	background-color: rgba(14, 15, 20, 1);
-	min-width: 180px;
-	max-width: 280px;
-	width: 20%;
-	min-height: 100%;
-	padding: 1rem;
-	-moz-box-sizing: border-box;
-	box-sizing: border-box;
-}
-
-/* Hovedcontainer - alle grid-elementer skal inn her */
-.cp-main {
-	flex: 1 1 auto;
-	width: 80%;
-	padding: 1rem;
-	-moz-box-sizing: border-box;
-	box-sizing: border-box;
-}
-
-/* Automagisk clearing */
-.cp-main:before, .cp-main:after {
-	display: table;
-	content: " ";
-	clear: both;
-}
-
-/* Tittelen på websiden */
-.cp-site-title {
-	border-bottom: 2px solid rgba(0, 0, 0, 0.1);
-	margin-bottom: 1.5rem;
-}
-
-.cp-site-title span {
-	color: rgba(14, 15, 20, 0.5);
-	font-size: 70%;
-	font-weight: 400;
-}
-
-.cp-logout {
-	margin-top: 3rem;
-}
-
-/* A button is a button is a button is a button */
 input[type="submit"],
 input[type="button"],
 button,
@@ -176,30 +170,27 @@ button,
 	color: #ffffff;
 }
 
-input[type="submit"]:hover,
-input[type="button"]:hover,
-button:hover,
-.button:hover {
-	text-decoration: none;
-	background-color: #0058e5;
-}
+	input[type="submit"]:hover,
+	input[type="button"]:hover,
+	button:hover,
+	.button:hover {
+		text-decoration: none;
+		background-color: #0058e5;
+	}
 
-input[type="submit"]:active,
-input[type="button"]:active,
-button:active,
-.button:active {
-	border-bottom: 0;
-	margin-top: 3px;
-	background-color: #004ecc;
-}
+	input[type="submit"]:active,
+	input[type="button"]:active,
+	button:active,
+	.button:active {
+		background-color: #004ecc;
+	}
+
+
+/* Størrelsesmodifikatorer */
 
 .button.smaller {
 	font-size: 80%;
 	border-bottom-width: 2px;
-}
-
-.button.smaller:active {
-	margin-top: 2px;
 }
 
 .button.bigger {
@@ -210,34 +201,38 @@ button:active,
 	display: block;
 }
 
+
+/* Fargemodifikatorer */
+
 .button.green {
 	background-color: #00992b;
 	border-bottom-color: #007321;
 }
 
-.button.green:hover {
-	background-color: #00a62f;
-}
+	.button.green:hover {
+		background-color: #00a62f;
+	}
 
-.button.green:active {
-	background-color: #008c28;
-}
+	.button.green:active {
+		background-color: #008c28;
+	}
+
 
 .button.red {
 	background-color: #d00000;
 	border-bottom-color: #a00000;
 }
 
-.button.red:hover {
-	background-color: #de0000;
-}
+	.button.red:hover {
+		background-color: #de0000;
+	}
 
-.button.red:active {
-	background-color: #c40000;
-}
+	.button.red:active {
+		background-color: #c40000;
+	}
 
-/* Labels skjules by default av CSS
-*/
+
+/* Labels */
 
 label {
 	display: none;
@@ -247,43 +242,109 @@ label.cp-category-label {
 	display: inline;
 }
 
-/* Navigasjon i sidebaren
-*/
+
+/*	<5> Komponenter
+=================*/
+
+
+/* <5a> Grunnleggende flexbox-layout 
+----------------------------------*/
+
+.cp-container {
+	display: flex;
+	flex-flow: row nowrap;
+	justify-content: flex-start;
+	align-items: stretch;
+	width: 100%;
+	min-height: 100%;
+}
+
+
+.cp-sidebar {
+	flex: 0 0 auto;
+	background-color: rgba(14, 15, 20, 1);
+	min-width: 180px;
+	max-width: 280px;
+	width: 20%;
+	min-height: 100%;
+	padding: 1rem;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+
+.cp-main {
+	flex: 1 1 auto;
+	width: 80%;
+	padding: 1rem;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+	.cp-main:before, .cp-main:after {
+		display: table;
+		content: " ";
+		clear: both;
+	}
+
+
+/* Sidetittel */
+
+.cp-site-title {
+	border-bottom: 2px solid rgba(0, 0, 0, 0.1);
+	margin-bottom: 1.5rem;
+}
+
+	.cp-site-title span {
+		color: rgba(14, 15, 20, 0.5);
+		font-size: 70%;
+		font-weight: 400;
+	}
+
+
+
+/* <5b> Sidebar
+-------------*/
 
 nav ul {
 	list-style-type: none;
 	margin: 0;
 }
 
-nav ul li {
-	margin: 0;
+	nav ul li {
+		margin: 0;
+	}
+
+		nav ul li a {
+			display: block;
+			padding: 0.5rem;
+			color: #fff;
+			text-decoration: none;
+		}
+
+			nav ul li a:hover {
+				background-color: rgba(0, 200, 255, 0.16);
+				text-decoration: none;
+			}
+
+			nav ul li a i.fa {
+				padding-right: 0.5rem;
+			}
+
+
+/* Gi utloggingsknappen mer luft */
+
+.cp-logout {
+	margin-top: 3rem;
 }
 
-nav ul li a {
-	display: block;
-	padding: 0.5rem;
-	color: #fff;
-	text-decoration: none;
-}
 
-nav ul li a:hover {
-	background-color: rgba(0, 200, 255, 0.16);
-	text-decoration: none;
-}
 
-/*	Gi ikoner fra FontAwesome litt mer plass
-*/
+/*	<5c> Editor
+-------------*/
 
-i.fa {
-	padding-right: 0.5rem;
-}
 
-/*	Komponenter til editoren
-*/
-
-.post-editor-main {
-	
-}
+/* Fellesregler for tittelfelt og innholdsfelt */
 
 .post-editor-title, .post-editor-content {
 	width: 100%;
@@ -291,6 +352,9 @@ i.fa {
 	-moz-box-sizing: border-box;
 	color: rgba(14, 15, 20, 0.8);
 }
+
+
+/* Tittelfelt */
 
 .post-editor-title {
 	font-size: 150%;
@@ -300,6 +364,9 @@ i.fa {
 	min-height: 4rem;
 }
 
+
+/* Innholdsfelt */
+
 .post-editor-content {
 	font-family: "Fira Mono", monospace;
 	min-height: 65vh;
@@ -307,13 +374,18 @@ i.fa {
 	border-width: 2px;
 }
 
-.post-editor-content:hover, .post-editor-content:focus {
-	border-width: 2px;
-	box-shadow: none;
-}
+	.post-editor-content:hover, .post-editor-content:focus {
+		border-width: 2px;
+		box-shadow: none;
+	}
 
-/*	Toolbar til editor
-*/
+	/* Editor for statiske sider trenger litt mer plass */
+	.page-data {
+		margin-bottom: 1.5rem;
+	}
+
+
+/*	Toolbar til innholdsfeltet */
 
 .post-editor-toolbar {
 	background-color: rgba(14, 15, 20, 0.25);
@@ -330,18 +402,35 @@ i.fa {
 	display: inline-block;
 }
 
-.post-editor-toolbar a:hover {
-	background-color: rgba(255, 255, 255, 0.2);
-	color: #0058e5;
+	.post-editor-toolbar a:hover {
+		background-color: rgba(255, 255, 255, 0.2);
+		color: #0058e5;
+	}
+
+	.post-editor-toolbar a span {
+		display: none;
+	}
+
+
+
+/* <5d> Emneord 
+-------------*/
+
+
+.post-editor-section-tags {
+	margin-bottom: 1.5rem;
 }
 
-.post-editor-toolbar a span {
-	display: none;
+
+/* Informasjonstekst */
+
+.post-editor-help {
+	color: rgba(14, 15, 20, 0.4);
+	font-size: 90%;
+	padding-bottom: 0.25rem;
 }
 
-#post-editor i.fa {
-	padding: 0;
-}
+/* Felt for gjeldende emneord */
 
 .post-editor-current-tags {
 	display: block;
@@ -353,9 +442,17 @@ i.fa {
 	min-height: 15vh;
 }
 
+
+/* Container for innlegging av emneord */
+
 .post-editor-tags {
 	margin-bottom: 3rem;
 }
+
+.post-editor-new-tag, .post-editor-tag-add {
+	min-height: 3rem;
+}
+
 
 .post-editor-new-tag {
 	padding: 0 0 0 0.5rem;
@@ -369,13 +466,8 @@ i.fa {
 	text-align: center;
 }
 
-.post-editor-tag-add:focus {
-	margin-top: 0;
-}
 
-.post-editor-new-tag, .post-editor-tag-add {
-	min-height: 3rem;
-}
+/* De faktiske emneordene */
 
 .tag {
 	background-color: #0058e5;
@@ -387,41 +479,39 @@ i.fa {
 	font-size: 90%;
 }
 
-.tag:hover {
-	background-color: #d00000;
-	cursor: pointer;
-}
+	.tag:hover {
+		background-color: #d00000;
+		cursor: pointer;
+	}
+
+
+
+/*	<5e> Kategorier
+-----------------*/
+
 
 .post-editor-categories {
 	list-style-type: none;
 	margin-bottom: 3rem;
 }
 
-.post-editor-categories li {
-	padding: 0.33rem 0;
-}
+	.post-editor-categories li {
+		padding: 0.33rem 0;
+	}
 
-.post-editor-categories label {
-	padding-left: 0.5rem;
-}
+	.post-editor-categories label {
+		padding-left: 0.5rem;
+	}
 
-.post-editor-categories label:hover {
-	color: #0058e5;
-}
-
-.post-editor-helper-label {
-	color: rgba(14, 15, 20, 0.4);
-	font-size: 90%;
-	padding-bottom: 0.25rem;
-}
-
-#page_data {
-	margin-bottom: 1.5rem;
-}
+		.post-editor-categories label:hover {
+			color: #0058e5;
+		}
 
 
-/*	Meldingsbokser
-*/
+
+/*	<5f> Meldingsbokser
+---------------------*/
+
 
 .cp-message {
 	display: block;
@@ -430,25 +520,30 @@ i.fa {
 	margin-bottom: 1.5rem;
 }
 
-.cp-message.success {
-	background-color: #00992b;
-}
+	.cp-message.success {
+		background-color: #00992b;
+	}
 
-.cp-message.error {
-	background-color: #d00000;
-}
+	.cp-message.error {
+		background-color: #d00000;
+	}
 
-.cp-message.information {
-	background-color: #0053d9;
-}
+	.cp-message.information {
+		background-color: #0053d9;
+	}
 
 
-/*	Tabeller på oversiktsider
-*/
+
+/*	<5g> Oversiktssidene + tabeller
+---------------------------------*/
+
+
+/* Tabell i oversiktssidene */
 
 .cp-database-table {
 	margin-bottom: 3rem;
 }
+
 
 table {
     border-collapse: collapse;
@@ -456,26 +551,25 @@ table {
     text-align: center;
 }
 
-tbody {
+	tr:hover {
+		background-color: #fffcb4;
+	}
 
-}
+	tr:first-child:hover {
+		background-color: #fff;
+	}
 
-th {
-	font-weight: bold;
-}
+		th {
+			font-weight: bold;
+		}
 
-tr:hover {
-	background-color: #fffcb4;
-}
+		td {
+			border: 1px solid #ccc;
+			padding: 0.5rem;
+		}
 
-tr:first-child:hover {
-	background-color: #fff;
-}
 
-td {
-	border: 1px solid #ccc;
-	padding: 0.5rem;
-}
+/* Tabellmodifikatorer */
 
 .noborder {
 	border: 0;
@@ -489,19 +583,19 @@ td {
 	width: 10%;
 }
 
-/*	Forsiden  
-*/
 
-.cp-latest-posts li, .cp-latest-comments li {
-	list-style: none;
-	background-color: rgba(0,0,0,0.06);
-	margin-bottom: 1.5rem;
-	padding: 1rem;
+/* Paginasjon */
+
+.cp-view-pagination a {
+	display: inline-block;
+	padding: 0.5rem 1rem;
 }
 
 
-/*	Innlogging
-*/
+
+/*	<5h> Innlogging
+-----------------*/
+
 
 .login-page {
 	background-color: #f0f0f0;
@@ -517,27 +611,26 @@ td {
 	padding: 1.5rem;
 }
 
-.cp-login-header {
-	text-align: center;
-	font-size: 120%;
-	font-weight: 500;
-	border-bottom: 2px solid rgba(0, 0, 0, 0.1);
-	margin-bottom: 3rem;
-	padding-bottom: 0.75rem;
-}
+	.cp-login-header {
+		text-align: center;
+		font-size: 120%;
+		font-weight: 500;
+		border-bottom: 2px solid rgba(0, 0, 0, 0.1);
+		margin-bottom: 3rem;
+		padding-bottom: 0.75rem;
+	}
 
-.cp-login input {
-	display: block;
-	-moz-box-sizing: border-box;
-	box-sizing: border-box;
-	width: 100%;
-}
+	.cp-login input {
+		display: block;
+		-moz-box-sizing: border-box;
+		box-sizing: border-box;
+		width: 100%;
+	}
 
 
-.cp-view-pagination a {
-	display: inline-block;
-	padding: 0.5rem 1rem;
-}
+
+/*	<5i> Filedrop
+---------------*/
 
 
 .cp-filedrop {
@@ -550,87 +643,78 @@ td {
 	min-height: 20vh;
 }
 
-.cp-filedrop p {
-	text-align: center;
-	font-size: 200%;
-	padding: 0;
-	line-height: 30vh;
-}
+	.cp-filedrop p {
+		text-align: center;
+		font-size: 200%;
+		padding: 0;
+		line-height: 30vh;
+	}
 
-/*		Grid
+
+
+/*	<6> Grid
 ==========*/
 
-/*  Bruk .container for å "pakke inn" grid-elementer
-*/
+
+/*  Generell container */
 
 .container {
-  margin-left: auto;
-  margin-right: auto;
-  padding: 0;
-  width: 100%;
-  max-width: 100%; 
+	margin-left: auto;
+	margin-right: auto;
+	padding: 0;
+	width: 100%;
+	max-width: 100%; 
 }
 
+	.container:before, .container:after {
+		content: " ";
+		display: table; 
+	}
 
-/*  Fikser automagisk clearing av elementer
-*/
-
-.container:before, .container:after {
-content: " ";
-display: table; 
-}
-
-.container:after {
-clear: both; 
-}
+	.container:after {
+		clear: both; 
+	}
 
 
-/*  Dersom det oppstår problemer med layout, kan en mulig løsning være å pakke
-**  inn hver "rad" med elementer i .row
-*/
+/* Subcontainer for hver rad av elementer */
 
 .row {
-width: 100%;
-margin: 0;
-padding: 0; 
+	width: 100%;
+	margin: 0;
+	padding: 0; 
 }
 
-.row:before, .row:after {
-content: " ";
-display: table; 
-}
+	.row:before, .row:after {
+		content: " ";
+		display: table; 
+	}
 
-.row:after {
-clear: both; 
-}
+	.row:after {
+		clear: both; 
+	}
 
 
-/*  .grid: Felles properties for alle spalte-elementer
-*/
+/* Spalteelementer */
 
 .grid {
-float: left;
-display: inline-block;
-min-height: 1px;
--webkit-box-sizing: border-box;
--moz-box-sizing: border-box;
-box-sizing: border-box;
-margin-left: 1.5%;
-margin-right: 1.5%; 
+	float: left;
+	display: inline-block;
+	min-height: 1px;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+	margin-left: 1.5%;
+	margin-right: 1.5%; 
 }
 
-
-/*  Legg på klasse .no-gutters for å få et element uten marginer på hver side
-*/
-
-.grid.no-gutters {
-margin-left: 0;
-margin-right: 0; 
-}
+	/*  Modifikator for elementer uten gutters */
+	.grid.no-gutters {
+		margin-left: 0;
+		margin-right: 0; 
+	}
 
 
-/*  Spaltebredder
-*/
+/*  Spaltebredder */
 
 .grid.g1 { width: 5.33333%; }
 .grid.g2 { width: 13.66667%; }
@@ -660,11 +744,16 @@ margin-right: 0;
 
 
 
+/*	<7> Responsivt design
+=======================*/
 
-/*		Mobilvisning
-==================*/
+
+/*	<7a> Små skjermer  
+-------------------*/
 
 @media only screen and (max-width: 768px) {
+
+	/* Rotelementer */
 
 	html {
 		font-size: 16px;
@@ -673,6 +762,9 @@ margin-right: 0;
 	html, body {
 		overflow-x: hidden;
 	}
+
+
+	/* Generell omstrukturering */
 
 	.cp-container {
 		display: block;
@@ -694,6 +786,16 @@ margin-right: 0;
 		margin-bottom: 3rem;
 	}
 
+	.grid {
+		width: 100% !important;
+		margin-left: 0;
+		margin-right: 0;
+		float: none;
+	}
+
+
+	/* Navigasjon */
+
 	.cp-sidebar nav {
 		display: none;
 	}
@@ -712,30 +814,46 @@ margin-right: 0;
 		padding: 0.75rem;
 	}
 
-	#cp-mobile-menu-toggle {
+	.cp-mobile-menu {
 		display: block;
 		padding: 0;
 	}
 
-	.grid {
-		width: 100% !important;
-		margin-left: 0 !important;
-		margin-right: 0 !important;
-		float: none !important;
-	}
+	
+	/* Skjemaer */
 
 	input[type="submit"], input[type="button"], button, a.button {
 		display: block;
 		max-width: 100%;
 	}
 
+	input[type="submit"], input[type="button"], button {
+		margin-top: 1.5rem;
+		margin-bottom: 1.5rem;
+	}
+
+
+	/* Editor */
+
+	.post-editor-content {
+		font-size: 0.85rem;
+		min-height: 15rem;
+	}
+
 	.post-editor-meta {
 		margin-top: 3rem;
+	}
+
+	.post-editor-current-tags {
+		min-height: 6rem;
 	}
 
 	.cp-message {
 		margin-bottom: 1.5rem;
 	}
+
+
+	/* Visningssider og tabeller */
 
 	.cp-table-select {
 		display: none;
@@ -749,7 +867,28 @@ margin-right: 0;
 		width: 20%;
 	}
 
+
+	/* Innlogging */
+
+	.cp-login {
+		width: 90%;
+		max-width: 90%;
+		-moz-box-sizing: border-box;
+		box-sizing: border-box;
+	}
+
+
+	/* Filedrop */
+
+	.cp-filedrop {
+		display: none;
+	}
+
 }
+
+
+/*	<7b> Store skjermer 
+---------------------*/
 
 @media only screen and (min-width: 769px) {
 
@@ -757,14 +896,27 @@ margin-right: 0;
 		display: block !important;
 	}
 
-	#cp-mobile-menu-toggle {
+	.cp-mobile-menu{
 		display: none;
 	}
 
 }
 
-/*	Hjelpeklasser
-*/
+
+/*	<7c> Digre skjermer 
+---------------------*/
+
+@media only screen and (min-width: 1920px) {
+	
+	html {
+		font-size: 20px;
+	}
+
+}
+
+
+/*	<8> Hjelpeklasser 
+-------------------*/
 
 .align-left { text-align: left; }
 .align-center { text-align: center; }
