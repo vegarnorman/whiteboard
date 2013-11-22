@@ -17,7 +17,3 @@
 		<a href="logout.php" class="button red smaller">Logg ut</a>
 	</p>
 </nav>
-
-<p class="cp-mobile-menu-toggle">
-	<a href="#" class="button c2a">Vis/skjul meny</a>
-</p>
