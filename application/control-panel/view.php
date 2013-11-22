@@ -485,5 +485,7 @@
 
 	<?php endif; ?>
 
+	<?php $cp->kill(); ?>
+
 </body>
 </html>

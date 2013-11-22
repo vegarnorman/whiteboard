@@ -16,12 +16,20 @@
 			$this->data_handler = new Data();
 		}
 
+		public function __destruct() {
+			$this->data_handler->close();
+		}
+
 		public function getDataHandler() {
 			return $this->data_handler;
 		}
 
 		public static function getSiteTitle() {
 			echo SITE_TITLE;
+		}
+
+		public function kill() {
+			$this->__destruct();
 		}
 
 	}

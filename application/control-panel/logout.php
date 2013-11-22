@@ -30,5 +30,7 @@
 		<p><a href="login.php">Vil du logge inn på nytt?</a></p>
 	</div>
 
+	<?php $cp->kill(); ?>
+
 </body>
 </html>

@@ -143,7 +143,7 @@
 
 	</section>
 
-	
+	<?php $cp->kill(); ?>
 
 </body>
 </html>
