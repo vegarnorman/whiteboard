@@ -1,23 +1,25 @@
-/* STYLESHEET FOR WHITEBOARD CMS - WEB PROJECT AT HIOA 2013
- * AUTHOR:  PER ERIK FINSTAD
- * ALL CONTENT OWNED BY GROUP 25
- */ 
+/* **********************************************************************
+ *																		*
+ *		STYLESHEET FOR WHITEBOARD CMS - WEB PROJECT AT HIOA 2013		*
+ * 		AUTHOR:  PER ERIK FINSTAD										*
+ * 		ALL CONTENT OWNED BY GROUP 25									*
+ *																		*
+ ***********************************************************************/
+
+
+/*		IMPORTS		*/
+
+@import url("grid.css");
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:400italic,600italic,700italic,400,600,700);
+@import url("responsiveness.css");
 
 
 
- /*
-  *		GRID
-  */
-/*@import url("grid.css");*/
-/*
- *		FONT
- */
-/*@import url(http://fonts.googleapis.com/css?family=Open+Sans:400italic,600italic,700italic,400,600,700);*/
-
-/*
- *		RESPONSIVENESS
- */
-/*@import url("responsiveness.css");*/
+/****************************
+ *							*
+ *		 MAIN STYLING		*
+ *							*
+ ***************************/
 
 
 *{
@@ -49,9 +51,9 @@ body{
 section{
 	margin-bottom: 50px;
 }
-/*
- *		PAGE CONTENT
- */
+
+
+/*		PAGE CONTENT 	*/
 
 header{
 	background-image: url("images/city3.jpg");
@@ -100,9 +102,9 @@ header h4{
 	padding-top: 15px; 
 	color: #444040;
 }
-/*
- *		FOOTER
- */
+
+/*		FOOTER		*/
+
 footer{
 	width: 100%;
 	height: auto;
@@ -128,9 +130,7 @@ footer .grid.g4.no-gutters{
 	 	width: 100%; 
 	 }
 
-/*
- *		MENU / NAVIGATION
- */
+/*		MENU / NAVIGATION		2*/
 
 nav{
 	width: 100%;
@@ -195,9 +195,7 @@ nav li:nth-child(3){
 }
 
 
-/*
- *		ARCHIVE
- */
+/*	 	SIDEBAR / ARCHIVE		*/
 
 .history{
 	width: 150px;
@@ -210,9 +208,8 @@ nav li:nth-child(3){
 	box-shadow: 1px 2px 3px #BBB;
 }
 
-/*
- *		ARTICLES
- */
+
+/*		ARTICLES		S*/
 
 article{
 	margin-top: 30px;
@@ -251,10 +248,8 @@ article{
 	margin-left: 5px;
 }
 
+/*		BUTTONS		*/
 
-/*
- *		BUTTONS
- */
  .nav-button{
 	background-size: 18px;
 	background-repeat: no-repeat;
@@ -311,9 +306,7 @@ button a{
 	color:#444040;
 }
 
-/*
- *		COMMENTS FROM USERS
- */
+/*		COMMENTS FROM USER		*/
 
 sub{
 	display: block;
@@ -323,9 +316,8 @@ sub{
 	border-bottom: 1px solid black;
 }
 
-/*
- *		COMMENT FORM
- */
+/*		INPUTFORM		*/
+
 #new-comment-button{
  	padding:5px;
  }
@@ -395,9 +387,7 @@ sub{
     	background-color: #C2C0BE; 
   	}
 
-/*
- *		MISC
- */
+/*		MISC		*/
 
 .stop:after{
 	clear:both;
@@ -432,9 +422,7 @@ sub{
 	text-shadow: 0 1px 2px #CCC;
 }
 
-/*
- *		PØNT te' JAVASCRIPT'n
- */
+/*		JAVASCRIPT ERROR MESSAGE	*/
 
 #error{
 	display: inline-block;
