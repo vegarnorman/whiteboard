@@ -207,19 +207,21 @@ function meshUp(){
 
 // Easter Egg Marius
 
-var navnomraade = document.getElementsByTagName("input");
+var input = document.getElementsByTagName("input");
 
-function popupwindow(url, title, w, h) {
-  var left = (screen.width/2)-(w/2);
-  var top = (screen.height/2)-(h/2);
-  return window.open(url="http://www.empireonline.com/images/uploaded/chuck-norris-uzis.jpg", title, 'toolbar=no, location=no, directories=no, status=no, menubar=no, scrollbars=no, resizable=no, copyhistory=no, width='+w+', height='+h+', top='+top+', left='+left);
+
+function popupwindow() {
+	var url = "http://www.empireonline.com/images/uploaded/chuck-norris-uzis.jpg";
+  window.open(url);
 } 
 
  function vis() {
-	if (navnomraade[0].value === "Chuck Norris") {
+	if (input[0].value === ("Chuck Norris") || ("chuck norris") ) { //sjekker om navnet er Chuck Norris
+	(validateForm()==false);
 	popupwindow();
 	}
 }
+
 
 
 
