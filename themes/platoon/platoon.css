@@ -60,12 +60,13 @@ header nav ul{
 
 .nav-button{
 	text-decoration: none;
-	color: #000;
+	color: #EEE;
 	background-color:#4B5320;
 	border-style:solid;
 	border-width: 1px;
+	border-color: #000;
 	font-family: 'Stardos Stencil', cursive;
-	padding: 10px 5px 5px 10px;
+	padding: 5px 10px 5px 10px;
 	margin: 10%;
 }
 
@@ -78,19 +79,16 @@ float: left;
 }
 
 .next:hover,.last:hover{
-box-shadow: 10px 10px 50px;
+box-shadow: 5px 5px 10px #000;
+background-image: url('images/woodland.jpg');
+background-size: cover;
 }
 
 .next:active,.last:active{
-padding: 8px 3px 3px 8px;
+padding: 3px 8px 3px 8px;
 }
 
-.article-footer{
-	margin-left: 5%;
-	margin-bottom: 5%;
-	border-top: solid 1px #CCC;
-	width: 25%;
-}
+
 .main-container h2 {
 margin-top:5%;
 border-bottom: 1px solid;
@@ -130,44 +128,63 @@ width:90%;
 	margin-bottom: 5%;
 }
 
-.main-container .article-footer span a{
-	text-decoration: none;
+.article-footer {
+	margin-left: 5%;
+	margin-bottom: 5%;
+	border-top: solid 1px #CCC;
+	width: 75%;
+	height: 100%;
 	color: #000;
+
+}
+
+.article-footer a{
+	text-decoration: none;
+	color: #EEE;
 	background-color:#4B5320;
 	border-style:solid;
 	border-width: 1px;
+	border-color: #000;
 	font-family: 'Stardos Stencil', cursive;
-	padding: 8px 3px 3px 8px;
-	margin-left: 5%;
-	
+	padding: 5px 10px 5px 10px;
+	float: right;
 }
 
-.container .article-footer a:hover{
-	box-shadow: 5px 5px 20px;
+.article-footer a:hover{
+box-shadow: 5px 5px 10px #000;
+background-image: url('images/woodland.jpg');
+background-size: cover;
 }
 
-.container .article-footer a:active{
-	padding: 5px 1px 1px 5px;	
+.article-footer a:active{
+	padding: 3px 8px 3px 8px;	
 }
 
 
 button{
-	margin-left:30px;
-	background-color:#4D704D;
+	width: auto;
+	color: #EEE;
+	background-color:#4B5320;
 	font-size: 18px;
 	font-family: 'Stardos Stencil',cursive;
-	width: auto;
- 	color: #fff;
-	margin-top:10px;
-  	box-shadow: 0px 1px 4px #777;
-	border: 0;
-	
+  	border: 0px;
+ 	margin-left:30px;
+  	padding: 5px 10px 5px 10px;
+  	font-size: 18px;
+
+
 
 }
 button:hover{
 	cursor: pointer;
  	background-image: url('images/woodland.jpg'); 
     background-size: cover;
+    box-shadow: 5px 5px 10px #000;
+
+}
+
+button:active{
+	padding: 3px 8px 3px 8px;
 }
 
 #submit{
@@ -193,6 +210,8 @@ button:hover{
  	margin-top: 40px;
 
  }
+
+
 .comment-form {
   	margin: 0 auto;
  }
@@ -219,26 +238,30 @@ button:hover{
  	border: 1px solid #AAA;
  }
 
+
 .submit-comment-button {
 	width: auto;
 	color: #EEE;
-  	background-color: #4D704D;
+	background-color:#4B5320;
+	font-size: 18px;
+	font-family: 'Stardos Stencil',cursive;
   	border: 0px;
-  	margin:0 20px 0 0;
-	margin-left:30px;
-  	padding:5px;
-  	box-shadow: 0px 1px 4px #777;
-  	font-size: 12px;
+ 	margin-left:23px;
+  	padding: 5px 10px 5px 10px;
+  	font-size: 18px;
 
-  	text-transform: uppercase;
+
 }
 .submit-comment-button:hover {
    	background-image: url('images/woodland.jpg'); 
    	background-size: cover;
- 
+ 	box-shadow: 5px 5px 10px #000;
+}
+.submit-comment-button:active{
+	padding: 3px 8px 3px 8px;
 }
 
-.committed-comments p{
+.committed-comments {
 	width: 50%;
 	height: auto;
 	text-align: left;
