@@ -10,7 +10,6 @@
 		<title>Whiteboard CMS</title>
 		<link rel="stylesheet" title="Default" type="text/css" href="themes/default/master.css">
 		<link rel="alternate stylesheet" title="New Style" type="text/css" href="themes/new-style/alternate-stylesheet.css">
-		<link rel="alternate stylesheet" title="White Sun" type="text/css" href="themes/white-sun/master.css">
 		<link rel="alternate stylesheet" title="Platoon" type="text/css" href="themes/platoon/platoon.css">
 		<script type="text/javascript" src="//code.jquery.com/jquery-1.10.2.min.js"></script>
 		<script type="text/javascript" src="themes/default/js/jquery.js"></script>
