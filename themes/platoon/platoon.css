@@ -1,11 +1,40 @@
+/*--------------------------------------------------------+
+|		       W H I T E B O A R D   C M S                |
+|					   Platoon.css						  |
+|				  Author: Halvor Ødegård				  |
++---------------------------------------------------------+
+|	Innholdsfortegnelse:                                  |					
+|                                                         |
+|	<1> Importsetninger                                   |
+|	<2> Enkel reset av elementer              			  |
+|	<3> Oppsett av rotelementer                           |
+|	<4> Komponenter                                       |
+|		- <4a> Header					                  |
+|		- <4b> Knapper                                    |
+|		- <4c> navigasjon                                 |
+|		- <4d> Kommentarfelt                              |
+|		- <4e> Footer	                                  |
+|	<5> Grid                                              |
+|	                                 					  |
++--------------------------------------------------------*/
+
+/*	<1> Importsetninger
+=====================*/
 
 @import url(http://fonts.googleapis.com/css?family=Stardos+Stencil|Muli&v2);
 @import url(http://fonts.googleapis.com/css?family=Sintony);
+
+/*	<2> reset av elementer
+===========================*/
+
 *{
 	margin: 0%;
 	padding: 0%;
 	list-style-type: none;
 }
+
+/*	<3> Oppsett av rotelementer
+=============================*/
 
 html {
 	font-family: "Source Sans Pro", sans-serif;
@@ -16,19 +45,26 @@ html {
 }
 
 body {
-	background-color: #EEE;
+	background-image: url('images/brushedsteel.jpg');
+	background-size: cover;
 	color: #00002E;
 	height: 100%;
 	width: 100%;
 	font-family: 'Sintony', sans-serif;
 }
 
+/*	<4> Komponenter
+=================*/
+
+/* <4a> Header
+--------------*/
+
 header {
 	min-height: 530px;
 	background: transparent url("images/helikopter.jpg") no-repeat top center fixed;
-	background-position: 0 -250px;
+	background-position: 0 -360px;
 	background-size: cover;
-	color: #EEE;
+	color: #FFF;
 	font-family: 'Stardos Stencil', cursive;
 	font-size: 2.6rem;
 	box-shadow: 0 3px 10px #333;
@@ -56,46 +92,17 @@ header nav ul{
 	margin-bottom: 50px;
 }
 
-.nav-button{
-	text-decoration: none;
-	color: #EEE;
-	background-color:#4B5320;
-	border-style:solid;
-	border-width: 1px;
-	border-color: #000;
-	font-family: 'Stardos Stencil', cursive;
-	padding: 5px 10px 5px 10px;
-	margin: 10%;
-}
 
-.next{
-float: right;
-}
-
-.last{
-float: left;
-}
-
-.next:hover,.last:hover{
-box-shadow: 5px 5px 10px #000;
-background-image: url('images/woodland.jpg');
-background-size: cover;
-}
-
-.next:active,.last:active{
-padding: 3px 8px 3px 8px;
-}
 
 
 .main-container h2 {
 margin-top:5%;
-border-bottom: 1px solid;
+border-bottom:solid 1px #A6A6A6;
 width:90%;
 margin-left:auto;
 margin-right:auto;
 font-family: 'Stardos Stencil', cursive;
 font-size: 2rem;
-border-color:#CACACA;
 color: #000;
 text-align: center;
 
@@ -120,8 +127,7 @@ text-align: center;
 .container h1{
 	text-align: center;
 	margin: 20px;
-	border-bottom: 1px solid;
-	border-color:#CACACA;
+	border-bottom: solid 1px #A6A6A6;
 }
 
 .container p{
@@ -131,12 +137,15 @@ text-align: center;
 .article-footer {
 	margin-left: 5%;
 	margin-bottom: 5%;
-	border-top: solid 1px #CCC;
+	border-top: solid 1px #A6A6A6;
 	width: 75%;
 	height: 100%;
 	color: #000;
 
 }
+
+/* <4b> Knapper
+----------------*/
 
 .article-footer a{
 	text-decoration: none;
@@ -187,6 +196,39 @@ button:active{
 	padding: 3px 8px 3px 8px;
 }
 
+/* <4c> Navigasjons
+------------------*/
+
+.nav-button{
+	text-decoration: none;
+	color: #EEE;
+	background-color:#4B5320;
+	border-style:solid;
+	border-width: 1px;
+	border-color: #000;
+	font-family: 'Stardos Stencil', cursive;
+	padding: 5px 10px 5px 10px;
+	margin: 10%;
+}
+
+.next{
+float: right;
+}
+
+.last{
+float: left;
+}
+
+.next:hover,.last:hover{
+box-shadow: 5px 5px 10px #000;
+background-image: url('images/woodland.jpg');
+background-size: cover;
+}
+
+.next:active,.last:active{
+padding: 3px 8px 3px 8px;
+}
+
 #submit{
 	font-family: 'Stardos Stencil',cursive;
 	font-size: 18px;
@@ -196,6 +238,31 @@ button:active{
  	padding:5px;
  	margin-left: 5%;
  }
+
+ .submit-comment-button {
+	width: auto;
+	color: #EEE;
+	background-color:#4B5320;
+	font-size: 18px;
+	font-family: 'Stardos Stencil',cursive;
+  	border: 0px;
+ 	margin-left:23px;
+  	padding: 5px 10px 5px 10px;
+  	font-size: 18px;
+
+
+}
+.submit-comment-button:hover {
+   	background-image: url('images/woodland.jpg'); 
+   	background-size: cover;
+ 	box-shadow: 5px 5px 10px #000;
+}
+.submit-comment-button:active{
+	padding: 3px 8px 3px 8px;
+}
+
+/* <4d> Kommentarfelt
+--------------------*/
 
 #comment-box{
  	height: auto;
@@ -238,29 +305,6 @@ button:active{
  	border: 1px solid #AAA;
  }
 
-
-.submit-comment-button {
-	width: auto;
-	color: #EEE;
-	background-color:#4B5320;
-	font-size: 18px;
-	font-family: 'Stardos Stencil',cursive;
-  	border: 0px;
- 	margin-left:23px;
-  	padding: 5px 10px 5px 10px;
-  	font-size: 18px;
-
-
-}
-.submit-comment-button:hover {
-   	background-image: url('images/woodland.jpg'); 
-   	background-size: cover;
- 	box-shadow: 5px 5px 10px #000;
-}
-.submit-comment-button:active{
-	padding: 3px 8px 3px 8px;
-}
-
 .committed-comments {
 	width: 50%;
 	height: auto;
@@ -275,6 +319,8 @@ li h3{
 	text-align: center;
 }
 
+/* <4e> Footer
+--------------*/
 
 footer {
 	background-image:url('images/woodland.jpg');
@@ -313,8 +359,11 @@ footer {
 		color: #000;
 	}
 		
+/*	<5> Grid
+==========*/
+
 /*  Bruk .container for å "pakke inn" grid-elementer
-*/
+----------------------------------------------------*/
 
 .container {
   margin-left: auto;
@@ -326,7 +375,7 @@ footer {
 
 
 /*  Fikser automagisk clearing av elementer
-*/
+-------------------------------------------*/
 
 .container:before, .container:after {
 content: " ";
@@ -340,7 +389,7 @@ clear: both;
 
 /*  Dersom det oppstår problemer med layout, kan en mulig løsning være å pakke
 **  inn hver "rad" med elementer i .row
-*/
+------------------------------------------------------------------------------*/
 
 .row {
 width: 100%;
@@ -359,7 +408,7 @@ clear: both;
 
 
 /*  .grid: Felles properties for alle spalte-elementer
-*/
+-----------------------------------------------------*/
 
 .grid {
 float: left;
@@ -374,7 +423,7 @@ margin-right: 1.5%;
 
 
 /*  Legg på klasse .no-gutters for å få et element uten marginer på hver side
-*/
+-----------------------------------------------------------------------------*/
 
 .grid.no-gutters {
 margin-left: 0;
@@ -383,7 +432,7 @@ margin-right: 0;
 
 
 /*  Spaltebredder
-*/
+-----------------*/
 
 .grid.g1 { width: 5.33333%; }
 .grid.g2 { width: 13.66667%; }
@@ -411,4 +460,3 @@ margin-right: 0;
 .grid.g11.no-gutters { width: 91.66667%; }
 .grid.g12.no-gutters { width: 100%; }
 
-/* -------------------- END OF INDEX --------------------  */
