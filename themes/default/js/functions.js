@@ -211,16 +211,21 @@ var input = document.getElementsByTagName("input");
 
 
 function popupwindow() {
+
 	var url = "http://www.empireonline.com/images/uploaded/chuck-norris-uzis.jpg";
-  window.open(url);
+	window.open(url);
+  return false;
 } 
 
- function vis() {
-	if (input[0].value === ("Chuck Norris") || ("chuck norris") ) { //sjekker om navnet er Chuck Norris
-	(validateForm()=false);
-	popupwindow();
-	}
-}
+$(document).ready (function() {
+	$('form').submit(function(event) {
+		if (input[0].value === ("Chuck Norris") ) {
+		popupwindow();
+		event.preventDefault();
+		}
+	});
+	return false;
+});
 
 
 
