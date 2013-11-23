@@ -3,17 +3,19 @@
  * ALL CONTENT OWNED BY GROUP 25
  */ 
 
+
+
  /*
-  *  GRID
+  *		GRID
   */
 /*@import url("grid.css");*/
 /*
- * FONT
+ *		FONT
  */
 /*@import url(http://fonts.googleapis.com/css?family=Open+Sans:400italic,600italic,700italic,400,600,700);*/
 
 /*
- *  RESPONSIVENESS
+ *		RESPONSIVENESS
  */
 /*@import url("responsiveness.css");*/
 
@@ -48,7 +50,7 @@ section{
 	margin-bottom: 50px;
 }
 /*
- *  PAGE CONTENT
+ *		PAGE CONTENT
  */
 
 header{
@@ -99,7 +101,7 @@ header h4{
 	color: #444040;
 }
 /*
- *       FOOTER
+ *		FOOTER
  */
 footer{
 	width: 100%;
@@ -127,7 +129,7 @@ footer .grid.g4.no-gutters{
 	 }
 
 /*
- *          MENU / NAVIGATION
+ *		MENU / NAVIGATION
  */
 
 nav{
@@ -194,7 +196,7 @@ nav li:nth-child(3){
 
 
 /*
- *      ARCHIVE
+ *		ARCHIVE
  */
 
 .history{
@@ -209,7 +211,7 @@ nav li:nth-child(3){
 }
 
 /*
- *  	ARTICLES
+ *		ARTICLES
  */
 
 article{
@@ -251,7 +253,7 @@ article{
 
 
 /*
- *    BUTTONS
+ *		BUTTONS
  */
  .nav-button{
 	background-size: 18px;
@@ -310,7 +312,7 @@ button a{
 }
 
 /*
- *COMMENTS FROM USERS
+ *		COMMENTS FROM USERS
  */
 
 sub{
@@ -320,8 +322,9 @@ sub{
 	font-family: Tahoma;
 	border-bottom: 1px solid black;
 }
+
 /*
- * COMMENT FORM
+ *		COMMENT FORM
  */
 #new-comment-button{
  	padding:5px;
@@ -393,7 +396,7 @@ sub{
   	}
 
 /*
- *      MISC
+ *		MISC
  */
 
 .stop:after{
@@ -430,8 +433,9 @@ sub{
 }
 
 /*
- *			PØNT te' JAVASCRIPT'n
+ *		PØNT te' JAVASCRIPT'n
  */
+
 #error{
 	display: inline-block;
 	color: #FF3F3F;
