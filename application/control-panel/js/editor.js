@@ -1,5 +1,11 @@
 $(function() {
 
+	//	EMNEORD
+	//=========
+
+
+	//	Legger til emneord-seksjonen på editorsiden
+
 	$(".post-editor-section-tags").append('<h3>Emneord</h3>');
 	$(".post-editor-section-tags").append('<p class="post-editor-help">Trykk på et emneord for å slette det</p>');
 	$(".post-editor-section-tags").append('<div id="post-editor-current-tags" class="post-editor-current-tags" />');
@@ -7,7 +13,28 @@ $(function() {
 	$(".post-editor-tags").append('<input type="text" id="post-editor-new-tag" placeholder="Nytt emneord" class="grid g9 no-gutters post-editor-new-tag" />');
 	$(".post-editor-tags").append('<button id="post-editor-tag-add" class="grid g3 no-gutters post-editor-tag-add button green"><i class="fa fa-plus-circle"></i></button>');
 
+
+	//	Håndterer tillegg og sletting av emneord
+
+	$(".post-editor-tag-add").click(function() {
+		if ($(".post-editor-new-tag").val() !== "") {
+			var tag = "<span class=\"tag\">" + $(".post-editor-new-tag").val() + "</span>";
+			$(".post-editor-current-tags").append(tag);
+			$(".post-editor-new-tag").val("");
+		}
+		return false;
+	});
+
+	$("body").on("click", ".tag", function() {
+		$(this).remove();
+	});
+
 	
+
+	//	JSON-PARSER
+	//	Henter data fra et JSON-objekt og fyller 
+	//	ut editoren for videre redigering
+	//==============================================
 
 	if (edit !== "") {
 		edit = edit.replace(/<br \/>/g, "\\n");
@@ -31,18 +58,12 @@ $(function() {
 	}
 
 
-	$(".post-editor-tag-add").click(function() {
-		if ($(".post-editor-new-tag").val() !== "") {
-			var tag = "<span class=\"tag\">" + $(".post-editor-new-tag").val() + "</span>";
-			$(".post-editor-current-tags").append(tag);
-			$(".post-editor-new-tag").val("");
-		}
-		return false;
-	});
 
-	$("body").on("click", ".tag", function() {
-		$(this).remove();
-	});
+	//	TEKSTREDIGERING
+	//=================
+	
+
+	//	Funksjon for å wrappe tekst i tekstområdet med markdown-tagger
 
 	function wrapText(openTag, closeTag) {
 	    var textArea = $(".post-editor-content");
@@ -53,6 +74,9 @@ $(function() {
 	    var replacement = openTag + selectedText + closeTag;
 	    textArea.val(textArea.val().substring(0, start) + replacement + textArea.val().substring(end, len));
 	}
+
+
+	//	De faktiske funksjonene som brukes i toolbar'en
 
 	function makeBold() {
 		wrapText("**", "**");
@@ -69,10 +93,6 @@ $(function() {
 	function makeLink() {
 		var url = prompt("Vennligst skriv inn URL:", "http://");
 		wrapText("[", "](" + url + ")");
-	}
-
-	function makeUnordered() {
-		wrapText("+ ", "");
 	}
 
 	function makeCode() {
@@ -103,6 +123,11 @@ $(function() {
 		makeCode();
 		return false;
 	});
+
+
+
+	//	DISTRACTION-FREE EDITING
+	//==========================
 
 
 	var distraction_free = false;
@@ -149,6 +174,11 @@ $(function() {
 	});
 
 
+
+	//	SUBMIT-SCRIPT
+	//===============
+
+
 	$("#editor_submit").click(function() {
 
 		if ($(".post-editor-title").val() === "" || $(".post-editor-content").val() === "") {
@@ -185,7 +215,6 @@ $(function() {
 
 		}
 		
-
 		return true;
 
 	});	
