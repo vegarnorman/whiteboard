@@ -2,11 +2,11 @@
 @import url(http://fonts.googleapis.com/css?family=Jolly+Lodger);
 @import url(http://fonts.googleapis.com/css?family=Nosifer);
 @import url(http://fonts.googleapis.com/css?family=Chela+One);
+@import url(http://fonts.googleapis.com/css?family=Signika+Negative);
 
 body {
-background-color:#303030!important;
+
 margin-top:0 !important;
-background-image: url("images/knitted-netting.png");
 }
 
 #top-of-page {
@@ -17,6 +17,7 @@ opacity:0.9;
 html {
 background-color:#303030;
 }
+
 
 h1,h2,h3,h4,h5,h6 {
 font-family: 'Chela One', cursive;
@@ -57,7 +58,6 @@ margin-top:30%;
 
 nav li {
 display:inline;
-width:100%,
 }
 
 nav a {
@@ -67,28 +67,34 @@ color:rgb(112,112,112);
 margin:5px;
 }
 
+nav :hover{
+color:white;
+}
+
 
 
 @media only screen and (max-width: 768px) {
 
 	nav {
-	width:100%;
-	height:250px;
+	width:100%!important;
+	height:250px!important;
 	}
 
 	
 	.container {
-	width:100%;
+	width:100%!important;
+	margin-left:auto;
+	margin-right:auto;
 	}
+	
 	
 	.main-container {
 	width:100% !important;
 	}
-	
-	.main-container article {
-	border-left:0px !important;
-	border-right:0px !important;
+	footer {
+	width:100%;
 	}
+
 
 }
 
@@ -107,7 +113,10 @@ margin-left:auto;
 margin-right:auto;
 width:90%;
 background-color:#303030!important;
+}
 
+.container h2 {
+text-align:center;
 }
 
 .container li {
@@ -126,6 +135,57 @@ color:#94B8B8;
 background-color:#303030!important;
 text-align:center;
 text-decoration:none;
+font-size:1.4rem;
+}
+.nav-button  {
+border:2px groove;
+background-color:white;
+font-size:1.2rem;
+min-width:120px;
+text-align:center;
+color:rgb(112,112,112);
+text-decoration:none;
+font-family: 'Signika Negative', sans-serif;
+border-bottom-left-radius:5px;
+border-bottom-right-radius:5px;
+border-top-left-radius:5px;
+border-top-right-radius:5px;
+margin-top:20px;
+}
+
+.next {
+float:right;
+margin-right:50px;
+}
+
+.last {
+float:left;
+margin-left:50px;
+}
+.committed-comments {
+text-align:center;
+font-size:1.3rem;
+}
+
+.article-footer {
+font-size:1rem;
+text-align:center;
+margin-left:auto;
+margin-right:auto;
+}
+
+.article-footer span a {
+color:white;
+}
+
+.grid.g4.history {
+display:none;
+}
+
+.grid.g8 {
+text-align:center;
+color:black;
+font-size:1.5rem;
 }
 
 p {
@@ -133,21 +193,60 @@ color:#94B8B8;
 background-color:#303030!important;
 }
 
+button {
+Font-size:1.1rem;
+font-family: 'Signika Negative', sans-serif;
+border-bottom-left-radius:5px;
+border-bottom-right-radius:5px;
+border-top-left-radius:5px;
+border-top-right-radius:5px;
+}
 
-footer {
-background-color:#303030!important;
+button:hover {
+color:#94B8B8;
+}
+.grid.g12 {
 text-align:center;
 }
 
-footer ul {
-margin-top:0 !important;
-background-color:#303030;
+#comment-box{
+text-align:center;
 }
 
+.comment-form input[type="text"]{
+margin-top:10px;
+margin-left:10px;
+margin-right:10px;
+}
 
+.comment-form textarea{
+margin-top:20px;
+width:500px;
+}
+
+.submit-comment-button {
+font-family: 'Signika Negative', sans-serif;
+border-bottom-left-radius:5px;
+border-bottom-right-radius:5px;
+border-top-left-radius:5px;
+border-top-right-radius:5px;
+Font-size:1.1rem;
+}
+
+.submit-comment-button:hover {
+color:#94B8B8;
+}
+
+footer {
+text-align:center;
+margin-top:30px;
+}
+
+footer a {
+display:none;
+}
 footer li {
 color:white;
-background-color:#303030!important;
 display:inline;
 text-decoration:none;
 }

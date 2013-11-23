@@ -208,8 +208,6 @@ function meshUp(){
 // Easter Egg Marius
 
 var navnomraade = document.getElementsByTagName("input");
-var chucknavn = navnomraade.getAttribute("placeholder");
-
 
 function popupwindow(url, title, w, h) {
   var left = (screen.width/2)-(w/2);
