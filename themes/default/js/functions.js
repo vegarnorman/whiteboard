@@ -217,7 +217,7 @@ function popupwindow() {
 
  function vis() {
 	if (input[0].value === ("Chuck Norris") || ("chuck norris") ) { //sjekker om navnet er Chuck Norris
-	(validateForm()==false);
+	(validateForm()=false);
 	popupwindow();
 	}
 }
