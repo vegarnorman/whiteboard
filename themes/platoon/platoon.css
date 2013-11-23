@@ -9,14 +9,14 @@
 
 html {
 	font-family: "Source Sans Pro", sans-serif;
-	font-size: 20px;
+	font-size: 18px;
 	line-height: 1.5;
 	height: 100%;
 	width: 100%;
 }
 
 body {
-	background-color: #ffffff;
+	background-color: #EEE;
 	color: #00002E;
 	height: 100%;
 	width: 100%;
@@ -24,16 +24,14 @@ body {
 }
 
 header {
-	min-height: 580px;
+	min-height: 530px;
 	background: transparent url("images/helikopter.jpg") no-repeat top center fixed;
+	background-position: 0 -250px;
 	background-size: cover;
-	padding-top: 400px;
-}
-
-header{
-	color: #fff;
+	color: #EEE;
 	font-family: 'Stardos Stencil', cursive;
-	font-size: 3rem;
+	font-size: 2.6rem;
+	box-shadow: 0 3px 10px #333;
 }
 
 header a{
@@ -99,6 +97,7 @@ font-family: 'Stardos Stencil', cursive;
 font-size: 2rem;
 border-color:#CACACA;
 color: #000;
+text-align: center;
 
 }
 	
@@ -106,6 +105,7 @@ color: #000;
 margin-left:auto;
 margin-right:auto;
 width:90%;
+text-align: center;
 }
 
 .container h3,h2,h1{
@@ -271,15 +271,20 @@ button:active{
 
 }
 
+li h3{
+	text-align: center;
+}
 
 
 footer {
 	background-image:url('images/woodland.jpg');
 	background-size: cover;
-	min-height: 70px;
-	padding: 1.5rem;
+	height: auto;
+	padding: 40px;
+	margin-top: 50px;
 	text-align: center;
 	color: #fff;
+	box-shadow: 0 -3px 10px #555;
 }
 
 	footer ul {
