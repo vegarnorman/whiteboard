@@ -185,12 +185,12 @@
 					<input class="post-editor-title" name="page_title" id="page_title" placeholder="Skriv inn tittel her" />
 
 					<div class="post-editor-toolbar">
-						<a href="#" id="editor-heading"><i class="fa fa-text-height"></i></a>
 						<a href="#" id="editor-bold"><i class="fa fa-bold"></i></a>
 						<a href="#" id="editor-italic"><i class="fa fa-italic"></i></a>
 						<a href="#" id="editor-underline"><i class="fa fa-underline"></i></a>
 						<a href="#" id="editor-link"><i class="fa fa-link"></i></a>
 						<a href="#" id="editor-code"><i class="fa fa-code"></i></a>
+						<a href="#" id="editor-distraction-free" class="float-right"><i class="fa fa-desktop"></i></a>
 					</div>
 
 					<label for="page_data">Sideinnhold:</label>
