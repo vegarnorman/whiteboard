@@ -117,7 +117,7 @@ a:hover {
 	text-decoration: underline;
 }
 
-a.cp-delete-link {
+.cp-delete-link {
 	color: #cc0000;
 }
 
@@ -239,7 +239,7 @@ label {
 	display: none;
 }
 
-label.cp-category-label {
+.cp-category-label {
 	display: inline;
 }
 
@@ -345,6 +345,17 @@ nav ul {
 -------------*/
 
 
+/* Regel for distraction-free editing */
+
+.post-editor-main.post-editor-distraction-free {
+	margin: 0 auto;
+	display: block;
+	float: none;
+	width: 90%;
+	max-width: 1680px;
+}
+
+
 /* Fellesregler for tittelfelt og innholdsfelt */
 
 .post-editor-title, .post-editor-content {
@@ -390,7 +401,6 @@ nav ul {
 
 .post-editor-toolbar {
 	background-color: rgba(14, 15, 20, 0.25);
-	padding: 2px;
 }
 
 .post-editor-toolbar a {
@@ -852,6 +862,10 @@ table {
 		margin-bottom: 1.5rem;
 	}
 
+	#editor-distraction-free {
+		display: none;
+	}
+
 
 	/* Visningssider og tabeller */
 
@@ -978,9 +992,15 @@ table {
 
 
 
+
 /*	<8> Hjelpeklasser 
--------------------*/
+===================*/
 
 .align-left { text-align: left; }
 .align-center { text-align: center; }
 .align-right { text-align: right; }
+
+.float-left { float: left; }
+.float-right { float: right; }
+
+.hidden { display: none !important; }

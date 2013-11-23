@@ -7,10 +7,11 @@ $(function() {
 	$(".post-editor-tags").append('<input type="text" id="post-editor-new-tag" placeholder="Nytt emneord" class="grid g9 no-gutters post-editor-new-tag" />');
 	$(".post-editor-tags").append('<button id="post-editor-tag-add" class="grid g3 no-gutters post-editor-tag-add button green"><i class="fa fa-plus-circle"></i></button>');
 
+	
+
 	if (edit !== "") {
 		edit = edit.replace(/<br \/>/g, "\\n");
 		var post = jQuery.parseJSON(edit);
-		console.log(post);
 
 		$("#post_title").val(post.post_title);
 		$("#post_data").val(post.post_data);
@@ -53,10 +54,6 @@ $(function() {
 	    textArea.val(textArea.val().substring(0, start) + replacement + textArea.val().substring(end, len));
 	}
 
-	function makeHeading() {
-		wrapText("## ", "\n");
-	}
-
 	function makeBold() {
 		wrapText("**", "**");
 	}
@@ -82,12 +79,6 @@ $(function() {
 		wrapText("```\n", "\n```");
 	}
 
-
-	$("#editor-heading").click(function() {
-		makeHeading();
-		return false;
-	});
-
 	$("#editor-bold").click(function() {
 		makeBold();
 		return false;
@@ -111,6 +102,50 @@ $(function() {
 	$("#editor-code").click(function() {
 		makeCode();
 		return false;
+	});
+
+
+	var distraction_free = false;
+
+	$("#editor-distraction-free").click(function() {
+
+		if (distraction_free) {
+
+			$(".post-editor-main").removeClass("post-editor-distraction-free");
+			$(".cp-sidebar, .post-editor-meta").removeClass("hidden");
+
+			$(".cp-sidebar, .post-editor-meta").animate({
+				opacity: 1
+			}, 500, function() {
+				
+			});
+
+
+			$("#editor-distraction-free").css({
+				"background-color": "rgba(14, 15, 20, 0)", "color": "rgba(14, 15, 20, 0.8)"
+			});
+
+			distraction_free = false;
+		}
+
+		else {
+
+			$(".cp-sidebar, .post-editor-meta").animate({
+				opacity: 0
+			}, 500, function() {
+				$(this).addClass("hidden");
+				$(".post-editor-main").addClass("post-editor-distraction-free");
+			});
+
+			$("#editor-distraction-free").css({
+				"background-color": "rgba(14, 15, 20, 0.7)", "color": "#0058e5"
+			});
+
+			distraction_free = true;
+		}
+
+		return false;
+
 	});
 
 
