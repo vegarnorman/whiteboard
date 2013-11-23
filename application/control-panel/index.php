@@ -40,7 +40,7 @@
 				<h3>Velkommen til Whiteboard CMS!</h3>
 
 				<p>
-					For å publisere en post, trykk "Skriv ny post" i menyen - eller, for nettlesere som støtter dette, bare dra en fil lagret på enheten din over det grå området under for å laste opp filen! Filer må være i tekst- eller markdown-format.
+					For å publisere en post, trykk "Skriv ny post" i menyen. Dersom nettleseren din støtter det, kan du dra inn en tekstfil for å åpne den i editoren. Filen må være i .txt-format, med eller uten Markdown-formatering.
 				</p>
 
 			</section>	
