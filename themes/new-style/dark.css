@@ -1,29 +1,40 @@
 
+/*--------------------------------------------------------+
+|		       W H I T E B O A R D   C M S                |
+|					   dark.css						 	  |
+|			   Author: Marius Baltramaitis			      |
++---------------------------------------------------------+
+|	<1> Importsetninger	                                  |
+|	<2> Oppset av rotelementer                            |
+|	<3>Komponenter                                        |
+|		-<3a> Header                                      |
+|		-<3b> Knapper                                     |
+|		-<3c> Konteinere                                  |
+|		-<3d>Kommentarer                                  |
+|		-<3e> footer                                      |
+|	<4> Oppset av klasser som skjuler innholdet på html   |
+|	<5> Oppset av elementer for mobilskjerm               |
+|	                                 					  |
++--------------------------------------------------------*/
+
+/* Importsetninger */
+
 @import url(http://fonts.googleapis.com/css?family=Andika); /* Font for h1,h2,h3,h4,h5,h6 tagger */
 @import url(http://fonts.googleapis.com/css?family=Nosifer); /* Font for h1 på toppen */
 @import url(http://fonts.googleapis.com/css?family=Jolly+Lodger); /* Font for menu bar */
 
+/* <2> Oppset av rotelementer */
 
 html {
 background-color:#191919;
 color:white;
 }
 
-
-/* Gir egenskaper for kroppen */
-
-body {
-background-color:#191919;
-}
-
-/* Setter font for disse taggene */
-
 h1,h2,h3,h4,h5,h6{
 font-family: 'Andika', sans-serif;
 color:#E6E6E6;
 }
 
-/* egenskaper for alle paragrafene */
 
 p {
 line-height:2rem;
@@ -31,13 +42,26 @@ color:#B2FFB2;
 opacity:0.9;
 }
 
-/* Fjerner punktene */
 
 li{
 list-style-type:none;
 }
 
-/* Egenskaper for header */
+
+body {
+background-color:#191919;
+}
+
+article {
+font-size:1.3rem;
+}
+
+article h2 {
+text-align:center;
+}
+
+/* <3a> Egenskaper for elementene som ligger i header */
+
 
 header {
 border:1px solid black;
@@ -55,10 +79,6 @@ background-color:#191919;
 background-image: url("images/banner1.jpg");
 }
 
-
-
-/* Egenskaper for h1 tag som ligger over bilde i headeren */
-
 #top-of-page h1 {
 float:right;
 text-transform:uppercase;
@@ -68,13 +88,10 @@ font-size:2.6rem;
 margin-top:5px;
 }
 
-/* Tar vekk h4 som er på toppen  */
 
 #top-of-page h4 {
 display:none;
 }
-
-/* Gir en font for nav-baren og fikser posisjonen */
 
 nav {
 padding-top:300px;
@@ -82,7 +99,6 @@ padding-left:25px;
 font-family: 'Jolly Lodger', cursive;
 }
 
-/* Fyller inn luft mellom li taggene, fjerner punkter og plasserer linkene i linja (inline) */
 
 nav li {
 margin:10px;
@@ -90,73 +106,50 @@ list-style-type:none;
 display:inline;
 }
 
-/* gir font størrelse og farge på nav sin a */
 
 nav a {
 font-size:2.5rem;
 color:rgb(112,112,112);
 }
 
-/* farger li hvit hvis musa er på */
+
 
 nav :hover{
 color:white;
 }
 
-/* gir egenskaper til main-container klassen. */
 
-.main-container{
-min-height:200px;
-width:75%;
-margin-left:auto;
-margin-right:auto;
+/* <3b> Knapper */
+
+.submit-comment-button {
+margin-top:10px;
+margin-bottom:10px;
+font-family: sans-serif;
+border-bottom-left-radius:5px;
+border-bottom-right-radius:5px;
+border-top-left-radius:5px;
+border-top-right-radius:5px;
+Font-size:1.1rem;
 }
 
-/*egenskaper for container */
-.container {
-background-color:#191919;
+.submit-comment-button:hover {
+color:#94B8B8;
 }
 
-/*egenskaper for artikkel */
-
-article {
-font-size:1.3rem;
+#new-comment-button {
+margin-top:10px;
+margin-bottom:10px;
+font-family: sans-serif;
+border-bottom-left-radius:5px;
+border-bottom-right-radius:5px;
+border-top-left-radius:5px;
+border-top-right-radius:5px;
+Font-size:1.1rem;
 }
 
-/* Egenskaper for tittelen av artikkel */
-
-article h2 {
-text-align:center;
+#new-comment-button:hover{
+color:#94B8B8;
 }
-
-/* Egenskaper for kommentar-footer ( Der hvor det står hvem har skrevet kommentaren ) */ 
-
-.article-footer {
-margin-top:5px;
-margin-bottom:30px;
-}
-
-.article-footer span{
-margin-top:15px;
-color:#828282;
-}
-.article-footer a {
-margin-top:15px;
-margin-left:10px;
-color:white;
-}
-
-.article-footer a:hover {
-color:#CFCFCF;
-}
-
-/* Skjuler Historien */
-
-.grid.g4.history {
-display:none;
-}
-
-/* "Nyere poster" og "eldre poster" knappens egenskaper */
 
 .nav-button  {
 color:white;
@@ -188,24 +181,27 @@ button:hover {
 color:#94B8B8;
 }
 
-/*" ny kommentar " sin knappen egenskaper */
 
-#new-comment-button {
-margin-top:10px;
-margin-bottom:10px;
-font-family: sans-serif;
-border-bottom-left-radius:5px;
-border-bottom-right-radius:5px;
-border-top-left-radius:5px;
-border-top-right-radius:5px;
-Font-size:1.1rem;
+
+/* <3d> Kontainere */
+
+.main-container{
+min-height:200px;
+width:75%;
+margin-left:auto;
+margin-right:auto;
 }
 
-#new-comment-button:hover{
-color:#94B8B8;
+.container {
+background-color:#191919;
+min-height:300px;
 }
 
-/* kommentar egenskaper */
+
+
+
+
+/* <3d> Egenskaper for kommentarer */
 
 .committed-comments{
 line-height:2rem;
@@ -213,8 +209,6 @@ font-size:1.3rem;
 color:white;
 width:50%;
 }
-
-/* Navnefelt og eposfelt */
 
 .comment-form input[type="text"]{
 margin-top:10px;
@@ -226,25 +220,30 @@ margin-top:20px;
 width:400px;
 }
 
-/* Kommentarfeltet */
+/* Egenskaper for kommentar-footer ( Der hvor det står hvem har skrevet kommentaren ) */ 
 
-.submit-comment-button {
-margin-top:10px;
-margin-bottom:10px;
-font-family: sans-serif;
-border-bottom-left-radius:5px;
-border-bottom-right-radius:5px;
-border-top-left-radius:5px;
-border-top-right-radius:5px;
-Font-size:1.1rem;
+.article-footer {
+margin-top:5px;
+margin-bottom:30px;
 }
 
-.submit-comment-button:hover {
-color:#94B8B8;
+.article-footer span{
+margin-top:15px;
+color:#828282;
+}
+.article-footer a {
+margin-top:15px;
+margin-left:10px;
+color:white;
+}
+
+.article-footer a:hover {
+color:#CFCFCF;
 }
 
 
-/* footer egenskaper */
+
+/* <3e> Footer */
 footer {
 margin-top:30px;
 text-align:center;
@@ -258,7 +257,13 @@ color:white;
 display:inline;
 text-decoration:none;
 }
- /* egenskaper for mobil-enheter */
+
+/*<4> Oppset av klasser som skjuler innholdet på html */
+.grid.g4.history {
+display:none;
+}
+
+  /*<5> Oppset av elementer for mobilskjerm  */
 @media screen and (device-width:320px)  {
 
 	header {
@@ -286,8 +291,10 @@ text-decoration:none;
 	min-width:100% !important;
 	max-width:100% !important;
 	}
+	
 	footer {
-	text-align:center;
+	display:inline;
+	width:50%!important;
 	}
 
 
