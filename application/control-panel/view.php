@@ -13,7 +13,7 @@
 	<script src="js/main.js"></script>
 	<script src="js/view.js"></script>
 
-	<title>Kontrollpanel</title>
+	<title>Whiteboard CMS - Dataoversikt</title>
 </head>
 
 <body>

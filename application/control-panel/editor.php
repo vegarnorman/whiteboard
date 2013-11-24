@@ -135,7 +135,7 @@
 	<script src="js/main.js"></script>
 	<script src="js/editor.js"></script>
 
-	<title>Skriv ny post (<?php ControlPanel::getSiteTitle(); ?>)</title>
+	<title>Whiteboard CMS - Skriv ny post</title>
 
 		
 

@@ -12,7 +12,7 @@
 	<script src="http://code.jquery.com/jquery-2.0.3.min.js"></script>
 	<script src="js/main.js"></script>
 
-	<title>Kontrollpanel</title>
+	<title>Whiteboard CMS - Ny kategori</title>
 </head>
 
 <body>

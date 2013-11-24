@@ -13,7 +13,7 @@
 	<script src="js/main.js"></script>
 	<script src="js/login.js"></script>
 
-	<title>Kontrollpanel</title>
+	<title>Logg inn</title>
 </head>
 
 <body class="login-page">
@@ -107,7 +107,11 @@
 		<?php elseif ($login == "ok"): ?>
 
 		<p>
-			Innloggingen var vellykket. Du vil automatisk bli sendt videre til kontrollpanelet. <a href="index.php">Trykk her hvis du ikke vil vente.</a>
+			Innloggingen var vellykket. Du vil automatisk bli sendt videre til kontrollpanelet.
+		</p>
+
+		<p>
+			<a href="index.php">Gå rett til kontrollpanelet</a>
 		</p>
 
 		<script>

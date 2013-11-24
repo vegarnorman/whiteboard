@@ -13,7 +13,7 @@
 	<script src="js/main.js"></script>
 	<script src="js/login.js"></script>
 
-	<title>Kontrollpanel</title>
+	<title>Whiteboard CMS - Logg ut</title>
 </head>
 
 <body class="login-page">

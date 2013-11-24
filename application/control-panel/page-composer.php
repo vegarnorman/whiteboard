@@ -102,7 +102,7 @@
 	<script src="js/main.js"></script>
 	<script src="js/composer.js"></script>
 
-	<title>Skriv ny post (<?php ControlPanel::getSiteTitle(); ?>)</title>
+	<title>Whiteboard CMS - Ny statisk side</title>
 
 		
 
