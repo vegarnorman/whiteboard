@@ -376,6 +376,14 @@ nav ul {
 	min-height: 4rem;
 }
 
+	.post-editor-title:hover {
+		border-bottom: 2px solid rgba(0, 0, 0, 0.2);
+	}
+
+	.post-editor-title:focus {
+		border-bottom: 2px solid #0058e5;
+	}
+
 
 /* Innholdsfelt */
 
