@@ -38,8 +38,8 @@
 
 		//skriver ut kommentarer
 		public function printComments($data){
-			echo "<sub class='committed-comments'>";
-			echo $data['comment_data']."</sub>";
+			echo "<p class='committed-comments'>";
+			echo $data['comment_data']."</p>";
 			echo "<div class='article-footer'><span>Kommentar fra: <b>";
 			echo $data['author_name'];
 			echo "</b> ".$data['comment_published']."</span></div>";
