@@ -18,7 +18,7 @@
 		//skriver poster ut til nettsiden
 		public function printPost($data){
 			echo "<article>";
-			echo "<a href='index.php?page=bloggpost&amp;no=".$data['post_id']."'<h2>".$data['post_title']."</h2></a>";
+			echo "<a href='index.php?page=bloggpost&amp;no=".$data['post_id']."'><h2>".$data['post_title']."</h2></a>";
 			echo "<p>".$data['post_data']."</p>";
 			echo "</article>";
 			echo "<div class='article-footer'><span>Skrevet av:<b> ";
