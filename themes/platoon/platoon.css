@@ -24,6 +24,7 @@
 @import url(http://fonts.googleapis.com/css?family=Stardos+Stencil|Muli&v2);
 @import url(http://fonts.googleapis.com/css?family=Sintony);
 
+
 /*	<2> reset av elementer
 ===========================*/
 
@@ -51,6 +52,18 @@ body {
 	height: 100%;
 	width: 100%;
 	font-family: 'Sintony', sans-serif;
+}
+
+h1,h2,h3,h4,h5,h6{
+	padding:10px 0 20px 0 ;
+	margin: 0; 
+}
+p{
+	margin-top: 0;
+}
+
+section{
+	margin-bottom: 50px;
 }
 
 /*	<4> Komponenter
@@ -85,11 +98,15 @@ header nav ul{
 	border-radius: 0px 15px 15px 0px;
 }
 
+.header-content{
+	margin-left: 11%;
+}
 
 .align-center{
 	text-align: center;
 	margin-top: 50px;
 	margin-bottom: 50px;
+	width: auto;
 }
 
 
@@ -112,7 +129,6 @@ text-align: center;
 margin-left:auto;
 margin-right:auto;
 width:90%;
-text-align: center;
 }
 
 .container h3,h2,h1{
@@ -136,13 +152,14 @@ text-align: center;
 
 .article-footer {
 	margin-left: 5%;
-	margin-bottom: 5%;
+	margin-bottom: 25%;
 	border-top: solid 1px #A6A6A6;
 	width: 75%;
 	height: 100%;
 	color: #000;
 
 }
+
 
 /* <4b> Knapper
 ----------------*/
@@ -161,7 +178,7 @@ text-align: center;
 
 .article-footer a:hover{
 box-shadow: 5px 5px 10px #000;
-background-image: url('images/woodland.jpg');
+background-color: #353F2A;
 background-size: cover;
 }
 
@@ -186,7 +203,7 @@ button{
 }
 button:hover{
 	cursor: pointer;
- 	background-image: url('images/woodland.jpg'); 
+ 	background-color: #353F2A; 
     background-size: cover;
     box-shadow: 5px 5px 10px #000;
 
@@ -221,7 +238,7 @@ float: left;
 
 .next:hover,.last:hover{
 box-shadow: 5px 5px 10px #000;
-background-image: url('images/woodland.jpg');
+background-color: #353F2A;
 background-size: cover;
 }
 
@@ -253,7 +270,7 @@ padding: 3px 8px 3px 8px;
 
 }
 .submit-comment-button:hover {
-   	background-image: url('images/woodland.jpg'); 
+   	background-color: #353F2A; 
    	background-size: cover;
  	box-shadow: 5px 5px 10px #000;
 }
@@ -313,6 +330,11 @@ padding: 3px 8px 3px 8px;
 	margin-left: 5%;
 	margin-right: auto;
 
+}
+
+.comment-area h2{
+	border-style: none;
+	margin-bottom: 5%;
 }
 
 li h3{
