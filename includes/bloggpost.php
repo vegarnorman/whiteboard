@@ -39,7 +39,6 @@
 								<input type="text" name="mail" onchange="mailCheck();" onkeypress="mailCheck();" placeholder="Email"><br/>
 								<textarea rows="5" placeholder="Enter your comments here" name="comment" onChange="commentCheck();"></textarea><br/>
 								<span id="error"></span>
-								<span id="free"></span>
 								<br/>
 								<input type="submit" id="submit" name="submit_comment" value="Legg til kommentar" class="submit-comment-button"><br/>
 								<br/>
