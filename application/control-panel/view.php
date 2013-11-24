@@ -184,7 +184,7 @@
 
 					if (isset($_GET["delete"])) {
 						if ($_GET["delete"] > 0) {
-							$delete_result = Post::deletePost($db, $_GET["delete"]);
+							$delete_result = Page::deletePage($db, $_GET["delete"]);
 
 							if ($delete_result == true) {
 								echo '<p class="cp-message success grid g12"><b>SUKSESS</b><br />Oppføringen ble slettet fra databasen.</p>';
@@ -277,7 +277,7 @@
 
 					if (isset($_GET["delete"])) {
 						if ($_GET["delete"] > 0) {
-							$delete_result = Post::deletePost($db, $_GET["delete"]);
+							$delete_result = Comment::deleteComment($db, $_GET["delete"]);
 
 							if ($delete_result == true) {
 								echo '<p class="cp-message success grid g12"><b>SUKSESS</b><br />Oppføringen ble slettet fra databasen.</p>';
