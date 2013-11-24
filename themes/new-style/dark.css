@@ -1,0 +1,303 @@
+
+@import url(http://fonts.googleapis.com/css?family=Andika); /* Font for h1,h2,h3,h4,h5,h6 tagger */
+@import url(http://fonts.googleapis.com/css?family=Nosifer); /* Font for h1 på toppen */
+@import url(http://fonts.googleapis.com/css?family=Jolly+Lodger); /* Font for menu bar */
+
+
+html {
+background-color:#191919;
+color:white;
+}
+
+
+/* Gir egenskaper for kroppen */
+
+body {
+background-color:#191919;
+}
+
+/* Setter font for disse taggene */
+
+h1,h2,h3,h4,h5,h6{
+font-family: 'Andika', sans-serif;
+color:#E6E6E6;
+}
+
+/* egenskaper for alle paragrafene */
+
+p {
+line-height:2rem;
+color:#B2FFB2;
+opacity:0.9;
+}
+
+/* Fjerner punktene */
+
+li{
+list-style-type:none;
+}
+
+/* Egenskaper for header */
+
+header {
+border:1px solid black;
+box-shadow:0px 5px 10px #6B6B6B;
+color:white;
+height:500px;
+width:950px;
+background-repeat: no-repeat;
+background-size:cover;
+background-position:center;
+margin-left:auto;
+margin-right:auto;
+font-family: 'Jolly Lodger', cursive;
+background-color:#191919;
+background-image: url("images/banner1.jpg");
+}
+
+
+
+/* Egenskaper for h1 tag som ligger over bilde i headeren */
+
+#top-of-page h1 {
+float:right;
+text-transform:uppercase;
+margin-right:10px;
+font-family: 'Nosifer', cursive;
+font-size:2.6rem;
+margin-top:5px;
+}
+
+/* Tar vekk h4 som er på toppen  */
+
+#top-of-page h4 {
+display:none;
+}
+
+/* Gir en font for nav-baren og fikser posisjonen */
+
+nav {
+padding-top:300px;
+padding-left:25px;
+font-family: 'Jolly Lodger', cursive;
+}
+
+/* Fyller inn luft mellom li taggene, fjerner punkter og plasserer linkene i linja (inline) */
+
+nav li {
+margin:10px;
+list-style-type:none;
+display:inline;
+}
+
+/* gir font størrelse og farge på nav sin a */
+
+nav a {
+font-size:2.5rem;
+color:rgb(112,112,112);
+}
+
+/* farger li hvit hvis musa er på */
+
+nav :hover{
+color:white;
+}
+
+/* gir egenskaper til main-container klassen. */
+
+.main-container{
+min-height:200px;
+width:75%;
+margin-left:auto;
+margin-right:auto;
+}
+
+/*egenskaper for container */
+.container {
+background-color:#191919;
+}
+
+/*egenskaper for artikkel */
+
+article {
+font-size:1.3rem;
+}
+
+/* Egenskaper for tittelen av artikkel */
+
+article h2 {
+text-align:center;
+}
+
+/* Egenskaper for kommentar-footer ( Der hvor det står hvem har skrevet kommentaren ) */ 
+
+.article-footer {
+margin-top:5px;
+margin-bottom:30px;
+}
+
+.article-footer span{
+margin-top:15px;
+color:#828282;
+}
+.article-footer a {
+margin-top:15px;
+margin-left:10px;
+color:white;
+}
+
+.article-footer a:hover {
+color:#CFCFCF;
+}
+
+/* Skjuler Historien */
+
+.grid.g4.history {
+display:none;
+}
+
+/* "Nyere poster" og "eldre poster" knappens egenskaper */
+
+.nav-button  {
+color:white;
+border:2px groove;
+font-size:1.2rem;
+min-width:120px;
+text-align:center;
+text-decoration:none;
+font-family:sans-serif;
+border-bottom-left-radius:5px;
+border-bottom-right-radius:5px;
+border-top-left-radius:5px;
+border-top-right-radius:5px;
+margin-top:20px;
+}
+
+.next {
+float:right;
+margin-right:50px;
+}
+
+.last {
+margin-top:50px;
+float:left;
+margin-left:50px;
+}
+
+button:hover {
+color:#94B8B8;
+}
+
+/*" ny kommentar " sin knappen egenskaper */
+
+#new-comment-button {
+margin-top:10px;
+margin-bottom:10px;
+font-family: sans-serif;
+border-bottom-left-radius:5px;
+border-bottom-right-radius:5px;
+border-top-left-radius:5px;
+border-top-right-radius:5px;
+Font-size:1.1rem;
+}
+
+#new-comment-button:hover{
+color:#94B8B8;
+}
+
+/* kommentar egenskaper */
+
+.committed-comments{
+line-height:2rem;
+font-size:1.3rem;
+color:white;
+width:50%;
+}
+
+/* Navnefelt og eposfelt */
+
+.comment-form input[type="text"]{
+margin-top:10px;
+margin-right:10px;
+}
+
+.comment-form textarea{
+margin-top:20px;
+width:400px;
+}
+
+/* Kommentarfeltet */
+
+.submit-comment-button {
+margin-top:10px;
+margin-bottom:10px;
+font-family: sans-serif;
+border-bottom-left-radius:5px;
+border-bottom-right-radius:5px;
+border-top-left-radius:5px;
+border-top-right-radius:5px;
+Font-size:1.1rem;
+}
+
+.submit-comment-button:hover {
+color:#94B8B8;
+}
+
+
+/* footer egenskaper */
+footer {
+margin-top:30px;
+text-align:center;
+}
+
+footer a {
+display:none;
+}
+footer li {
+color:white;
+display:inline;
+text-decoration:none;
+}
+ /* egenskaper for mobil-enheter */
+@media screen and (device-width:320px)  {
+
+	header {
+	width:550px!important;
+	height:250px!important;
+	margin-left:auto;
+	margin-right:auto;
+	}
+	
+	nav {
+	padding-top:100px;
+	float:left;
+	margin-right:100px;
+	}
+	#top-of-page h1 {
+	font-size:1rem;
+	}
+
+	
+	.container {
+	min-width:100% !important;
+	max-width:100% !important;
+	}
+	.main-container {
+	min-width:100% !important;
+	max-width:100% !important;
+	}
+	footer {
+	text-align:center;
+	}
+
+
+}
+
+
+
+
+
+
+
+
+

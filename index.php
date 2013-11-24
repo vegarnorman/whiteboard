@@ -9,7 +9,7 @@
 		<meta name="keywords" content="cms, project">
 		<title>Whiteboard CMS</title>
 		<link rel="stylesheet" title="Default" type="text/css" href="themes/default/master.css">
-		<link rel="alternate stylesheet" title="New Style" type="text/css" href="themes/new-style/alternate-stylesheet.css">
+		<link rel="alternate stylesheet" title="Dark" type="text/css" href="themes/new-style/dark.css">
 		<link rel="alternate stylesheet" title="Platoon" type="text/css" href="themes/platoon/platoon.css">
 		<script src="http://code.jquery.com/jquery-2.0.3.min.js"></script>
 		<script type="text/javascript" src="themes/default/js/jquery.js"></script>
