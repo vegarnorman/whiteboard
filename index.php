@@ -5,7 +5,7 @@
 <html lang="no">
 	<head>
 		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width, initial-scale=0.61, user-scalable=yes"> 
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes"> 
 		<meta name="keywords" content="cms, project">
 		<title>Whiteboard CMS</title>
 		<link rel="stylesheet" title="Default" type="text/css" href="themes/default/master.css">
@@ -23,15 +23,19 @@
 	?>
 
 	<header id="top-of-page">
-		<h1>whiteboard</h1>	
-		<h4>content management system</h4>
+		<div class="header-content">
+			<h1>whiteboard</h1>	
+			<h4>content management system</h4>
+		</div>	<!-- header-content closing -->
+	
 		<nav>
 			<ul>
-				<li class="menu"><a href="index.php?page=forside">Forside</a></li>
-				<li class="menu"><a href="index.php?page=blogg&amp;site=0">Blogg</a></li>
-				<li class="menu"><a href="index.php?page=artikler">Artikler</a></li>
+				<li><a href="index.php?page=forside">Forside</a></li>
+				<li><a href="index.php?page=blogg&amp;site=0">Blogg</a></li>
+				<li><a href="index.php?page=artikler">Artikler</a></li>
 			</ul>
 		</nav>
+	
 	</header>
 	
  	<!-- page content here -->
