@@ -65,8 +65,6 @@
 
 			<section class="grid g4 history">
 
-				<h2>Historikk</h2>
-				
 				<h3>Arkiv</h3>
 				
 					<ul>
