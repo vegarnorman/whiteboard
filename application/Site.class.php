@@ -48,7 +48,7 @@
 
 		public function printPage($data){
 			echo "<h2>" .$data['page_title']."</h2>";
-			echo "<p>".$data['page_data']."</p>";
+			echo $data['page_data'];
 		}
 
 	}
