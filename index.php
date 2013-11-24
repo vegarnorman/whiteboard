@@ -30,9 +30,9 @@
 	
 		<nav>
 			<ul>
-				<li><a href="index.php?page=forside">Forside</a></li>
-				<li><a href="index.php?page=blogg&amp;site=0">Blogg</a></li>
-				<li><a href="index.php?page=artikler">Artikler</a></li>
+				<li class="menu"><a href="index.php?page=forside">Forside</a></li>
+				<li class="menu"><a href="index.php?page=blogg&amp;site=0">Blogg</a></li>
+				<li class="menu"><a href="index.php?page=artikler">Artikler</a></li>
 			</ul>
 		</nav>
 	
