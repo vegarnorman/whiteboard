@@ -1,7 +1,17 @@
 <?php
 	
 	require_once "Database.auth.class.php";
-	require_once "Database.settings.php";
+	require_once "Database.settings.alt.php";
+
+	// MERK!
+	// Løsningen kjører på skolens databaseserver ut av esken, men da denne er høyst usikker
+	// er det ingen garanti for at dataene i databasen ligger der ved tidspunkt for retting.
+	// Vi har derfor også sørget for at det eksisterer en mulig tilkobling til en privat
+	// databaseserver - for å bruke denne dersom cube.iu.hio.no skulle gå ned eller det skulle
+	// være andre feil, vennligst fjern eller kommenter ut linje 4, og fjern kommentaren på
+	// linje 14. Med vennlig hilsen, Gruppe 25.
+
+	// require_once "Database.settings.php";
 
 	class Database extends mysqli {
 
