@@ -18,14 +18,13 @@
 		//skriver poster ut til nettsiden
 		public function printPost($data){
 			echo "<article>";
-			echo "<h2>".$data['post_title']."</h2>";
+			echo "<a href='index.php?page=bloggpost&amp;no=".$data['post_id']."'<h2>".$data['post_title']."</h2></a>";
 			echo "<p>".$data['post_data']."</p>";
 			echo "</article>";
 			echo "<div class='article-footer'><span>Skrevet av:<b> ";
 			echo $data['user_display_name'];
 			echo "</b> ".$data['post_published'];
-			echo "</span><span><a href='index.php?page=bloggpost&amp;no=".$data['post_id']."'>Kommentér";
-			echo "<img src='themes/default/images/talk.png' alt='snakkeboble' height='12'></a></span></div>";
+			echo "</span><span><a href='index.php?page=bloggpost&amp;no=".$data['post_id']."'>Kommentér</a></span></div>";
 		}
 
 		//skriver ut en enkelt post
