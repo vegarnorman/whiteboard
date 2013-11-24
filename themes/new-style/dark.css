@@ -26,7 +26,6 @@
 /* <2> Oppset av rotelementer */
 
 html {
-background-color:#191919;
 color:white;
 }
 
@@ -54,6 +53,7 @@ background-color:#191919;
 
 article {
 font-size:1.3rem;
+font-family: 'Andika', sans-serif;
 }
 
 article h2 {
@@ -66,9 +66,9 @@ text-align:center;
 header {
 border:1px solid black;
 box-shadow:0px 5px 10px #6B6B6B;
+width:100%;
 color:white;
-height:500px;
-width:950px;
+height:600px;
 background-repeat: no-repeat;
 background-size:cover;
 background-position:center;
@@ -80,9 +80,9 @@ background-image: url("images/banner1.jpg");
 }
 
 #top-of-page h1 {
+clear:both;
 float:right;
 text-transform:uppercase;
-margin-right:10px;
 font-family: 'Nosifer', cursive;
 font-size:2.6rem;
 margin-top:5px;
@@ -94,7 +94,7 @@ display:none;
 }
 
 nav {
-padding-top:300px;
+padding-top:400px;
 padding-left:25px;
 font-family: 'Jolly Lodger', cursive;
 }
@@ -122,7 +122,7 @@ color:white;
 /* <3b> Knapper */
 
 .submit-comment-button {
-margin-top:10px;
+margin-top:50px;
 margin-bottom:10px;
 font-family: sans-serif;
 border-bottom-left-radius:5px;
@@ -137,8 +137,8 @@ color:#94B8B8;
 }
 
 #new-comment-button {
-margin-top:10px;
-margin-bottom:10px;
+margin-top:50px;
+margin-bottom:50px;
 font-family: sans-serif;
 border-bottom-left-radius:5px;
 border-bottom-right-radius:5px;
@@ -167,11 +167,13 @@ margin-top:20px;
 }
 
 .next {
+clear:both;
 float:right;
 margin-right:50px;
 }
 
 .last {
+clear:both;
 margin-top:50px;
 float:left;
 margin-left:50px;
@@ -186,15 +188,14 @@ color:#94B8B8;
 /* <3d> Kontainere */
 
 .main-container{
-min-height:200px;
 width:75%;
 margin-left:auto;
 margin-right:auto;
+clear:both;
 }
 
 .container {
-background-color:#191919;
-min-height:300px;
+clear:both;
 }
 
 
@@ -245,6 +246,7 @@ color:#CFCFCF;
 
 /* <3e> Footer */
 footer {
+clear:both;
 margin-top:30px;
 text-align:center;
 }
@@ -258,43 +260,43 @@ display:inline;
 text-decoration:none;
 }
 
+footer ul {
+margin:5px;
+}
+
 /*<4> Oppset av klasser som skjuler innholdet på html */
 .grid.g4.history {
 display:none;
 }
 
   /*<5> Oppset av elementer for mobilskjerm  */
-@media screen and (device-width:320px)  {
+@media screen and (max-width:768px) {
 
+ 
 	header {
 	width:550px!important;
 	height:250px!important;
-	margin-left:auto;
-	margin-right:auto;
 	}
 	
-	nav {
+	nav{
 	padding-top:100px;
-	float:left;
-	margin-right:100px;
 	}
-	#top-of-page h1 {
-	font-size:1rem;
-	}
-
 	
-	.container {
-	min-width:100% !important;
-	max-width:100% !important;
+	#top-of-page h1 {
+	display:none;
 	}
 	.main-container {
-	min-width:100% !important;
-	max-width:100% !important;
+	clear:both;
+	width:100%!important;
 	}
-	
+	.container {
+	width:100%!important;
+	clear:both;
+	}
+
 	footer {
-	display:inline;
-	width:50%!important;
+	width:100%!important;
+	clear:both;
 	}
 
 
