@@ -33,7 +33,7 @@
 
 				$page_id = $_POST["page_id"];
 
-				$edit_page_data = [
+				$edit_page_data = array(
 					"page_id" => (int) $_POST["page_id"],
 					"page_title" => (string) $_POST["page_title"],
 					"page_data" => (string) $_POST["page_data"],
@@ -41,7 +41,7 @@
 					"page_last_modified" => (string) date("j-m-Y, G:i"),
 					"page_published_by" => (int) $_POST["user_id"],
 					"page_last_modified_by" => (int) $_POST["user_id"]
-				];
+				);
 
 				$page = new Page($edit_page_data);
 
@@ -54,14 +54,14 @@
 
 			else {
 
-				$new_page_data = [
+				$new_page_data = array(
 					"page_title" => (string) $_POST["page_title"],
 					"page_data" => (string) $_POST["page_data"],
 					"page_published" => (string) date("j-m-Y, G:i"),
 					"page_last_modified" => (string) date("j-m-Y, G:i"),
 					"page_published_by" => (int) $_POST["user_id"],
 					"page_last_modified_by" => (int) $_POST["user_id"],
-				];
+				);
 
 				$page = new Page($new_page_data);
 
